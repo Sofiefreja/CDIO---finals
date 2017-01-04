@@ -1,5 +1,16 @@
 package game;
-
+import java.awt.*;
+import java.util.ArrayList;
+//import board.*;
+import desktop_fields.*;
+//import desktop_fields.Refuge;
+//import desktop_fields.Tax;
+import desktop_codebehind.*;
+import desktop_resources.GUI;
+import board.LaborCamp;
+import board.Ownable;
+import board.Tax;
+import board.Refuge;
 public class GUIControl {
 	public void makeBoard() { // Method that creates the board for the GUI and
 		// sets the squares with their descriptions,
