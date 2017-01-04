@@ -1,5 +1,6 @@
 package controller;
-import entities.*;
+import entities.Player;
+import entities.Cup;
 import java.awt.*;
 import java.util.ArrayList;
 //import board.*;
@@ -9,9 +10,10 @@ import desktop_fields.*;
 import desktop_codebehind.*;
 import desktop_resources.GUI;
 //import board.LaborCamp;
-import board.Ownable;
+import board.*;
 //import board.Tax;
 //import board.Refuge;
+import board.Ownable;
 
 public class GUIControl {
 
@@ -241,9 +243,9 @@ public class GUIControl {
 	public static void notEnoughMoney(Ownable own){
 		GUI.showMessage("Whoa there, you don't have enough money to buy "+own.toString());
 	}
-	public static void taxNotEnoughMoney(Tax tax){
+	/*public static void taxNotEnoughMoney(Tax tax){
 		GUI.showMessage("You don't have enough money to pay the tax amount of "+tax.getTaxAmount()+", so you have to pay the 10% tax rate.");
-	}
+	}*/
 	public void endGUI(){
 		GUI.close();
 	}
