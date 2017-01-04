@@ -3,7 +3,7 @@ import entities.Player;
 import controller.GUIControl;
 /**
  * 	A player lands on parking.
- * @author Sofie Freja Christensen
+ * @author Sofie Freja Christensen s153932
  *
  */
 public class Parking extends Square {
