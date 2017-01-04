@@ -2,11 +2,11 @@ package controller;
 import controller.*;
 import java.util.ArrayList;
 import desktop_resources.GUI;
-import board.Square;
-import entities.Player;
 import board.*;
-import entities.Board;
+import entities.Player;
+import board.Square;
 import entities.Cup;
+import entities.Board;
 
 public class Game {
 	public Game() {

@@ -1,5 +1,5 @@
 package board;
-import game.Player;
+import entities.Player;
 /**
  * Abstract class Square, superclass to all Squares.
  * @author Mathias Tværmose Gleerup
