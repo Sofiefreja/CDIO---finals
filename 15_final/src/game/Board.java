@@ -1,5 +1,5 @@
 package game;
-
+import board.*;
 public class Board {
 	Square[] squares = new Square[40];
 	public Board(){
