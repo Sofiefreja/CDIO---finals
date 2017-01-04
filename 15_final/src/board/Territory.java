@@ -1,5 +1,5 @@
 package board;
-import game.Player;
+import entities.Player;
 /**
  * Class Territory extended from Ownable.
  * @author Mathias Tværmose Gleerup
