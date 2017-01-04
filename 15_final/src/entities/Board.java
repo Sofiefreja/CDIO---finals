@@ -1,5 +1,6 @@
 package entities;
 import board.*;
+import board.Tax;
 public class Board {
 	/* Class, to initialize the board and the square. 
 	 * Author: Sofie Freja Christensen
@@ -14,7 +15,7 @@ public class Board {
 	squares[1] = new Territory("Rødovrevej", 2, 4000, 324);
 	squares[2] = new Territory("Prøv lykken", 3,  1500, 300);
 	squares[3] = new Territory("Hvidovrevej", 4, 5000,234);
-	squares[4] = new Territory("Indkomstskat", 5, 2500,2344);
+	squares[4] = new Tax("Indkomstskat",5, 2000);
 	squares[5] = new Territory("Scandlines Helsingør-Helsingborg", 6, 2000, 500);
 	squares[6] = new Territory("Roskildevej", 7, 4000,234);
 	squares[7] = new Territory("Prøv lykken", 8, 3000, 700);
@@ -48,7 +49,7 @@ public class Board {
 	squares[35] = new Territory("Scandllines Rødby-Puttgaarden", 16, 2500,464);
 	squares[36] = new Territory("Prøv lykken", 17, 5500, 2600);
 	squares[37] = new Territory("Frederiksberggade", 18, 4000,234);
-	squares[38] = new Territory("Ekstraordinær statsskat", 19, 4000,124);
+	squares[38] = new Tax("Ekstraordinær statsskat", 19,2000 );
 	squares[39] = new Territory("Rådhuspladsen", 20, 6000, 3200);
 	
 	}
