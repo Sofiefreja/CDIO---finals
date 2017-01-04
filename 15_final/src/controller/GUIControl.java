@@ -22,8 +22,8 @@ public class GUIControl {
 								// colouring and number
 		// terr = white, ref = green, fleet = blue, tax = red, labor = yellow.
 		Field[] fields = new Field[40];
-		fields[0] = new Street.Builder().setTitle("Tribe Encampment").setDescription("Territory").setSubText("Price: 1000").setRent("Rent: 100")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[0] = new Street.Builder().setTitle("Start").setDescription("Hver gang De passere modtag kr. 4000").
+				setBgColor(Color.yellow).setFgColor(Color.black).build();
 		fields[1] = new Shipping.Builder().setTitle("Second Sail").setDescription("Fleet").setSubText("Price: 4000").setRent("Rent: 500,1000,2000 or 4000")
 				.setBgColor(Color.blue).setFgColor(Color.white).build();
 		fields[2] = new Street.Builder().setTitle("Crater").setDescription("Territory").setSubText("Price: 1500").setRent("Rent: 300")
