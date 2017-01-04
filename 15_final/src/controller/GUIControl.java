@@ -1,5 +1,5 @@
 package controller;
-
+import entities.*;
 import java.awt.*;
 import java.util.ArrayList;
 //import board.*;
@@ -8,10 +8,10 @@ import desktop_fields.*;
 //import desktop_fields.Tax;
 import desktop_codebehind.*;
 import desktop_resources.GUI;
-import board.LaborCamp;
+//import board.LaborCamp;
 import board.Ownable;
-import board.Tax;
-import board.Refuge;
+//import board.Tax;
+//import board.Refuge;
 
 public class GUIControl {
 
