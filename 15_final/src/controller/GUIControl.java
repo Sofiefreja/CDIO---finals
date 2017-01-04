@@ -5,6 +5,7 @@ import java.awt.*;
 import java.util.ArrayList;
 //import board.*;
 import desktop_fields.*;
+import desktop_fields.Tax;
 //import desktop_fields.Refuge;
 //import desktop_fields.Tax;
 import desktop_codebehind.*;
@@ -20,88 +21,88 @@ public class GUIControl {
 	public void makeBoard() { // Method that creates the board for the GUI and
 								// sets the squares with their descriptions,
 								// colouring and number
-		// terr = white, ref = green, fleet = blue, tax = red, labor = yellow.
+		//Street colors 
 		Field[] fields = new Field[40];
-		fields[0] = new Street.Builder().setTitle("Start").setDescription("Hver gang De passere modtag kr. 4000").
-				setBgColor(Color.yellow).setFgColor(Color.black).build();
-		fields[1] = new Shipping.Builder().setTitle("Second Sail").setDescription("Fleet").setSubText("Price: 4000").setRent("Rent: 500,1000,2000 or 4000")
-				.setBgColor(Color.blue).setFgColor(Color.white).build();
-		fields[2] = new Street.Builder().setTitle("Crater").setDescription("Territory").setSubText("Price: 1500").setRent("Rent: 300")
+		fields[0] = new Start.Builder().setTitle("Start").setDescription("Hver gang De passere modtag kr. 4000").setSubText("4000 kr.").
+				setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
+		fields[1] = new Street.Builder().setTitle("Rødovrevej").setDescription("Leje af grund 50,  m/1 hus = 250, 2 huse = 750, 3 huse = 2250, 4 huse = 4000, hotel = 6000").setSubText("Pris: 1200")
+				.setBgColor(Color.blue).setFgColor(Color.black).build();
+		fields[2] = new Chance.Builder()
+				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
+		fields[3] = new Street.Builder().setTitle("Hvidovrevej").setDescription("").setSubText("Pris: 1200 kr.")
+				.setBgColor(Color.blue).setFgColor(Color.black).build();
+		fields[4] = new Tax.Builder().setTitle("Indkomstskat ").setDescription("Vælg mellem 10% eller 4000 kr.").setSubText("")
+				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
+		fields[5] = new Shipping.Builder().setTitle("Scandlines H-H").setDescription("").setSubText("Pris: 4000 kr.").setRent("Rent: 500")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[3] = new Street.Builder().setTitle("Walled City").setDescription("Refuge").setSubText("Reward: 5000")
+		fields[6] = new Street.Builder().setTitle("Roskildevej").setDescription("").setSubText("Pris: 2000")
+				.setBgColor(Color.getHSBColor(127, 140, 141)).setFgColor(Color.black).build();
+		fields[7] = new Chance.Builder().
+				setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
+		fields[8] = new Street.Builder().setTitle("Valby Langgade").setDescription("").setSubText("Pris: 2000 kr.")
+				.setBgColor(Color.getHSBColor(127, 140, 141)).setFgColor(Color.black).build();
+		fields[9] = new Street.Builder().setTitle("Allégade").setDescription("Tax").setSubText("Pris: 2400 kr.")
+				.setBgColor(Color.getHSBColor(127, 140, 141)).setFgColor(Color.black).build();
+		fields[10] = new Jail.Builder().setTitle("Fængsels besøg").setDescription("Du er på besøg i fængselet").setSubText("Fængsels besøg.")
+				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
+		fields[11] = new Street.Builder().setTitle("Frederiksberg Allé").setDescription("").setSubText("Pris: 2800 kr.")
+				.setRent("1600").setBgColor(Color.green).setFgColor(Color.black).build();
+		fields[12] = new Brewery.Builder().setTitle("Tuborg").setDescription("").setSubText("Pris: 3000 kr.").setRent("Rent: 500,1000,2000 or 4000")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[13] = new Street.Builder().setTitle("Bülowsvej").setDescription("").setSubText("Pris: 2800 kr.")
+				.setRent("2000").setBgColor(Color.green).setFgColor(Color.black).build();
+		fields[14] = new Street.Builder().setTitle("Gl. Kongevej").setDescription("").setSubText("Pris: 3200 kr.")
 				.setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[4] = new Street.Builder().setTitle("Huts in the mountain").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes * 100 * Camps owned")
+		fields[15] = new Shipping.Builder().setTitle("Mols-Linien").setDescription("").setSubText("Pris: 4000 kr.").setRent("Rent: Eyes * 100 * Camps owned")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[16] = new Street.Builder().setTitle("Bernstorffsvej").setDescription("").setSubText("Pris: 3600 kr.")
+				.setBgColor(Color.gray).setFgColor(Color.black).build();
+		fields[17] = new Chance.Builder()
+				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
+		fields[18] = new Street.Builder().setTitle("Hellerupvej").setDescription("").setSubText("Pris: 3600 kr.")
+				.setBgColor(Color.gray).setFgColor(Color.black).build();
+		fields[19] = new Street.Builder().setTitle("Strandvejen").setDescription("").setSubText("Pris: 4000 kr")
+				.setBgColor(Color.gray).setFgColor(Color.black).build();
+		fields[20] = new Refuge.Builder().setTitle("Parkering").setDescription("Du er pakeret").setSubText("Helle")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[21] = new Street.Builder().setTitle("Trianglen").setDescription("").setSubText("Pris: 4400 kr.")
+				.setBgColor(Color.getHSBColor(224, 130, 131)).setFgColor(Color.black).build();
+		fields[22] = new Chance.Builder()
+				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
+		fields[23] = new Street.Builder().setTitle("Østerbrogade").setDescription("").setSubText("Pris: 4400 kr.")
+				.setBgColor(Color.getHSBColor(224, 130, 131)).setFgColor(Color.black).build();
+		fields[24] = new Street.Builder().setTitle("Grønningen").setDescription("").setSubText("Pris: 4800 kr.")
+				.setBgColor(Color.getHSBColor(224, 130, 131)).setFgColor(Color.black).build();
+		fields[25] = new Shipping.Builder().setTitle("Scandlines G-R").setDescription("").setSubText("Pris: 4000 kr.")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[26] = new Street.Builder().setTitle("Bredgade").setDescription("").setSubText("Pris: 5200 kr.")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[27] = new Street.Builder().setTitle("Kgs. Nytorv").setDescription("").setSubText("Pris: 5200 kr.")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[28] = new Brewery.Builder().setTitle("Carlsberg").setDescription("").setSubText("Pris: 3000 kr.").setRent("Rent: 700")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[29] = new Street.Builder().setTitle("Østergade").setDescription("").setSubText("Pris: 5600 kr.")
+				.setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[30] = new Jail.Builder().setTitle("Fængslet").setDescription("Ryk til fængsel!").setSubText("Ryk til fængsel!")
+				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
+		fields[31] = new Street.Builder().setTitle("Amagertorv").setDescription("").setSubText("Pris: 6000 kr.")
 				.setBgColor(Color.yellow).setFgColor(Color.black).build();
-		fields[5] = new Street.Builder().setTitle("Mountain").setDescription("Territory").setSubText("Price: 2000").setRent("Rent: 500")
+		fields[32] = new Street.Builder().setTitle("Vimmelskaftet").setDescription("").setSubText("Pris: 6000 kr.")
+				.setRent("1600").setBgColor(Color.yellow).setFgColor(Color.black).build();
+		fields[33] = new Chance.Builder()
+				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
+		fields[34] = new Street.Builder().setTitle("Nygade").setDescription("").setSubText("Pris: 6400 kr.")
+				.setRent("2000").setBgColor(Color.yellow).setFgColor(Color.black).build();
+		fields[35] = new Shipping.Builder().setTitle("Scandlines R-P").setDescription("").setSubText("Pris: 4000 kr.")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[6] = new Shipping.Builder().setTitle("Sea Grover").setDescription("Fleet").setSubText("Price: 4000").setRent("Rent: 500,1000,2000 or 4000")
-				.setBgColor(Color.blue).setFgColor(Color.white).build();
-		fields[7] = new Street.Builder().setTitle("Cold Desert").setDescription("Territory").setSubText("Price: 3000").setRent("Rent: 700")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[8] = new Street.Builder().setTitle("Black Cave").setDescription("Territory").setSubText("Price: 4000").setRent("Rent: 1000")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[9] = new Street.Builder().setTitle("Goldmine").setDescription("Tax").setSubText("2000 or 10% of balance tax!")
-				.setBgColor(Color.red).setFgColor(Color.black).build();
-		fields[10] = new Street.Builder().setTitle("The Werewall").setDescription("Territory").setSubText("Price: 4300").setRent("Rent: 1300")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[11] = new Street.Builder().setTitle("Mountain Village").setDescription("Territory").setSubText("Price: 4750")
-				.setRent("1600").setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[12] = new Shipping.Builder().setTitle("Buccaneers").setDescription("Fleet").setSubText("Price: 4000").setRent("Rent: 500,1000,2000 or 4000")
-				.setBgColor(Color.blue).setFgColor(Color.white).build();
-		fields[13] = new Street.Builder().setTitle("South Citidel").setDescription("Territory").setSubText("Price: 5000")
-				.setRent("2000").setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[14] = new Street.Builder().setTitle("Monestary").setDescription("Refuge").setSubText("Reward: 500")
-				.setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[15] = new Street.Builder().setTitle("The Pit").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes * 100 * Camps owned")
-				.setBgColor(Color.yellow).setFgColor(Color.black).build();
-		fields[16] = new Street.Builder().setTitle("Palace Gates").setDescription("Territory").setSubText("Price: 5500").setRent("Rent: 2600")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[17] = new Shipping.Builder().setTitle("Privateer").setDescription("Fleet").setSubText("Price: 4000").setRent("Rent: 500,1000,2000 or 4000")
-				.setBgColor(Color.blue).setFgColor(Color.white).build();
-		fields[18] = new Street.Builder().setTitle("Caravan").setDescription("Tax").setSubText("4000 or 10% of balance tax!").setBgColor(Color.red)
-				.setFgColor(Color.black).build();
-		fields[19] = new Street.Builder().setTitle("Tower").setDescription("Territory").setSubText("Price: 6000").setRent("Rent: 3200")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[20] = new Street.Builder().setTitle("Castle").setDescription("Territory").setSubText("Price: 8000").setRent("Rent: 4000")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[21] = new Street.Builder().setTitle("Tribe Encampment").setDescription("Territory").setSubText("Price: 1000").setRent("Rent: 100")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[22] = new Shipping.Builder().setTitle("Second Sail").setDescription("Fleet").setSubText("Price: 4000").setRent("Rent: 500,1000,2000 or 4000")
-				.setBgColor(Color.blue).setFgColor(Color.white).build();
-		fields[23] = new Street.Builder().setTitle("Crater").setDescription("Territory").setSubText("Price: 1500").setRent("Rent: 300")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[24] = new Street.Builder().setTitle("Walled City").setDescription("Refuge").setSubText("Reward: 5000")
-				.setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[25] = new Street.Builder().setTitle("Huts in the mountain").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes * 100 * Camps owned")
-				.setBgColor(Color.yellow).setFgColor(Color.black).build();
-		fields[26] = new Street.Builder().setTitle("Mountain").setDescription("Territory").setSubText("Price: 2000").setRent("Rent: 500")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[27] = new Shipping.Builder().setTitle("Sea Grover").setDescription("Fleet").setSubText("Price: 4000").setRent("Rent: 500,1000,2000 or 4000")
-				.setBgColor(Color.blue).setFgColor(Color.white).build();
-		fields[28] = new Street.Builder().setTitle("Cold Desert").setDescription("Territory").setSubText("Price: 3000").setRent("Rent: 700")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[29] = new Street.Builder().setTitle("Black Cave").setDescription("Territory").setSubText("Price: 4000").setRent("Rent: 1000")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[30] = new Street.Builder().setTitle("Goldmine").setDescription("Tax").setSubText("2000 or 10% of balance tax!")
-				.setBgColor(Color.red).setFgColor(Color.black).build();
-		fields[31] = new Street.Builder().setTitle("The Werewall").setDescription("Territory").setSubText("Price: 4300").setRent("Rent: 1300")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[32] = new Street.Builder().setTitle("Mountain Village").setDescription("Territory").setSubText("Price: 4750")
-				.setRent("1600").setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[33] = new Shipping.Builder().setTitle("Buccaneers").setDescription("Fleet").setSubText("Price: 4000").setRent("Rent: 500,1000,2000 or 4000")
-				.setBgColor(Color.blue).setFgColor(Color.white).build();
-		fields[34] = new Street.Builder().setTitle("South Citidel").setDescription("Territory").setSubText("Price: 5000")
-				.setRent("2000").setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[35] = new Street.Builder().setTitle("Monestary").setDescription("Refuge").setSubText("Reward: 500")
-				.setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[36] = new Street.Builder().setTitle("The Pit").setDescription("Labor Camp").setSubText("Price: 2500").setRent("Rent: Eyes * 100 * Camps owned")
-				.setBgColor(Color.yellow).setFgColor(Color.black).build();
-		fields[37] = new Street.Builder().setTitle("Palace Gates").setDescription("Territory").setSubText("Price: 5500").setRent("Rent: 2600")
-				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[38] = new Shipping.Builder().setTitle("Privateer").setDescription("Fleet").setSubText("Price: 4000").setRent("Rent: 500,1000,2000 or 4000")
-				.setBgColor(Color.blue).setFgColor(Color.white).build();
-		fields[39] = new Street.Builder().setTitle("Caravan").setDescription("Tax").setSubText("4000 or 10% of balance tax!").setBgColor(Color.red)
-				.setFgColor(Color.black).build();
+		fields[36] = new Chance.Builder()
+				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
+		fields[37] = new Street.Builder().setTitle("Frederiksberggade").setDescription("").setSubText("Pris: 7000 kr.")
+				.setBgColor(Color.orange).setFgColor(Color.black).build();
+		fields[38] = new Tax.Builder().setTitle("Ekstraordinær statsskat").setDescription("Betal 2000 kr.").setSubText("Betal 2000 kr.")
+				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
+		fields[39] = new Street.Builder().setTitle("Rådhuspladsen").setDescription("").setSubText("Pris: 8000 kr.")
+				.setBgColor(Color.orange).setFgColor(Color.black).build();
 	
 		GUI.create(fields);
 	}

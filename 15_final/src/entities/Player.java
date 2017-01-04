@@ -6,13 +6,20 @@ import java.util.*;
 
 import board.Ownable;
 
+/**
+ * 
+ * @author Simon Lundorf s154008
+ *
+ */
+
 public class Player {
 
 	private String name;
 	private Account balance = new Account();
 	private Vehicle vehicle;
-	ArrayList<Ownable> owned = new ArrayList<Ownable>();
-	
+	private Assets assets = new Assets();
+	private int jailCounter = 0;
+	private boolean jailStatus = false;
 	
 	public Player(String name, int balance){
 		this.name=name;
@@ -21,66 +28,79 @@ public class Player {
 		
 	}
 	
+	public void addToJailCounter() {
+		jailCounter=+1;
+	}
+	
+	public void resetJailCounter() {
+		jailCounter=0;
+	}
+	
+	public int getJailCounter() {
+		return jailCounter;
+	}
+	
+	/**
+	 * Method for 
+	 * @return
+	 */
+	
+	public ArrayList <Ownable> getOwned() {
+		return assets.getOwned();
+	}
+	
+	/**
+	 * Method for setting the jail status of a player
+	 * @param jailStatus
+	 */
+	
+	public void setJailStatus(boolean jailStatus) {
+		jailStatus = jailStatus;
+	}
+	
+	/**
+	 * Method for checking the jail status of a player
+	 * @return Boolean value true or false depending on the jail status of the player
+	 */
+	
+	public boolean getJailStatus() {
+		return jailStatus;
+	}
+	
+	/**
+	 * Method that returns whether or not the player has a get out of jail free card
+	 * @return Boolean value true or false depending on whether the player has a card
+	 */
+	
+	public boolean getJailCard() {
+		return assets.getJailCard();
+	}
+	
+	/**
+	 * Method for using a get out of jail free card
+	 */
+	
+	public void useJailCard() {
+		assets.useJailCard();
+	}
+	
+	/**
+	 * Method for receiving a get out of jail free card
+	 */
+	
+	public void setJailCard() {
+		assets.setJailCard();
+	}
+	
 	/**
 	 * Constructor that initializes a player into the game with a name, an account balance of 30000, a vehicle with a color and an ArrayList of owned squares
 	 * @param name
 	 */
+	
 	public Player (String name) {
 		this.name = name;
 		balance.deposit(30000);
 		vehicle = new Vehicle();
-	}
-	
-	/**
-	 * Method for adding a bought square to list of squares a player owns
-	 * @param square
-	 */
-	
-	public void bought(Ownable square) {
-		owned.add(square);
-
-	}
-	
-	/**
-	 * Method for determining how many of one type of square that a player owns
-	 * @param square
-	 * @return Returns amount of squares owned of the type integer
-	 */
-	
-	public int ownedTypes(Ownable square) {
-		
-		int counter = 0;
-		
-		for (int i = 0; i < owned.size(); i++) {
-			
-			if (owned.get(i).getClass().equals(square.getClass())) {
-				counter++;
-			}
-			
-		}
-		
-		return counter;
-	}
-	public ArrayList <Ownable> returnOwned(){
-		return owned;
-	}
-	
-	/**
-	 * Method for determining the square IDs of the squares a player owns
-	 * @return An integer array with the square IDs
-	 */
-	
-	public int[] ownedID() {
-		
-		int[] squareID = new int[owned.size()];
-		
-		for (int i=0; i < owned.size(); i++) {
-			
-			squareID[i] = owned.get(i).getID();
-		}
-		
-		return squareID;
-		
 	}
 		
 	/**
@@ -106,8 +126,8 @@ public class Player {
 	 * @param amount
 	 */
 	
-	public void pay(int amount) {
-		balance.pay(amount);
+	public void withdraw(int amount) {
+		balance.withdraw(amount);
 	}
 	
 	/**
@@ -124,7 +144,7 @@ public class Player {
 	 * @param roll
 	 */
 	
-	public void moveCar(int roll) {
+	public void moveVehicle(int roll) {
 		vehicle.move(roll);
 	}
 	
