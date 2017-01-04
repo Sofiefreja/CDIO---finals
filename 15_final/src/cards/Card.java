@@ -37,5 +37,5 @@ public abstract class Card extends AllCards{
 	 * Method which determines what happens to a player when the specific card is picked.
 	 * @param player
 	 */
-	public abstract void landOnSquare(Player player);
+	public abstract void useCards(Player player);
 }
