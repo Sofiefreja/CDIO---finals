@@ -22,8 +22,9 @@ public class Street extends Ownable {
 	 * @param rents
 	 * @param type
 	 */
-	public Street(String name, int id,int price, int pawn, int[] rents, char type) {
+	public Street(String name, int id,int price, int pawn,int priceOfBuilding, int[] rents, char type) {
 		super(name,id, price, pawn,type);
+		this.priceOfBuilding=priceOfBuilding;
 		this.rents=rents;
 	}
 	/**
