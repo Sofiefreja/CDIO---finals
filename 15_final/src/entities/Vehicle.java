@@ -4,7 +4,7 @@ import java.awt.Color;
 
 public class Vehicle {
 
-	Color carColor = null;
+	Color vehicleColor = null;
 	static int counter = 0;
 	private int currentPosition = 1;
 	private int previousPosition = 1;
@@ -32,7 +32,7 @@ public class Vehicle {
 
 		previousPosition = currentPosition;
 
-		currentPosition = (currentPosition + value) % 21;
+		currentPosition = (currentPosition + value) % 40;
 
 		return currentPosition;
 
@@ -79,27 +79,27 @@ public class Vehicle {
 	private void setColor() {
 		switch (counter) {
 		case 1:
-			carColor = Color.orange;
+			vehicleColor = Color.orange;
 			break;
 
 		case 2:
-			carColor = Color.magenta;
+			vehicleColor = Color.magenta;
 			break;
 
 		case 3:
-			carColor = Color.pink;
+			vehicleColor = Color.pink;
 			break;
 
 		case 4:
-			carColor = Color.cyan;
+			vehicleColor = Color.cyan;
 			break;
 
 		case 5:
-			carColor = Color.black;
+			vehicleColor = Color.black;
 			break;
 
 		case 6:
-			carColor = Color.GRAY;
+			vehicleColor = Color.GRAY;
 			break;
 
 		}
@@ -107,6 +107,6 @@ public class Vehicle {
 	}
 
 	public Color getColor() {
-		return carColor;
+		return vehicleColor;
 	}
 }
