@@ -1,6 +1,7 @@
 package entities;
 import board.*;
 import board.Tax;
+import board.Parking;
 /**
  * Keeps track of all the squares, in an array.
  * @author Jonas Larsen s136335
@@ -33,7 +34,7 @@ public class Board {
 		squares[17] = new Territory("Prøv lykken", 18, 4000,234);
 		squares[18] = new Territory("Hellerupvej", 19, 4000,213);
 		squares[19] = new Territory("Strandvejen", 20, 6000, 3200);
-		squares[20] = new Territory("Parkering", 21, 8000, 4000);
+		squares[20] = new Parking("Parkering", 21);
 		squares[21] = new Territory("Trianglen", 2, 4000,124);
 		squares[22] = new Territory("Prøv Lykken", 3,  1500, 300);
 		squares[23] = new Territory("Østerbrogade", 4, 5000,234);
