@@ -7,6 +7,11 @@ import controller.GUIControl;
  *
  */
 public class Parking extends Square {
+	/**
+	 * Constructor which accepts one parameter name for thisspecific instance.
+	 * @param name
+	 * @param id
+	 */
 	public Parking(String name, int id) {
 		super(name, id);
 	}
