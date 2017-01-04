@@ -32,9 +32,11 @@ public class Street extends Ownable {
 		
 		return 0;
 	}
-	
-	public int buyHouses(int amount){
-		boolean permission =false;
+	/**
+	 * Method for buying houses on a street.
+	 * @param amount
+	 */
+	public void buyHouses(int amount){
 		int maxAmount;
 		ArrayList<Ownable> arr = owner.getOwned();
 		int counter=0;
@@ -49,14 +51,9 @@ public class Street extends Ownable {
 			maxAmount =3;
 		}
 		if(counter==maxAmount){
-			permission=true;
-		}
-		if(permission=true){
 			numberOfBuildings+=amount;
-			owner.pay(amount*priceOfBuilding);
-			return amount*priceOfBuilding;
-		}else{
-			return 0;
+			owner.withdraw(amount*priceOfBuilding);
+			//GUIControl.housesBought(this, amount, priceOfBuilding);
 		}
 	}
 }
