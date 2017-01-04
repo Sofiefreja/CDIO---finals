@@ -16,6 +16,7 @@ public abstract class Ownable extends Square {
 	 */
 	protected int price;
 	protected int pawn;
+	protected char type;
 	protected Player owner;
 	
 
@@ -27,10 +28,11 @@ public abstract class Ownable extends Square {
 	 * @param price
 	 * @param pawn
 	 */
-	public Ownable(String name, int id, int price, int pawn) {
+	public Ownable(String name, int id, int price, int pawn, char type) {
 		super(name, id);
 		this.price = price;
 		this.pawn = pawn;
+		this.type=type;
 	}
 
 	/**
@@ -53,6 +55,9 @@ public abstract class Ownable extends Square {
 	 */
 	public int getPawn(){
 		return pawn;
+	}
+	public char getType(){
+		return type;
 	}
 
 	/**
