@@ -14,8 +14,10 @@ public abstract class Ownable extends Square {
 	/**
 	 * Adds a field Player and int for all ownable squares.
 	 */
-	protected Player owner;
 	protected int price;
+	protected int pawn;
+	protected Player owner;
+	
 
 	/**
 	 * Constructor which takes a name and a price of the square as parameters.
@@ -23,10 +25,12 @@ public abstract class Ownable extends Square {
 	 * @param name
 	 * @param id
 	 * @param price
+	 * @param pawn
 	 */
-	public Ownable(String name, int id, int price) {
+	public Ownable(String name, int id, int price, int pawn) {
 		super(name, id);
 		this.price = price;
+		this.pawn = pawn;
 	}
 
 	/**
@@ -35,13 +39,24 @@ public abstract class Ownable extends Square {
 	 * @return rent.
 	 */
 	public abstract int getRent();
-
+	
+	/**
+	 * Method for returning the price of this instance.
+	 * @return price
+	 */
 	public int getPrice() {
 		return price;
 	}
+	/**
+	 * Method for returning the pawn amount.
+	 * @return pawn
+	 */
+	public int getPawn(){
+		return pawn;
+	}
 
 	/**
-	 * Method for clearing the owner field in this instance.
+	 * Method for clearing the owner field of this instance.
 	 */
 	public void clearOwner() {
 		this.owner = null;
