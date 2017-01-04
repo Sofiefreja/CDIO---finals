@@ -2,7 +2,7 @@ package board;
 import entities.Player;
 /**
  * Abstract class Square, superclass to all Squares.
- * @author Sofie Freja Christensen
+ * @author Sofie Freja Christensen s153932
  *
  */
 public abstract class Square {
