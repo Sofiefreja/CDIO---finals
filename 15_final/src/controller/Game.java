@@ -1,7 +1,9 @@
 package controller;
-
+import controller.*;
 import java.util.ArrayList;
 import desktop_resources.GUI;
+import board.*;
+import entities.*;
 import board.*;
 
 public class Game {

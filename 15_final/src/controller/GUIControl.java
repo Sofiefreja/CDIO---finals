@@ -121,7 +121,7 @@ public class GUIControl {
 
 	// Extra roll to determine Labor Camp tax.
 
-	public static int getUserRoll(LaborCamp camp) {
+	/*public static int getUserRoll(LaborCamp camp) {
 		int value = 0;
 		Cup thecup = new Cup();
 		//GUI.showMessage("You landed on "+camp.toString()+ ". You roll to determine the rent you need to pay.");
@@ -129,7 +129,7 @@ public class GUIControl {
 		GUI.setDice(thecup.getD1(),thecup.getD2());
 		//GUI.showMessage("You rolled: "+value);
 		return value;
-	}
+	}*/
 
 	// Player choice of buying a square or not.
 	public static boolean getBuyChoice(Ownable field, Player player) {
@@ -144,7 +144,7 @@ public class GUIControl {
 
 	// Player choice of paying 10% flatrate tax or Tax amount.
 
-	public static String rateOrAmount(Tax theTax, Player player) {
+	/*public static String rateOrAmount(Tax theTax, Player player) {
 
 		String TaxAmount = String.valueOf(theTax.getTaxAmount());
 		String output = null;
@@ -157,7 +157,7 @@ public class GUIControl {
 			output = "Tax Amount";
 
 		return output;
-	}
+	}*/
 
 	// Removing player from playing board when player surrenders or looses.
 	public void removePlayer(Player thePlayer) {
