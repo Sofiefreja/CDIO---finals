@@ -2,6 +2,11 @@ package board;
 
 import entities.Player;
 import controller.GUIControl;
+/**
+ * 
+ * @author Sofie Freja Christensen s153932
+ *
+ */
 public class Tax extends Square {
 	private int taxAmount; // amount defined in constructor
 	/**

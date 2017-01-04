@@ -30,7 +30,7 @@ public class Account {
 	 * @param value
 	 */
 
-	public void pay(int value) {
+	public void withdraw(int value) {
 		if (value > 0) {
 			balance -= value;
 		}
