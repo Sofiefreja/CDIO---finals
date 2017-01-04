@@ -1,7 +1,7 @@
 package cards;
 
 /**
- * 
+ * Withdraw xx from the player
  * @author Sofie Freja Christesen s153932
  *
  */
