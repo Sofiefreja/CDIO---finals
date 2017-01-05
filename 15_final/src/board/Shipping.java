@@ -16,8 +16,35 @@ public class Shipping extends Ownable {
 
 	@Override
 	public int getRent() {
-	
-		return 0;
+		int rent; 
+
+		if(get()){
+			rent = 0;
+
+		}
+		else { 
+			switch (()) {
+			case 1: 
+				rent = rent_1;
+				break;
+			case 2:
+				rent = rent_2;
+				break;
+			case 3: 
+				rent = rent_3;
+				break;
+			case 4:
+				rent = rent_4;
+				break;
+			default: return 0;
+
+
+			}
+		}
+		
 	}
 
+	
+	
+	
 }

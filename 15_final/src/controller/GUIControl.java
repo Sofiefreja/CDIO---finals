@@ -5,6 +5,9 @@ import java.awt.*;
 import java.util.ArrayList;
 //import board.*;
 import desktop_fields.*;
+import desktop_fields.Brewery;
+import desktop_fields.Shipping;
+import desktop_fields.Street;
 import desktop_fields.Tax;
 //import desktop_fields.Refuge;
 //import desktop_fields.Tax;
@@ -205,17 +208,17 @@ public class GUIControl {
 	public void removePlayer(Player thePlayer) {
 
 		// Remove the players owned squares.
-		int[] list = thePlayer.ownedID();
-		ArrayList <Ownable> arr=thePlayer.returnOwned();
-		for (int i = 0; i < list.length; i++) {
-			GUI.removeOwner(list[i]);
-			arr.get(i).clearOwner();
+	//	int[] list = thePlayer.ownedID();
+	//	ArrayList <Ownable> arr=thePlayer.returnOwned();
+	//	for (int i = 0; i < list.length; i++) {
+	//		GUI.removeOwner(list[i]);
+	//		arr.get(i).clearOwner();
 		}
 
 		// Remove Car
-		GUI.removeCar(thePlayer.getCurrentPosition()+1, thePlayer.toString());
-		GUI.setBalance(thePlayer.toString(),0);
-	}
+	//	GUI.removeCar(thePlayer.getCurrentPosition()+1, thePlayer.toString());
+	//	GUI.setBalance(thePlayer.toString(),0);
+//	}
 
 	// set square as owned.
 	public static void setOwned(int squareNumber, Player thePlayer) {
