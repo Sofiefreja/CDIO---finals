@@ -1,4 +1,6 @@
 package entities;
+import java.util.ArrayList;
+
 import board.Parking;
 import board.Square;
 import board.Tax;
@@ -9,10 +11,10 @@ import cards.Card;
  * @author Sofie Freja Christensen s153932
  *
  */
-public abstract class AllCards {
+public class AllCards { 
 	Card theCards[] = new Card[40];
 			
-	public AllCards() {
+	public AllCards(ArrayList<Player> thePlayers) { // 
 		theCards[0] = new Territory("Start", 1, 1000, 100);
 		theCards[1] = new Territory("Rødovrevej", 2, 4000, 324);
 		theCards[2] = new Territory("Prøv lykken", 3,  1500, 300);
@@ -52,6 +54,7 @@ public abstract class AllCards {
 		theCards[36] = new Territory("Prøv lykken", 17, 5500, 2600);
 		theCards[37] = new Territory("Frederiksberggade", 18, 4000,234);
 		theCards[38] = new Tax("Ekstraordinær statsskat", 19,2000 );
+		theCards[39] = new Territory("Rådhuspladsen", 20, 6000, 3200);
 		theCards[39] = new Territory("Rådhuspladsen", 20, 6000, 3200);
 	}
 		public Card getCard(int cho) {
