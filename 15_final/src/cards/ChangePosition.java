@@ -6,5 +6,7 @@ package cards;
  *
  */
 public class ChangePosition extends Move {
-
+	public ChangePosition(){
+		
+	}
 }

@@ -5,5 +5,5 @@ package cards;
  *
  */
 public class Transaction extends Card{
-
+	
 }
