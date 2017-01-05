@@ -22,15 +22,21 @@ public class Street extends Ownable {
 	 * @param rents
 	 * @param type
 	 */
-	public Street(String name, int id,int price, int pawn, int[] rents, char type) {
+	public Street(String name, int id,int price, int pawn,int priceOfBuilding, int[] rents, char type) {
 		super(name,id, price, pawn,type);
+		this.priceOfBuilding=priceOfBuilding;
 		this.rents=rents;
 	}
-
+	/**
+	 * Method for returning number of houses built on this instance.
+	 * @return numberOfBuildings
+	 */
+	public int getNumberOfBuildings(){
+		return numberOfBuildings;
+	}
 	@Override
 	public int getRent() {
-		
-		return 0;
+		return rents[numberOfBuildings];
 	}
 	/**
 	 * Method for buying houses on a street.
@@ -55,5 +61,13 @@ public class Street extends Ownable {
 			owner.withdraw(amount*priceOfBuilding);
 			//GUIControl.housesBought(this, amount, priceOfBuilding);
 		}
+	}
+	/**
+	 * Method for removing an amount of buildings on this instance.
+	 * @param amount
+	 */
+	public void removeHouses(int amount){
+		numberOfBuildings-=amount;
+		owner.deposit(amount*priceOfBuilding);
 	}
 }
