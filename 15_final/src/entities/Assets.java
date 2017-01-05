@@ -20,7 +20,7 @@ public class Assets {
 	 */
 	
 	public void setJailCard() {
-		jailCard=+1;
+		jailCard=++;
 	}
 	
 	/**
@@ -41,7 +41,7 @@ public class Assets {
 	 */
 	
 	public void useJailCard() {
-		jailCard=-1;
+		jailCard=--jailCard;
 	}
 	
 	/**
@@ -49,7 +49,7 @@ public class Assets {
 	 * @param square
 	 */
 	
-	public void buy(Ownable square) {
+	public void buySquare(Ownable square) {
 		owned.add(square);
 
 	}
@@ -59,7 +59,7 @@ public class Assets {
 	 * @return An integer array with the square IDs
 	 */
 	
-	public int[] ownedID() {
+	public int[] getOwnedID() {
 		
 		int[] squareID = new int[owned.size()];
 		
