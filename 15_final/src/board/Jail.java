@@ -18,8 +18,11 @@ public class Jail extends Square {
 
 	@Override
 	public void landOnSquare(Player player) {
+		
+		GUIControl.jailMessage(player);
 		player.setJailStatus(true);
 		player.setPosition(10);
+	
 	}
 
 		

@@ -20,7 +20,7 @@ public class Assets {
 	 */
 	
 	public void setJailCard() {
-		jailCard=++;
+		jailCard=++jailCard;
 	}
 	
 	/**
