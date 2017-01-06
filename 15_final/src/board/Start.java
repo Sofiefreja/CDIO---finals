@@ -17,7 +17,7 @@ public class Start extends Square {
 
 	@Override
 	public void landOnSquare(Player player) {
-		GUIControl.startMessage(player);
+		/* GUIControl.startMessage(player); */
 	}
 
 }

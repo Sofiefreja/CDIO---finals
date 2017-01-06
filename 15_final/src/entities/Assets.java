@@ -3,6 +3,7 @@ package entities;
 import java.util.ArrayList;
 
 import board.Ownable;
+import board.Street;
 
 /**
  * 
@@ -13,14 +14,25 @@ import board.Ownable;
 public class Assets {
 	
 	ArrayList<Ownable> owned = new ArrayList<Ownable>();
-	private int jailCard = 0;
+	ArrayList<Street> ownedStreet = new ArrayList<Street>();
+	ArrayList<String> property = new ArrayList<String>();
+	private int jailCard;
+	private boolean propertyOwner;
+	private boolean buildingOwner;
+	
+	public Assets() {
+		jailCard = 0;
+		propertyOwner = false;
+		buildingOwner = false;
+	}
 	
 	/**
 	 * Method for adding a get out of jail free card to the player
+	 * @param jailCard 
 	 */
 	
 	public void setJailCard() {
-		jailCard=++jailCard;
+		jailCard++;
 	}
 	
 	/**
@@ -38,10 +50,11 @@ public class Assets {
 	
 	/**
 	 * Method for removing a get out of jail free card after it is used by the player
+	 * @param jailCard 
 	 */
 	
 	public void useJailCard() {
-		jailCard=--jailCard;
+		jailCard--;
 	}
 	
 	/**
@@ -51,8 +64,18 @@ public class Assets {
 	
 	public void buySquare(Ownable square) {
 		owned.add(square);
+		property.add(square.toString());
+		propertyOwner = true;
+		
+		if (square instanceof Street) {
+			
+			Street isStreet = (Street)square;
+			ownedStreet.add(isStreet);
+			
+		}
+			
+		}
 
-	}
 
 	/**
 	 * Method for determining the square IDs of the squares a player owns
@@ -75,4 +98,67 @@ public class Assets {
 	public ArrayList <Ownable> getOwned(){
 		return owned;
 	}
+	
+	public ArrayList<String> getPropertyList() {
+		return property;
+	}
+	
+	public String[] getHouseList() {
+		
+		String[] houseList = new String[owned.size()];
+		
+		for (int i=0; i < ownedStreet.size(); i++) {
+			
+			if (ownedStreet.get(i).getNumberOfBuildings() >= 1 && ownedStreet.get(i).getNumberOfBuildings() < 5) {
+			
+			houseList[i] = ownedStreet.get(i).toString();
+				
+			}
+			
+		}
+		
+		return houseList;
+	}
+	
+	public String[] getHotelList() {
+		
+		String[] hotelList = new String[owned.size()];
+		
+		for (int i=0; i < ownedStreet.size(); i++) {
+			
+			if (ownedStreet.get(i).getNumberOfBuildings() == 5) {
+			
+			hotelList[i] = ownedStreet.get(i).toString();
+				
+			}
+			
+		}
+		
+		return hotelList;
+	}
+	
+	public boolean getBuilding() {
+		
+		return buildingOwner;
+		
+	}
+	
+	public boolean getProperty() {
+		
+		return propertyOwner;
+		
+	}
+	
+	public void buyHouses(Street street, int amount) {
+		
+		street.buyHouses(amount);
+		buildingOwner = true;
+		
+	}
+	
+	public void removeHouses(Street street, int amount) {
+		
+		street.removeHouses(amount);
+	}
+	
 }
