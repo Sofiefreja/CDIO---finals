@@ -37,7 +37,7 @@ public class Player {
 	}
 	
 	public void addToJailCounter() {
-		jailCounter=+1;
+		jailCounter=++jailCounter;
 	}
 	
 	public void resetJailCounter() {
