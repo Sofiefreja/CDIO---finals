@@ -25,83 +25,83 @@ public class GUIControl {
 		Field[] fields = new Field[40];
 		fields[0] = new Start.Builder().setTitle("Start").setDescription("Hver gang De passere modtag kr. 4000").setSubText("4000 kr.").
 				setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[1] = new Street.Builder().setTitle("Rødovrevej").setDescription("Leje af grund 50,  m/1 hus = 250, 2 huse = 750, 3 huse = 2250, 4 huse = 4000, hotel = 6000").setSubText("Pris: 1200")
+		fields[1] = new Street.Builder().setTitle("Rødovrevej").setDescription("Leje af grund 50,  m/1 hus = 250, 2 huse = 750, 3 huse = 2250, 4 huse = 4000, hotel = 6000, Hus pris = 1000, Hotel pris = 1000, pant = 600").setSubText("Pris: 1200")
 				.setBgColor(Color.blue).setFgColor(Color.black).build();
 		fields[2] = new Chance.Builder()
 				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[3] = new Street.Builder().setTitle("Hvidovrevej").setDescription("").setSubText("Pris: 1200 kr.")
+		fields[3] = new Street.Builder().setTitle("Hvidovrevej").setDescription("Leje af grund 50,  m/1 hus = 250, 2 huse = 750, 3 huse = 2250, 4 huse = 4000, hotel = 6000, Hus pris = 1000, Hotel pris = 1000, pant = 600").setSubText("Pris: 1200 kr.")
 				.setBgColor(Color.blue).setFgColor(Color.black).build();
-		fields[4] = new Tax.Builder().setTitle("Indkomstskat ").setDescription("Vælg mellem 10% eller 4000 kr.").setSubText("")
+		fields[4] = new Tax.Builder().setTitle("Indkomstskat").setDescription("Vælg mellem 10% eller 4000 kr.").setSubText("")
 				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[5] = new Shipping.Builder().setTitle("Scandlines H-H").setDescription("").setSubText("Pris: 4000 kr.").setRent("Rent: 500")
+		fields[5] = new Shipping.Builder().setTitle("Scandlines H-H").setDescription("Leje af grund hvis du ejer 1 = 500, 2 = 1000, 3 = 2000, 4 huse = 4000").setSubText("Pris: 4000 kr.").setRent("Rent: 500")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[6] = new Street.Builder().setTitle("Roskildevej").setDescription("").setSubText("Pris: 2000")
+		fields[6] = new Street.Builder().setTitle("Roskildevej").setDescription("Leje af grund 100,  m/1 hus = 600, 2 huse = 1800, 3 huse = 5400, 4 huse = 8000, hotel = 11000, Hus pris = 1000, Hotel pris = 1000, pant = 1000").setSubText("Pris: 2000")
 				.setBgColor(Color.getHSBColor(127, 140, 141)).setFgColor(Color.black).build();
 		fields[7] = new Chance.Builder().
 				setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[8] = new Street.Builder().setTitle("Valby Langgade").setDescription("").setSubText("Pris: 2000 kr.")
+		fields[8] = new Street.Builder().setTitle("Valby Langgade").setDescription("Leje af grund 100,  m/1 hus = 600, 2 huse = 1800, 3 huse = 5400, 4 huse = 8000, hotel = 11000, Hus pris = 1000, Hotel pris = 1000, pant = 1000").setSubText("Pris: 2000 kr.")
 				.setBgColor(Color.getHSBColor(127, 140, 141)).setFgColor(Color.black).build();
-		fields[9] = new Street.Builder().setTitle("Allégade").setDescription("Tax").setSubText("Pris: 2400 kr.")
+		fields[9] = new Street.Builder().setTitle("Allégade").setDescription("Leje af grund 150,  m/1 hus = 800, 2 huse = 2000, 3 huse = 6000, 4 huse = 9000, hotel = 12000, Hus pris = 1000, Hotel pris = 1000, pant = 1200").setSubText("Pris: 2400 kr.")
 				.setBgColor(Color.getHSBColor(127, 140, 141)).setFgColor(Color.black).build();
 		fields[10] = new Jail.Builder().setTitle("Fængsels besøg").setDescription("Du er på besøg i fængselet").setSubText("Fængsels besøg.")
 				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[11] = new Street.Builder().setTitle("Frederiksberg Allé").setDescription("").setSubText("Pris: 2800 kr.")
+		fields[11] = new Street.Builder().setTitle("Frederiksberg Allé").setDescription("Leje af grund 200,  m/1 hus = 1000, 2 huse = 3000, 3 huse = 9000, 4 huse = 12500, hotel = 15000, Hus pris = 2000, Hotel pris = 2000, pant = 1400").setSubText("Pris: 2800 kr.")
 				.setRent("1600").setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[12] = new Brewery.Builder().setTitle("Tuborg").setDescription("").setSubText("Pris: 3000 kr.").setRent("Rent: 500,1000,2000 or 4000")
+		fields[12] = new Brewery.Builder().setTitle("Tuborg").setDescription("Leje af grund, per grund du ejer x100, x200  , pant = 1500").setSubText("Pris: 3000 kr.").setRent("Rent: 500,1000,2000 or 4000")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[13] = new Street.Builder().setTitle("Bülowsvej").setDescription("").setSubText("Pris: 2800 kr.")
+		fields[13] = new Street.Builder().setTitle("Bülowsvej").setDescription("Leje af grund 200,  m/1 hus = 1000, 2 huse = 3000, 3 huse = 9000, 4 huse = 12500, hotel = 15000, Hus pris = 2000, Hotel pris = 2000, pant = 1400").setSubText("Pris: 2800 kr.")
 				.setRent("2000").setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[14] = new Street.Builder().setTitle("Gl. Kongevej").setDescription("").setSubText("Pris: 3200 kr.")
+		fields[14] = new Street.Builder().setTitle("Gl. Kongevej").setDescription("Leje af grund 250,  m/1 hus = 1250, 2 huse = 3750, 3 huse = 10000, 4 huse = 14000, hotel = 18000, Hus pris = 2000, Hotel pris = 2000, pant = 1600").setSubText("Pris: 3200 kr.")
 				.setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[15] = new Shipping.Builder().setTitle("Mols-Linien").setDescription("").setSubText("Pris: 4000 kr.").setRent("Rent: Eyes * 100 * Camps owned")
+		fields[15] = new Shipping.Builder().setTitle("Mols-Linien").setDescription("Leje af grund hvis du ejer 1 = 500, 2 = 1000, 3 = 2000, 4 huse = 4000").setSubText("Pris: 4000 kr.")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[16] = new Street.Builder().setTitle("Bernstorffsvej").setDescription("").setSubText("Pris: 3600 kr.")
+		fields[16] = new Street.Builder().setTitle("Bernstorffsvej").setDescription("Leje af grund 300,  m/1 hus = 1400, 2 huse = 4000, 3 huse = 11000, 4 huse = 15000, hotel = 19000, Hus pris = 2000, Hotel pris = 2000, pant = 1800").setSubText("Pris: 3600 kr.")
 				.setBgColor(Color.gray).setFgColor(Color.black).build();
 		fields[17] = new Chance.Builder()
 				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[18] = new Street.Builder().setTitle("Hellerupvej").setDescription("").setSubText("Pris: 3600 kr.")
+		fields[18] = new Street.Builder().setTitle("Hellerupvej").setDescription("Leje af grund 300,  m/1 hus = 1400, 2 huse = 4000, 3 huse = 11000, 4 huse = 15000, hotel = 19000, Hus pris = 2000, Hotel pris = 2000, pant = 1800").setSubText("Pris: 3600 kr.")
 				.setBgColor(Color.gray).setFgColor(Color.black).build();
-		fields[19] = new Street.Builder().setTitle("Strandvejen").setDescription("").setSubText("Pris: 4000 kr")
+		fields[19] = new Street.Builder().setTitle("Strandvejen").setDescription("Leje af grund 350,  m/1 hus = 1600, 2 huse = 4400, 3 huse = 12000, 4 huse = 16000, hotel = 20000, Hus pris = 2000, Hotel pris = 2000, pant = 2000").setSubText("Pris: 4000 kr")
 				.setBgColor(Color.gray).setFgColor(Color.black).build();
 		fields[20] = new Refuge.Builder().setTitle("Parkering").setDescription("Du er pakeret").setSubText("Helle")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[21] = new Street.Builder().setTitle("Trianglen").setDescription("").setSubText("Pris: 4400 kr.")
+		fields[21] = new Street.Builder().setTitle("Trianglen").setDescription("Leje af grund 350,  m/1 hus = 1800, 2 huse = 5000, 3 huse = 14000, 4 huse = 17500, hotel = 21000, Hus pris = 3000, Hotel pris = 3000, pant = 1800").setSubText("Pris: 4400 kr.")
 				.setBgColor(Color.getHSBColor(224, 130, 131)).setFgColor(Color.black).build();
 		fields[22] = new Chance.Builder()
 				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[23] = new Street.Builder().setTitle("Østerbrogade").setDescription("").setSubText("Pris: 4400 kr.")
+		fields[23] = new Street.Builder().setTitle("Østerbrogade").setDescription("Leje af grund 350,  m/1 hus = 1800, 2 huse = 5000, 3 huse = 14000, 4 huse = 17500, hotel = 21000, Hus pris = 3000, Hotel pris = 3000, pant = 2200").setSubText("Pris: 4400 kr.")
 				.setBgColor(Color.getHSBColor(224, 130, 131)).setFgColor(Color.black).build();
-		fields[24] = new Street.Builder().setTitle("Grønningen").setDescription("").setSubText("Pris: 4800 kr.")
+		fields[24] = new Street.Builder().setTitle("Grønningen").setDescription("Leje af grund 400,  m/1 hus = 2000, 2 huse = 6000, 3 huse = 15000, 4 huse = 18500, hotel = 22000, Hus pris = 3000, Hotel pris = 3000, pant = 2400").setSubText("Pris: 4800 kr.")
 				.setBgColor(Color.getHSBColor(224, 130, 131)).setFgColor(Color.black).build();
-		fields[25] = new Shipping.Builder().setTitle("Scandlines G-R").setDescription("").setSubText("Pris: 4000 kr.")
+		fields[25] = new Shipping.Builder().setTitle("Scandlines G-R").setDescription("Leje af grund hvis du ejer 1 = 500, 2 = 1000, 3 = 2000, 4 huse = 4000").setSubText("Pris: 4000 kr.")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[26] = new Street.Builder().setTitle("Bredgade").setDescription("").setSubText("Pris: 5200 kr.")
+		fields[26] = new Street.Builder().setTitle("Bredgade").setDescription("Leje af grund 450,  m/1 hus = 2200, 2 huse = 6600, 3 huse = 16000, 4 huse = 19500, hotel = 23000, Hus pris = 3000, Hotel pris = 3000, pant = 2600").setSubText("Pris: 5200 kr.")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[27] = new Street.Builder().setTitle("Kgs. Nytorv").setDescription("").setSubText("Pris: 5200 kr.")
+		fields[27] = new Street.Builder().setTitle("Kgs. Nytorv").setDescription("Leje af grund 450,  m/1 hus = 2200, 2 huse = 6600, 3 huse = 16000, 4 huse = 19500, hotel = 23000, Hus pris = 3000, Hotel pris = 3000, pant = 2600").setSubText("Pris: 5200 kr.")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[28] = new Brewery.Builder().setTitle("Carlsberg").setDescription("").setSubText("Pris: 3000 kr.").setRent("Rent: 700")
+		fields[28] = new Brewery.Builder().setTitle("Carlsberg").setDescription("Hvis du ejer 1 terning = x100, 2=x200").setSubText("Pris: 3000 kr.").setRent("Rent: 700")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[29] = new Street.Builder().setTitle("Østergade").setDescription("").setSubText("Pris: 5600 kr.")
+		fields[29] = new Street.Builder().setTitle("Østergade").setDescription("Leje af grund 500,  m/1 hus = 2400, 2 huse = 7200, 3 huse = 17000, 4 huse = 20500, hotel = 24000, Hus pris = 3000, Hotel pris = 3000, pant = 2800").setSubText("Pris: 5600 kr.")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
 		fields[30] = new Jail.Builder().setTitle("Fængslet").setDescription("Ryk til fængsel!").setSubText("Ryk til fængsel!")
 				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[31] = new Street.Builder().setTitle("Amagertorv").setDescription("").setSubText("Pris: 6000 kr.")
+		fields[31] = new Street.Builder().setTitle("Amagertorv").setDescription("Leje af grund 550,  m/1 hus = 2600, 2 huse = 7800, 3 huse = 18000, 4 huse = 22000, hotel = 25000, Hus pris = 4000, Hotel pris = 4000, pant = 3000").setSubText("Pris: 6000 kr.")
 				.setBgColor(Color.yellow).setFgColor(Color.black).build();
-		fields[32] = new Street.Builder().setTitle("Vimmelskaftet").setDescription("").setSubText("Pris: 6000 kr.")
+		fields[32] = new Street.Builder().setTitle("Vimmelskaftet").setDescription("Leje af grund 550,  m/1 hus = 2600, 2 huse = 7800, 3 huse = 18000, 4 huse = 22000, hotel = 25000, Hus pris = 4000, Hotel pris = 4000, pant = 2600").setSubText("Pris: 6000 kr.")
 				.setRent("1600").setBgColor(Color.yellow).setFgColor(Color.black).build();
 		fields[33] = new Chance.Builder()
 				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[34] = new Street.Builder().setTitle("Nygade").setDescription("").setSubText("Pris: 6400 kr.")
+		fields[34] = new Street.Builder().setTitle("Nygade").setDescription("Leje af grund 600,  m/1 hus = 3000, 2 huse = 9000, 3 huse = 20000, 4 huse = 24000, hotel = 28000, Hus pris = 4000, Hotel pris = 4000, pant = 3200").setSubText("Pris: 6400 kr.")
 				.setRent("2000").setBgColor(Color.yellow).setFgColor(Color.black).build();
-		fields[35] = new Shipping.Builder().setTitle("Scandlines R-P").setDescription("").setSubText("Pris: 4000 kr.")
+		fields[35] = new Shipping.Builder().setTitle("Scandlines R-P").setDescription("Leje af grund hvis du ejer 1 = 500, 2 = 1000, 3 = 2000, 4 huse = 4000").setSubText("Pris: 4000 kr.")
 				.setBgColor(Color.white).setFgColor(Color.black).build();
 		fields[36] = new Chance.Builder()
 				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[37] = new Street.Builder().setTitle("Frederiksberggade").setDescription("").setSubText("Pris: 7000 kr.")
+		fields[37] = new Street.Builder().setTitle("Frederiksberggade").setDescription("Leje af grund 700,  m/1 hus = 3500, 2 huse = 10000, 3 huse = 22000, 4 huse = 30000, hotel = 40000, Hus pris = 4000, Hotel pris = 4000, pant = 3500").setSubText("Pris: 7000 kr.")
 				.setBgColor(Color.orange).setFgColor(Color.black).build();
-		fields[38] = new Tax.Builder().setTitle("Ekstraordinær statsskat").setDescription("Betal 2000 kr.").setSubText("Betal 2000 kr.")
+		fields[38] = new Tax.Builder().setTitle("Ekstraordinær statsskat").setDescription("Betal ekstraordinær statsskat 2000 kr.").setSubText("Betal 2000 kr.")
 				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[39] = new Street.Builder().setTitle("Rådhuspladsen").setDescription("").setSubText("Pris: 8000 kr.")
+		fields[39] = new Street.Builder().setTitle("Rådhuspladsen").setDescription("Leje af grund 1000,  m/1 hus = 4000, 2 huse = 12000, 3 huse = 28000, 4 huse = 34000, hotel = 40000, Hus pris = 4000, Hotel pris = 4000, pant = 4000").setSubText("Pris: 8000 kr.")
 				.setBgColor(Color.orange).setFgColor(Color.black).build();
 	
 		GUI.create(fields);
