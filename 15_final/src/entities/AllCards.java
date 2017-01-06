@@ -20,7 +20,7 @@ public class AllCards {
 		theCards[7] = new IncomeIncrease("Deres præmieobligation er udtrukket. De modtager 1.000 kr. af banken.", 1000);
 		theCards[8] = new IncomeIncrease("Deres præmieobligation er udtrukket. De modtager 1.000 kr. af banken.", 1000);
 		theCards[9] = new Grant("De modtager 'Matador-legatet for værdigt trængende' på 40.000. Ved værdigt trængende forstås, at deres formue, dvs. deres kontante penge + skøder + bygninger ikke overstiger 15.000 kr.", 40000);
-		theCards[10] = new MoveToSquare("Ryk frem til 'START'", 0, );//Kig lige
+		theCards[10] = new MoveToSquare("Ryk frem til 'START'", 0);//Kig lige
 		theCards[11] = new MoveToSquare("Ryk frem til 'START'", 0);//Kig lige
 		theCards[12] = new MobilePay("De skal holde familiefest og har fået et tilskud fra hver medspiller på 500 kr.", 500, thePlayers);
 		theCards[13] = new MoveToSquare("Tag ind på Rådhuspladsen", 0);//Kige lige

@@ -11,10 +11,9 @@ import entities.Board;
  */
 public class MoveToSquare extends Move {
 	int moveTo;
-	public MoveToSquare(String description, int steps, int moveTo){
+	public MoveToSquare(String description, int moveTo){
 		super(description);
 		this.moveTo=moveTo;
-		this.steps = steps;
 	}
 	
 	public void useCard(Player player){
