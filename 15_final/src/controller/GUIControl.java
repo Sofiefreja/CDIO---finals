@@ -185,6 +185,7 @@ public class GUIControl {
 	}*/
 
 	// Player choice of buying a square or not.
+	
 	public static boolean getBuyChoice(Ownable field, Player player) {
 
 		String input = GUI.getUserButtonPressed(player.toString()+", you landed on "+field.toString()+
@@ -193,6 +194,15 @@ public class GUIControl {
 			return true;
 		else
 			return false;
+	}
+	/**
+	 * Prints message in GUI
+	 * @param message type: String
+	 * @author Jonas Larsen (s136335)
+	 * @author Morten Velin (s147300)
+	 */
+	public static void printMessage(String message){
+		GUI.showMessage(message);
 	}
 
 	// Player choice of paying 10% flatrate tax or Tax amount.
