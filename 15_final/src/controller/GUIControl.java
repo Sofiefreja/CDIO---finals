@@ -1,5 +1,6 @@
 package controller;
 import entities.Player;
+import sun.applet.Main;
 import entities.Cup;
 import java.awt.*;
 import java.util.ArrayList;
@@ -9,6 +10,8 @@ import desktop_fields.Brewery;
 import desktop_fields.Shipping;
 import desktop_fields.Street;
 import desktop_fields.Tax;
+import desktop_fields.Start;
+import desktop_fields.Jail;
 //import desktop_fields.Refuge;
 //import desktop_fields.Tax;
 import desktop_codebehind.*;
@@ -18,6 +21,7 @@ import board.*;
 //import board.Tax;
 //import board.Refuge;
 import board.Ownable;
+
 
 public class GUIControl {
 
@@ -150,10 +154,9 @@ public class GUIControl {
 	}
 
 	// Player choices for each new turn
-	public String getUserInputTurn(Player thePlayer) {
+	public String getUserInputTurn(Player thePlayer, String[] choices) {
 		String input;
-		input = GUI.getUserButtonPressed(thePlayer.toString() + " it's your turn. Take an action: ", "Roll",
-				"Surrender");
+		input = GUI.getUserButtonPressed(thePlayer.toString() + " it's your turn. Take an action: ", choices);
 		return input;
 	}
 
@@ -205,7 +208,7 @@ public class GUIControl {
 	}*/
 
 	// Removing player from playing board when player surrenders or looses.
-	public void removePlayer(Player thePlayer) {
+	//public void removePlayer(Player thePlayer) {
 
 		// Remove the players owned squares.
 	//	int[] list = thePlayer.ownedID();
@@ -213,7 +216,7 @@ public class GUIControl {
 	//	for (int i = 0; i < list.length; i++) {
 	//		GUI.removeOwner(list[i]);
 	//		arr.get(i).clearOwner();
-		}
+	//	}
 
 		// Remove Car
 	//	GUI.removeCar(thePlayer.getCurrentPosition()+1, thePlayer.toString());
