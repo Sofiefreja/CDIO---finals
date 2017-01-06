@@ -7,7 +7,7 @@ import entities.Player;
  *
  */
 public abstract class Transaction extends Card{
-
+	int money;
 	public Transaction(String description, int money) {
 		super(description);
 		this.money = money;

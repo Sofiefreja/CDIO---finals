@@ -9,7 +9,6 @@ import entities.Player;
  */
 public abstract class Card{
 	protected String description;
-	protected int money;
 	/**
 	 * Super constructor which takes a String name as a parameter.
 	 * @param description

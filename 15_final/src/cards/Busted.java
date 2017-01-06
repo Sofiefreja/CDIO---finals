@@ -15,9 +15,8 @@ public class Busted extends Move{
 	}
 
 	@Override
-	public void useCards(Player player) {
-		
-		GUIControl.bustedMessage(player);
+	public void useCard(Player player) {		
+		GUIControl.printMessage("Go straight to jail");
 		player.setJailStatus(true);
 		player.setPosition(10);
 		

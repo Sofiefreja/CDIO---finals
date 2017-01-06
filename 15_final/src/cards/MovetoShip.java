@@ -10,13 +10,12 @@ public class MovetoShip extends Card {
 
 	public MovetoShip(String name) {
 		super(name);
-	
 	}
 
 	@Override
 	public void useCard(Player player) {
 		
-		GUIControl.moveToShipMessage(player);
+		GUIControl.printMessage("You will now move to the ship");
 		if (player.getCurrentPosition()==2 || player.getCurrentPosition()==36) { /* Skal potentielt �ndres, alt efter hvordan vi h�ndterer startbonus */
 			player.setPosition(5);
 		}else if (player.getCurrentPosition()==7) {

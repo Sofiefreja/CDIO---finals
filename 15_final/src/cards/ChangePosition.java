@@ -9,15 +9,14 @@ import entities.Player;
  *
  */
 public class ChangePosition extends Move {
-	protected int move;
-	
-	public ChangePosition(String description, int move){
+	int moveTo;
+	public ChangePosition(String description, int moveTo){
 		super(description);
-		this.move=move;
+		this.moveTo=moveTo;
 	}
 public void useCard(Player player) {
 		GUIControl.printMessage("You move 3 spaces");
-		GUIControl.changePositionMessage(player);
-		player.setPosition(player.getCurrentPosition()+3);
+		player.setPosition(moveTo);
+		
 	}
 }

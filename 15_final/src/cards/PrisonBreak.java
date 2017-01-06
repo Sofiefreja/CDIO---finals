@@ -15,7 +15,7 @@ public class PrisonBreak extends Card{
 	}
 
 	@Override
-	public void useCards(Player player) {
+	public void useCard(Player player) {
 		player.setJailCard();
 		
 	}
