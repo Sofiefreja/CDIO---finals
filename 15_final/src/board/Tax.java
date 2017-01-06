@@ -33,7 +33,7 @@ public class Tax extends Square {
 
 	@Override
 	public void landOnSquare(Player player) {
-				player.pay(taxAmount);
+				player.withdraw(taxAmount);
 				GUIControl.taxMessage(player, taxAmount);
 				GUIControl.updateBalance(player);
 	}
