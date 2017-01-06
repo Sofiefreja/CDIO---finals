@@ -19,11 +19,13 @@ public class Assets {
 	private int jailCard;
 	private boolean propertyOwner;
 	private boolean buildingOwner;
+	private boolean buildStatus;
 	
 	public Assets() {
 		jailCard = 0;
 		propertyOwner = false;
 		buildingOwner = false;
+		buildStatus = false;
 	}
 	
 	/**
@@ -86,7 +88,7 @@ public class Assets {
 		
 		int[] squareID = new int[owned.size()];
 		
-		for (int i=0; i < owned.size(); i++) {
+		for (int i=0; i <= owned.size(); i++) {
 			
 			squareID[i] = owned.get(i).getID();
 		}
@@ -107,7 +109,7 @@ public class Assets {
 		
 		String[] houseList = new String[owned.size()];
 		
-		for (int i=0; i < ownedStreet.size(); i++) {
+		for (int i=0; i <= ownedStreet.size(); i++) {
 			
 			if (ownedStreet.get(i).getNumberOfBuildings() >= 1 && ownedStreet.get(i).getNumberOfBuildings() < 5) {
 			
@@ -124,7 +126,7 @@ public class Assets {
 		
 		String[] hotelList = new String[owned.size()];
 		
-		for (int i=0; i < ownedStreet.size(); i++) {
+		for (int i=0; i <= ownedStreet.size(); i++) {
 			
 			if (ownedStreet.get(i).getNumberOfBuildings() == 5) {
 			
@@ -163,7 +165,7 @@ public class Assets {
 		
 		street.removeHouses(amount);
 		
-		for (int i=0; i < ownedStreet.size(); i++) {
+		for (int i=0; i <= ownedStreet.size(); i++) {
 			
 			if (ownedStreet.get(i).getNumberOfBuildings() >= 1) {
 			
@@ -178,6 +180,58 @@ public class Assets {
 			}
 			
 		}
+	}
+	
+	public boolean getBuildStatus() {
+			
+		int counterA=0;
+		int counterB=0;
+		int counterC=0;
+		int counterD=0;
+		int counterE=0;
+		int counterF=0;
+		int counterG=0;
+		int counterH=0;
+		
+		for(int i =0; i<=ownedStreet.size();i++){
+			
+			if(ownedStreet.get(i).getType()=='A'){
+				counterA++;
+			
+			}else if (ownedStreet.get(i).getType()=='B'){
+				counterB++;
+				
+			}else if (ownedStreet.get(i).getType()=='C'){
+				counterC++;
+				
+			}else if (ownedStreet.get(i).getType()=='D'){
+				counterD++;
+				
+			}else if (ownedStreet.get(i).getType()=='E'){
+				counterE++;
+				
+			}else if (ownedStreet.get(i).getType()=='F'){
+				counterF++;
+				
+			}else if (ownedStreet.get(i).getType()=='G'){
+				counterG++;
+				
+			}else if (ownedStreet.get(i).getType()=='H'){
+				counterH++;
+		}
+			
+				}
+				
+		if (counterA==2 || counterH==2) {
+			buildStatus = true;
+		} else if (counterB==3 || counterC==3 || counterD==3 || counterE==3 || counterF==3 || counterG==3) {
+			buildStatus = true;
+		} else {
+			buildStatus = false;
+		}
+			
+		return buildStatus;
+		
 	}
 	
 }
