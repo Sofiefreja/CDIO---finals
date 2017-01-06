@@ -13,9 +13,10 @@ public class Board {
 	 * An array of the type square. In these indexes, It's defined which type
 	 * of square it is, and prices and rents of the different squares. 
 	 */
+	
 	public Board(){
-		squares[0] = new Territory("Start", 1, 1000, 100);
-		squares[1] = new Territory("Rødovrevej", 2, 4000, 324);
+		squares[0] = new Start ("Start", 1);
+		squares[1] = new Street("Rødovrevej", 2, 1200, 600, 1000, streetRents, 'A');
 		squares[2] = new Territory("Prøv lykken", 3,  1500, 300);
 		squares[3] = new Territory("Hvidovrevej", 4, 5000,234);
 		squares[4] = new Tax("Indkomstskat",5, 2000);
