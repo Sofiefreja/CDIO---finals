@@ -25,9 +25,9 @@ public class GameLogic {
 	 */
 
 	public GameLogic() {
-		/*
-		 * Initializing the game.
-		 */
+		
+		// Initializing the game.
+		 
 
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
@@ -36,11 +36,9 @@ public class GameLogic {
 		theCup = new Cup();
 
 		// The players are initialized
-
 		createPlayers();
 
 		// Beginning the game.
-
 		firstTurn = true;
 		firstRound = 0;
 		numberOfPlayers = playerNames.length;
@@ -52,45 +50,46 @@ public class GameLogic {
 			// The for loop running through all the players.
 			for (int i = 0; i < thePlayers.size(); i++) { 
 
-				// If only one player are left, then 'else' runs and breaks the for loop
+				// If only one player is left, the 'else' runs and breaks the for loop
 				if (thePlayers.size() != 1) { 
 
-					// The difference option in the menu.
+					// Creating menues for the player based on property or status.
 					String[] valg = getMenu(thePlayers.get(i));
-					String turn = GUIGame.getUserInputTurn(thePlayers.get(i), valg); // Ask
+					String turn = GUIGame.getUserInputTurn(thePlayers.get(i), valg); 
 					
 					
-					//The differen
-					if (turn.equals("Rull")) {
-						// Hvis der ikke er bliver slået ens tre gange i træk
-						// if(!thePlayers.get(i).getJailStatus()){
+					//All the if statements for Player choices on start of turn.
+					
+					
+					if (turn.equals("Rul")) {
 
 						theCup.roll();
 						GUIGame.showDice(theCup);
-
+						
+						//All the if statements for different scenarios a player can be in when rolling.
+						
+						
 						if (thePlayers.get(i).getJailStatus()) {
 
 							doJail(thePlayers.get(i));
 
 						} else if (equalEyeCounter != 3) {
 
-							// Move the Vehicle on board. and call the
-							// landOnSquare(Player --- )
 							doMoveVehicle(thePlayers.get(i));
 
-							// If the dice is equals.
-
+							// If the dice is equals turn resets
 							if (theCup.getEquals() == true) {
 								i--;
 								equalEyeCounter++;
-							}
+							}else
+								equalEyeCounter = 0;
 
-						} else { // Put player in jail.
+						} else { // Puts the player in jail if equalEyeCounter hits 3.
 							thePlayers.get(i).setJailStatus(true);
 							equalEyeCounter = 0;
 						}
 
-						// The player Surrenders.
+						
 					} else if (turn.equals("Sælg")) {
 
 						System.out.println("Shit");
@@ -105,13 +104,14 @@ public class GameLogic {
 						System.out.println("Shit");
 
 					}
-
+					
 					else if (turn.equals("Giv op")) {
 						GUIGame.removePlayer(thePlayers.get(i));
+						//missing removePlayer 
 						thePlayers.remove(i);
 						i--;
 
-					} else { // Breaks the forloop.
+					} else { // Breaks the forloop because winner is found.
 						break;
 					}
 				}
@@ -122,6 +122,10 @@ public class GameLogic {
 		}
 	}
 
+	/**
+	 *  Asks for number of players, their names and creates an arraylist of players.
+	 */
+	
 	private void createPlayers() {
 		// String[] playerNames = GUIGame.numberOfPlayers(); // Ask how many
 		// players there are
@@ -170,7 +174,7 @@ public class GameLogic {
 					A.add("Sælg huse eller hotel");
 				}
 			}
-			A.add("Rull");
+			A.add("Rul");
 			A.add("Giv op");
 
 		}
@@ -206,7 +210,7 @@ public class GameLogic {
 			theplayer.setJailStatus(false);
 		}
 		// Print til gui hvad det skal være.
-		else if (thePlayers.get(i).getJailStatusNumber() == 3) {
+		else if (theplayer.getJailCounter() == 3) {
 
 			theplayer.withdraw(1000);
 			theplayer.setJailStatus(false);
