@@ -18,13 +18,16 @@ public class Player {
 	private Account balance = new Account();
 	private Vehicle vehicle;
 	private Assets assets = new Assets();
-	private int jailCounter = 0;
-	private boolean jailStatus = false;
+	private int jailCounter;
+	private boolean jailStatus;
 	
 	public Player(String name, int balance){
 		this.name=name;
 		this.balance.deposit(balance);
 		vehicle=new Vehicle();
+		jailStatus = false;
+		jailCounter = 0;
+		
 		
 	}
 	
@@ -37,7 +40,7 @@ public class Player {
 	}
 	
 	public void addToJailCounter() {
-		jailCounter=++jailCounter;
+		jailCounter++;
 	}
 	
 	public void resetJailCounter() {
@@ -63,7 +66,7 @@ public class Player {
 	 */
 	
 	public void setJailStatus(boolean jailStatus) {
-		jailStatus = jailStatus;
+		this.jailStatus = jailStatus;
 	}
 	
 	/**
