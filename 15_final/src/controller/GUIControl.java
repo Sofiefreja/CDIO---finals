@@ -6,14 +6,11 @@ import java.awt.*;
 import java.util.ArrayList;
 //import board.*;
 import desktop_fields.*;
-<<<<<<< HEAD
 import desktop_fields.Jail;
 import desktop_fields.Start;
-=======
 import desktop_fields.Brewery;
 import desktop_fields.Shipping;
 import desktop_fields.Street;
->>>>>>> branch 'Develop' of https://github.com/Sofiefreja/CDIO---finals.git
 import desktop_fields.Tax;
 import desktop_fields.Start;
 import desktop_fields.Jail;
@@ -111,7 +108,7 @@ public class GUIControl {
 				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
 		fields[37] = new Street.Builder().setTitle("Frederiksberggade").setDescription("Leje af grund 700,  m/1 hus = 3500, 2 huse = 10000, 3 huse = 22000, 4 huse = 30000, hotel = 40000, Hus pris = 4000, Hotel pris = 4000, pant = 3500").setSubText("Pris: 7000 kr.")
 				.setBgColor(Color.orange).setFgColor(Color.black).build();
-		fields[38] = new Tax.Builder().setTitle("Ekstraordinær statsskat").setDescription("Betal ekstraordinær statsskat 2000 kr.").setSubText("Betal 2000 kr.")
+		fields[38] = new Tax.Builder().setTitle("").setDescription("Betal ekstraordinær statsskat 2000 kr.").setSubText("Betal ekstraordinær statsskat 2000 kr.")
 				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
 		fields[39] = new Street.Builder().setTitle("Rådhuspladsen").setDescription("Leje af grund 1000,  m/1 hus = 4000, 2 huse = 12000, 3 huse = 28000, 4 huse = 34000, hotel = 40000, Hus pris = 4000, Hotel pris = 4000, pant = 4000").setSubText("Pris: 8000 kr.")
 				.setBgColor(Color.orange).setFgColor(Color.black).build();
@@ -147,13 +144,33 @@ public class GUIControl {
 
 	// Creation of players, saving the number of players to an integer and the
 	// name of a player as a string in an array.
+	/**
+	 * Input number of players, name of players and denies same name entries.
+	 */
+	
 	public String[] numberOfPlayers() {
 		int numberOfPlayers = GUI.getUserInteger("How many players are you? (between 2-6)", 2, 6);
 		String[] playerNames = new String[numberOfPlayers];
+		
 		for (int i = 0; i < numberOfPlayers; i++) {
 			int number = i + 1; // The Array[] have to start at index 0, but the
 								// player is number 1.
-			playerNames[i] = GUI.getUserString("Player " + String.valueOf(number));
+			boolean sameName = false;
+			String[] tempArray = new String[6];
+			String tempName = GUI.getUserString("Player " + String.valueOf(number));
+			for (int j = 0; j < 6;j++){
+				if(tempName.equals(tempArray[j])){
+					sameName = true;
+					i--;
+					GUI.showMessage("Ugyldigt navn: navne må ikke være ens");
+				}
+				
+			}
+			if(sameName = false){
+				playerNames[i] = tempName;
+				tempArray[i] = tempName;
+			}
+			
 		}
 		return playerNames;
 	}
@@ -165,8 +182,11 @@ public class GUIControl {
 		return input;
 	}
 
-	// Move vehicle on the board.
-	public void moveVehicle(Player thePlayer) {
+	/**
+	 * Moves vehicle on the board
+	 * @param thePlayer type: Player
+	 */
+	public static void moveVehicle(Player thePlayer) {
 		GUI.removeCar(thePlayer.getPreviousPosition()+1, thePlayer.toString());
 		GUI.setCar(thePlayer.getCurrentPosition()+1, thePlayer.toString());
 
@@ -185,6 +205,7 @@ public class GUIControl {
 	}*/
 
 	// Player choice of buying a square or not.
+	
 	public static boolean getBuyChoice(Ownable field, Player player) {
 
 		String input = GUI.getUserButtonPressed(player.toString()+", you landed on "+field.toString()+
@@ -193,6 +214,15 @@ public class GUIControl {
 			return true;
 		else
 			return false;
+	}
+	/**
+	 * Prints message in GUI
+	 * @param message type: String
+	 * @author Jonas Larsen (s136335)
+	 * @author Morten Velin (s147300)
+	 */
+	public static void printMessage(String message){
+		GUI.showMessage(message);
 	}
 
 	// Player choice of paying 10% flatrate tax or Tax amount.
@@ -264,11 +294,5 @@ public class GUIControl {
 
 
 
-	// Move vehicle on the board.
-	public void moveVehicle(Player thePlayer) {
-		GUI.removeCar(thePlayer.getPreviousPosition()+1, thePlayer.toString());
-		GUI.setCar(thePlayer.getCurrentPosition()+1, thePlayer.toString());
-	
-	}
 
 }

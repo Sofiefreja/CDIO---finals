@@ -1,5 +1,7 @@
 package cards;
 
+import controller.GUIControl;
+import entities.Board;
 import entities.Player;
 
 /**
@@ -9,15 +11,15 @@ import entities.Player;
  */
 public class PrisonBreak extends Card{
 
-	public PrisonBreak(String name) {
-		super(name);
+	public PrisonBreak(String name,Board board) {
+		super(name,board);
 		
 	}
 
 	@Override
-	public void useCards(Player player) {
+	public void useCard(Player player) {
 		player.setJailCard();
-		
+		GUIControl.printMessage("You got a card for getting out of jail");
 	}
 
 }

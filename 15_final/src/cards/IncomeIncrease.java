@@ -1,6 +1,7 @@
 package cards;
 
 import controller.GUIControl;
+import entities.Board;
 import entities.Player;
 
 /**
@@ -15,12 +16,12 @@ public class IncomeIncrease extends Transaction {
 	 * @param name
 	 * @param reward
 	 */
-	public IncomeIncrease(String description, int money) {
-		super(description,money);
+	public IncomeIncrease(String description, int amount, Board board) {
+		super(description,board,amount);
 	}
 	/**
-	 * Method for retrieving the reward.
-	 * @return reward
+	 * Method for calculating amount
+	 * @return pay amount
 	 */
 	public int getMoney() {
 		return money;
@@ -31,7 +32,7 @@ public class IncomeIncrease extends Transaction {
 	 */
 	public void useCard(Player player) {
 		player.deposit(money);
-		GUIControl.incomeIncreaseMessage(player, money);
+		GUIControl.printMessage("you get "+money);
 		GUIControl.updateBalance(player);
 }
 }

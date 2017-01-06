@@ -1,4 +1,5 @@
 package cards;
+import entities.Board;
 import entities.Player;
 
 /**
@@ -7,9 +8,9 @@ import entities.Player;
  *
  */
 public abstract class Transaction extends Card{
-
-	public Transaction(String description, int money) {
-		super(description);
+	int money;
+	public Transaction(String description,Board board ,int money) {
+		super(description,board);
 		this.money = money;
 		// TODO Auto-generated constructor stub
 	}

@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Street extends Ownable {
 	int priceOfBuilding;
-	int [] rents;
+	int [] rents=new int[6];
 	int numberOfBuildings=0;
 	
 	/**
@@ -22,10 +22,15 @@ public class Street extends Ownable {
 	 * @param rents
 	 * @param type
 	 */
-	public Street(String name, int id,int price, int pawn,int priceOfBuilding, int[] rents, char type) {
+	public Street(String name, int id,int price, int pawn,int priceOfBuilding,int rent0, int rent1, int rent2, int rent3, int rent4, int rentHotel, char type) {
 		super(name,id, price, pawn,type);
 		this.priceOfBuilding=priceOfBuilding;
-		this.rents=rents;
+		rents[0]=rent0;
+		rents[1]=rent1;
+		rents[2]=rent2;
+		rents[3]=rent3;
+		rents[4]=rent4;
+		rents[5]=rentHotel;
 	}
 	/**
 	 * Method for returning number of houses built on this instance.
@@ -37,6 +42,9 @@ public class Street extends Ownable {
 	@Override
 	public int getRent() {
 		return rents[numberOfBuildings];
+	}
+	public int getPriceOfBuilding(){
+		return priceOfBuilding;
 	}
 	/**
 	 * Method for buying houses on a street.

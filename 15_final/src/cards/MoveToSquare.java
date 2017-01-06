@@ -10,16 +10,13 @@ import entities.Board;
  *
  */
 public class MoveToSquare extends Move {
-	int moveTo;
-	public MoveToSquare(String description, int steps, int moveTo){
-		super(description);
-		this.moveTo=moveTo;
-		this.steps = steps;
+	public MoveToSquare(String description, int moveTo,Board board){
+		super(description,moveTo,board);
 	}
 	
 	public void useCard(Player player){
 		player.setPosition(moveTo);
 		GUIControl.moveVehicle(player);
-		Board.getSquare(moveTo).landOnSquare(player);
+		board.getSquare(moveTo).landOnSquare(player);
 	}
 }

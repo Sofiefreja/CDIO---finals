@@ -1,5 +1,5 @@
 package cards;
-import entities.AllCards;
+import entities.Board;
 import entities.Player;
 
 /**
@@ -9,14 +9,15 @@ import entities.Player;
  */
 public abstract class Card{
 	protected String description;
-	protected int money;
+	protected Board board;
 	/**
 	 * Super constructor which takes a String name as a parameter.
 	 * @param description
 	 * @param money
 	 */
-	public Card(String description){
+	public Card(String description, Board board){
 		this.description=description;
+		this.board=board;
 	}
 	/**
 	 * Returns the name of the Card
