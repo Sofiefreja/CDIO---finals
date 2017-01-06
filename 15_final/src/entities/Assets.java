@@ -94,7 +94,7 @@ public class Assets {
 
 		int[] squareID = new int[owned.size()];
 
-		for (int i = 0; i <= owned.size(); i++) {
+		for (int i = 0; i < owned.size(); i++) {
 
 			squareID[i] = owned.get(i).getID();
 		}
@@ -115,7 +115,7 @@ public class Assets {
 
 		String[] houseList = new String[owned.size()];
 
-		for (int i = 0; i <= ownedStreet.size(); i++) {
+		for (int i = 0; i < ownedStreet.size(); i++) {
 
 			if (ownedStreet.get(i).getNumberOfBuildings() >= 1 && ownedStreet.get(i).getNumberOfBuildings() < 5) {
 
@@ -132,7 +132,7 @@ public class Assets {
 
 		String[] hotelList = new String[owned.size()];
 
-		for (int i = 0; i <= ownedStreet.size(); i++) {
+		for (int i = 0; i < ownedStreet.size(); i++) {
 
 			if (ownedStreet.get(i).getNumberOfBuildings() == 5) {
 
@@ -171,7 +171,7 @@ public class Assets {
 
 		street.removeHouses(amount);
 
-		for (int i = 0; i <= ownedStreet.size(); i++) {
+		for (int i = 0; i < ownedStreet.size(); i++) {
 
 			if (ownedStreet.get(i).getNumberOfBuildings() >= 1) {
 
@@ -257,7 +257,7 @@ public class Assets {
 		int counterG = 0;
 		int counterH = 0;
 
-		for (int i = 0; i <= ownedStreet.size(); i++) {
+		for (int i = 0; i < ownedStreet.size(); i++) {
 
 			if (ownedStreet.get(i).getType() == 'A') {
 				counterA++;
@@ -285,7 +285,7 @@ public class Assets {
 			}
 
 		}
-		for (int i = 0; i <= ownedStreet.size(); i++) {
+		for (int i = 0; i < ownedStreet.size(); i++) {
 
 			if (counterA == 2 && ownedStreet.get(i).getType() == 'A'
 					|| counterB == 3 && ownedStreet.get(i).getType() == 'B'

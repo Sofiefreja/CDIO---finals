@@ -22,13 +22,18 @@ public class Player {
 	private int jailCounter;
 	private boolean jailStatus;
 	
+/**
+ * 
+ * @param name
+ * @param balance
+ */
+	
 	public Player(String name, int balance){
 		this.name=name;
 		this.balance.deposit(balance);
 		vehicle=new Vehicle();
 		jailStatus = false;
-		jailCounter = 0;
-		
+		jailCounter = 0;	
 		
 	}
 	
@@ -102,17 +107,6 @@ public class Player {
 	
 	public void setJailCard() {
 		assets.setJailCard();
-	}
-	
-	/**
-	 * Constructor that initializes a player into the game with a name, an account balance of 30000, a vehicle with a color and an ArrayList of owned squares
-	 * @param name
-	 */
-	
-	public Player (String name) {
-		this.name = name;
-		balance.deposit(30000);
-		vehicle = new Vehicle();
 	}
 		
 	/**
@@ -195,8 +189,6 @@ public class Player {
 	public Color getColor() {
 		return vehicle.getColor();
 	}
-	
-	
 	
 	public ArrayList<String> getPropertyList() {
 		
