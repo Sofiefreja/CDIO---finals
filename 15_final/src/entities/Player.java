@@ -238,4 +238,8 @@ public class Player {
 		
 	}
 	
+	public String[] getBuildableList() {
+		return assets.getBuildableList();
+	}
+	
 }
