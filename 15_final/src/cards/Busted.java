@@ -10,9 +10,8 @@ import entities.Player;
  */
 public class Busted extends Move{
 
-	public Busted(String name, int money) {
-		super(name, money);
-		
+	public Busted(String name) {
+		super(name);
 	}
 
 	@Override

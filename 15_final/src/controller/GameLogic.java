@@ -174,7 +174,7 @@ public class GameLogic {
 					A.add("Sælg huse eller hotel");
 				}
 			}
-			A.add("Rull");
+			A.add("Rul");
 			A.add("Giv op");
 
 		}
@@ -210,7 +210,7 @@ public class GameLogic {
 			theplayer.setJailStatus(false);
 		}
 		// Print til gui hvad det skal være.
-		else if (thePlayers.get(i).getJailStatusNumber() == 3) {
+		else if (theplayer.getJailCounter() == 3) {
 
 			theplayer.withdraw(1000);
 			theplayer.setJailStatus(false);

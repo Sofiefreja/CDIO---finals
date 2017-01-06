@@ -1,61 +1,59 @@
 package entities;
 import java.util.ArrayList;
-
-import board.Parking;
-import board.Square;
-import board.Tax;
-import board.Territory;
-import cards.Card;
+import cards.*;
 /**
  * 
  * @author Sofie Freja Christensen s153932
  *
  */
 public class AllCards { 
-	Card theCards[] = new Card[40];
+	Card theCards[] = new Card[44];
 			
 	public AllCards(ArrayList<Player> thePlayers) { // 
-		theCards[0] = new Territory("Start", 1, 1000, 100);
-		theCards[1] = new Territory("Rødovrevej", 2, 4000, 324);
-		theCards[2] = new Territory("Prøv lykken", 3,  1500, 300);
-		theCards[3] = new Territory("Hvidovrevej", 4, 5000,234);
-		theCards[4] = new Tax("Indkomstskat",5, 2000);
-		theCards[5] = new Territory("Scandlines Helsingør-Helsingborg", 6, 2000, 500);
-		theCards[6] = new Territory("Roskildevej", 7, 4000,234);
-		theCards[7] = new Territory("Prøv lykken", 8, 3000, 700);
-		theCards[8] = new Territory("Valby Langgade", 9, 4000, 1000);
-		theCards[9] = new Territory("Allégade", 10, 2000,234);
-		theCards[10] = new Territory("Fængsel - besøg", 11, 4300, 1300);
-		theCards[11] = new Territory("Frederiksberg Allé", 12, 4750, 1600);
-		theCards[12] = new Territory("Tuborg Squash", 13, 4000,312);
-		theCards[13] = new Territory("Bülowsvej", 14, 5000, 2000);
-		theCards[14] = new Territory("Gl. Kongevej", 15, 500,324);
-		theCards[15] = new Territory("Mols-linien", 16, 2500,234);
-		theCards[16] = new Territory("Bernstorffsvej", 17, 5500, 2600);
-		theCards[17] = new Territory("Prøv lykken", 18, 4000,234);
-		theCards[18] = new Territory("Hellerupvej", 19, 4000,213);
-		theCards[19] = new Territory("Strandvejen", 20, 6000, 3200);
-		theCards[20] = new Parking("Parkering", 21);
-		theCards[21] = new Territory("Trianglen", 2, 4000,124);
-		theCards[22] = new Territory("Prøv Lykken", 3,  1500, 300);
-		theCards[23] = new Territory("Østerbrogade", 4, 5000,234);
-		theCards[24] = new Territory("Grønningen", 5, 2500,634);
-		theCards[25] = new Territory("Scandlines Gedser-Rostock", 6, 2000, 500);
-		theCards[26] = new Territory("Bredgade", 7, 4000,2321);
-		theCards[27] = new Territory("Kgs. Nytorv", 8, 3000, 700);
-		theCards[28] = new Territory("Coca Cola", 9, 4000, 1000);
-		theCards[29] = new Territory("Østerbrogade", 10, 2000,245);
-		theCards[30] = new Territory("Fængslet", 11, 4300, 1300);
-		theCards[31] = new Territory("Amagertorv", 12, 4750, 1600);
-		theCards[32] = new Territory("Vimmelskaftet", 13, 4000,2131);
-		theCards[33] = new Territory("Prøv lykken", 14, 5000, 2000);
-		theCards[34] = new Territory("Nygade", 15, 500,234);
-		theCards[35] = new Territory("Scandllines Rødby-Puttgaarden", 16, 2500,464);
-		theCards[36] = new Territory("Prøv lykken", 17, 5500, 2600);
-		theCards[37] = new Territory("Frederiksberggade", 18, 4000,234);
-		theCards[38] = new Tax("Ekstraordinær statsskat", 19,2000 );
-		theCards[39] = new Territory("Rådhuspladsen", 20, 6000, 3200);
-		theCards[39] = new Territory("Rådhuspladsen", 20, 6000, 3200);
+		theCards[0] = new PriceIncrease("Ejendomsskatterne er steget. Ekstraudgifterne er: 800 kr. pr. hus, 2.300 kr. pr. hotel", 800, 2300);
+		theCards[1] = new ChangePosition("Ryk frem til Frederiksberg Allé. Hvis de passerer 'START', indkassér da 4.000 kr.", 0);//Kig lige
+		theCards[2] = new MobilePay("Det er deres fødselsdag. Modtag af hver medspiller", 200, thePlayers);
+		theCards[3] = new ChangePosition("Ryk tre felter frem", 3);
+		theCards[4] = new IncomeIncrease("De modtager deres aktieudbytte. Modtag 1.000 kr. af banken.",1000);
+		theCards[5] = new IncomeIncrease("Grundet dyrtiden har De fået gageforhøjelse. Modtag 1.000 kr.", 1000);
+		theCards[6] = new Expense("Betal for vognvask og smøring", 300);
+		theCards[7] = new IncomeIncrease("Deres præmieobligation er udtrukket. De modtager 1.000 kr. af banken.", 1000);
+		theCards[8] = new IncomeIncrease("Deres præmieobligation er udtrukket. De modtager 1.000 kr. af banken.", 1000);
+		theCards[9] = new Grant("De modtager 'Matador-legatet for værdigt trængende' på 40.000. Ved værdigt trængende forstås, at deres formue, dvs. deres kontante penge + skøder + bygninger ikke overstiger 15.000 kr.", 40000);
+		theCards[10] = new MoveToSquare("Ryk frem til 'START'", 0, );//Kig lige
+		theCards[11] = new MoveToSquare("Ryk frem til 'START'", 0);//Kig lige
+		theCards[12] = new MobilePay("De skal holde familiefest og har fået et tilskud fra hver medspiller på 500 kr.", 500, thePlayers);
+		theCards[13] = new MoveToSquare("Tag ind på Rådhuspladsen", 0);//Kige lige
+		theCards[14] = new MovetoShip("Tag med Mols-Linien. Flyt brikken frem, og hvis de passerer 'START', indkassér da 4.000 kr.");
+		theCards[15] = new Expense("De har købt 4 nye dæk til Deres vogn. Betal 1.000 kr.", 1000);
+		theCards[16] = new Expense("De har fået en parkeringsbøde. Betal 200 kr. i bøde.", 200);
+		theCards[17] = new Expense("Betal 200 kr. for levering af 2 kasser øl.", 200);
+		theCards[18] = new MovetoShip("Tag med den nærmeste færge. Flyt brikken frem, og hvis de passerer 'START', indkassér da 4.000 kr.");
+		theCards[19] = new Busted("Gå i fængsel. Ryk direkte til fængslet. Selvom de passerer 'START', indkasserer de ikke 4.000 kr.");
+		theCards[20] = new Busted("Gå i fængsel. Ryk direkte til fængslet. Selvom de passerer 'START', indkasserer de ikke 4.000 kr.");
+		theCards[21] = new PriceIncrease("Oliepriserne er steget, og de skal betale: 500 kr. pr. hus, 2.000 kr. pr. hotel", 500, 2000);
+		theCards[22] = new IncomeIncrease("Modtag udbytte af deres aktier - 1.000 kr.", 1000);
+		theCards[23] = new IncomeIncrease("Modtag udbytte af deres aktier - 1.000 kr.", 1000);
+		theCards[24] = new MovetoShip("Ryk brikken frem til det nærmeste rederi og betal lejern to gane leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan du købe det af banken.");
+		theCards[25] = new MovetoShip("Ryk brikken frem til det nærmeste rederi og betal lejeren to gange leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan du købe det af banken.");
+		theCards[26] = new MoveToSquare("Ryk frem til Strandvejen. Hvis du passerer start, indkassér 4.000 kr.", 0);// Kig lige
+		theCards[27] = new Expense("Betal deres bilforsikring - 1.000 kr.", 1000);
+		theCards[28] = new IncomeIncrease("De havde en række med elleve rigtige i tipning. Modtag 4.000 kr.", 4000);
+		theCards[29] = new IncomeIncrease("De har vundet i klasselotteriet. Modtag 500 kr.", 500);
+		theCards[30] = new IncomeIncrease("De har vundet i klasselotteriet. Modtag 500 kr.", 500);
+		theCards[31] = new MoveToSquare("Ryk frem til Vimmelskaftet. Hvis de passerer start, indkassér da 4.000 kr.", 0);// Kig lige
+		theCards[32] = new ChangePosition("Ryk tre felter tilbage", 0);//Kige lige
+		theCards[33] = new ChangePosition("Ryk tre felter tilbage", 0);//Kig lige
+		theCards[34] = new PrisonBreak("I andledningen af kongens fødselsdag benådes de herved for fængsel. Dette kort kan opbevares indtil De får brug for det.");
+		theCards[35] = new PrisonBreak("I andledningen af kongens fødselsdag benådes de herved for fængsel. Dette kort kan opbevares indtil De får brug for det.");
+		theCards[36] = new Expense("Betal 3.000 kr. for reparation af deres vogn.", 3000);
+		theCards[37] = new Expense("Betal 3.000 kr. for reparation af deres vogn.", 3000);
+		theCards[38] = new IncomeIncrease("De har solgt nogle gamle møbler på aukion. Modtag 1.000 kr. af banken.", 1000);
+		theCards[39] = new Expense("De har været en tur i udlandet og haft mange cigaretter med hjem. Betal 200 kr. i told.", 200);
+		theCards[40] = new MoveToSquare("Ryk frem til Grønningen. Hvis de passerer start indkassér da 4000 kr.", 0);// Kig lige
+		theCards[41] = new IncomeIncrease("Kommunen har eftergivet et kvartals skat. Hæv i banken 3.000 kr.", 3000);
+		theCards[42] = new MobilePay("De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag 500 kr. fra hver spiller", 500, thePlayers);
+		theCards[43] = new Expense("De har kørt frem for 'Fuldt stop'. Betal 1.000 kr. i bøde.", 1000);
 	}
 		public Card getCard(int cho) {
 			return theCards[cho];
