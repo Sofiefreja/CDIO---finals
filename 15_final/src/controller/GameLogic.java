@@ -168,20 +168,20 @@ public class GameLogic {
 		ArrayList<String> A = new ArrayList<>();
 
 		if (theplayer.getBalance() < 0) { //menu if is balance under 0  (forced to sell houses)
-			if (theplayer.getHouse) {
+			if (theplayer.getBuilding()) {
 				A.add("Sælg");
 			}
-			if (theplayer.getProperty) { //menu if is balance under 0  (forced to pawn)
+			if (theplayer.getProperty()) { //menu if is balance under 0  (forced to pawn)
 				A.add("Pantsætning");
 			}
 			A.add("Giv op"); 
 		} else {						// menu options for owning property, a house or 3 streets of same type.
-			if (theplayer.getProperty) {
+			if (theplayer.getProperty()) {
 				A.add("Pantsætning");
-				if (theplayer.getHouse) {
+				if (theplayer.getBuilding()) {
 					A.add("Sælg huse eller hotel");
 				}
-				if (theplayer.getBuildStatus){
+				if (theplayer.getBuildStatus()){
 					A.add("Køb hus eller hotel");
 				}
 			}
