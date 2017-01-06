@@ -243,15 +243,16 @@ public class GUIControl {
 	}*/
 
 	// Removing player from playing board when player surrenders or looses.
-	//public void removePlayer(Player thePlayer) {
+	public void removePlayer(Player thePlayer) {
 
 		// Remove the players owned squares.
-	//	int[] list = thePlayer.ownedID();
-	//	ArrayList <Ownable> arr=thePlayer.returnOwned();
-	//	for (int i = 0; i < list.length; i++) {
-	//		GUI.removeOwner(list[i]);
-	//		arr.get(i).clearOwner();
-	//	}
+	int[] list = thePlayer.getOwnedID();
+		ArrayList <Ownable> arr=thePlayer.getOwned();
+		for (int i = 0; i < list.length; i++) {
+			GUI.removeOwner(list[i]);
+			arr.get(i).clearOwner();
+		}
+	}
 
 		// Remove Car
 	//	GUI.removeCar(thePlayer.getCurrentPosition()+1, thePlayer.toString());
