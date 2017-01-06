@@ -16,7 +16,7 @@ public class Board {
 	
 	public Board(){
 		squares[0] = new Start ("Start", 1);
-		squares[1] = new Street("Rødovrevej", 2, 1200, 600, 1000, streetRents, 'A');
+		squares[1] = new Street("Rødovrevej", 2, 1200, 600, 1000, 'A');
 		squares[2] = new Territory("Prøv lykken", 3,  1500, 300);
 		squares[3] = new Territory("Hvidovrevej", 4, 5000,234);
 		squares[4] = new Tax("Indkomstskat",5, 2000);
