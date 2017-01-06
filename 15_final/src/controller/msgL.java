@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class msgL {
 	private static String[] info_danish = new String[1000];
 	private static String[] info_english = new String[1000];
+	static String lang="dk";
 	
 	static {
 		System.out.println(new File("ajknsfhijoa").getAbsolutePath()); // FInd bib.
@@ -26,19 +27,21 @@ public class msgL {
 		} catch (FileNotFoundException e) {
 			System.out.println("Forkert");
 		}
-		
 	}
-	public static String msg(String lang, int index){
+	public static String msg(int index){
 		if(lang.equals("en")){
-			return info_danish[index];
-		}
-		else{
 			return info_english[index];
 		}
-		
+		else{
+			return info_danish[index];
+		}
 	}
-	
-	
-
-	
+	public static void changeLanguage(){
+		String l =GUIControl.giveLanguageChoice();
+		if(l.equals("en")){
+			lang="en";
+		}else{
+			lang="dk";
+		}
+	}
 }
