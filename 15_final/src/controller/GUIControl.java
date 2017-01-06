@@ -147,13 +147,33 @@ public class GUIControl {
 
 	// Creation of players, saving the number of players to an integer and the
 	// name of a player as a string in an array.
+	/**
+	 * Input number of players, name of players and denies same name entries.
+	 */
+	
 	public String[] numberOfPlayers() {
 		int numberOfPlayers = GUI.getUserInteger("How many players are you? (between 2-6)", 2, 6);
 		String[] playerNames = new String[numberOfPlayers];
+		
 		for (int i = 0; i < numberOfPlayers; i++) {
 			int number = i + 1; // The Array[] have to start at index 0, but the
 								// player is number 1.
-			playerNames[i] = GUI.getUserString("Player " + String.valueOf(number));
+			boolean sameName = false;
+			String[] tempArray = new String[6];
+			String tempName = GUI.getUserString("Player " + String.valueOf(number));
+			for (int j = 0; j < 6;j++){
+				if(tempName.equals(tempArray[j])){
+					sameName = true;
+					i--;
+					GUI.showMessage("Ugyldigt navn: navne må ikke være ens");
+				}
+				
+			}
+			if(sameName = false){
+				playerNames[i] = tempName;
+				tempArray[i] = tempName;
+			}
+			
 		}
 		return playerNames;
 	}
@@ -165,7 +185,10 @@ public class GUIControl {
 		return input;
 	}
 
-	// Move vehicle on the board.
+	/**
+	 * Moves vehicle on the board
+	 * @param thePlayer type: Player
+	 */
 	public void moveVehicle(Player thePlayer) {
 		GUI.removeCar(thePlayer.getPreviousPosition()+1, thePlayer.toString());
 		GUI.setCar(thePlayer.getCurrentPosition()+1, thePlayer.toString());
@@ -185,6 +208,7 @@ public class GUIControl {
 	}*/
 
 	// Player choice of buying a square or not.
+	
 	public static boolean getBuyChoice(Ownable field, Player player) {
 
 		String input = GUI.getUserButtonPressed(player.toString()+", you landed on "+field.toString()+
@@ -193,6 +217,15 @@ public class GUIControl {
 			return true;
 		else
 			return false;
+	}
+	/**
+	 * Prints message in GUI
+	 * @param message type: String
+	 * @author Jonas Larsen (s136335)
+	 * @author Morten Velin (s147300)
+	 */
+	public static void printMessage(String message){
+		GUI.showMessage(message);
 	}
 
 	// Player choice of paying 10% flatrate tax or Tax amount.
