@@ -20,48 +20,47 @@ public class GameLogic {
 	private ArrayList<Player> thePlayers;
 	private int equalEyeCounter;
 
+	/**
+	 * @author Jonas Larsen s136335
+	 */
+
 	public GameLogic() {
 		/*
 		 * Initializing the game.
 		 */
+
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
 		theBoard = new Board();
 		// AllCards theCards = new AllCards(thePlayers);
 		theCup = new Cup();
 
-		/*
-		 * The players are initialized
-		 */
+		// The players are initialized
 
 		createPlayers();
 
-		/*
-		 * Beginning the game.
-		 */
+		// Beginning the game.
+
 		firstTurn = true;
 		firstRound = 0;
 		numberOfPlayers = playerNames.length;
 		equalEyeCounter = 0;
+ 
+		// The game should run until one player remains in the ArrayList.
+		while (thePlayers.size() > 1) { 
+									
+			// The for loop running through all the players.
+			for (int i = 0; i < thePlayers.size(); i++) { 
 
-		while (thePlayers.size() > 1) { // The game should run until one player
-										// remains in the ArrayList.
+				// If only one player are left, then 'else' runs and breaks the for loop
+				if (thePlayers.size() != 1) { 
 
-			for (int i = 0; i < thePlayers.size(); i++) { // The // for loop
-															// running through
-															// all the players.
-
-				if (thePlayers.size() != 1) { // If only one player are left,
-												// then 'else' runs and breaks
-												// the for loop
-
-					// The difference option a the player has on it's turn.
-
+					// The difference option in the menu.
 					String[] valg = getMenu(thePlayers.get(i));
-
 					String turn = GUIGame.getUserInputTurn(thePlayers.get(i), valg); // Ask
-					// what the player what to do.
-
+					
+					
+					//The differen
 					if (turn.equals("Rull")) {
 						// Hvis der ikke er bliver slået ens tre gange i træk
 						// if(!thePlayers.get(i).getJailStatus()){
