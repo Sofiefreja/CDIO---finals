@@ -5,5 +5,10 @@ package cards;
  *
  */
 public class MoveToSquare extends Move {
-
+	public MoveToSquare(String name, int steps){
+		this.name = name;
+		this.steps = steps;
+	}
+	
+	GUI.moveVehicle
 }

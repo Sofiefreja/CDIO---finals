@@ -73,19 +73,19 @@ public abstract class Ownable extends Square {
 	public void landOnSquare(Player player) {
 		if (owner != null) {//if the square is owned, the following happens.
 			if(player.toString().equals(owner.toString())==false){//if the player is not the owner of this field, the following happens
-			int amount = getRent();//the rent is calculated, depending on the subclass.
-			GUIControl.ownedMessage(this, player, owner, amount);//a message is printed to the player about the sequence.
-			player.withdraw(amount);
-			owner.deposit(amount);
-			GUIControl.updateBalance(player);
-			GUIControl.updateBalance(owner);
+				int amount = getRent();//the rent is calculated, depending on the subclass.
+				GUIControl.ownedMessage(this, player, owner, amount);//a message is printed to the player about the sequence.
+				player.withdraw(amount);
+				owner.deposit(amount);
+				GUIControl.updateBalance(player);
+				GUIControl.updateBalance(owner);
 			}else{//if the 
 				GUIControl.selfOwned(); // prints "You are the owner of this square!"
 			}
 		}else if(player.getBalance()>=this.price){// if the field isnt owned and the player has enough money, he has the choice of buying it.
 			if (GUIControl.getBuyChoice(this,player) == true) {//if player chooses to buy it, the following happens
 				GUIControl.buyMessage(this, player);
-				player.bought(this);
+				player.buySquare(this);
 				player.withdraw(this.price);
 				owner = player;
 				GUIControl.updateBalance(player);
