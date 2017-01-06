@@ -240,4 +240,10 @@ public class Player {
 		
 	}
 	
+	public boolean getBuildStatus() {
+		
+		return assets.getBuildStatus();
+		
+	}
+	
 }
