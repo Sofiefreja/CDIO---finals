@@ -198,46 +198,51 @@ public class Assets {
 		int counterF = 0;
 		int counterG = 0;
 		int counterH = 0;
+		
+		
+		if (ownedStreet.size() == 0) {
+			buildStatus = false;
+			return buildStatus;
+		} else {
+			for (int i = 0; i <= ownedStreet.size(); i++) {
 
-		for (int i = 0; i <= ownedStreet.size(); i++) {
+				if (ownedStreet.get(i).getType() == 'A') {
+					counterA++;
 
-			if (ownedStreet.get(i).getType() == 'A') {
-				counterA++;
+				} else if (ownedStreet.get(i).getType() == 'B') {
+					counterB++;
 
-			} else if (ownedStreet.get(i).getType() == 'B') {
-				counterB++;
+				} else if (ownedStreet.get(i).getType() == 'C') {
+					counterC++;
 
-			} else if (ownedStreet.get(i).getType() == 'C') {
-				counterC++;
+				} else if (ownedStreet.get(i).getType() == 'D') {
+					counterD++;
 
-			} else if (ownedStreet.get(i).getType() == 'D') {
-				counterD++;
+				} else if (ownedStreet.get(i).getType() == 'E') {
+					counterE++;
 
-			} else if (ownedStreet.get(i).getType() == 'E') {
-				counterE++;
+				} else if (ownedStreet.get(i).getType() == 'F') {
+					counterF++;
 
-			} else if (ownedStreet.get(i).getType() == 'F') {
-				counterF++;
+				} else if (ownedStreet.get(i).getType() == 'G') {
+					counterG++;
 
-			} else if (ownedStreet.get(i).getType() == 'G') {
-				counterG++;
+				} else if (ownedStreet.get(i).getType() == 'H') {
+					counterH++;
+				}
 
-			} else if (ownedStreet.get(i).getType() == 'H') {
-				counterH++;
 			}
 
+			if (counterA == 2 || counterH == 2 || counterB == 3 || counterC == 3 || counterD == 3 || counterE == 3
+					|| counterF == 3 || counterG == 3) {
+				buildStatus = true;
+			} else {
+				buildStatus = false;
+			}
+
+			return buildStatus;
+
 		}
-
-		if (counterA == 2 || counterH == 2) {
-			buildStatus = true;
-		} else if (counterB == 3 || counterC == 3 || counterD == 3 || counterE == 3 || counterF == 3 || counterG == 3) {
-			buildStatus = true;
-		} else {
-			buildStatus = false;
-		}
-
-		return buildStatus;
-
 	}
 
 	public String[] getBuildableList() {
