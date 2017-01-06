@@ -5,5 +5,7 @@ package cards;
  *
  */
 public class Grant extends Transaction{
-
+	public Grant(String description, int money){
+		super(description,money);
+	}
 }

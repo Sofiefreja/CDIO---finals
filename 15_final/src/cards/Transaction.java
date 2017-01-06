@@ -1,5 +1,4 @@
 package cards;
-
 import entities.Player;
 
 /**
@@ -7,16 +6,15 @@ import entities.Player;
  * @author Sofie Freja Christensen s153932
  *
  */
-public class Transaction extends Card{
+public abstract class Transaction extends Card{
 
-	public Transaction(String name, int money) {
-		super(name, money);
+	public Transaction(String description, int money) {
+		super(description);
+		this.money = money;
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void useCards(Player player) {
-		
-	}
+	public abstract void useCard(Player player);
 	
 }

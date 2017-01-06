@@ -7,15 +7,12 @@ import entities.Player;
  * @author Sofie Freja Christensen s153932
  *
  */
-public class Move extends Card{
+public abstract class Move extends Card{
 
-	public Move(String name, int money) {
-		super(name, money);
+	public Move(String description) {
+		super(description);
 	}
 
 	@Override
-	public void useCards(Player player) {
-		
-	}
-
+	public abstract void useCard(Player player);
 }

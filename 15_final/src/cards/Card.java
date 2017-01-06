@@ -7,35 +7,27 @@ import entities.Player;
  * @author Sofie Freja Christensen s153932
  *
  */
-public abstract class Card extends AllCards{
-	protected String name;
+public abstract class Card{
+	protected String description;
 	protected int money;
 	/**
 	 * Super constructor which takes a String name as a parameter.
-	 * @param name
+	 * @param description
 	 * @param money
 	 */
-	public Card(String name, int money){
-		this.name=name;
-		this.money=money;
+	public Card(String description){
+		this.description=description;
 	}
 	/**
 	 * Returns the name of the Card
-	 * @retun name
+	 * @retun description
 	 */
 	public String toString(){
-		return name;
-	}
-	/**
-	 * Returns money change of the Card
-	 * @return
-	 */
-	public int getMoney(){
-		return this.money;
+		return description;
 	}
 	/**
 	 * Method which determines what happens to a player when the specific card is picked.
 	 * @param player
 	 */
-	public abstract void useCards(Player player);
+	public abstract void useCard(Player player);
 }
