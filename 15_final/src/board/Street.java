@@ -43,6 +43,9 @@ public class Street extends Ownable {
 	public int getRent() {
 		return rents[numberOfBuildings];
 	}
+	public int getPriceOfBuilding(){
+		return priceOfBuilding;
+	}
 	/**
 	 * Method for buying houses on a street.
 	 * @param amount

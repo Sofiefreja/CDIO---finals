@@ -1,6 +1,7 @@
 package cards;
 
 import controller.GUIControl;
+import entities.Board;
 import entities.Player;
 
 /**
@@ -10,16 +11,16 @@ import entities.Player;
  */
 public class Busted extends Move{
 
-	public Busted(String name) {
-		super(name);
+	public Busted(String name ,Board board) {
+		super(name,10,board);
 	}
 
 	@Override
 	public void useCard(Player player) {		
 		GUIControl.printMessage("Go straight to jail");
 		player.setJailStatus(true);
-		player.setPosition(10);
-		
+		player.setPosition(moveTo);
+		GUIControl.moveVehicle(player);
 	}
 	
 	

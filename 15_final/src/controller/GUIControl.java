@@ -186,7 +186,7 @@ public class GUIControl {
 	 * Moves vehicle on the board
 	 * @param thePlayer type: Player
 	 */
-	public void moveVehicle(Player thePlayer) {
+	public static void moveVehicle(Player thePlayer) {
 		GUI.removeCar(thePlayer.getPreviousPosition()+1, thePlayer.toString());
 		GUI.setCar(thePlayer.getCurrentPosition()+1, thePlayer.toString());
 

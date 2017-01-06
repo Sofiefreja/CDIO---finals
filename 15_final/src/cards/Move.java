@@ -1,5 +1,6 @@
 package cards;
 
+import entities.Board;
 import entities.Player;
 
 /**
@@ -8,11 +9,13 @@ import entities.Player;
  *
  */
 public abstract class Move extends Card{
-
-	public Move(String description) {
-		super(description);
+	protected int moveTo;
+	public Move(String description, int moveTo , Board board) {
+		super(description,board);
+		this.moveTo=moveTo;
 	}
 
 	@Override
 	public abstract void useCard(Player player);
+	
 }

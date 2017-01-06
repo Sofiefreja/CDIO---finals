@@ -1,6 +1,7 @@
 package cards;
 
 import controller.GUIControl;
+import entities.Board;
 import entities.Player;
 
 /**
@@ -9,14 +10,13 @@ import entities.Player;
  *
  */
 public class ChangePosition extends Move {
-	int moveTo;
-	public ChangePosition(String description, int moveTo){
-		super(description);
-		this.moveTo=moveTo;
+	public ChangePosition(String description, int moveTo, Board board){
+		super(description, moveTo, board);
 	}
 public void useCard(Player player) {
 		GUIControl.printMessage("You move 3 spaces");
-		player.setPosition(moveTo);
+		player.moveVehicle(moveTo);
+		board.getSquare(player.getCurrentPosition()).landOnSquare(player);
 		
 	}
 }

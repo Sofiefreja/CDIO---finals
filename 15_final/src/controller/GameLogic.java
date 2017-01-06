@@ -31,9 +31,10 @@ public class GameLogic {
 
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
-		theBoard = new Board();
-		// AllCards theCards = new AllCards(thePlayers);
 		theCup = new Cup();
+		theBoard = new Board(theCup);
+		// AllCards theCards = new AllCards(thePlayers);
+		
 
 		// The players are initialized
 		createPlayers();
@@ -186,7 +187,7 @@ public class GameLogic {
 	private void doMoveVehicle(Player theplayer) {
 		if (firstTurn) {
 			theplayer.setPosition(theCup.getSum());
-			GUIGame.moveVehicle(theplayer);
+			GUIControl.moveVehicle(theplayer);
 			firstRound++;
 
 			// First turn
@@ -196,7 +197,7 @@ public class GameLogic {
 
 		} else { // A normal turn.
 			theplayer.moveVehicle(theCup.getSum());
-			GUIGame.moveVehicle(theplayer);
+			GUIControl.moveVehicle(theplayer);
 
 		}
 		// Call the landOnSquare(Player --- )

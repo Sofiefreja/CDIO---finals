@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import board.Ownable;
+import controller.GUIControl;
+import entities.Board;
 import entities.Player;
 
 /**
@@ -16,8 +18,8 @@ public class MobilePay extends Transaction{
 	int number = 0;
 	ArrayList<Player> playerList = new ArrayList<Player>();
 	
-	public MobilePay(String name, int money, ArrayList<Player> playerList) {
-		super(name, money);
+	public MobilePay(String name,Board board ,int money, ArrayList<Player> playerList) {
+		super(name,board ,money);
 		this.playerList = playerList;
 		
 	}
@@ -32,7 +34,7 @@ public class MobilePay extends Transaction{
 		switch(res) {
 		
 		case 1:
-			GUIControl.payBirthdayMessage();
+			GUIControl.printMessage("det er din fødselsdag, de andre giver dig 200");;
 			
 			for (int i=0; i<=playerList.size();i++) {
 				playerList.get(i).withdraw(200);
@@ -43,7 +45,7 @@ public class MobilePay extends Transaction{
 			break;
 			
 		case 2:
-			GUIControl.payFamilyMessage();
+			GUIControl.printMessage("Du har lagt ud for familiefest de andre betaler");
 			
 			for (int i=0; i<=playerList.size();i++) {
 				playerList.get(i).withdraw(500);
@@ -54,7 +56,7 @@ public class MobilePay extends Transaction{
 			break;
 		
 		case 3:
-			GUIControl.payPartyMessage();
+			GUIControl.printMessage("Sammenskudsgilde, de andre betaler!");
 			
 			for (int i=0; i<=playerList.size();i++) {
 				playerList.get(i).withdraw(500);
