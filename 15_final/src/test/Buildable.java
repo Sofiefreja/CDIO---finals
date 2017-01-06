@@ -25,7 +25,7 @@ public class Buildable {
 	@Test
 	public void test() {
 		
-		p1.buySquare(street[0]);
+		p1.buySquare(street[]);
 		
 		
 	}
