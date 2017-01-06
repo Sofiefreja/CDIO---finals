@@ -204,7 +204,7 @@ public class Assets {
 			buildStatus = false;
 			return buildStatus;
 		} else {
-			for (int i = 0; i <= ownedStreet.size(); i++) {
+			for (int i = 0; i < ownedStreet.size(); i++) {
 
 				if (ownedStreet.get(i).getType() == 'A') {
 					counterA++;
