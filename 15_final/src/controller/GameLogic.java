@@ -96,16 +96,17 @@ public class GameLogic {
 					} else if (turn.equals("Sælg")) {
 
 						System.out.println("Shit");
-
+						i--;
 					} else if (turn.equals("Pantsætning")) {
 						System.out.println("Shit");
+						i--;
 
 					} else if (turn.equals("Køb huse eller hotel")) {
 						System.out.println("Shit");
-
+						i--;
 					} else if (turn.equals("Sælg huse eller hotel")) {
 						System.out.println("Shit");
-
+						i--;
 					}
 
 					else if (turn.equals("Giv op")) {
