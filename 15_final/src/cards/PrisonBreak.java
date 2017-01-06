@@ -9,8 +9,8 @@ import entities.Player;
  */
 public class PrisonBreak extends Card{
 
-	public PrisonBreak(String name, int money) {
-		super(name, money);
+	public PrisonBreak(String name) {
+		super(name);
 		
 	}
 

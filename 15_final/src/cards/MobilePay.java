@@ -23,7 +23,7 @@ public class MobilePay extends Transaction{
 	}
 
 	@Override
-	public void useCards(Player player) {
+	public void useCard(Player player) {
 		
 		Random number = new Random();
 		int res = number.nextInt(3);

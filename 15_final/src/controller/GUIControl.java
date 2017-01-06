@@ -262,4 +262,13 @@ public class GUIControl {
 		GUI.close();
 	}
 
+
+
+	// Move vehicle on the board.
+	public void moveVehicle(Player thePlayer) {
+		GUI.removeCar(thePlayer.getPreviousPosition()+1, thePlayer.toString());
+		GUI.setCar(thePlayer.getCurrentPosition()+1, thePlayer.toString());
+	
+	}
+
 }

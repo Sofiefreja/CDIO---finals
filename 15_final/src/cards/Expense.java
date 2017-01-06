@@ -13,27 +13,26 @@ public class Expense extends Transaction{
 /**
  * Constructor which accepts two parameters name and withdrawal for this
  * specific instance.
- * @param name
+ * @param description
  * @param withdrawal
  */
-	public Expense(String name, int withdrawal) {
-		this.name= name;
-		this.withdrawal= withdrawal;
+	public Expense(String description, int money) {
+		super(description,money);
 	}
 	/**
 	 * Method for retrieving the withdrawal amount.
 	 * @return reward
 	 */
-	public int payWithdrawal() {
-		return withdrawal;
+	public int payMoney() {
+		return money;
 	}
 	/**
 	 * Player pays the expense, and balance is updated.
 	 * @param player
 	 */
 	public void useCard(Player player) {
-		player.pay(withdrawal);
-		GUIControl.expenseMessage(player, withdrawal);
+		player.withdraw(money);
+		GUIControl.expenseMessage(player, money);
 		GUIControl.updateBalance(player);
 }
 

@@ -8,16 +8,16 @@ import controller.GUIControl;
  */
 public class MovetoShip extends Card {
 
-	public MovetoShip(String name, int money) {
-		super(name, money);
+	public MovetoShip(String name) {
+		super(name);
 	
 	}
 
 	@Override
-	public void useCards(Player player) {
+	public void useCard(Player player) {
 		
 		GUIControl.moveToShipMessage(player);
-		if (player.getCurrentPosition()==2 || player.getCurrentPosition()==36) { /* Skal potentielt ændres, alt efter hvordan vi håndterer startbonus */
+		if (player.getCurrentPosition()==2 || player.getCurrentPosition()==36) { /* Skal potentielt ï¿½ndres, alt efter hvordan vi hï¿½ndterer startbonus */
 			player.setPosition(5);
 		}else if (player.getCurrentPosition()==7) {
 			player.setPosition(15);
