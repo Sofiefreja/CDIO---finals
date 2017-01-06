@@ -5,6 +5,8 @@ import java.awt.*;
 import java.util.ArrayList;
 //import board.*;
 import desktop_fields.*;
+import desktop_fields.Jail;
+import desktop_fields.Start;
 import desktop_fields.Tax;
 //import desktop_fields.Refuge;
 //import desktop_fields.Tax;
@@ -107,7 +109,7 @@ public class GUIControl {
 		GUI.create(fields);
 	}
 		
-		
+	
 	
 	// public void showSquareInfo(Square theSquare) {
 	//
