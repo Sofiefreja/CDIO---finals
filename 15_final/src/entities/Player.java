@@ -28,6 +28,14 @@ public class Player {
 		
 	}
 	
+	public int[] getOwnedID() {
+		return assets.getOwnedID();
+	}
+	
+	public void buySquare(Ownable square) {
+		assets.buySquare(square);
+	}
+	
 	public void addToJailCounter() {
 		jailCounter=+1;
 	}
