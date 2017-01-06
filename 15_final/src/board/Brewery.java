@@ -2,14 +2,15 @@ package board;
 
 import entities.Cup;
 
+
 public class Brewery extends Ownable {
 	
 	private int rent_1=100;
 	private int rent_2=200;
 	private Cup gameCup;
 	
-	public Brewery(String name, int id, int price, int pawn, char type, Cup gameCup) {
-		super(name, id, price, pawn, type);
+	public Brewery(String name, int id, Cup gameCup) {
+		super(name, id, 3000, 1500, 'I');
 		this.gameCup = gameCup;
 	}
 	
