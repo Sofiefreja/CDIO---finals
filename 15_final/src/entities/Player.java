@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.util.*;
 
 import board.Ownable;
+import board.Street;
 
 /**
  * 
@@ -194,4 +195,49 @@ public class Player {
 	public Color getColor() {
 		return vehicle.getColor();
 	}
+	
+	
+	
+	public ArrayList<String> getPropertyList() {
+		
+		return assets.getPropertyList();
+		
+	}
+	
+	public String[] getHouseList() {
+		
+		return assets.getHouseList();
+		
+	}
+	
+	public String[] getHotelList() {
+		
+		return assets.getHotelList();
+		
+	}
+	
+	public boolean getBuilding() {
+		
+		return assets.getBuilding();
+		
+	}
+	
+	public boolean getProperty() {
+		
+		return assets.getProperty();
+		
+	}
+	
+	public void buyHouses(Street street, int amount) {
+		
+		assets.buyHouses(street, amount);
+		
+	}
+	
+	public void removeHouses(Street street, int amount) {
+		
+		assets.removeHouses(street, amount);
+		
+	}
+	
 }

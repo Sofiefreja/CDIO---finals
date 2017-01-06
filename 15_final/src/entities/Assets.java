@@ -158,7 +158,19 @@ public class Assets {
 	
 	public void removeHouses(Street street, int amount) {
 		
+		boolean 
+		
 		street.removeHouses(amount);
+		
+		for (int i=0; i < ownedStreet.size(); i++) {
+			
+			if (ownedStreet.get(i).getNumberOfBuildings() >= 1) {
+			
+			buildingCounter = 1;
+				
+			}
+			
+		}
 	}
 	
 }
