@@ -7,32 +7,61 @@ import controller.GUIControl;
  * Abstract class Ownable, extended from Square. Superclass to all ownable types
  * of Square.
  * 
- * @author Mathias Tværmose Gleerup
+ * @author Mathias Tvaermose Gleerup, s153120
  *
  */
 public abstract class Ownable extends Square {
-	/**
-	 * Adds a field Player and int for all ownable squares.
-	 */
 	protected int price;
 	protected int pawn;
 	protected char type;
 	protected Player owner;
-	
 
 	/**
-	 * Constructor which takes a name and a price of the square as parameters.
+	 * Constructor to create an ownable Square
 	 * 
 	 * @param name
 	 * @param id
 	 * @param price
 	 * @param pawn
+	 * @param type
 	 */
 	public Ownable(String name, int id, int price, int pawn, char type) {
 		super(name, id);
 		this.price = price;
 		this.pawn = pawn;
-		this.type=type;
+		this.type = type;
+	}
+
+	// Implements the inherited method landOnSquare, to be overridden for each
+	// type with a different getRent() method.
+	@Override
+	public void landOnSquare(Player player) {
+		if (owner != null) {// if the square is owned, the following happens.
+			if (player.toString().equals(owner.toString()) == false) {// if the player is not the owner of
+																		// this field, the following happens
+				int amount = getRent();// the rent is calculated, depending on the subclass.
+				GUIControl.ownedMessage(this, player, owner, amount);// a message is printed to the player about the sequence.
+				player.withdraw(amount);
+				owner.deposit(amount);
+				GUIControl.updateBalance(player);
+				GUIControl.updateBalance(owner);
+			} else { //if the player is the owner of this square
+				GUIControl.selfOwned(); // prints "You are the owner of this square!"
+			}
+		} else if (player.getBalance() >= this.price) {// if the field is'nt owned and the player
+														// has enough money, he has the choice of buying it.
+			if (GUIControl.getBuyChoice(this, player) == true) {// if player chooses to buy it, the following happens
+				GUIControl.buyMessage(this, player);
+				player.buySquare(this);
+				player.withdraw(this.price);
+				owner = player;
+				GUIControl.updateBalance(player);
+				GUIControl.setOwned(this.getID(), player);
+			}
+		} else {// if the square is not owned but the player can't afford it, a
+				// message is printed.
+			GUIControl.notEnoughMoney(this);
+		}
 	}
 
 	/**
@@ -41,22 +70,29 @@ public abstract class Ownable extends Square {
 	 * @return rent.
 	 */
 	public abstract int getRent();
-	
+
 	/**
 	 * Method for returning the price of this instance.
+	 * 
 	 * @return price
 	 */
 	public int getPrice() {
 		return price;
 	}
+
 	/**
 	 * Method for returning the pawn amount.
+	 * 
 	 * @return pawn
 	 */
-	public int getPawn(){
+	public int getPawn() {
 		return pawn;
 	}
-	public char getType(){
+	/**
+	 * Method for returning the type of this square, as a char
+	 * @return type
+	 */
+	public char getType() {
 		return type;
 	}
 
@@ -67,32 +103,4 @@ public abstract class Ownable extends Square {
 		this.owner = null;
 	}
 
-	
-	//Implements the inherited method landOnSquare, to be overridden for each type with a different getRent() method.
-	@Override
-	public void landOnSquare(Player player) {
-		if (owner != null) {//if the square is owned, the following happens.
-			if(player.toString().equals(owner.toString())==false){//if the player is not the owner of this field, the following happens
-				int amount = getRent();//the rent is calculated, depending on the subclass.
-				GUIControl.ownedMessage(this, player, owner, amount);//a message is printed to the player about the sequence.
-				player.withdraw(amount);
-				owner.deposit(amount);
-				GUIControl.updateBalance(player);
-				GUIControl.updateBalance(owner);
-			}else{//if the 
-				GUIControl.selfOwned(); // prints "You are the owner of this square!"
-			}
-		}else if(player.getBalance()>=this.price){// if the field isnt owned and the player has enough money, he has the choice of buying it.
-			if (GUIControl.getBuyChoice(this,player) == true) {//if player chooses to buy it, the following happens
-				GUIControl.buyMessage(this, player);
-				player.buySquare(this);
-				player.withdraw(this.price);
-				owner = player;
-				GUIControl.updateBalance(player);
-				GUIControl.setOwned(this.getID(),player);
-				}
-		}else{//if the square is not owned but the player can't afford it, a message is printed.
-			GUIControl.notEnoughMoney(this);
-		}
-	}
 }

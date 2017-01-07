@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Class Street, which has a type, and can have houses and a hotel built on it.
- * @author Mathias Tvaermose Gleerup
+ * @author Mathias Tvaermose Gleerup, s153120
  *
  */
 public class Street extends Ownable {
@@ -13,13 +13,18 @@ public class Street extends Ownable {
 	int numberOfBuildings=0;
 	
 	/**
-	 * Constructor which instantiates a Street.
-	 * 
+	 * Constructor for Street
 	 * @param name
 	 * @param id
 	 * @param price
 	 * @param pawn
-	 * @param rents
+	 * @param priceOfBuilding
+	 * @param rent0
+	 * @param rent1
+	 * @param rent2
+	 * @param rent3
+	 * @param rent4
+	 * @param rentHotel
 	 * @param type
 	 */
 	public Street(String name, int id,int price, int pawn,int priceOfBuilding,int rent0, int rent1, int rent2, int rent3, int rent4, int rentHotel, char type) {
@@ -32,19 +37,10 @@ public class Street extends Ownable {
 		rents[4]=rent4;
 		rents[5]=rentHotel;
 	}
-	/**
-	 * Method for returning number of houses built on this instance.
-	 * @return numberOfBuildings
-	 */
-	public int getNumberOfBuildings(){
-		return numberOfBuildings;
-	}
+	
 	@Override
 	public int getRent() {
 		return rents[numberOfBuildings];
-	}
-	public int getPriceOfBuilding(){
-		return priceOfBuilding;
 	}
 	/**
 	 * Method for buying houses on a street.
@@ -70,6 +66,21 @@ public class Street extends Ownable {
 			//GUIControl.housesBought(this, amount, priceOfBuilding);
 		}
 	}
+	/**
+	 * Method for returning number of houses built on this instance.
+	 * @return numberOfBuildings
+	 */
+	public int getNumberOfBuildings(){
+		return numberOfBuildings;
+	}
+	/**
+	 * Returns the price of this instance
+	 * @return
+	 */
+	public int getPriceOfBuilding(){
+		return priceOfBuilding;
+	}
+
 	/**
 	 * Method for removing an amount of buildings on this instance.
 	 * @param amount

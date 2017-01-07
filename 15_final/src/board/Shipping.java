@@ -1,8 +1,17 @@
 package board;
-
+/**
+ * 
+ * @author Mathias Tvaermose Gleerup, s153120
+ *
+ */
 public class Shipping extends Ownable {
 	int [] rents={500,1000,2000,4000};
 	int numberOfShips;
+	/**
+	 * Constructor for Shipping
+	 * @param name
+	 * @param id
+	 */
 	public Shipping(String name, int id) {
 		super(name, id, 4000, 2000, 'J');
 	}

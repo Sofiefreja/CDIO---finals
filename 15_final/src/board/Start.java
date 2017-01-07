@@ -9,7 +9,11 @@ import entities.Player;
  */
 
 public class Start extends Square {
-
+	/**
+	 * Constructor for a Start square
+	 * @param name
+	 * @param id
+	 */
 	public Start(String name, int id) {
 		super(name, id);
 		
