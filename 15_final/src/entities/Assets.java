@@ -6,6 +6,8 @@ import board.Ownable;
 import board.Street;
 
 /**
+ * Class which keeps track of a Players assets (Squares, buildings and
+ * jailCards).
  * 
  * @author Simon Lundorf s154008
  *
@@ -21,6 +23,9 @@ public class Assets {
 	private boolean buildingOwner;
 	private boolean buildStatus;
 
+	/**
+	 * Constructor for Assets
+	 */
 	public Assets() {
 		jailCard = 0;
 		propertyOwner = false;
@@ -89,7 +94,6 @@ public class Assets {
 	 * 
 	 * @return An integer array with the square IDs
 	 */
-
 	public int[] getOwnedID() {
 
 		int[] squareID = new int[owned.size()];
@@ -103,14 +107,30 @@ public class Assets {
 
 	}
 
+	/**
+	 * Method for getting an ArrayList of owned squares
+	 * 
+	 * @return ArrayList<Ownable>
+	 */
 	public ArrayList<Ownable> getOwned() {
 		return owned;
 	}
 
+	/**
+	 * Returns a list of the names of the properties owned by this player.
+	 * 
+	 * @return ArrayList<String>
+	 */
 	public ArrayList<String> getPropertyList() {
 		return property;
 	}
 
+	/**
+	 * Method for getting an array of the names of properties with houses built
+	 * on them
+	 * 
+	 * @return String[]
+	 */
 	public String[] getHouseList() {
 
 		String[] houseList = new String[owned.size()];
@@ -128,6 +148,12 @@ public class Assets {
 		return houseList;
 	}
 
+	/**
+	 * Method for getting an array of the names of properties with hotels built
+	 * on them
+	 * 
+	 * @return String[]
+	 */
 	public String[] getHotelList() {
 
 		String[] hotelList = new String[owned.size()];
@@ -145,25 +171,47 @@ public class Assets {
 		return hotelList;
 	}
 
+	/**
+	 * Method for returning a boolean value of whether the player owns a
+	 * building.
+	 * 
+	 * @return boolean hasBuilding
+	 */
 	public boolean getBuilding() {
-
 		return buildingOwner;
-
 	}
 
+	/**
+	 * Method for returning a boolean value of whether the player owns a a
+	 * property.
+	 * 
+	 * @return boolean hasProperty
+	 */
 	public boolean getProperty() {
 
 		return propertyOwner;
 
 	}
 
+	/**
+	 * Method for buying an amount of buildings on a specific Street.
+	 * 
+	 * @param street
+	 * @param amount
+	 */
 	public void buyHouses(Street street, int amount) {
 
 		street.buyHouses(amount);
 		buildingOwner = true;
 
 	}
-
+	
+	/**
+	 * Method for removing an amount of houses from a specific Street.
+	 * 
+	 * @param street
+	 * @param amount
+	 */
 	public void removeHouses(Street street, int amount) {
 
 		boolean noBuilding = true;
@@ -187,7 +235,12 @@ public class Assets {
 
 		}
 	}
-
+	
+	/**
+	 * Method for returning a boolean value of whether the player can build a house.
+	 * 
+	 * @return
+	 */
 	public boolean getBuildStatus() {
 
 		int counterA = 0;
@@ -198,8 +251,7 @@ public class Assets {
 		int counterF = 0;
 		int counterG = 0;
 		int counterH = 0;
-		
-		
+
 		if (ownedStreet.size() == 0) {
 			buildStatus = false;
 			return buildStatus;
@@ -244,7 +296,11 @@ public class Assets {
 
 		}
 	}
-
+	/**
+	 * Method for getting a String array of streets which there can be built buildings on.
+	 * 
+	 * @return String[] 
+	 */
 	public String[] getBuildableList() {
 
 		String[] buildableList = new String[ownedStreet.size()];

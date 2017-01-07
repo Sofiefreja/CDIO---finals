@@ -2,13 +2,18 @@ package entities;
 import java.util.ArrayList;
 import cards.*;
 /**
+ * Class for holding all Cards
  * 
  * @author Sofie Freja Christensen s153932
  *
  */
 public class AllCards { 
 	Card theCards[] = new Card[44];
-			
+	
+	/**
+	 * Creating an AllCards instance
+	 * @param thePlayers
+	 */
 	public AllCards(ArrayList<Player> thePlayers) { // 
 		theCards[0] = new PriceIncrease("Ejendomsskatterne er steget. Ekstraudgifterne er: 800 kr. pr. hus, 2.300 kr. pr. hotel", 800, 2300);
 		theCards[1] = new ChangePosition("Ryk frem til Frederiksberg Allé. Hvis de passerer 'START', indkassér da 4.000 kr.", 0);//Kig lige
@@ -55,7 +60,13 @@ public class AllCards {
 		theCards[42] = new MobilePay("De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag 500 kr. fra hver spiller", 500, thePlayers);
 		theCards[43] = new Expense("De har kørt frem for 'Fuldt stop'. Betal 1.000 kr. i bøde.", 1000);
 	}
-		public Card getCard(int cho) {
-			return theCards[cho];
-		}
+	/**
+	 * Method which takes an int as a parameter 
+	 * and returns that index from the 'theCards' array of this instance 
+	 * @param index
+	 * @return Card
+	 */
+	public Card getCard(int index) {
+		return theCards[index];
+	}
 }
