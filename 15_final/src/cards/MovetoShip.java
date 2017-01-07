@@ -2,13 +2,20 @@ package cards;
 import entities.Player;
 import controller.GUIControl;
 import entities.Board;
+
 /**
- * GUI.moveCar. Find position. Bestem hvilket felt.
+ * Class for cards which moves a player to nearest Shipping square
+ * 
  * @author Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
  *
  */
 public class MovetoShip extends Card {
-
+	
+	/**
+	 * Constructor for MoveToShip card
+	 * @param name
+	 * @param board
+	 */
 	public MovetoShip(String name, Board board) {
 		super(name,board);
 	}

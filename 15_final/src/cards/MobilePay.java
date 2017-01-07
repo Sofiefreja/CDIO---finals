@@ -18,6 +18,13 @@ public class MobilePay extends Transaction{
 	int number = 0;
 	ArrayList<Player> playerList = new ArrayList<Player>();
 	
+	/**
+	 * Constructor for MobilePay Card
+	 * @param name
+	 * @param board
+	 * @param money
+	 * @param playerList
+	 */
 	public MobilePay(String name,Board board ,int money, ArrayList<Player> playerList) {
 		super(name,board ,money);
 		this.playerList = playerList;

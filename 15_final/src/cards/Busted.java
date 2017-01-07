@@ -10,9 +10,14 @@ import entities.Player;
  *
  */
 public class Busted extends Move{
-
-	public Busted(String name ,Board board) {
-		super(name,10,board);
+	/**
+	 * Constructor for Busted card.
+	 * 	
+	 * @param name
+	 * @param board
+	 */
+	 public Busted(String name ,Board board) {
+	 super(name,10,board);
 	}
 
 	@Override

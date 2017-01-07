@@ -5,7 +5,7 @@ import entities.Board;
 import entities.Player;
 
 /**
- * Withdraw xx from the player
+ * Class for creating a card which withdraws a spicific amount from the players account.
  * 
  * @author Sofie Freja Christesen s153932
  *
