@@ -20,7 +20,7 @@ public class Board {
 		squares[1] = new Street("Rødovrevej", 2, 1200,50, 600, 1000, 250,750,2250,4000,6000, 'A');
 		squares[2] = new Parking("Prøv lykken", 3);
 		squares[3] = new Street("Hvidovrevej", 4, 1200,50, 600, 1000, 250,750,2250,4000,6000, 'A');
-		squares[4] = new Tax("Indkomstskat",5, 2000);
+		squares[4] = new Tax("Indkomstskat",5, 4000);
 		squares[5] = new Shipping("Scandlines Helsingør-Helsingborg", 6);
 		squares[6] = new Street("Roskildevej", 7, 2000,1000,1000,100,600,1800,5400,8000,11000,'B');
 		squares[7] = new Parking("Prøv lykken", 8);

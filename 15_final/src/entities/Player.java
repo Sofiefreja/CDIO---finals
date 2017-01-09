@@ -47,6 +47,12 @@ public class Player {
 		return assets.getOwnedID();
 	}
 
+	public ArrayList<Street> getOwnedStreet() {
+
+		return assets.ownedStreet;
+
+	}
+	
 	/**
 	 * Method for buying a Ownable Square.
 	 * 
