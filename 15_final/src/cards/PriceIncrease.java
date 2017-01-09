@@ -28,8 +28,8 @@ public class PriceIncrease extends Transaction {
 	 * @param hotelAfgift
 	 * @param board
 	 */
-	public PriceIncrease(String description, int husAfgift, int hotelAfgift, Board board) {
-		super(description, board, husAfgift);
+	public PriceIncrease(String description, int husAfgift, int hotelAfgift) {
+		super(description, husAfgift);
 		this.husAfgift = husAfgift;
 		this.hotelAfgift = hotelAfgift;
 	}

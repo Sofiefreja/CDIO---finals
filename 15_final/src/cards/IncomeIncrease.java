@@ -18,8 +18,8 @@ public class IncomeIncrease extends Transaction {
 	 * @param name
 	 * @param reward
 	 */
-	public IncomeIncrease(String description, int amount, Board board) {
-		super(description, board, amount);
+	public IncomeIncrease(String description, int amount) {
+		super(description, amount);
 	}
 
 	/**
