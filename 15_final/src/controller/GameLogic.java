@@ -36,7 +36,7 @@ public class GameLogic {
 		// AllCards theCards = new AllCards(thePlayers);
 
 		// The players are initialized
-		thePlayers=createPlayers();
+		thePlayers = createPlayers();
 
 		// Beginning the game.
 		equalEyeCounter = 0;
@@ -58,77 +58,74 @@ public class GameLogic {
 
 					// All the if statements for Player choices on start of
 					// turn.
-					if(thePlayers.get(i).getBalance() >0){
+					if (thePlayers.get(i).getBalance() > 0) {
 						if (turn.equals("Rul")) {
-	
+
 							theCup.roll();
 							GUIGame.showDice(theCup);
 							// All the if statements for different scenarios a
 							// player can be in when rolling.
-					
+
 							if (thePlayers.get(i).getJailStatus()) {
-	
+
 								doJail(thePlayers.get(i));
-	
+
 							} else if (equalEyeCounter != 3) {
-	
+
 								doMoveVehicle(thePlayers.get(i));
-	
+
 								// If the dice is equals turn resets
 								if (theCup.getEquals() == true) {
 									i--;
 									equalEyeCounter++;
 								} else
 									equalEyeCounter = 0;
-	
-							} else { // Puts the player in jail if equalEyeCounter
+
+							} else { // Puts the player in jail if
+										// equalEyeCounter
 										// hits 3.
 								thePlayers.get(i).setJailStatus(true);
+								thePlayers.get(i).setPosition(10, thePlayers.get(i).getCurrentPosition());
+								doMoveVehicle(thePlayers.get(i));
 								equalEyeCounter = 0;
-
-						} else { // Puts the player in jail if equalEyeCounter
-									// hits 3.
-							thePlayers.get(i).setJailStatus(true);
-							thePlayers.get(i).setPosition(10, thePlayers.get(i).getCurrentPosition());
-							doMoveVehicle(thePlayers.get(i));
-							equalEyeCounter = 0;
+							}
+						} else if (turn.equals("Sælg")) {
+							System.out.println("Shit");
+							i--;// han skal have en tur mere
+						} else if (turn.equals("Pantsætning")) {
+							System.out.println("Shit");
+							i--;
+						} else if (turn.equals("Køb huse eller hotel")) {
+							System.out.println("Shit");
+							i--;
+						} else if (turn.equals("Sælg huse eller hotel")) {
+							System.out.println("Shit");
+							i--;
+						} else if (turn.equals("Giv op")) {
+							GUIGame.removePlayer(thePlayers.get(i));
+							// missing removePlayer
+							thePlayers.remove(i);
+							i--; // fordi arrayet bliver mindre
+						}else if (turn.equals("Betal kaution 1000 kr.")) {
+							GUIControl.printMessage("Du betaler 1000 kroner i kaution.");
+							thePlayers.get(i).withdraw(1000);
+							thePlayers.get(i).setJailStatus(false);
+							i--;
 						}
-					} else if (turn.equals("Sælg")) {
-						System.out.println("Shit");
-						i--;//han skal have en tur mere
-					} else if (turn.equals("Pantsætning")) {
-						System.out.println("Shit");
-						i--;
-					} else if (turn.equals("Køb huse eller hotel")) {
-						System.out.println("Shit");
-						i--;
-					} else if (turn.equals("Sælg huse eller hotel")) {
-						System.out.println("Shit");
-					} else if (turn.equals("Giv op")) {
+					} else if (thePlayers.get(i).getBalance() < 0) {
 						GUIGame.removePlayer(thePlayers.get(i));
 						// missing removePlayer
 						thePlayers.remove(i);
 						i--; // fordi arrayet bliver mindre
 					} 
-				}else if(thePlayers.get(i).getBalance()<0){
-					GUIGame.removePlayer(thePlayers.get(i));
-					// missing removePlayer
-					thePlayers.remove(i);
-					i--; // fordi arrayet bliver mindre
-				}else if(turn.equals("Betal kaution 1000 kr.")){
-					GUIControl.printMessage("Du betaler 1000 kroner i kaution.");
-					thePlayers.get(i).withdraw(1000);
-					thePlayers.get(i).setJailStatus(false);
-					i--;
-				}
-			}else { // Breaks the forloop because winner is found.
+				} else { // Breaks the forloop because winner is found.
 					break;
+				}
 			}
 		}
-	}
 		GUIGame.showWinner(thePlayers.get(0)); // Shows the winner.
 		GUIGame.endGUI();
-}
+	}
 
 	/**
 	 * Asks for number of players, their names and creates an arraylist of
@@ -137,7 +134,7 @@ public class GameLogic {
 
 	private ArrayList<Player> createPlayers() {
 		String[] playerNames;
-		//playerNames=GUIGame.numberOfPlayers(); // Ask how many
+		// playerNames=GUIGame.numberOfPlayers(); // Ask how many
 		// players there are
 		// in the game.
 
@@ -188,7 +185,7 @@ public class GameLogic {
 			choices.add("Giv op");
 		} else { // menu options for owning property, a house or 3 streets of
 					// same type.
-			if(theplayer.getJailStatus()==true){
+			if (theplayer.getJailStatus() == true) {
 				choices.add("Betal kaution 1000 kr.");
 			}
 			choices.add("Rul");
@@ -204,8 +201,9 @@ public class GameLogic {
 			}
 		}
 
-		return choices.toArray(new String[choices.size()]); // Converting the Arraylist to
-												// an Array.
+		return choices.toArray(new String[choices.size()]); // Converting the
+															// Arraylist to
+		// an Array.
 
 	}
 
@@ -215,7 +213,7 @@ public class GameLogic {
 	 * @param theplayer
 	 *            type: Player
 	 */
-	 
+
 	private void doMoveVehicle(Player theplayer) {
 		theplayer.moveVehicle(theCup.getSum());
 		GUIControl.moveVehicle(theplayer);
@@ -234,8 +232,7 @@ public class GameLogic {
 			GUIControl.printMessage("Du slog 2 ens og er hermed løsladt");
 			doMoveVehicle(theplayer);
 			theplayer.setJailStatus(false);
-		}
-		else if (theplayer.getJailCounter() == 2) {
+		} else if (theplayer.getJailCounter() == 2) {
 			GUIControl.printMessage("Du har ikke slået 2 ens i tre ture, du skal betale kaution (1000 kr.)");
 			theplayer.withdraw(1000);
 			theplayer.setJailStatus(false);
