@@ -50,12 +50,12 @@ public class Vehicle {
 	/**
 	 * Method for setting a new position of the player's vehicle
 	 * 
-	 * @param value [0-39]
+	 * @param currentPosition [0-39]
 	 */
 
-	public void setPosition(int value) {
-		currentPosition = value;
-
+	public void setPosition(int currentPosition,int previousPosition) {
+		this.currentPosition = currentPosition;
+		this.previousPosition=previousPosition;
 	}
 
 	/**

@@ -19,7 +19,7 @@ public class Jail extends Square {
 	public void landOnSquare(Player player) {
 		/* GUIControl.jailMessage(player); */
 		player.setJailStatus(true);
-		player.setPosition(10);
+		player.setPosition(10,player.getCurrentPosition());
 		GUIControl.moveVehicle(player);
 	}
 }
