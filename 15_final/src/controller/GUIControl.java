@@ -216,6 +216,16 @@ public class GUIControl {
 		else
 			return false;
 	}
+	
+	public static boolean getTaxChoice(String name, Player player) {
+
+		String input = GUI.getUserButtonPressed(player.toString()+", du er landet på "+name+".\nVil du betale indkomstskatten med 4.000 kr., eller med 10% af dine totale værdier?  ", "4.000 kr.", "10%");
+		if (input.equals("4.000 kr."))
+			return true;
+		else
+			return false;
+	}
+	
 	/**
 	 * Prints message in GUI
 	 * @param message type: String
@@ -242,7 +252,7 @@ public class GUIControl {
 
 		return output;
 	}*/
-
+	
 	// Removing player from playing board when player surrenders or looses.
 	public void removePlayer(Player thePlayer) {
 

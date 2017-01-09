@@ -23,7 +23,7 @@ public class ChangePosition extends Move {
 	}
 	@Override
 	public void useCard(Player player) {
-		GUIControl.printMessage("You move 3 spaces");
+		GUIControl.printMessage(description);
 		player.moveVehicle(moveTo);
 		board.getSquare(player.getCurrentPosition()).landOnSquare(player);
 
