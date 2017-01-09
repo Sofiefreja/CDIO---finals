@@ -13,7 +13,7 @@ import entities.Player;
  * @author Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
  *
  */
-public class MobilePay extends Transaction{
+public class PlayerTransaction extends Transaction{
 
 	int number = 0;
 	ArrayList<Player> playerList = new ArrayList<Player>();
@@ -25,7 +25,7 @@ public class MobilePay extends Transaction{
 	 * @param money
 	 * @param playerList
 	 */
-	public MobilePay(String name, int money, ArrayList<Player> playerList) {
+	public PlayerTransaction(String name, int money, ArrayList<Player> playerList) {
 		super(name,money);
 		this.playerList = playerList;
 		

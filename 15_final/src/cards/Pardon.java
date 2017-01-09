@@ -9,7 +9,7 @@ import entities.Player;
  * @author Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
  *
  */
-public class PrisonBreak extends Card {
+public class Pardon extends Card {
 
 	/**
 	 * Constructor for PrisonBreak card
@@ -17,7 +17,7 @@ public class PrisonBreak extends Card {
 	 * @param name
 	 * @param board
 	 */
-	public PrisonBreak(String name) {
+	public Pardon(String name) {
 		super(name);
 
 	}

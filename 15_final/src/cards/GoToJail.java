@@ -9,14 +9,14 @@ import entities.Player;
  * @author Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
  *
  */
-public class Busted extends Move{
+public class GoToJail extends Move{
 	/**
 	 * Constructor for Busted card.
 	 * 	
 	 * @param name
 	 * @param board
 	 */
-	 public Busted(String description) {
+	 public GoToJail(String description) {
 	 super(description,10);
 	}
 
