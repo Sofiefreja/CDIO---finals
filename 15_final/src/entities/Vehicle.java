@@ -55,7 +55,7 @@ public class Vehicle {
 
 	public void setPosition(int currentPosition,int previousPosition) {
 		this.currentPosition = currentPosition;
-		this.previousPosition=previousPosition;
+		this.previousPosition = previousPosition;
 	}
 
 	/**
