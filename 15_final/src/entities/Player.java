@@ -207,8 +207,8 @@ public class Player {
 	 * 
 	 * @param position
 	 */
-	public void setPosition(int position) {
-		vehicle.setPosition(position);
+	public void setPosition(int currentPosition,int previousPosition) {
+		vehicle.setPosition(currentPosition,previousPosition);
 	}
 
 	/**
