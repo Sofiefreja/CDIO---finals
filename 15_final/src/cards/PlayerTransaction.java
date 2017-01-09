@@ -20,13 +20,13 @@ public class PlayerTransaction extends Transaction{
 	
 	/**
 	 * Constructor for MobilePay Card
-	 * @param name
+	 * @param description
 	 * @param board
 	 * @param money
 	 * @param playerList
 	 */
-	public PlayerTransaction(String name, int money, ArrayList<Player> playerList) {
-		super(name,money);
+	public PlayerTransaction(String description, int money, ArrayList<Player> playerList) {
+		super(description,money);
 		this.playerList = playerList;
 		
 	}

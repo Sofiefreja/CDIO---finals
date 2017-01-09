@@ -9,8 +9,8 @@ import entities.Cup;
  */
 public class Brewery extends Ownable {
 	
-	private int rent_1=100;
-	private int rent_2=200;
+	private int multiplier_1=100;
+	private int multiplier_2=200;
 	private Cup gameCup;
 	/**
 	 * Constructor which takes a name, ID and the cup used by the game as parameters
@@ -33,9 +33,9 @@ public class Brewery extends Ownable {
 			}
 		}
 		if(typeCounter==2){//Condition for doubling the rent.
-			return gameCup.getSum()*rent_2;
+			return gameCup.getSum()*multiplier_2;
 		}else{
-			return gameCup.getSum()*rent_1;
+			return gameCup.getSum()*multiplier_1;
 		}
 	}
 

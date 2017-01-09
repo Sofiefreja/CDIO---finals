@@ -13,8 +13,8 @@ public class Jail extends Square {
 
 	public Jail(String name, int id) {
 		super(name, id);
-
 	}
+	
 	@Override
 	public void landOnSquare(Player player) {
 		player.setJailStatus(true);

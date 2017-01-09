@@ -14,18 +14,18 @@ public class Pardon extends Card {
 	/**
 	 * Constructor for PrisonBreak card
 	 * 
-	 * @param name
+	 * @param description
 	 * @param board
 	 */
-	public Pardon(String name) {
-		super(name);
+	public Pardon(String description) {
+		super(description);
 
 	}
 
 	@Override
 	public void useCard(Player player) {
 		player.setJailCard();
-		GUIControl.printMessage("You got a card for getting out of jail");
+		GUIControl.printMessage(description);
 	}
 
 }

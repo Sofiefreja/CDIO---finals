@@ -13,17 +13,17 @@ public class MovetoShip extends Card {
 	Board board;
 	/**
 	 * Constructor for MoveToShip card
-	 * @param name
+	 * @param description
 	 * @param board
 	 */
-	public MovetoShip(String name, Board board) {
-		super(name);
+	public MovetoShip(String description, Board board) {
+		super(description);
 		this.board=board;
 	}
 
 	@Override
 	public void useCard(Player player) {
-		GUIControl.printMessage("You will now move to the ship");
+		GUIControl.printMessage(description);
 		if (player.getCurrentPosition()==2 || player.getCurrentPosition()==36) {
 			player.setPosition(5,player.getCurrentPosition());
 			board.getSquare(5).landOnSquare(player);
