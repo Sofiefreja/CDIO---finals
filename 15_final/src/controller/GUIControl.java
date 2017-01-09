@@ -273,6 +273,15 @@ public class GUIControl {
 		else
 			return false;
 	}
+	
+	public static boolean getTaxChoice(String name, Player player) {
+
+		String input = GUI.getUserButtonPressed(player.toString()+", du er landet på "+name+".\nVil du betale indkomstskatten med 4.000 kr., eller med 10% af dine totale værdier?  ", "4.000 kr.", "10%");
+		if (input.equals("4.000 kr."))
+			return true;
+		else
+			return false;
+	}
 
 	/**
 	 * Prints message in GUI
@@ -285,24 +294,6 @@ public class GUIControl {
 	public static void printMessage(String message) {
 		GUI.showMessage(message);
 	}
-
-	// Player choice of paying 10% flatrate tax or Tax amount.
-
-	/*
-	 * public static String rateOrAmount(Tax theTax, Player player) {
-	 * 
-	 * String TaxAmount = String.valueOf(theTax.getTaxAmount()); String output =
-	 * null;
-	 * 
-	 * String input =
-	 * GUI.getUserButtonPressed(player.toString()+", you landed on "+theTax.
-	 * toString()+", you have two options: ", "Tax rate 10 %", "Tax Amount " +
-	 * TaxAmount+"Â£"); if (input.equals("Tax rate 10 %")) output = "Tax rate";
-	 * else if (input.equals("Tax Amount " + TaxAmount+"Â£")) output =
-	 * "Tax Amount";
-	 * 
-	 * return output; }
-	 */
 
 	// Removing player from playing board when player surrenders or looses.
 	public void removePlayer(Player thePlayer) {

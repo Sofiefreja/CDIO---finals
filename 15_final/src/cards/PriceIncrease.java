@@ -9,6 +9,7 @@ import java.util.stream.IntStream;
 
 import board.Ownable;
 import board.Street;
+import controller.GUIControl;
 
 /**
  * Class for card which charges the Player with a fee for houses and hotels.
@@ -17,21 +18,22 @@ import board.Street;
  *
  */
 public class PriceIncrease extends Transaction {
-	protected int husAfgift;
-	protected int hotelAfgift;
+	protected int houseTax;
+	protected int hotelTax;
 
 	/**
 	 * Constructor for a PriceIncrease card
 	 * 
 	 * @param description
-	 * @param husAfgift
-	 * @param hotelAfgift
+	 * @param houseTax
+	 * @param hotelTax
 	 * @param board
 	 */
-	public PriceIncrease(String description, int husAfgift, int hotelAfgift, Board board) {
-		super(description, board, husAfgift);
-		this.husAfgift = husAfgift;
-		this.hotelAfgift = hotelAfgift;
+	public PriceIncrease(String description, int houseTax, int hotelTax) {
+		super(description, houseTax);
+		this.houseTax = houseTax;
+		this.hotelTax = hotelTax;
+		
 	}
 
 	@Override
@@ -41,15 +43,9 @@ public class PriceIncrease extends Transaction {
 		ArrayList<Integer> hotelPrice = new ArrayList<Integer>();
 		int sumHouse = 0;
 		int sumHotel = 0;
-
-		Random number = new Random();
-		int res = number.nextInt(2);
-
-		switch (res) {
-
-		case 1:
-
 			
+		GUIControl.printMessage(description);
+		
 			if (player.getBuilding() == true) {
 
 				for (int i = 0; i < player.getOwnedStreet().size(); i++) {
@@ -57,11 +53,11 @@ public class PriceIncrease extends Transaction {
 					if (player.getOwnedStreet().get(i).getNumberOfBuildings() >= 1
 							&& player.getOwnedStreet().get(i).getNumberOfBuildings() < 5) {
 
-						housePrice.add(player.getOwnedStreet().get(i).getNumberOfBuildings() * 800);
+						housePrice.add(player.getOwnedStreet().get(i).getNumberOfBuildings() * houseTax);
 
 					} else if (player.getOwnedStreet().get(i).getNumberOfBuildings() == 5) {
 
-						hotelPrice.add(2300);
+						hotelPrice.add(hotelTax);
 
 					}
 
@@ -83,56 +79,9 @@ public class PriceIncrease extends Transaction {
 
 			} else {
 
-				/*
-				 * Skal printe en GUI besked om, at spilleren ikke ejer huse, og
-				 * at der derfor intet sker
-				 */
-
-			}
-			break;
-
-		case 2:
-
-			if (player.getBuilding() == true) {
-
-				for (int i = 0; i < player.getOwnedStreet().size(); i++) {
-
-					if (player.getOwnedStreet().get(i).getNumberOfBuildings() >= 1
-							&& player.getOwnedStreet().get(i).getNumberOfBuildings() < 5) {
-
-						housePrice.add(player.getOwnedStreet().get(i).getNumberOfBuildings() * 500);
-
-					} else if (player.getOwnedStreet().get(i).getNumberOfBuildings() == 5) {
-
-						hotelPrice.add(2000);
-
-					}
-
-				}
-
-				for (int j = 0; j < housePrice.size(); j++) {
-
-					sumHouse += housePrice.get(j);
-
-				}
-
-				for (int k = 0; k < hotelPrice.size(); k++) {
-
-					sumHotel += hotelPrice.get(k);
-
-				}
-
-				player.withdraw(sumHouse + sumHotel);
-
-			} else {
-
-				/*
-				 * Skal printe en GUI besked om, at spilleren ikke ejer huse, og
-				 * at der derfor intet sker
-				 */
-
+				GUIControl.printMessage("Du ejer ingen huse eller hoteller, og skal derfor ikke betale afgift.");
+				
 			}
 
-		}
 	}
 }

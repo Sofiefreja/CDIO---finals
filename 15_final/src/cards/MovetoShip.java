@@ -10,14 +10,15 @@ import entities.Board;
  *
  */
 public class MovetoShip extends Card {
-	
+	Board board;
 	/**
 	 * Constructor for MoveToShip card
 	 * @param name
 	 * @param board
 	 */
 	public MovetoShip(String name, Board board) {
-		super(name,board);
+		super(name);
+		this.board=board;
 	}
 
 	@Override

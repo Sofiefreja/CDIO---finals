@@ -7,6 +7,7 @@ import entities.AllCards;
 import entities.Board;
 import entities.Cup;
 import entities.Player;
+import test.FakeCup;
 
 public class GameLogic {
 

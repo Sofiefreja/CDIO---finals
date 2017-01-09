@@ -25,8 +25,8 @@ public class MobilePay extends Transaction{
 	 * @param money
 	 * @param playerList
 	 */
-	public MobilePay(String name,Board board ,int money, ArrayList<Player> playerList) {
-		super(name,board ,money);
+	public MobilePay(String name, int money, ArrayList<Player> playerList) {
+		super(name,money);
 		this.playerList = playerList;
 		
 	}
@@ -34,49 +34,20 @@ public class MobilePay extends Transaction{
 	@Override
 	public void useCard(Player player) {
 		
-		Random number = new Random();
-		int res = number.nextInt(3);
 		int amount = playerList.size();
 		
-		switch(res) {
+
+			GUIControl.printMessage(description);;
+			
+			for (int i=0; i<=playerList.size();i++) {
+				playerList.get(i).withdraw(money);
+			}
+				
+			player.deposit(money*amount);
+			
 		
-		case 1:
-			GUIControl.printMessage("det er din fødselsdag, de andre giver dig 200");;
-			
-			for (int i=0; i<=playerList.size();i++) {
-				playerList.get(i).withdraw(200);
-			}
-				
-			player.deposit(200*amount);
-			
-			break;
-			
-		case 2:
-			GUIControl.printMessage("Du har lagt ud for familiefest de andre betaler");
-			
-			for (int i=0; i<=playerList.size();i++) {
-				playerList.get(i).withdraw(500);
-			}
-				
-			player.deposit(500*amount);
-			
-			break;
-		
-		case 3:
-			GUIControl.printMessage("Sammenskudsgilde, de andre betaler!");
-			
-			for (int i=0; i<=playerList.size();i++) {
-				playerList.get(i).withdraw(500);
-			}
-				
-			player.deposit(500*amount);
-			
-			break;
 		
 		}
 			
 		
 	}
-	
-	
-}

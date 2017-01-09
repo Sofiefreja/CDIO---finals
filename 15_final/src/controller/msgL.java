@@ -36,12 +36,12 @@ public class msgL {
 			return info_danish[index];
 		}
 	}
-	public static void changeLanguage(){
-		String l =GUIControl.giveLanguageChoice();
-		if(l.equals("en")){
-			lang="en";
-		}else{
-			lang="dk";
-		}
-	}
+//	public static void changeLanguage(){
+//		String l =GUIControl.giveLanguageChoice();
+//		if(l.equals("en")){
+//			lang="en";
+//		}else{
+//			lang="dk";
+//		}
+//	}
 }
