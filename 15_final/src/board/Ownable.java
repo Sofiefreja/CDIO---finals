@@ -51,12 +51,12 @@ public abstract class Ownable extends Square {
 		} else if (player.getBalance() >= this.price) {// if the field is'nt owned and the player
 														// has enough money, he has the choice of buying it.
 			if (GUIControl.getBuyChoice(this, player) == true) {// if player chooses to buy it, the following happens
-				GUIControl.buyMessage(this, player);
 				player.buySquare(this);
 				player.withdraw(this.price);
 				owner = player;
 				GUIControl.updateBalance(player);
 				GUIControl.setOwned(this.getID(), player);
+				GUIControl.buyMessage(this, player);
 			}
 		} else {// if the square is not owned but the player can't afford it, a
 				// message is printed.

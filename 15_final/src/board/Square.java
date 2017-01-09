@@ -31,7 +31,7 @@ public abstract class Square {
 	}
 	/**
 	 * Returns the id (int) of the square.
-	 * @return id
+	 * @return id [1-40]
 	 */
 	public int getID(){
 		return this.id;
