@@ -49,6 +49,7 @@ public class PriceIncrease extends Transaction {
 
 		case 1:
 
+			
 			if (player.getBuilding() == true) {
 
 				for (int i = 0; i < player.getOwnedStreet().size(); i++) {
