@@ -27,7 +27,7 @@ public class Brewery extends Ownable {
 	public int getRent(){
 		int typeCounter=0;
 		//the for loop evaluates the number of breweries the owner has
-		for(int i = 0; i<=owner.getOwned().size();i++){
+		for(int i = 0; i<owner.getOwned().size();i++){
 			if(owner.getOwned().get(i).getType()==this.getType()){
 				typeCounter++;
 			}

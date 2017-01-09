@@ -15,13 +15,11 @@ public class Jail extends Square {
 		super(name, id);
 
 	}
-
 	@Override
 	public void landOnSquare(Player player) {
 		/* GUIControl.jailMessage(player); */
 		player.setJailStatus(true);
 		player.setPosition(10);
-
+		GUIControl.moveVehicle(player);
 	}
-
 }

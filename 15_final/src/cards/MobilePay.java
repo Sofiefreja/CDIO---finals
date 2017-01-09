@@ -25,8 +25,8 @@ public class MobilePay extends Transaction{
 	 * @param money
 	 * @param playerList
 	 */
-	public MobilePay(String name,Board board ,int money, ArrayList<Player> playerList) {
-		super(name,board ,money);
+	public MobilePay(String name, int money, ArrayList<Player> playerList) {
+		super(name,money);
 		this.playerList = playerList;
 		
 	}

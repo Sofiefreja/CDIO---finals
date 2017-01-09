@@ -29,10 +29,17 @@ public class PriceIncrease extends Transaction {
 	 * @param hotelTax
 	 * @param board
 	 */
+<<<<<<< HEAD
 	public PriceIncrease(String description, int houseTax, int hotelTax, Board board) {
 		super(description, board, houseTax);
 		this.houseTax = houseTax;
 		this.hotelTax = hotelTax;
+=======
+	public PriceIncrease(String description, int husAfgift, int hotelAfgift) {
+		super(description, husAfgift);
+		this.husAfgift = husAfgift;
+		this.hotelAfgift = hotelAfgift;
+>>>>>>> branch 'Develop' of https://github.com/Sofiefreja/CDIO---finals.git
 	}
 
 	@Override

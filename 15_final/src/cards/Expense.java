@@ -18,8 +18,8 @@ public class Expense extends Transaction {
 	 * @param description
 	 * @param withdrawal
 	 */
-	public Expense(String description, int money, Board board) {
-		super(description, board, money);
+	public Expense(String description, int money) {
+		super(description, money);
 	}
 
 	/**

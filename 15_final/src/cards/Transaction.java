@@ -19,8 +19,8 @@ public abstract class Transaction extends Card {
 	 * @param board
 	 * @param money
 	 */
-	public Transaction(String description, Board board, int money) {
-		super(description, board);
+	public Transaction(String description, int money) {
+		super(description);
 		this.money = money;
 
 	}

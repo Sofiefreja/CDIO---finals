@@ -13,10 +13,6 @@ public class GameLogic {
 	private GUIControl GUIGame;
 	private Board theBoard;
 	private Cup theCup;
-	private boolean firstTurn;
-	private int firstRound;
-	private int numberOfPlayers;
-	private String[] playerNames;
 	private ArrayList<Player> thePlayers;
 	private int equalEyeCounter;
 
@@ -38,12 +34,9 @@ public class GameLogic {
 		// AllCards theCards = new AllCards(thePlayers);
 
 		// The players are initialized
-		createPlayers();
+		thePlayers=createPlayers();
 
 		// Beginning the game.
-		firstTurn = true;
-		firstRound = 0;
-		numberOfPlayers = playerNames.length;
 		equalEyeCounter = 0;
 
 		// The game should run until one player remains in the ArrayList.
@@ -94,30 +87,26 @@ public class GameLogic {
 						}
 
 					} else if (turn.equals("Sælg")) {
-
 						System.out.println("Shit");
-						i--;
+						i--;//han skal have en tur mere
 					} else if (turn.equals("Pantsætning")) {
 						System.out.println("Shit");
 						i--;
-
 					} else if (turn.equals("Køb huse eller hotel")) {
 						System.out.println("Shit");
+
 						i--;
 					} else if (turn.equals("Sælg huse eller hotel")) {
 						System.out.println("Shit");
-						i--;
-					}else if (turn.equals("Giv op")) {
+					} else if (turn.equals("Giv op")) {
 						GUIGame.removePlayer(thePlayers.get(i));
 						// missing removePlayer
 						thePlayers.remove(i);
-						i--;
-
+						i--; // fordi arrayet bliver mindre
 					}
 				} else { // Breaks the forloop because winner is found.
 					break;
 				}
-
 			}
 
 		}
@@ -130,8 +119,9 @@ public class GameLogic {
 	 * players.
 	 */
 
-	private void createPlayers() {
-		// String[] playerNames = GUIGame.numberOfPlayers(); // Ask how many
+	private ArrayList<Player> createPlayers() {
+		String[] playerNames;
+		//playerNames=GUIGame.numberOfPlayers(); // Ask how many
 		// players there are
 		// in the game.
 
@@ -158,6 +148,7 @@ public class GameLogic {
 														// for the GUI
 
 		}
+		return thePlayers;
 	}
 
 	/**
@@ -183,6 +174,8 @@ public class GameLogic {
 			A.add("Giv op");
 		} else { // menu options for owning property, a house or 3 streets of
 					// same type.
+			A.add("Rul");
+			A.add("Giv op");
 			if (theplayer.getProperty()) {
 				A.add("Pantsætning");
 				if (theplayer.getBuilding()) {
@@ -193,8 +186,6 @@ public class GameLogic {
 				}
 			}
 		}
-		A.add("Rul");
-		A.add("Giv op");
 
 		return A.toArray(new String[A.size()]); // Converting the Arraylist to
 												// an Array.
@@ -207,26 +198,12 @@ public class GameLogic {
 	 * @param theplayer
 	 *            type: Player
 	 */
-
+	 
 	private void doMoveVehicle(Player theplayer) {
-		// if (firstTurn) { // First time moving is a special case.
-		// theplayer.setPosition(theCup.getSum());
-		// GUIControl.moveVehicle(theplayer);
-		// firstRound++;
-		//
-		// // First turn
-		// if (firstRound == numberOfPlayers) {
-		// firstTurn = false;
-		// }
-		//
-		// } else { // A normal turn.
 		theplayer.moveVehicle(theCup.getSum());
 		GUIControl.moveVehicle(theplayer);
-
-		// }
-		// Call the landOnSquare(Player --- )
 		int newPosition = theplayer.getCurrentPosition();
-		theBoard.getSquare(newPosition - 1).landOnSquare(theplayer);
+		theBoard.getSquare(newPosition).landOnSquare(theplayer);
 	}
 
 	/**

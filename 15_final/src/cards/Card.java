@@ -11,7 +11,7 @@ import entities.Player;
  */
 public abstract class Card {
 	protected String description;
-	protected Board board;
+
 
 	/**
 	 * Super constructor which takes a String name as a parameter.
@@ -19,9 +19,8 @@ public abstract class Card {
 	 * @param description
 	 * @param money
 	 */
-	public Card(String description, Board board) {
+	public Card(String description) {
 		this.description = description;
-		this.board = board;
 	}
 
 	/**

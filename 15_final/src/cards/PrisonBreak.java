@@ -1,7 +1,6 @@
 package cards;
 
 import controller.GUIControl;
-import entities.Board;
 import entities.Player;
 
 /**
@@ -18,8 +17,8 @@ public class PrisonBreak extends Card {
 	 * @param name
 	 * @param board
 	 */
-	public PrisonBreak(String name, Board board) {
-		super(name, board);
+	public PrisonBreak(String name) {
+		super(name);
 
 	}
 

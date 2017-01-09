@@ -14,8 +14,8 @@ public class Vehicle {
 
 	Color vehicleColor = null;
 	static int counter = 0;
-	private int currentPosition = 1;
-	private int previousPosition = 1;
+	private int currentPosition = 0;
+	private int previousPosition = 0;
 
 	/**
 	 * Constructor that initializes a vehicle with a counter and a color for a
@@ -50,7 +50,7 @@ public class Vehicle {
 	/**
 	 * Method for setting a new position of the player's vehicle
 	 * 
-	 * @param value
+	 * @param value [0-39]
 	 */
 
 	public void setPosition(int value) {

@@ -20,8 +20,8 @@ public class Grant extends Transaction {
 	 * @param money
 	 * @param board
 	 */
-	public Grant(String description, int money, Board board) {
-		super(description, board, money);
+	public Grant(String description, int money) {
+		super(description, money);
 	}
 
 	@Override

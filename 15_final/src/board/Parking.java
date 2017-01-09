@@ -20,6 +20,6 @@ public class Parking extends Square {
 	 * @param player
 	 */
 	public void landOnSquare(Player player){
-		/* GUIControl.parkingMessage(player); */
+		GUIControl.printMessage("Du er landet på et parkeringsfelt");
 	}
 }

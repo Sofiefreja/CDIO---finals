@@ -11,10 +11,11 @@ import entities.Player;
  */
 public abstract class Move extends Card {
 	protected int moveTo;
-
+	protected Board board;
 	public Move(String description, int moveTo, Board board) {
-		super(description, board);
+		super(description);
 		this.moveTo = moveTo;
+		this.board=board;
 	}
 
 	@Override
