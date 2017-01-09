@@ -84,6 +84,8 @@ public class GameLogic {
 						} else { // Puts the player in jail if equalEyeCounter
 									// hits 3.
 							thePlayers.get(i).setJailStatus(true);
+							thePlayers.get(i).setPosition(10, thePlayers.get(i).getCurrentPosition());
+							doMoveVehicle(thePlayers.get(i));
 							equalEyeCounter = 0;
 						}
 

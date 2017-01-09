@@ -39,12 +39,16 @@ public abstract class Ownable extends Square {
 		if (owner != null) {// if the square is owned, the following happens.
 			if (player.toString().equals(owner.toString()) == false) {// if the player is not the owner of
 																		// this field, the following happens
-				int amount = getRent();// the rent is calculated, depending on the subclass.
-				GUIControl.ownedMessage(this, player, owner, amount);// a message is printed to the player about the sequence.
-				player.withdraw(amount);
-				owner.deposit(amount);
-				GUIControl.updateBalance(player);
-				GUIControl.updateBalance(owner);
+				if(owner.getJailStatus()==true){
+					GUIControl.printMessage("Ejeren er i fængsel, du skal ikke betale nogen leje.");
+				}else{
+					int amount = getRent();// the rent is calculated, depending on the subclass.
+					GUIControl.ownedMessage(this, player, owner, amount);// a message is printed to the player about the sequence.
+					player.withdraw(amount);
+					owner.deposit(amount);
+					GUIControl.updateBalance(player);
+					GUIControl.updateBalance(owner);
+				}
 			} else { //if the player is the owner of this square
 				GUIControl.selfOwned(); // prints "You are the owner of this square!"
 			}
