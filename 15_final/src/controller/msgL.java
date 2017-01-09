@@ -10,17 +10,17 @@ public class msgL {
 	static String lang="dk";
 	
 	static {
-		System.out.println(new File("ajknsfhijoa").getAbsolutePath()); // FInd bib.
-		String fileName = "Lastfile.csv";
+		System.out.println(new File("Language.csv").getAbsolutePath()); // FInd bib.
+		String fileName = "Language.csv";
 		File file = new File(fileName);
-		int Danish = 2;
+		int Danish = 1;
 		int English = 3; 
 		int i = 0;
 		try {
 			Scanner inputStream = new Scanner(file);
 			while (inputStream.hasNextLine()) {
 				info_danish[i++] = inputStream.nextLine().split(";")[Danish];
-				info_english[i++] = inputStream.nextLine().split(";")[English];
+//				info_english[i++] = inputStream.nextLine().split(";")[English];
 			}
 			inputStream.close();
 
