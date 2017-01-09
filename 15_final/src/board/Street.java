@@ -50,7 +50,7 @@ public class Street extends Ownable {
 		int maxAmount;
 		ArrayList<Ownable> arr = owner.getOwned();
 		int counter=0;
-		for(int i =0; i<=arr.size();i++){
+		for(int i =0; i<arr.size();i++){
 			if(arr.get(i).getType()==this.type){
 				counter++;
 			}
