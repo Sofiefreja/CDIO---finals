@@ -2,6 +2,14 @@ package entities;
 
 import java.awt.Color;
 
+/**
+ * Class which keeps track of the player's position on the board and creates a
+ * piece that the player moves with
+ * 
+ * @author Simon Lundorf s154008
+ *
+ */
+
 public class Vehicle {
 
 	Color vehicleColor = null;
@@ -10,7 +18,8 @@ public class Vehicle {
 	private int previousPosition = 1;
 
 	/**
-	 * Constructor that initializes a vehicle with a counter for a player
+	 * Constructor that initializes a vehicle with a counter and a color for a
+	 * player
 	 */
 
 	public Vehicle() {
@@ -105,6 +114,12 @@ public class Vehicle {
 		}
 
 	}
+
+	/**
+	 * Method for returning the color of the player's vehicle
+	 * 
+	 * @return Color of the type Color
+	 */
 
 	public Color getColor() {
 		return vehicleColor;

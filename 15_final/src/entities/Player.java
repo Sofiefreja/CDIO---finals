@@ -23,10 +23,10 @@ public class Player {
 	private boolean jailStatus;
 
 	/**
-	 * Constructor for a Player
+	 * Constructor for a Player, that initiates the player with an account balance, a vehicle, a jail status and a jail counter
 	 * 
-	 * @param name
-	 * @param balance
+	 * @param name String with the player name
+	 * @param balance Int with the player's starting balance
 	 */
 	public Player(String name, int balance) {
 		this.name = name;
