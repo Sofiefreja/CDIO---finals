@@ -133,6 +133,7 @@ public class GUIControl {
 		Car car = new Car.Builder().typeUfo().patternFill().primaryColor(newPlayer.getColor()).secondaryColor(newPlayer.getColor()).build();
 		// Creating player on board.
 		GUI.addPlayer(newPlayer.toString(), newPlayer.getBalance(), car);
+		GUI.setCar(1, newPlayer.toString());
 	}
 
 	// Getting dice value, printing to GUI
@@ -187,8 +188,8 @@ public class GUIControl {
 	 * @param thePlayer type: Player
 	 */
 	public static void moveVehicle(Player thePlayer) {
-		GUI.removeCar(thePlayer.getPreviousPosition()+1, thePlayer.toString());
-		GUI.setCar(thePlayer.getCurrentPosition()+1, thePlayer.toString());
+		GUI.removeCar(thePlayer.getPreviousPosition(), thePlayer.toString());
+		GUI.setCar(thePlayer.getCurrentPosition(), thePlayer.toString());
 
 	}
 
@@ -262,7 +263,7 @@ public class GUIControl {
 	// set square as owned.
 	public static void setOwned(int squareNumber, Player thePlayer) {
 
-		GUI.setOwner(squareNumber, thePlayer.toString());
+		GUI.setOwner(squareNumber-1, thePlayer.toString());
 	}
 	public static void updateBalance(Player player){
 		GUI.setBalance(player.toString(), player.getBalance());
