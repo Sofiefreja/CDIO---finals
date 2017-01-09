@@ -160,7 +160,7 @@ public class Assets {
 
 		for (int i = 0; i < ownedStreet.size(); i++) {
 
-			if (ownedStreetdrive.get(i).getNumberOfBuildings() == 5) {
+			if (ownedStreet.get(i).getNumberOfBuildings() == 5) {
 
 				hotelList[i] = ownedStreet.get(i).toString();
 
