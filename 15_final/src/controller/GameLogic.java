@@ -30,7 +30,7 @@ public class GameLogic {
 
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
-		theCup = new Cup();
+		theCup = new FakeCup(0);
 		theBoard = new Board(theCup);
 		// AllCards theCards = new AllCards(thePlayers);
 
@@ -104,6 +104,12 @@ public class GameLogic {
 						// missing removePlayer
 						thePlayers.remove(i);
 						i--; // fordi arrayet bliver mindre
+					}else if(turn.equals("Betal kaution 1000 kr.")){
+	
+						GUIControl.printMessage("Du betaler 1000 kroner i kaution.");
+						thePlayers.get(i).withdraw(1000);
+						thePlayers.get(i).setJailStatus(false);
+						i--;
 					}
 				} else { // Breaks the forloop because winner is found.
 					break;
@@ -127,11 +133,9 @@ public class GameLogic {
 		// in the game.
 
 		// For testing.
-		playerNames = new String[4];
+		playerNames = new String[2];
 		playerNames[0] = "Morten";
 		playerNames[1] = "Jonas";
-		playerNames[2] = "Simon";
-		playerNames[3] = "Emily";
 
 		/*
 		 * Creating the players. By using an array, the names are saved in each
@@ -161,34 +165,37 @@ public class GameLogic {
 	 * @return Type: String[] with player options.
 	 */
 	private String[] getMenu(Player theplayer) {
-		ArrayList<String> A = new ArrayList<>();
+		ArrayList<String> choices = new ArrayList<>();
 
 		if (theplayer.getBalance() < 0) { // menu if is balance under 0 (forced
 											// to sell houses)
 			if (theplayer.getBuilding()) {
-				A.add("Sælg");
+				choices.add("Sælg");
 			}
 			if (theplayer.getProperty()) { // menu if is balance under 0 (forced
 											// to pawn)
-				A.add("Pantsætning");
+				choices.add("Pantsætning");
 			}
-			A.add("Giv op");
+			choices.add("Giv op");
 		} else { // menu options for owning property, a house or 3 streets of
 					// same type.
-			A.add("Rul");
-			A.add("Giv op");
+			if(theplayer.getJailStatus()==true){
+				choices.add("Betal kaution 1000 kr.");
+			}
+			choices.add("Rul");
+			choices.add("Giv op");
 			if (theplayer.getProperty()) {
-				A.add("Pantsætning");
+				choices.add("Pantsætning");
 				if (theplayer.getBuilding()) {
-					A.add("Sælg huse eller hotel");
+					choices.add("Sælg huse eller hotel");
 				}
 				if (theplayer.getBuildStatus()) {
-					A.add("Køb hus eller hotel");
+					choices.add("Køb hus eller hotel");
 				}
 			}
 		}
 
-		return A.toArray(new String[A.size()]); // Converting the Arraylist to
+		return choices.toArray(new String[choices.size()]); // Converting the Arraylist to
 												// an Array.
 
 	}
@@ -219,14 +226,14 @@ public class GameLogic {
 			doMoveVehicle(theplayer);
 			theplayer.setJailStatus(false);
 		}
-
-		else if (theplayer.getJailCounter() == 3) {
+		else if (theplayer.getJailCounter() == 2) {
 			GUIControl.printMessage("Du har ikke slået 2 ens i tre ture, du skal betale kaution (1000 kr.)");
 			theplayer.withdraw(1000);
 			theplayer.setJailStatus(false);
 			doMoveVehicle(theplayer);
 		} else {
 			GUIControl.printMessage("Du slog ikke 2 ens og er stadig fanget");
+			theplayer.addToJailCounter();
 			// der sker ikke noget.
 		}
 		equalEyeCounter = 0;
