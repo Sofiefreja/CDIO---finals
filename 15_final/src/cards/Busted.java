@@ -24,7 +24,7 @@ public class Busted extends Move{
 	public void useCard(Player player) {		
 		GUIControl.printMessage(description);
 		player.setJailStatus(true);
-		player.setPosition(moveTo);
+		player.setPosition(moveTo,player.getCurrentPosition());
 		GUIControl.moveVehicle(player);
 	}
 	
