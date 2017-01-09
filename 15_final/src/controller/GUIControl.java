@@ -263,7 +263,7 @@ public class GUIControl {
 	// set square as owned.
 	public static void setOwned(int squareNumber, Player thePlayer) {
 
-		GUI.setOwner(squareNumber-1, thePlayer.toString());
+		GUI.setOwner(squareNumber-1, thePlayer.toString()); 
 	}
 	public static void updateBalance(Player player){
 		GUI.setBalance(player.toString(), player.getBalance());
