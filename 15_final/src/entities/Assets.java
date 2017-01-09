@@ -6,7 +6,7 @@ import board.Ownable;
 import board.Street;
 
 /**
- * Class which keeps track of a Players assets (Squares, buildings and
+ * Class which keeps track of a Player's assets (Squares, buildings and
  * jailCards).
  * 
  * @author Simon Lundorf s154008
@@ -287,16 +287,16 @@ public class Assets {
 			}
 
 			for (int i = 0; i < ownedStreet.size(); i++) {
-			
-			if (counterA == 2 || counterH == 2 || counterB == 3 || counterC == 3 || counterD == 3 || counterE == 3
-					|| counterF == 3 || counterG == 3 && ownedStreet.get(i).getNumberOfBuildings() < 5) {
-				buildStatus = true;
-			} else {
-				buildStatus = false;
-			}
+
+				if (counterA == 2 || counterH == 2 || counterB == 3 || counterC == 3 || counterD == 3 || counterE == 3
+						|| counterF == 3 || counterG == 3 && ownedStreet.get(i).getNumberOfBuildings() < 5) {
+					buildStatus = true;
+				} else {
+					buildStatus = false;
+				}
 
 			}
-			
+
 			return buildStatus;
 
 		}
