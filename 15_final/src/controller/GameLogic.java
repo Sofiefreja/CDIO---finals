@@ -16,6 +16,7 @@ public class GameLogic {
 	private Cup theCup;
 	private ArrayList<Player> thePlayers;
 	private int equalEyeCounter;
+	private int i;
 
 	/**
 	 * GameLogic controls the gameflow
@@ -31,7 +32,7 @@ public class GameLogic {
 
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
-		theCup = new Cup();
+		theCup = new FakeCup(0);
 		theBoard = new Board(theCup);
 		// AllCards theCards = new AllCards(thePlayers);
 
@@ -45,7 +46,7 @@ public class GameLogic {
 		while (thePlayers.size() > 1) {
 
 			// The for loop running through all the players.
-			for (int i = 0; i < thePlayers.size(); i++) {
+			for ( i = 0; i < thePlayers.size(); i++) {
 
 				// If only one player is left, the 'else' runs and breaks the
 				// for loop
@@ -232,6 +233,7 @@ public class GameLogic {
 			GUIControl.printMessage("Du slog 2 ens og er hermed løsladt");
 			doMoveVehicle(theplayer);
 			theplayer.setJailStatus(false);
+			i--;
 		} else if (theplayer.getJailCounter() == 2) {
 			GUIControl.printMessage("Du har ikke slået 2 ens i tre ture, du skal betale kaution (1000 kr.)");
 			theplayer.withdraw(1000);
