@@ -31,6 +31,10 @@ public class Buildable {
 	ArrayList<Integer> hotelPrice = new ArrayList<Integer>();
 	int sumHouse;
 	int sumHotel;
+	ArrayList<Integer> propertyPrice = new ArrayList<Integer>();
+	ArrayList<Integer> buildingPrice = new ArrayList<Integer>();
+	int sumProperty = 0;
+	int sumBuilding = 0;
 
 	Player p1 = new Player("Simon", 100000);
 
@@ -56,44 +60,38 @@ public class Buildable {
 
 		System.out.println(p1.getBuilding());
 
-		if (p1.getBuilding() == true) {
+		for (int i = 0; i < p1.getOwned().size(); i++) {
 
-			for (int i = 0; i < p1.getOwnedStreet().size(); i++) {
-
-				if (p1.getOwnedStreet().get(i).getNumberOfBuildings() >= 1
-						&& p1.getOwnedStreet().get(i).getNumberOfBuildings() < 5) {
-
-					housePrice.add(p1.getOwnedStreet().get(i).getNumberOfBuildings() * 800);
-
-				} else if (p1.getOwnedStreet().get(i).getNumberOfBuildings() == 5) {
-
-					hotelPrice.add(2300);
-
-				}
-
-			}
-
-			for (int j = 0; j < housePrice.size(); j++) {
-
-				sumHouse += housePrice.get(j);
-
-			}
-
-			for (int k = 0; k < hotelPrice.size(); k++) {
-
-				sumHotel += hotelPrice.get(k);
-
-			}
-
-			p1.withdraw(sumHouse + sumHotel);
+			propertyPrice.add(p1.getOwned().get(i).getPrice());
 
 		}
+
+		for (int j = 0; j < p1.getOwnedStreet().size(); j++) {
+
+			buildingPrice.add(p1.getOwnedStreet().get(j).getNumberOfBuildings()
+					* p1.getOwnedStreet().get(j).getPriceOfBuilding());
+
+		}
+
+		for (int k = 0; k < propertyPrice.size(); k++) {
+
+			sumProperty += propertyPrice.get(k);
+
+		}
+
+		for (int l = 0; l < buildingPrice.size(); l++) {
+
+			sumBuilding += buildingPrice.get(l);
+
+		}
+
+		p1.withdraw((p1.getBalance() + sumProperty + sumBuilding) / 10);
 
 		String[] buildableList = p1.getBuildableList();
 
 		System.out.println(Arrays.toString(buildableList));
-		System.out.println(sumHouse);
-		System.out.println(sumHotel);
+		System.out.println(sumBuilding);
+		System.out.println(sumProperty);
 		System.out.println(p1.getBalance());
 	}
 }

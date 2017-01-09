@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import controller.GUIControl;
 /**
  * 
- * @author Sofie Freja Christensen s153932, Mathias Tvaermose Gleerup, s153120
+ * @author Sofie Freja Christensen s153932, Mathias Tvaermose Gleerup, s153120, Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
  *
  */
 public class Tax extends Square {
@@ -57,31 +57,31 @@ public class Tax extends Square {
 					
 					propertyPrice.add(player.getOwned().get(i).price);
 				
-				for (int j = 0; j < player.getOwnedStreet().size(); j++) {
+				}
 					
-					if (player.getOwnedStreet().get(j).getNumberOfBuildings() >= 1
-							&& player.getOwnedStreet().get(j).getNumberOfBuildings() < 5) {
+				for (int j = 0; j < player.getOwnedStreet().size(); j++) {
 
 						buildingPrice.add(player.getOwnedStreet().get(j).getNumberOfBuildings() * player.getOwnedStreet().get(j).getPriceOfBuilding() );
-
-					} else if (player.getOwnedStreet().get(i).getNumberOfBuildings() == 5) {
-
-						hotelPrice.add();
-					
+								
 				}
-				
+						
 				for (int k = 0; k < propertyPrice.size(); k++) {
 					
 					sumProperty += propertyPrice.get(k);
 					
 				}
 				
-
+				for (int l = 0; l < buildingPrice.size(); l++) {
+					
+					sumBuilding += buildingPrice.get(l);
+					
+				}
+				
+				player.withdraw((player.getBalance()+sumProperty+sumBuilding)/10);
+				GUIControl.updateBalance(player);
+				
 					}
 					
-				}
-					
-				}
 				
 		} else {
 			
@@ -89,5 +89,5 @@ public class Tax extends Square {
 			GUIControl.taxMessage(player, taxAmount);
 			GUIControl.updateBalance(player);
 		}
-	}
+}
 }
