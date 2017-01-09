@@ -273,7 +273,6 @@ public class GUIControl {
 		else
 			return false;
 	}
-<<<<<<< HEAD
 	
 	public static boolean getTaxChoice(String name, Player player) {
 
@@ -283,10 +282,7 @@ public class GUIControl {
 		else
 			return false;
 	}
-	
-=======
 
->>>>>>> branch 'Develop' of https://github.com/Sofiefreja/CDIO---finals.git
 	/**
 	 * Prints message in GUI
 	 * 
@@ -299,42 +295,6 @@ public class GUIControl {
 		GUI.showMessage(message);
 	}
 
-	// Player choice of paying 10% flatrate tax or Tax amount.
-
-<<<<<<< HEAD
-	/*public static String rateOrAmount(Tax theTax, Player player) {
-
-		String TaxAmount = String.valueOf(theTax.getTaxAmount());
-		String output = null;
-
-		String input = GUI.getUserButtonPressed(player.toString()+", you landed on "+theTax.toString()+", you have two options: ", "Tax rate 10 %",
-				"Tax Amount " + TaxAmount+"£");
-		if (input.equals("Tax rate 10 %"))
-			output = "Tax rate";
-		else if (input.equals("Tax Amount " + TaxAmount+"£"))
-			output = "Tax Amount";
-
-		return output;
-	}*/
-	
-=======
-	/*
-	 * public static String rateOrAmount(Tax theTax, Player player) {
-	 * 
-	 * String TaxAmount = String.valueOf(theTax.getTaxAmount()); String output =
-	 * null;
-	 * 
-	 * String input =
-	 * GUI.getUserButtonPressed(player.toString()+", you landed on "+theTax.
-	 * toString()+", you have two options: ", "Tax rate 10 %", "Tax Amount " +
-	 * TaxAmount+"£"); if (input.equals("Tax rate 10 %")) output = "Tax rate";
-	 * else if (input.equals("Tax Amount " + TaxAmount+"£")) output =
-	 * "Tax Amount";
-	 * 
-	 * return output; }
-	 */
-
->>>>>>> branch 'Develop' of https://github.com/Sofiefreja/CDIO---finals.git
 	// Removing player from playing board when player surrenders or looses.
 	public void removePlayer(Player thePlayer) {
 
