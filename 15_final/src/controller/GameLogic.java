@@ -95,25 +95,32 @@ public class GameLogic {
 
 					} else if (turn.equals("Sælg")) {
 						System.out.println("Shit");
+						i--;
 					} else if (turn.equals("Pantsætning")) {
 						System.out.println("Shit");
+						i--;
 					} else if (turn.equals("Køb huse eller hotel")) {
 						System.out.println("Shit");
+
+						i--;
 					} else if (turn.equals("Sælg huse eller hotel")) {
 						System.out.println("Shit");
 					} else if (turn.equals("Giv op")) {
+						i--;
+					}else if (turn.equals("Giv op")) {
 						GUIGame.removePlayer(thePlayers.get(i));
 						// missing removePlayer
 						thePlayers.remove(i);
 						i--;
-					} else { // Breaks the forloop because winner is found.
-						break;
 					}
+				} else { // Breaks the forloop because winner is found.
+					break;
 				}
 			}
-			GUIGame.showWinner(thePlayers.get(0)); // Shows the winner.
-			GUIGame.endGUI();
+
 		}
+		GUIGame.showWinner(thePlayers.get(0)); // Shows the winner.
+		GUIGame.endGUI();
 	}
 
 	/**
@@ -198,26 +205,26 @@ public class GameLogic {
 	 * @param theplayer
 	 *            type: Player
 	 */
-
+	 
 	private void doMoveVehicle(Player theplayer) {
-		if (firstTurn) { // First time moving is a special case.
-			theplayer.setPosition(theCup.getSum());
-			GUIControl.moveVehicle(theplayer);
-			firstRound++;
+		// if (firstTurn) { // First time moving is a special case.
+		// theplayer.setPosition(theCup.getSum());
+		// GUIControl.moveVehicle(theplayer);
+		// firstRound++;
+		//
+		// // First turn
+		// if (firstRound == numberOfPlayers) {
+		// firstTurn = false;
+		// }
+		//
+		// } else { // A normal turn.
+		theplayer.moveVehicle(theCup.getSum());
+		GUIControl.moveVehicle(theplayer);
 
-			// First turn
-			if (firstRound == numberOfPlayers) {
-				firstTurn = false;
-			}
-
-		} else { // A normal turn.
-			theplayer.moveVehicle(theCup.getSum());
-			GUIControl.moveVehicle(theplayer);
-
-		}
+		// }
 		// Call the landOnSquare(Player --- )
 		int newPosition = theplayer.getCurrentPosition();
-		theBoard.getSquare(newPosition).landOnSquare(theplayer);
+		theBoard.getSquare(newPosition - 1).landOnSquare(theplayer);
 	}
 
 	/**
