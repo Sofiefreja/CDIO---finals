@@ -11,7 +11,7 @@ public class msgL {
 	
 	static {
 		System.out.println(new File("Language.csv").getAbsolutePath()); // FInd bib.
-		String fileName = "Language.csv";
+		String fileName = "language2";
 		File file = new File(fileName);
 		int Danish = 1;
 		int English = 3; 
@@ -19,7 +19,7 @@ public class msgL {
 		try {
 			Scanner inputStream = new Scanner(file);
 			while (inputStream.hasNextLine()) {
-				info_danish[i++] = inputStream.nextLine().split(";")[Danish];
+				info_danish[i++] = inputStream.nextLine().split("\t")[Danish];
 //				info_english[i++] = inputStream.nextLine().split(";")[English];
 			}
 			inputStream.close();
@@ -36,12 +36,4 @@ public class msgL {
 			return info_danish[index];
 		}
 	}
-//	public static void changeLanguage(){
-//		String l =GUIControl.giveLanguageChoice();
-//		if(l.equals("en")){
-//			lang="en";
-//		}else{
-//			lang="dk";
-//		}
-//	}
 }

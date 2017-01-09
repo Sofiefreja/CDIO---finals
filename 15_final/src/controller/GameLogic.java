@@ -177,27 +177,27 @@ public class GameLogic {
 		if (theplayer.getBalance() < 0) { // menu if is balance under 0 (forced
 											// to sell houses)
 			if (theplayer.getBuilding()) {
-				choices.add("Sælg");
+				choices.add(msgL.msg(2));
 			}
 			if (theplayer.getProperty()) { // menu if is balance under 0 (forced
 											// to pawn)
-				choices.add("Pantsætning");
+				choices.add(msgL.msg(3));
 			}
-			choices.add("Giv op");
+			choices.add(msgL.msg(10));
 		} else { // menu options for owning property, a house or 3 streets of
 					// same type.
 			if (theplayer.getJailStatus() == true) {
 				choices.add("Betal kaution 1000 kr.");
 			}
-			choices.add("Rul");
-			choices.add("Giv op");
+			choices.add(msgL.msg(1));
+			choices.add(msgL.msg(10));
 			if (theplayer.getProperty()) {
-				choices.add("Pantsætning");
+				choices.add(msgL.msg(4));
 				if (theplayer.getBuilding()) {
-					choices.add("Sælg huse eller hotel");
+					choices.add(msgL.msg(8));
 				}
 				if (theplayer.getBuildStatus()) {
-					choices.add("Køb hus eller hotel");
+					choices.add(msgL.msg(6));
 				}
 			}
 		}
