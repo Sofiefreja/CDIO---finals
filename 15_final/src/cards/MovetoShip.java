@@ -24,17 +24,17 @@ public class MovetoShip extends Card {
 	@Override
 	public void useCard(Player player) {
 		GUIControl.printMessage("You will now move to the ship");
-		if (player.getCurrentPosition()==2 || player.getCurrentPosition()==36) { /* Skal potentielt �ndres, alt efter hvordan vi h�ndterer startbonus */
-			player.setPosition(5);
+		if (player.getCurrentPosition()==2 || player.getCurrentPosition()==36) {
+			player.setPosition(5,player.getCurrentPosition());
 			board.getSquare(5).landOnSquare(player);
 		}else if (player.getCurrentPosition()==7) {
-			player.setPosition(15);
+			player.setPosition(15,player.getCurrentPosition());
 			board.getSquare(15).landOnSquare(player);
 		}else if (player.getCurrentPosition()==17 || (player.getCurrentPosition()==22)) {
-			player.setPosition(25);
+			player.setPosition(25,player.getCurrentPosition());
 			board.getSquare(25).landOnSquare(player);
 		}else if (player.getCurrentPosition()==33) {
-			player.setPosition(35);
+			player.setPosition(35,player.getCurrentPosition());
 			board.getSquare(35).landOnSquare(player);
 	}
 	

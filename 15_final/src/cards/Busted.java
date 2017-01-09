@@ -16,15 +16,15 @@ public class Busted extends Move{
 	 * @param name
 	 * @param board
 	 */
-	 public Busted(String description ,Board board) {
-	 super(description,10,board);
+	 public Busted(String description) {
+	 super(description,10);
 	}
 
 	@Override
 	public void useCard(Player player) {		
 		GUIControl.printMessage(description);
 		player.setJailStatus(true);
-		player.setPosition(moveTo,player.getCurrentPosition());
+		player.setPosition(10,player.getCurrentPosition());
 		GUIControl.moveVehicle(player);
 	}
 	

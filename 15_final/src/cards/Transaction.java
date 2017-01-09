@@ -1,7 +1,5 @@
 package cards;
 
-import entities.Board;
-import entities.Player;
 
 /**
  * abstract. amount
@@ -22,10 +20,5 @@ public abstract class Transaction extends Card {
 	public Transaction(String description, int money) {
 		super(description);
 		this.money = money;
-
 	}
-
-	@Override
-	public abstract void useCard(Player player);
-
 }

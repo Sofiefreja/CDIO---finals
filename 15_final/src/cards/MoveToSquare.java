@@ -11,7 +11,7 @@ import entities.Board;
  */
 public class MoveToSquare extends Move {
 	
-	
+	Board board;
 	/**
 	 * Constructor for MoveToSquare
 	 * @param description
@@ -19,11 +19,12 @@ public class MoveToSquare extends Move {
 	 * @param board
 	 */
 	public MoveToSquare(String description, int moveTo,Board board){
-		super(description,moveTo,board);
+		super(description,moveTo);
+		this.board=board;
 	}
 	@Override
 	public void useCard(Player player){
-		player.setPosition(moveTo);
+		player.setPosition(moveTo,player.getCurrentPosition());
 		GUIControl.moveVehicle(player);
 		board.getSquare(moveTo).landOnSquare(player);
 	}

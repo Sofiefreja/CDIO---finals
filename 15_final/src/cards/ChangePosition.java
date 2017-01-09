@@ -11,7 +11,7 @@ import entities.Player;
  *
  */
 public class ChangePosition extends Move {
-	
+	Board board;
 	/**
 	 * Constructor for ChangePosition card
 	 * @param description
@@ -19,12 +19,14 @@ public class ChangePosition extends Move {
 	 * @param board
 	 */
 	public ChangePosition(String description, int moveTo, Board board) {
-		super(description, moveTo, board);
+		super(description, moveTo);
+		this.board=board;
 	}
 	@Override
 	public void useCard(Player player) {
 		GUIControl.printMessage(description);
-		player.moveVehicle(moveTo);
+		player.setPosition(moveTo,player.getCurrentPosition());
+		GUIControl.moveVehicle(player);
 		board.getSquare(player.getCurrentPosition()).landOnSquare(player);
 
 	}
