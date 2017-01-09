@@ -9,9 +9,10 @@ import board.Parking;
  */
 public class Board {
 	Square[] squares = new Square[40];
+	
 	/**
-	 * An array of the type square. In these indexes, It's defined which type
-	 * of square it is, and prices and rents of the different squares. 
+	 * Constructor for a Board, which accepts a Cup, for the creating of Breweries.
+	 * @param theCup
 	 */
 	public Board(Cup theCup){
 		//Navn, ID, pris, pawn, pris for bygning, rent 0,1,2,3,4,hotel, type
@@ -58,11 +59,12 @@ public class Board {
 		
 	}
 	/**
+	 * Method for returning a square from the array in this instance.
 	 * 
-	 * @param ren
-	 * @return squares
+	 * @param index
+	 * @return Square
 	 */
-	public Square getSquare(int ren) {
-		return squares[ren];
+	public Square getSquare(int index) {
+		return squares[index];
 	}
 }

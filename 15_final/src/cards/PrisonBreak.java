@@ -5,15 +5,22 @@ import entities.Board;
 import entities.Player;
 
 /**
+ * Class which awards the Player with a 'get out of jail for free card'.
  * 
  * @author Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
  *
  */
-public class PrisonBreak extends Card{
+public class PrisonBreak extends Card {
 
-	public PrisonBreak(String name,Board board) {
-		super(name,board);
-		
+	/**
+	 * Constructor for PrisonBreak card
+	 * 
+	 * @param name
+	 * @param board
+	 */
+	public PrisonBreak(String name, Board board) {
+		super(name, board);
+
 	}
 
 	@Override

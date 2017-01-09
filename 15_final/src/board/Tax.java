@@ -4,7 +4,7 @@ import entities.Player;
 import controller.GUIControl;
 /**
  * 
- * @author Sofie Freja Christensen s153932
+ * @author Sofie Freja Christensen s153932, Mathias Tvaermose Gleerup, s153120
  *
  */
 public class Tax extends Square {
