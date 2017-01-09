@@ -22,7 +22,8 @@ public class GameLogic {
 
 	/**
 	 * GameLogic controls the gameflow
-	 * @author Jonas Larsen s136335 
+	 * 
+	 * @author Jonas Larsen s136335
 	 * @author Morten Velin s147300
 	 */
 
@@ -35,7 +36,6 @@ public class GameLogic {
 		theCup = new Cup();
 		theBoard = new Board(theCup);
 		// AllCards theCards = new AllCards(thePlayers);
-		
 
 		// The players are initialized
 		createPlayers();
@@ -107,23 +107,22 @@ public class GameLogic {
 					} else if (turn.equals("Sælg huse eller hotel")) {
 						System.out.println("Shit");
 						i--;
-					}
-
-					else if (turn.equals("Giv op")) {
+					}else if (turn.equals("Giv op")) {
 						GUIGame.removePlayer(thePlayers.get(i));
 						// missing removePlayer
 						thePlayers.remove(i);
 						i--;
 
-					} else { // Breaks the forloop because winner is found.
-						break;
 					}
+				} else { // Breaks the forloop because winner is found.
+					break;
 				}
 
 			}
-			GUIGame.showWinner(thePlayers.get(0)); // Shows the winner.
-			GUIGame.endGUI();
+
 		}
+		GUIGame.showWinner(thePlayers.get(0)); // Shows the winner.
+		GUIGame.endGUI();
 	}
 
 	/**
@@ -152,8 +151,9 @@ public class GameLogic {
 		// Save all the players in a ArrayList.
 
 		for (int i = 0; i < playerNames.length; i++) {
-			thePlayers.add(new Player(playerNames[i])); // Creating player
-														// objects for the game
+			thePlayers.add(new Player(playerNames[i], 30000)); // Creating
+																// player
+			// objects for the game
 			GUIGame.createPlayer(thePlayers.get(i)); // Creating Player objects
 														// for the GUI
 
@@ -161,69 +161,79 @@ public class GameLogic {
 	}
 
 	/**
-	 * Menues for the player based on what assets he currently holds and balance.
-	 * @param theplayer Type: Player
+	 * Menues for the player based on what assets he currently holds and
+	 * balance.
+	 * 
+	 * @param theplayer
+	 *            Type: Player
 	 * @return Type: String[] with player options.
 	 */
 	private String[] getMenu(Player theplayer) {
 		ArrayList<String> A = new ArrayList<>();
 
-		if (theplayer.getBalance() < 0) { //menu if is balance under 0  (forced to sell houses)
+		if (theplayer.getBalance() < 0) { // menu if is balance under 0 (forced
+											// to sell houses)
 			if (theplayer.getBuilding()) {
 				A.add("Sælg");
 			}
-			if (theplayer.getProperty()) { //menu if is balance under 0  (forced to pawn)
+			if (theplayer.getProperty()) { // menu if is balance under 0 (forced
+											// to pawn)
 				A.add("Pantsætning");
 			}
-			A.add("Giv op"); 
-		} else {						// menu options for owning property, a house or 3 streets of same type.
+			A.add("Giv op");
+		} else { // menu options for owning property, a house or 3 streets of
+					// same type.
 			if (theplayer.getProperty()) {
 				A.add("Pantsætning");
 				if (theplayer.getBuilding()) {
 					A.add("Sælg huse eller hotel");
 				}
-				if (theplayer.getBuildStatus()){
+				if (theplayer.getBuildStatus()) {
 					A.add("Køb hus eller hotel");
 				}
 			}
-			}
-			A.add("Rul");
-			A.add("Giv op");
+		}
+		A.add("Rul");
+		A.add("Giv op");
 
-			return A.toArray(new String[A.size()]); // Converting the Arraylist to an Array.
+		return A.toArray(new String[A.size()]); // Converting the Arraylist to
+												// an Array.
 
 	}
 
-
 	/**
 	 * Moving vehicle.
-	 * @param theplayer type: Player
+	 * 
+	 * @param theplayer
+	 *            type: Player
 	 */
-	
-	private void doMoveVehicle(Player theplayer){
-		if (firstTurn) { 							//First time moving is a special case.
-			theplayer.setPosition(theCup.getSum());
-			GUIControl.moveVehicle(theplayer);
-			firstRound++;
 
-			// First turn
-			if (firstRound == numberOfPlayers) {
-				firstTurn = false;
-			}
+	private void doMoveVehicle(Player theplayer) {
+		// if (firstTurn) { // First time moving is a special case.
+		// theplayer.setPosition(theCup.getSum());
+		// GUIControl.moveVehicle(theplayer);
+		// firstRound++;
+		//
+		// // First turn
+		// if (firstRound == numberOfPlayers) {
+		// firstTurn = false;
+		// }
+		//
+		// } else { // A normal turn.
+		theplayer.moveVehicle(theCup.getSum());
+		GUIControl.moveVehicle(theplayer);
 
-		} else { // A normal turn.
-			theplayer.moveVehicle(theCup.getSum());
-			GUIControl.moveVehicle(theplayer);
-
-		}
+		// }
 		// Call the landOnSquare(Player --- )
 		int newPosition = theplayer.getCurrentPosition();
-		theBoard.getSquare(newPosition).landOnSquare(theplayer);
+		theBoard.getSquare(newPosition - 1).landOnSquare(theplayer);
 	}
 
 	/**
 	 * Method for a turn while in prison.
-	 * @param theplayer type: Player.
+	 * 
+	 * @param theplayer
+	 *            type: Player.
 	 */
 	private void doJail(Player theplayer) {
 		if (theCup.getEquals()) {
@@ -231,7 +241,7 @@ public class GameLogic {
 			doMoveVehicle(theplayer);
 			theplayer.setJailStatus(false);
 		}
-		
+
 		else if (theplayer.getJailCounter() == 3) {
 			GUIControl.printMessage("Du har ikke slået 2 ens i tre ture, du skal betale kaution (1000 kr.)");
 			theplayer.withdraw(1000);
