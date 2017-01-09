@@ -79,7 +79,7 @@ public class Tax extends Square {
 				int taxAmount = (player.getBalance()+sumProperty+sumBuilding)/10;
 				player.withdraw(taxAmount);
 				GUIControl.updateBalance(player);
-				GUIControl.printMessage("Du har betalt " +taxAmount+".");
+				GUIControl.printMessage("Du har betalt " +taxAmount+" kr.");
 				
 					}
 					
