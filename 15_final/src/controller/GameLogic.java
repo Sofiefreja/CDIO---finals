@@ -7,7 +7,6 @@ import entities.AllCards;
 import entities.Board;
 import entities.Cup;
 import entities.Player;
-import test.FakeCup;
 
 public class GameLogic {
 
@@ -22,6 +21,7 @@ public class GameLogic {
 	 * 
 	 * @author Jonas Larsen s136335
 	 * @author Morten Velin s147300
+	 * @author Sofie Freja Christensen s153932
 	 */
 
 	public GameLogic() {
@@ -57,55 +57,61 @@ public class GameLogic {
 
 					// All the if statements for Player choices on start of
 					// turn.
-
-					if (turn.equals("Rul")) {
-
-						theCup.roll();
-						GUIGame.showDice(theCup);
-
-						// All the if statements for different scenarios a
-						// player can be in when rolling.
-
-						if (thePlayers.get(i).getJailStatus()) {
-
-							doJail(thePlayers.get(i));
-
-						} else if (equalEyeCounter != 3) {
-
-							doMoveVehicle(thePlayers.get(i));
-
-							// If the dice is equals turn resets
-							if (theCup.getEquals() == true) {
-								i--;
-								equalEyeCounter++;
-							} else
+					if(thePlayers.get(i).getBalance() >0){
+						if (turn.equals("Rul")) {
+	
+							theCup.roll();
+							GUIGame.showDice(theCup);
+							// All the if statements for different scenarios a
+							// player can be in when rolling.
+					
+							if (thePlayers.get(i).getJailStatus()) {
+	
+								doJail(thePlayers.get(i));
+	
+							} else if (equalEyeCounter != 3) {
+	
+								doMoveVehicle(thePlayers.get(i));
+	
+								// If the dice is equals turn resets
+								if (theCup.getEquals() == true) {
+									i--;
+									equalEyeCounter++;
+								} else
+									equalEyeCounter = 0;
+	
+							} else { // Puts the player in jail if equalEyeCounter
+										// hits 3.
+								thePlayers.get(i).setJailStatus(true);
 								equalEyeCounter = 0;
-
-						} else { // Puts the player in jail if equalEyeCounter
-									// hits 3.
-							thePlayers.get(i).setJailStatus(true);
-							equalEyeCounter = 0;
-						}
-
-					} else if (turn.equals("Sælg")) {
-						System.out.println("Shit");
-						i--;//han skal have en tur mere
-					} else if (turn.equals("Pantsætning")) {
-						System.out.println("Shit");
-						i--;
-					} else if (turn.equals("Køb huse eller hotel")) {
-						System.out.println("Shit");
-
-						i--;
-					} else if (turn.equals("Sælg huse eller hotel")) {
-						System.out.println("Shit");
-					} else if (turn.equals("Giv op")) {
+							}
+	
+						} else if (turn.equals("Sælg")) {
+							System.out.println("Shit");
+							i--;//han skal have en tur mere
+						} else if (turn.equals("Pantsætning")) {
+							System.out.println("Shit");
+							i--;
+						} else if (turn.equals("Køb huse eller hotel")) {
+							System.out.println("Shit");
+	
+							i--;
+						} else if (turn.equals("Sælg huse eller hotel")) {
+							System.out.println("Shit");
+						} else if (turn.equals("Giv op")) {
+							GUIGame.removePlayer(thePlayers.get(i));
+							// missing removePlayer
+							thePlayers.remove(i);
+							i--; // fordi arrayet bliver mindre
+						} }
+					else if(thePlayers.get(i).getBalance()<0){
 						GUIGame.removePlayer(thePlayers.get(i));
 						// missing removePlayer
 						thePlayers.remove(i);
 						i--; // fordi arrayet bliver mindre
 					}
-				} else { // Breaks the forloop because winner is found.
+					} 
+				else { // Breaks the forloop because winner is found.
 					break;
 				}
 			}
