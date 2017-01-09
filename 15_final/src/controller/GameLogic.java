@@ -60,7 +60,7 @@ public class GameLogic {
 					// All the if statements for Player choices on start of
 					// turn.
 					if (thePlayers.get(i).getBalance() > 0) {
-						if (turn.equals("Rul")) {
+						if (turn.equals(msgL.msg(1))) {
 
 							theCup.roll();
 							GUIGame.showDice(theCup);
@@ -90,25 +90,25 @@ public class GameLogic {
 								doMoveVehicle(thePlayers.get(i));
 								equalEyeCounter = 0;
 							}
-						} else if (turn.equals("Sælg")) {
+						} else if (turn.equals(msgL.msg(2))) {
 							System.out.println("Shit");
 							i--;// han skal have en tur mere
-						} else if (turn.equals("Pantsætning")) {
+						} else if (turn.equals(msgL.msg(4))) {
 							System.out.println("Shit");
 							i--;
-						} else if (turn.equals("Køb huse eller hotel")) {
+						} else if (turn.equals(msgL.msg(6))) {
 							System.out.println("Shit");
 							i--;
-						} else if (turn.equals("Sælg huse eller hotel")) {
+						} else if (turn.equals(msgL.msg(8))) {
 							System.out.println("Shit");
 							i--;
-						} else if (turn.equals("Giv op")) {
+						} else if (turn.equals(msgL.msg(10))) {
 							GUIGame.removePlayer(thePlayers.get(i));
 							// missing removePlayer
 							thePlayers.remove(i);
 							i--; // fordi arrayet bliver mindre
-						}else if (turn.equals("Betal kaution 1000 kr.")) {
-							GUIControl.printMessage("Du betaler 1000 kroner i kaution.");
+						}else if (turn.equals(msgL.msg(166))) {
+							GUIControl.printMessage(msgL.msg(167));
 							thePlayers.get(i).withdraw(1000);
 							thePlayers.get(i).setJailStatus(false);
 							i--;

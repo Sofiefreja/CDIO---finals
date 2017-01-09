@@ -1,13 +1,13 @@
 Index0	Danish	English
 Index1	Rul	Roll
 Index2	Sælg	Sell
-Index3	Du vil gerne sælge noget	
+Index3	Du vil gerne sælge noget	You want to sell something
 Index4	Pantsætning	Pawning
-Index5	Du vil gerne pantsætte noget	
+Index5	Du vil gerne pantsætte noget	You want to pawn something
 Index6	Køb huse eller hotel	Buy houses or hotel
-Index7	Du vil gerne købe huse eller hoteller	
+Index7	Du vil gerne købe huse eller hoteller	You want to buy houses or hotels
 Index8	Sælg huse eller hotel	Sell houses or hotel
-Index9	Du vil gerne sælge huse eller hoteller	
+Index9	Du vil gerne sælge huse eller hoteller	You want to sell houses and hotels
 Index10	Giv op	Give up
 Index11	Start	Start
 Index12	Hver gang De passere modtag kr. 4000	Each time you pass start you receive kr. 4000
@@ -164,3 +164,5 @@ Index162	De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler a
 Index163	De har kørt frem for 'Fuldt stop'. Betal 1.000 kr. i bøde.	You've run over 'Full stop'. Pay 1000 kr. In fines.
 Index164	Du rykker i fængsel.	You move to jail.
 Index165	Du har betalt	You have paid
+Index166	Betal kaution på 1000 kr.	Pay bail of 1000 kr.
+Index167	Du betaler 1000 kroner i kaution.	You pay the bail of 1000 kr.
