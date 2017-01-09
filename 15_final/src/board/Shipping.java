@@ -17,7 +17,7 @@ public class Shipping extends Ownable {
 	}
 	@Override
 	public int getRent() {
-		numberOfShips=0;
+		numberOfShips=-1;
 		for(int i=0; i<owner.getOwned().size();i++){
 			if(owner.getOwned().get(i).getType()==this.getType()){
 				numberOfShips++;
