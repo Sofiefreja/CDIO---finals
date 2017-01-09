@@ -160,7 +160,7 @@ public class Assets {
 
 		for (int i = 0; i < ownedStreet.size(); i++) {
 
-			if (ownedStreet.get(i).getNumberOfBuildings() == 5) {
+			if (ownedStreetdrive.get(i).getNumberOfBuildings() == 5) {
 
 				hotelList[i] = ownedStreet.get(i).toString();
 
@@ -205,7 +205,7 @@ public class Assets {
 		buildingOwner = true;
 
 	}
-	
+
 	/**
 	 * Method for removing an amount of houses from a specific Street.
 	 * 
@@ -235,9 +235,10 @@ public class Assets {
 
 		}
 	}
-	
+
 	/**
-	 * Method for returning a boolean value of whether the player can build a house.
+	 * Method for returning a boolean value of whether the player can build a
+	 * house.
 	 * 
 	 * @return
 	 */
@@ -285,21 +286,27 @@ public class Assets {
 
 			}
 
+			for (int i = 0; i < ownedStreet.size(); i++) {
+			
 			if (counterA == 2 || counterH == 2 || counterB == 3 || counterC == 3 || counterD == 3 || counterE == 3
-					|| counterF == 3 || counterG == 3) {
+					|| counterF == 3 || counterG == 3 && ownedStreet.get(i).getNumberOfBuildings() < 5) {
 				buildStatus = true;
 			} else {
 				buildStatus = false;
 			}
 
+			}
+			
 			return buildStatus;
 
 		}
 	}
+
 	/**
-	 * Method for getting a String array of streets which there can be built buildings on.
+	 * Method for getting a String array of streets which there can be built
+	 * buildings on.
 	 * 
-	 * @return String[] 
+	 * @return String[]
 	 */
 	public String[] getBuildableList() {
 
@@ -349,8 +356,8 @@ public class Assets {
 					|| counterD == 3 && ownedStreet.get(i).getType() == 'D'
 					|| counterE == 3 && ownedStreet.get(i).getType() == 'E'
 					|| counterF == 3 && ownedStreet.get(i).getType() == 'F'
-					|| counterG == 3 && ownedStreet.get(i).getType() == 'G'
-					|| counterH == 2 && ownedStreet.get(i).getType() == 'H') {
+					|| counterG == 3 && ownedStreet.get(i).getType() == 'G' || counterH == 2
+							&& ownedStreet.get(i).getType() == 'H' && ownedStreet.get(i).getNumberOfBuildings() < 5) {
 				buildableList[i] = ownedStreet.get(i).toString();
 			}
 
