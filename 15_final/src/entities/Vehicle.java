@@ -55,7 +55,6 @@ public class Vehicle {
 
 	public void setPosition(int value) {
 		currentPosition = value;
-		previousPosition = value;
 
 	}
 
