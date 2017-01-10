@@ -8,6 +8,7 @@ import entities.Board;
 import entities.Cup;
 import entities.Player;
 import test.FakeCup;
+import board.Street;
 
 public class GameLogic {
 
@@ -17,6 +18,7 @@ public class GameLogic {
 	private ArrayList<Player> thePlayers;
 	private int equalEyeCounter;
 	private int i;
+	
 
 	/**
 	 * GameLogic controls the gameflow
@@ -96,9 +98,13 @@ public class GameLogic {
 						} else if (turn.equals(msgL.msg(4))) {
 							System.out.println("Shit");
 							i--;
-						} else if (turn.equals(msgL.msg(6))) {//køb hus
+						} else if (turn.equals(msgL.msg(6))) {//køb hus eller hotel
+							if(thePlayers.get(i).getBuildStatus()== true){
 							String streetName= GUIControl.makeLists("Hvilken grund vil du gerne bygge et hus på", thePlayers.get(i).getBuildableList());
-							GUIGame.setBuilding(streetName, thePlayers.get(i));					
+							setBuilding(thePlayers.get(i), streetName);
+							}else{
+								GUIControl.printMessage("Du kan ikke købe mere .....");
+							}
 							i--;
 						} else if (turn.equals(msgL.msg(8))) {
 							System.out.println("Shit");
@@ -154,7 +160,7 @@ public class GameLogic {
 		// Save all the players in a ArrayList.
 
 		for (int i = 0; i < playerNames.length; i++) {
-			thePlayers.add(new Player(playerNames[i], 30000)); // Creating
+			thePlayers.add(new Player(playerNames[i], 130000)); // Creating
 																// player
 			// objects for the game
 			GUIGame.createPlayer(thePlayers.get(i)); // Creating Player objects
@@ -191,7 +197,7 @@ public class GameLogic {
 				choices.add(msgL.msg(166));
 			}
 			choices.add(msgL.msg(1));
-			choices.add(msgL.msg(10));
+			//choices.add(msgL.msg(10)); for test mode
 			if (theplayer.getProperty()) {
 				choices.add(msgL.msg(4));
 				if (theplayer.getBuilding()) {
@@ -246,5 +252,22 @@ public class GameLogic {
 			// der sker ikke noget.
 		}
 		equalEyeCounter = 0;
+	}
+	private void setBuilding(Player thePlayer, String streetName){
+		int i, position=0,numberOfBuildings=0;
+		Street theStreet=null;
+		
+		for(i=0;i<thePlayer.getOwnedStreet().size();i++){
+			if(thePlayer.getOwnedStreet().get(i).toString().equals(streetName)) {
+				position =thePlayer.getOwnedStreet().get(i).getID();
+				numberOfBuildings = thePlayer.getOwnedStreet().get(i).getNumberOfBuildings();
+				theStreet = thePlayer.getOwnedStreet().get(i);
+			}
+		}
+		GUIGame.setBuilding(position, numberOfBuildings);
+		thePlayer.buyHouses(theStreet, 1);
+		GUIGame.updateBalance(thePlayer);
+		
+		
 	}
 }

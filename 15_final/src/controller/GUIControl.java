@@ -1,32 +1,30 @@
 package controller;
 
-import entities.Player;
-import sun.applet.Main;
-import entities.Cup;
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
-//import board.*;
-import desktop_fields.*;
-import desktop_fields.Jail;
-import desktop_fields.Start;
-import desktop_fields.Brewery;
-import desktop_fields.Shipping;
-import desktop_fields.Street;
-import desktop_fields.Tax;
-import desktop_fields.Start;
-import desktop_fields.Jail;
-//import desktop_fields.Refuge;
-//import desktop_fields.Tax;
-import desktop_codebehind.*;
-import desktop_resources.GUI;
+
 //import board.LaborCamp;
-import board.*;
 //import board.Tax;
 //import board.Refuge;
 import board.Ownable;
+//import desktop_fields.Refuge;
+//import desktop_fields.Tax;
+import desktop_codebehind.Car;
+//import board.*;
+import desktop_fields.Brewery;
+import desktop_fields.Chance;
+import desktop_fields.Field;
+import desktop_fields.Jail;
+import desktop_fields.Refuge;
+import desktop_fields.Shipping;
+import desktop_fields.Start;
+import desktop_fields.Street;
+import desktop_fields.Tax;
+import desktop_resources.GUI;
+import entities.Cup;
+import entities.Player;
 
 public class GUIControl {
-	private int position, numberOfBuildings;
 
 	public void makeBoard() { // Method that creates the board for the GUI and
 								// sets the squares with their descriptions,
@@ -358,17 +356,12 @@ public class GUIControl {
 	public void endGUI() {
 		GUI.close();
 	}
-	public void setBuilding(String streetName, Player thePlayer){
-		for(int i=0;i<thePlayer.getOwnedStreet().size();i++){
-			if(thePlayer.getOwnedStreet().get(i).toString().equals(streetName)) {
-				position =thePlayer.getOwnedStreet().get(i).getID();
-				numberOfBuildings = thePlayer.getOwnedStreet().get(i).getNumberOfBuildings();
-			}
-		}
+	public void setBuilding(int position, int numberOfBuildings){
+		
 		if(numberOfBuildings == 4){
 			GUI.setHotel(position, true);
-		} else if (numberOfBuildings > 0) {
-			GUI.setHouses(position, 1);
+		} else if (numberOfBuildings >= 0) {
+			GUI.setHouses(position, numberOfBuildings+1);
 		} else {
 			GUI.showMessage("Der er sket en fejl i setBuildings");//tiltænkt til os
 		}
