@@ -17,7 +17,7 @@ public class GameLogic {
 	private GUIControl GUIGame;
 	private Board theBoard;
 	private Cup theCup;
-	private List<Player> thePlayers;
+	private ArrayList<Player> thePlayers;
 	private int equalEyeCounter;
 	private int i;
 	private AllCards allTheCards;
@@ -186,7 +186,7 @@ public class GameLogic {
 	 * players.
 	 */
 
-	private List<Player> createPlayers() {
+	private ArrayList<Player> createPlayers() {
 		String[] playerNames;
 		// playerNames=GUIGame.numberOfPlayers(); // Ask how many
 		// players there are
