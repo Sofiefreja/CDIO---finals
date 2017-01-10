@@ -8,6 +8,7 @@ import entities.Board;
 import entities.Cup;
 import entities.Player;
 import test.FakeCup;
+import board.Ownable;
 import board.Street;
 import board.Ownable;
 
@@ -29,6 +30,7 @@ public class GameLogic {
 	 * @author Jonas Larsen s136335
 	 * @author Morten Velin s147300
 	 * @author Sofie Freja Christensen s153932
+	 * @author Simon Lundorf s154008
 	 */
 
 	public GameLogic() {
@@ -241,7 +243,7 @@ public class GameLogic {
 				if (theplayer.getBuilding()) {
 					choices.add(msgL.msg(8));
 				}
-				if (theplayer.getBuildStatus()) {
+				if (theplayer.getBuildStatus() == true) {
 					choices.add(msgL.msg(6));
 				}
 			}
@@ -250,7 +252,7 @@ public class GameLogic {
 		return choices.toArray(new String[choices.size()]); // Converting the
 															// Arraylist to
 		// an Array.
-
+		
 	}
 
 	/**
