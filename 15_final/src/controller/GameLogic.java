@@ -96,7 +96,7 @@ public class GameLogic {
 						} else if (turn.equals(msgL.msg(4))) {
 							System.out.println("Shit");
 							i--;
-						} else if (turn.equals(msgL.msg(6))) {
+						} else if (turn.equals(msgL.msg(6))) {//køb hus
 							System.out.println("Shit");
 							i--;
 						} else if (turn.equals(msgL.msg(8))) {
