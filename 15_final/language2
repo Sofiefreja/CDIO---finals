@@ -117,7 +117,7 @@ Index115	Tillykke! Du har købt	Congratulations! You have bought
 Index116	betalte	payed
 Index117	, du landede på helle	, you landed on the Refuge
 Index118	Du er tildelt en bonus på	. You are awarded a bonus of:
-Index119	kr.	kr.
+Index119	 kr.	 kr. 
 Index120	Du er ejeren af dette felt!	You are the owner of this square!
 Index121	Uha, du har ikke nok penge til at købe	Whoa there, you don't have enough money to buy
 Index122	Du får legatet på 4000 kr!	You get a grant of 40000 kr!
@@ -163,6 +163,24 @@ Index161	Kommunen har eftergivet et kvartals skat. Hæv i banken 3.000 kr.	The m
 Index162	De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag 500 kr. fra hver spiller	You put money out for a potluck. Receive 500 kr. From each player
 Index163	De har kørt frem for 'Fuldt stop'. Betal 1.000 kr. i bøde.	You've run over 'Full stop'. Pay 1000 kr. In fines.
 Index164	Du rykker i fængsel.	You move to jail.
-Index165	Du har betalt	You have paid
+Index165	Du har betalt 	You have paid 
 Index166	Betal kaution på 1000 kr.	Pay bail of 1000 kr.
 Index167	Du betaler 1000 kroner i kaution.	You pay the bail of 1000 kr.
+Index168	Du har købt	You have bought
+Index169	 huse. Det kostede 	 houses. It cost 
+Index170	Du slog to ens og er hermed løsladt.	You rolled two equals, and are herby released from jail.
+Index171	Du har ikke slået to ens i tre ture, du skal betale kaution (1000 kr.)	You have not rolled two equals for three rounds, you must pay bail (1000 kr.)
+Index172	Du slog ikke to ens og er stadig i fængsel.	You didn't roll two equals and are still in jail.
+Index173	4000 kr.	4000 kr.
+Index174	Vælg venligst sprog: 	Please choose language: 
+Index175	Dansk	Danish
+Index176	English	English
+Index177	.\nVil du købe 	.\nDo you want to buy 
+Index178	 for 	for
+Index179	Ja	Yes
+Index180	Nej	No
+Index181	kr.?	kr.?
+Index182	.\nVil du betale indkomstskatten med 4.000 kr., eller med 10% af dine totale værdier?  	\nDo you want to pay the incometax by 4000 kr. or by 10% of your total assets? 
+Index183	10%	10%
+Index184	\n	\n
+Index185	! Du betaler 	! You pay 

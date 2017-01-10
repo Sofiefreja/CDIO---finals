@@ -2,6 +2,7 @@ package cards;
 
 import board.Street;
 import controller.GUIControl;
+import controller.msgL;
 import entities.Board;
 import entities.Player;
 
@@ -36,10 +37,10 @@ public class Grant extends Transaction {
 			}
 		}
 		if (total <= 15000) {
-			GUIControl.printMessage("You get a grant of 40000");
+			GUIControl.printMessage(msgL.msg(122));
 			player.deposit(40000);
 		} else {
-			GUIControl.printMessage("YOU GET NOTHING");
+			GUIControl.printMessage(msgL.msg(123));
 		}
 	}
 }

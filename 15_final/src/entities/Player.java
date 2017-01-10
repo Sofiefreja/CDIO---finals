@@ -303,4 +303,39 @@ public class Player {
 		return assets.getBuildableList();
 	}
 
+	public boolean getPawnStatus() {
+		
+		return assets.getPawnStatus();
+		
+	}
+	
+	public String[] getPawnable() {
+		
+		return assets.getPawnable();
+		
+	}
+	
+	public void pawnProperty(Ownable ownable) {
+		
+		assets.pawnProperty(ownable);
+	}
+	
+	public void liftPawn(Ownable ownable) {
+		
+		assets.liftPawn(ownable);
+		
+	}
+	
+	public String[] getPawned() {
+		
+		return assets.getPawned();
+		
+	}
+	
+	public boolean getHasPawned() {
+		
+		return assets.getHasPawned();
+		
+	}
+	
 }

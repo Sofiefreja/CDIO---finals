@@ -10,6 +10,7 @@ import java.util.stream.IntStream;
 import board.Ownable;
 import board.Street;
 import controller.GUIControl;
+import controller.msgL;
 
 /**
  * Class for card which charges the Player with a fee for houses and hotels.
@@ -79,7 +80,7 @@ public class PriceIncrease extends Transaction {
 
 			} else {
 
-				GUIControl.printMessage("Du ejer ingen huse eller hoteller, og skal derfor ikke betale afgift.");
+				GUIControl.printMessage(msgL.msg(126));
 				
 			}
 

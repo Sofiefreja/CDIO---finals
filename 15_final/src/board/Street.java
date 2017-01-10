@@ -2,6 +2,9 @@ package board;
 
 import java.util.ArrayList;
 
+import controller.GUIControl;
+import controller.msgL;
+
 /**
  * Class Street, which has a type, and can have houses and a hotel built on it.
  * @author Mathias Tvaermose Gleerup, s153120
@@ -63,7 +66,7 @@ public class Street extends Ownable {
 		if(counter==maxAmount){
 			numberOfBuildings+=amount;
 			owner.withdraw(amount*priceOfBuilding);
-			//GUIControl.housesBought(this, amount, priceOfBuilding);
+			GUIControl.printMessage(msgL.msg(168)+amount+msgL.msg(169)+(amount*priceOfBuilding));
 		}
 	}
 	/**

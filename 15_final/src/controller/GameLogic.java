@@ -99,7 +99,35 @@ public class GameLogic {
 							System.out.println("Shit");
 							i--;// han skal have en tur mere
 						} else if (turn.equals(msgL.msg(4))) {
-							System.out.println("Shit");
+							Ownable pawned = null;
+							String pawnName = GUIControl.makeLists(msgL.msg(5), thePlayers.get(i).getPawnable());
+							for (int j = 0; j < thePlayers.get(i).getOwned().size(); j++) {
+
+								if (thePlayers.get(i).getOwned().get(j).toString().equals(pawnName)) {
+
+									pawned = thePlayers.get(i).getOwned().get(j);
+
+								}
+
+							}
+
+							thePlayers.get(i).pawnProperty(pawned);
+							i--;
+						} else if (turn.equals("Løft pantsætning")) {
+							Ownable hasPawned = null;
+							String hasPawnName = GUIControl.makeLists("Du vil gerne hæve en pantsætning", thePlayers.get(i).getPawned());
+							for (int j = 0; j < thePlayers.get(i).getOwned().size(); j++) {
+								
+								if (thePlayers.get(i).getOwned().get(j).toString().equals(hasPawnName)) {
+									
+									hasPawned = thePlayers.get(i).getOwned().get(j);
+									
+								}
+								
+							}
+							
+							thePlayers.get(i).liftPawn(hasPawned);
+							
 							i--;
 						} else if (turn.equals(msgL.msg(6))) {//køb hus eller hotel
 							if(thePlayers.get(i).getBuildStatus()== true){
@@ -128,13 +156,14 @@ public class GameLogic {
 						// missing removePlayer
 						thePlayers.remove(i);
 						i--; // fordi arrayet bliver mindre
-					} 
+					}
 				} else { // Breaks the forloop because winner is found.
 					break;
 				}
 			}
-		}GUIGame.showWinner(thePlayers.get(0)); // Shows the winner.
-	GUIGame.endGUI();
+		}
+		GUIGame.showWinner(thePlayers.get(0)); // Shows the winner.
+		GUIGame.endGUI();
 
 	}
 
@@ -163,7 +192,7 @@ public class GameLogic {
 		// Save all the players in a ArrayList.
 
 		for (int i = 0; i < playerNames.length; i++) {
-			thePlayers.add(new Player(playerNames[i], 130000)); // Creating
+			thePlayers.add(new Player(playerNames[i], 30000)); // Creating
 																// player
 			// objects for the game
 			GUIGame.createPlayer(thePlayers.get(i)); // Creating Player objects
@@ -200,9 +229,14 @@ public class GameLogic {
 				choices.add(msgL.msg(166));
 			}
 			choices.add(msgL.msg(1));
-			//choices.add(msgL.msg(10)); for test mode
+			choices.add(msgL.msg(10));
 			if (theplayer.getProperty()) {
-				choices.add(msgL.msg(4));
+				if (theplayer.getPawnStatus() == true) {
+					choices.add(msgL.msg(4));
+				}
+				if (theplayer.getHasPawned() == true) {
+					choices.add("Løft pantsætning");
+				}
 				if (theplayer.getBuilding()) {
 					choices.add(msgL.msg(8));
 				}
@@ -240,17 +274,17 @@ public class GameLogic {
 	 */
 	private void doJail(Player theplayer) {
 		if (theCup.getEquals()) {
-			GUIControl.printMessage("Du slog 2 ens og er hermed løsladt");
+			GUIControl.printMessage(msgL.msg(170));
 			doMoveVehicle(theplayer);
 			theplayer.setJailStatus(false);
 			i--;
 		} else if (theplayer.getJailCounter() == 2) {
-			GUIControl.printMessage("Du har ikke slået 2 ens i tre ture, du skal betale kaution (1000 kr.)");
+			GUIControl.printMessage(msgL.msg(171));
 			theplayer.withdraw(1000);
 			theplayer.setJailStatus(false);
 			doMoveVehicle(theplayer);
 		} else {
-			GUIControl.printMessage("Du slog ikke 2 ens og er stadig fanget");
+			GUIControl.printMessage(msgL.msg(172));
 			theplayer.addToJailCounter();
 			// der sker ikke noget.
 		}

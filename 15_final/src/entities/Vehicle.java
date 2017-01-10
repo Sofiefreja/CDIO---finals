@@ -2,6 +2,8 @@ package entities;
 
 import java.awt.Color;
 
+import controller.GUIControl;
+
 /**
  * Class which keeps track of the player's position on the board and creates a
  * piece that the player moves with
@@ -38,7 +40,7 @@ public class Vehicle {
 	 */
 
 	public int move(int value) {
-
+		
 		previousPosition = currentPosition;
 
 		currentPosition = (currentPosition + value) % 40;
@@ -46,6 +48,8 @@ public class Vehicle {
 		return currentPosition;
 
 	}
+	
+
 
 	/**
 	 * Method for setting a new position of the player's vehicle
