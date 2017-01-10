@@ -252,7 +252,7 @@ public class GameLogic {
 		return choices.toArray(new String[choices.size()]); // Converting the
 															// Arraylist to
 		// an Array.
-
+		
 	}
 
 	/**
