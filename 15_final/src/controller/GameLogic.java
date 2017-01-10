@@ -59,7 +59,7 @@ public class GameLogic {
 
 					// All the if statements for Player choices on start of
 					// turn.
-					if (thePlayers.get(i).getBalance() > 0) {
+					if (thePlayers.get(i).getBalance() >= 0) {
 						if (turn.equals(msgL.msg(1))) {
 
 							theCup.roll();
