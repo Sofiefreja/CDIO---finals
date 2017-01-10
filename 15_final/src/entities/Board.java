@@ -25,7 +25,7 @@ public class Board {
 	 * 
 	 * @param theCup
 	 */
-	public Board(Cup theCup, AllCards allTheCards, List<Player> thePlayers) {
+	public Board(Cup theCup, AllCards allTheCards, ArrayList<Player> thePlayers) {
 		
 		allTheCards = new AllCards(thePlayers ,this);
 

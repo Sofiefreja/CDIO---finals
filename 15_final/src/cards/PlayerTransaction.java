@@ -18,7 +18,7 @@ import entities.Player;
 public class PlayerTransaction extends Transaction{
 
 	int number = 0;
-	List<Player> playerList = new ArrayList<Player>();
+	ArrayList<Player> playerList = new ArrayList<Player>();
 	
 	/**
 	 * Constructor for MobilePay Card
@@ -27,7 +27,7 @@ public class PlayerTransaction extends Transaction{
 	 * @param money
 	 * @param playerList
 	 */
-	public PlayerTransaction(String description, int money, List<Player> playerList) {
+	public PlayerTransaction(String description, int money, ArrayList<Player> playerList) {
 		super(description,money);
 		this.playerList = playerList;
 		

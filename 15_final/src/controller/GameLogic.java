@@ -37,7 +37,7 @@ public class GameLogic {
 
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
-		theCup = new FakeCup(0);
+		theCup = new Cup();
 		allTheCards = new AllCards(thePlayers, theBoard);
 		
 		

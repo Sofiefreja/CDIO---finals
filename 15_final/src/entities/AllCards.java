@@ -28,7 +28,7 @@ public class AllCards {
 	 * Creating an AllCards instance
 	 * @param thePlayers
 	 */
-	public AllCards(List<Player> thePlayers, Board theBoard) { // 
+	public AllCards(ArrayList<Player> thePlayers, Board theBoard) { // 
 		theCards = new Card[44];
 		
 		
