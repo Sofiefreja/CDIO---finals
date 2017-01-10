@@ -40,8 +40,10 @@ public class GameLogic {
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
 		theCup = new FakeCup(0);
-		theBoard = new Board(theCup,allTheCards);
 		allTheCards = new AllCards(thePlayers ,theBoard);
+		theBoard = new Board(theCup,allTheCards);
+		allTheCards.shuffle();
+		
 		
 
 		// The players are initialized
