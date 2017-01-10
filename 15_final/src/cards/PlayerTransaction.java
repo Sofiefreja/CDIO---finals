@@ -1,6 +1,8 @@
 package cards;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import java.util.Random;
 
 import board.Ownable;
@@ -16,7 +18,7 @@ import entities.Player;
 public class PlayerTransaction extends Transaction{
 
 	int number = 0;
-	ArrayList<Player> playerList = new ArrayList<Player>();
+	List<Player> playerList = new ArrayList<Player>();
 	
 	/**
 	 * Constructor for MobilePay Card
@@ -25,7 +27,7 @@ public class PlayerTransaction extends Transaction{
 	 * @param money
 	 * @param playerList
 	 */
-	public PlayerTransaction(String description, int money, ArrayList<Player> playerList) {
+	public PlayerTransaction(String description, int money, List<Player> playerList) {
 		super(description,money);
 		this.playerList = playerList;
 		

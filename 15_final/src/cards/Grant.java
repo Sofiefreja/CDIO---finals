@@ -29,7 +29,7 @@ public class Grant extends Transaction {
 	public void useCard(Player player) {
 		Street a;
 		int total = player.getBalance();
-		for (int i = 0; i <= player.getOwned().size(); i++) {
+		for (int i = 0; i < player.getOwned().size(); i++) {
 			total += player.getOwned().get(i).getPrice();
 			if (player.getOwned().get(i) instanceof Street) {
 				a = (Street) player.getOwned().get(i);

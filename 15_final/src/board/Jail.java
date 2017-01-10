@@ -18,9 +18,16 @@ public class Jail extends Square {
 	
 	@Override
 	public void landOnSquare(Player player) {
+		if(player.getJailCard()== false){
 		GUIControl.printMessage(msgL.msg(164));
 		player.setJailStatus(true);
 		player.setPosition(10,player.getCurrentPosition());
 		GUIControl.moveVehicle(player);
+		} else {
+			GUIControl.printMessage("Du rykker til fængslet, men du havde et benådelseskort, så du er bare på besøg.");
+			player.setPosition(10,player.getCurrentPosition());
+			GUIControl.moveVehicle(player);
+			player.useJailCard();
+		}
 	}
 }

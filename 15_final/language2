@@ -10,7 +10,7 @@ Index8	Sælg huse eller hotel	Sell houses or hotel
 Index9	Du vil gerne sælge huse eller hoteller	You want to sell houses and hotels
 Index10	Giv op	Give up
 Index11	Start	Start
-Index12	Hver gang De passere modtag kr. 4000	Each time you pass start you receive kr. 4000
+Index12	Hver gang De passere Start, modtag kr. 4000	Each time you pass start you receive kr. 4000
 Index13	Rødovrevej	Rødovrevej
 Index14	Leje af grund 50, m/1 hus = 250, 2 huse = 750, 3 huse = 2250, 4 huse = 4000, hotel = 6000, Hus pris = 1000, Hotel pris = 1000, pant = 600	Rent = 50. w/ 1 house = 250, 2 houses = 750, 3 houses = 2250, 4 = 4000 houses, hotel = 6000, house price = 1000, Hotel Price = 1000, pawn = 600
 Index15	Pris: 1200	Price: 1200
@@ -102,19 +102,19 @@ Index100	Betal ekstraordinær skat 2000 kr.	Pay special tax 2000 kr.
 Index101	Rådhuspladsen	Rådhuspladsen
 Index102	Leje af grund 1000, m/1 hus = 4000, 2 huse = 12000, 3 huse = 28000, 4 huse = 34000, hotel = 40000, Hus pris = 4000, Hotel pris = 4000, pant = 4000	Rent= 1000, m/1 house = 4000, 2 houses = 12000, 3 houses = 28000, 4 houses = 34000, hotel = 40000, house price = 4000, Hotel price = 4000, pawn = 4000
 Index103	Pris: 8000 kr.	Price: 8000 kr.
-Index104	Tillykke	Congratulations
-Index105	du er vinderen!	you are the winner!
+Index104	Tillykke 	Congratulations
+Index105	 Du er vinderen!	you are the winner!
 Index106	Hvor mange spillere er i? (mellen 3-6)	How many players are you? (between 3-6)
 Index107	Fejl	Error
 Index108	Indtast navn på spiller nummer	Enter name of player number
 Index109	Ugyldigt navn: navne må ikke være ens	Invalid name: names cannot be the same
-Index110	det er din tur. Gør noget:	it's your turn. Take an action:
-Index111	, du landede på	, you landed on
-Index112	, hvilket er eget af	, which is owned by
-Index113	Du betaler	You pay
-Index114	til	to
-Index115	Tillykke! Du har købt	Congratulations! You have bought
-Index116	betalte	payed
+Index110	 det er din tur. Gør noget:	it's your turn. Take an action:
+Index111	, du landede på 	, you landed on
+Index112	, som er eget af 	, which is owned by
+Index113	 Du betaler	You pay
+Index114	 til 	to
+Index115	Tillykke! Du har købt 	Congratulations! You have bought
+Index116	 betalte	payed
 Index117	, du landede på helle	, you landed on the Refuge
 Index118	Du er tildelt en bonus på	. You are awarded a bonus of:
 Index119	 kr.	 kr. 
@@ -166,7 +166,7 @@ Index164	Du rykker i fængsel.	You move to jail.
 Index165	Du har betalt 	You have paid 
 Index166	Betal kaution på 1000 kr.	Pay bail of 1000 kr.
 Index167	Du betaler 1000 kroner i kaution.	You pay the bail of 1000 kr.
-Index168	Du har købt	You have bought
+Index168	 Du har købt 	You have bought
 Index169	 huse. Det kostede 	 houses. It cost 
 Index170	Du slog to ens og er hermed løsladt.	You rolled two equals, and are herby released from jail.
 Index171	Du har ikke slået to ens i tre ture, du skal betale kaution (1000 kr.)	You have not rolled two equals for three rounds, you must pay bail (1000 kr.)
@@ -175,12 +175,12 @@ Index173	4000 kr.	4000 kr.
 Index174	Vælg venligst sprog: 	Please choose language: 
 Index175	Dansk	Danish
 Index176	English	English
-Index177	.\nVil du købe 	.\nDo you want to buy 
+Index177	. Vil du købe 	. Do you want to buy 
 Index178	 for 	for
 Index179	Ja	Yes
 Index180	Nej	No
 Index181	kr.?	kr.?
-Index182	.\nVil du betale indkomstskatten med 4.000 kr., eller med 10% af dine totale værdier?  	\nDo you want to pay the incometax by 4000 kr. or by 10% of your total assets? 
+Index182	. Vil du betale indkomstskatten med 4.000 kr., eller med 10% af dine totale værdier?  	 Do you want to pay the incometax by 4000 kr. or by 10% of your total assets? 
 Index183	10%	10%
-Index184	\n	\n
-Index185	! Du betaler 	! You pay 
+Index184	! Du betaler 	! You pay 
+Index185	Du er landet på Start feltet, men du har teknisk set ikke passeret feltet endnu.	Du have landed on the Start field, but you haven't techincally passed the field yet.
