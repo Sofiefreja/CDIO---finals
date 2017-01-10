@@ -217,7 +217,7 @@ public class GUIControl {
 			number = i + 1; // The Array[] have to start at index 0, but the
 							// player is number 1.
 			sameName = false;
-			tempName = GUI.getUserString("Indtast navn på spiller nummer " + String.valueOf(number));
+			tempName = GUI.getUserString("Indtast navn pï¿½ spiller nummer " + String.valueOf(number));
 			for (int j = 0; j < numberOfPlayers; j++) {
 				if (tempArray[j].equals(tempName)) {
 					sameName = true;
@@ -251,6 +251,26 @@ public class GUIControl {
 		GUI.setCar(thePlayer.getCurrentPosition() + 1, thePlayer.toString());
 
 	}
+	
+
+//	public static void moveVehicle(Player thePlayer) {
+//		// Calculate value
+//		
+//		int value = thePlayer.getCurrentPosition() - thePlayer.getPreviousPosition();
+//		while(value < 0) value += 40;
+//		
+//		for(int i = 0; i < value; i++){
+//			GUI.removeCar((thePlayer.getPreviousPosition()+i)%40 +1, thePlayer.toString());
+//			GUI.setCar((thePlayer.getPreviousPosition()+i+1)%40 +1, thePlayer.toString());
+//		
+//			try {
+//				Thread.currentThread();
+//				Thread.sleep(250);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
 
 	// Extra roll to determine Labor Camp tax.
 
@@ -276,7 +296,7 @@ public class GUIControl {
 	
 	public static boolean getTaxChoice(String name, Player player) {
 
-		String input = GUI.getUserButtonPressed(player.toString()+", du er landet på "+name+".\nVil du betale indkomstskatten med 4.000 kr., eller med 10% af dine totale værdier?  ", "4.000 kr.", "10%");
+		String input = GUI.getUserButtonPressed(player.toString()+", du er landet pï¿½ "+name+".\nVil du betale indkomstskatten med 4.000 kr., eller med 10% af dine totale vï¿½rdier?  ", "4.000 kr.", "10%");
 		if (input.equals("4.000 kr."))
 			return true;
 		else
@@ -346,6 +366,7 @@ public class GUIControl {
 	public static void notEnoughMoney(Ownable own) {
 		GUI.showMessage("Whoa there, you don't have enough money to buy " + own.toString());
 	}
+	
 
 	/*
 	 * public static void taxNotEnoughMoney(Tax tax){
