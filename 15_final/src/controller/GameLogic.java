@@ -10,6 +10,7 @@ import entities.Player;
 import test.FakeCup;
 import board.Ownable;
 import board.Street;
+import board.Ownable;
 
 public class GameLogic {
 
