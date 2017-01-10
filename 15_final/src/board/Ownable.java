@@ -2,6 +2,7 @@ package board;
 
 import entities.Player;
 import controller.GUIControl;
+import controller.msgL;
 
 /**
  * Abstract class Ownable, extended from Square. Superclass to all ownable types
