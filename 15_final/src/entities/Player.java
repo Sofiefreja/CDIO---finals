@@ -211,7 +211,8 @@ public class Player {
 	/**
 	 * Method for setting the position of the player's vehicle
 	 * 
-	 * @param position
+	 * @param currentPosition Type: int
+	 * @param previousPosition Type: int
 	 */
 	public void setPosition(int currentPosition,int previousPosition) {
 		vehicle.setPosition(currentPosition,previousPosition);

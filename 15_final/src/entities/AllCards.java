@@ -1,5 +1,7 @@
 package entities;
 import java.util.ArrayList;
+import java.util.List;
+
 import java.util.Random;
 
 import cards.Card;
@@ -26,12 +28,12 @@ public class AllCards {
 	 * Creating an AllCards instance
 	 * @param thePlayers
 	 */
-	public AllCards(ArrayList<Player> thePlayers, Board theBoard) { // 
+	public AllCards(List<Player> thePlayers, Board theBoard) { // 
 		theCards = new Card[44];
 		
 		
 		theCards[0] = new PriceIncrease("Ejendomsskatterne er steget. Ekstraudgifterne er: 800 kr. pr. hus, 2.300 kr. pr. hotel", 800, 2300);
-		theCards[1] = new ChangePosition("Ryk frem til Frederiksberg Allé. Hvis de passerer 'START', indkassér da 4.000 kr.", 0, theBoard);//Kig lige
+		theCards[1] = new ChangePosition("Ryk frem til Frederiksberg Allé. Hvis de passerer 'START', indkassér da 4.000 kr.", 37, theBoard);//Kig lige
 		theCards[2] = new PlayerTransaction("Det er deres fødselsdag. Modtag af hver medspiller", 200, thePlayers);
 		theCards[3] = new ChangePosition("Ryk tre felter frem", 3, theBoard);
 		theCards[4] = new IncomeIncrease("De modtager deres aktieudbytte. Modtag 1.000 kr. af banken.",1000);
