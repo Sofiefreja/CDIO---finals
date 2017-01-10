@@ -1,5 +1,7 @@
 package board;
 
+import controller.GUIControl;
+import controller.msgL;
 import entities.Player;
 
 /**
@@ -21,7 +23,7 @@ public class Start extends Square {
 
 	@Override
 	public void landOnSquare(Player player) {
-		/* GUIControl.startMessage(player); */
+		GUIControl.printMessage(msgL.msg(12));
 	}
 
 }

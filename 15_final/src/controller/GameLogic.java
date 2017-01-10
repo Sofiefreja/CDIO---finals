@@ -125,10 +125,13 @@ public class GameLogic {
 							thePlayers.get(i).liftPawn(hasPawned);
 							
 							i--;
-						} else if (turn.equals(msgL.msg(6))) {// køb hus
-							String streetName = GUIControl.makeLists("Hvilken grund vil du gerne bygge et hus på",
-									thePlayers.get(i).getBuildableList());
-							GUIGame.setBuilding(streetName, thePlayers.get(i));
+						} else if (turn.equals(msgL.msg(6))) {//køb hus eller hotel
+							if(thePlayers.get(i).getBuildStatus()== true){
+							String streetName= GUIControl.makeLists("Hvilken grund vil du gerne bygge et hus på", thePlayers.get(i).getBuildableList());
+							setBuilding(thePlayers.get(i), streetName);
+							}else{
+								GUIControl.printMessage("Du kan ikke købe mere .....");
+							}
 							i--;
 						} else if (turn.equals(msgL.msg(8))) {
 							System.out.println("Shit");
@@ -267,20 +270,37 @@ public class GameLogic {
 	 */
 	private void doJail(Player theplayer) {
 		if (theCup.getEquals()) {
-			GUIControl.printMessage("Du slog 2 ens og er hermed løsladt");
+			GUIControl.printMessage(msgL.msg(170));
 			doMoveVehicle(theplayer);
 			theplayer.setJailStatus(false);
 			i--;
 		} else if (theplayer.getJailCounter() == 2) {
-			GUIControl.printMessage("Du har ikke slået 2 ens i tre ture, du skal betale kaution (1000 kr.)");
+			GUIControl.printMessage(msgL.msg(171));
 			theplayer.withdraw(1000);
 			theplayer.setJailStatus(false);
 			doMoveVehicle(theplayer);
 		} else {
-			GUIControl.printMessage("Du slog ikke 2 ens og er stadig fanget");
+			GUIControl.printMessage(msgL.msg(172));
 			theplayer.addToJailCounter();
 			// der sker ikke noget.
 		}
 		equalEyeCounter = 0;
+	}
+	private void setBuilding(Player thePlayer, String streetName){
+		int i, position=0,numberOfBuildings=0;
+		Street theStreet=null;
+		
+		for(i=0;i<thePlayer.getOwnedStreet().size();i++){
+			if(thePlayer.getOwnedStreet().get(i).toString().equals(streetName)) {
+				position =thePlayer.getOwnedStreet().get(i).getID();
+				numberOfBuildings = thePlayer.getOwnedStreet().get(i).getNumberOfBuildings();
+				theStreet = thePlayer.getOwnedStreet().get(i);
+			}
+		}
+		GUIGame.setBuilding(position, numberOfBuildings);
+		thePlayer.buyHouses(theStreet, 1);
+		GUIGame.updateBalance(thePlayer);
+		
+		
 	}
 }

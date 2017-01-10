@@ -5,6 +5,7 @@ import entities.Player;
 import java.util.ArrayList;
 
 import controller.GUIControl;
+import controller.msgL;
 /**
  * 
  * @author Sofie Freja Christensen s153932, Mathias Tvaermose Gleerup, s153120, Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
@@ -79,7 +80,7 @@ public class Tax extends Square {
 				int taxAmount = (player.getBalance()+sumProperty+sumBuilding)/10;
 				player.withdraw(taxAmount);
 				GUIControl.updateBalance(player);
-				GUIControl.printMessage("Du har betalt " +taxAmount+" kr.");
+				GUIControl.printMessage(msgL.msg(165) +taxAmount+msgL.msg(119));
 				
 					}
 					

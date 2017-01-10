@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class msgL {
 	private static String[] info_danish = new String[1000];
 	private static String[] info_english = new String[1000];
-	static String lang="dk";
+	static String lang="Dansk";
 	
 	static {
 		//System.out.println(new File("Language.csv").getAbsolutePath()); // FInd bib.
@@ -28,11 +28,11 @@ public class msgL {
 			inputStream.close();
 
 		} catch (FileNotFoundException e) {
-			System.out.println("Forkert");
+			System.out.println("Forkert filnavn");
 		}
 	}
 	public static String msg(int index){
-		if(lang.equals("en")){
+		if(lang.equals("English")){
 			return info_english[index];
 		}
 		else{
@@ -44,12 +44,11 @@ public class msgL {
 	 * @param language
 	 * @return
 	 */
-	public static String changeLanguage(String language){
-		if(language.equals("en")){
-			lang="en";
-		}else if(language.equals("dk")){
-			lang="dk";
+	public static void changeLanguage(String language){
+		if(language.equals("English")){
+			lang="English";
+		}else if(language.equals("Dansk")){
+			lang="Dansk";
 		}
-		return lang;
 	}
 }
