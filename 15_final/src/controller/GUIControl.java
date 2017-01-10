@@ -247,7 +247,6 @@ public class GUIControl {
 	public static void moveVehicle(Player thePlayer) {
 		GUI.removeCar(thePlayer.getPreviousPosition() + 1, thePlayer.toString());
 		GUI.setCar(thePlayer.getCurrentPosition() + 1, thePlayer.toString());
-
 	}
 	
 
@@ -260,6 +259,14 @@ public class GUIControl {
 //		for(int i = 0; i < value; i++){
 //			GUI.removeCar((thePlayer.getPreviousPosition()+i)%40 +1, thePlayer.toString());
 //			GUI.setCar((thePlayer.getPreviousPosition()+i+1)%40 +1, thePlayer.toString());
+//			if((thePlayer.getPreviousPosition()+i+1)%40 +1==2){
+//			if(thePlayer.getFirstRound()==false){
+//				thePlayer.deposit(4000);
+//				updateBalance(thePlayer);
+//			}else{
+//				thePlayer.setFirstRound(false);
+//			}
+//			}
 //		
 //			try {
 //				Thread.currentThread();

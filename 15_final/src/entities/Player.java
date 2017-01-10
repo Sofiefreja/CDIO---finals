@@ -21,6 +21,7 @@ public class Player {
 	private Assets assets = new Assets();
 	private int jailCounter;
 	private boolean jailStatus;
+	private boolean firstRound=true;
 
 	/**
 	 * Constructor for a Player, that initiates the player with an account balance, a vehicle, a jail status and a jail counter
@@ -84,7 +85,12 @@ public class Player {
 	public int getJailCounter() {
 		return jailCounter;
 	}
-
+	public void setFirstRound(boolean b){
+		firstRound=b;
+	}
+	public boolean getFirstRound(){
+		return firstRound;
+	}
 	/**
 	 * Method for returning and ArrayList of the squares this player owns.
 	 * 
