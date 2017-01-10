@@ -243,7 +243,7 @@ public class GameLogic {
 				if (theplayer.getBuilding()) {
 					choices.add(msgL.msg(8));
 				}
-				if (theplayer.getBuildStatus()) {
+				if (theplayer.getBuildStatus() == true) {
 					choices.add(msgL.msg(6));
 				}
 			}
