@@ -36,6 +36,9 @@ public class GameLogic {
 		GUIGame.makeBoard();
 		theCup = new FakeCup(0);
 		theBoard = new Board(theCup);
+//		GUIGame.changeLanguage();
+//		GUIGame.endGUI();
+//		GUIGame.makeBoard();
 		// AllCards theCards = new AllCards(thePlayers);
 
 		// The players are initialized
@@ -237,17 +240,17 @@ public class GameLogic {
 	 */
 	private void doJail(Player theplayer) {
 		if (theCup.getEquals()) {
-			GUIControl.printMessage("Du slog 2 ens og er hermed løsladt");
+			GUIControl.printMessage(msgL.msg(170));
 			doMoveVehicle(theplayer);
 			theplayer.setJailStatus(false);
 			i--;
 		} else if (theplayer.getJailCounter() == 2) {
-			GUIControl.printMessage("Du har ikke slået 2 ens i tre ture, du skal betale kaution (1000 kr.)");
+			GUIControl.printMessage(msgL.msg(171));
 			theplayer.withdraw(1000);
 			theplayer.setJailStatus(false);
 			doMoveVehicle(theplayer);
 		} else {
-			GUIControl.printMessage("Du slog ikke 2 ens og er stadig fanget");
+			GUIControl.printMessage(msgL.msg(172));
 			theplayer.addToJailCounter();
 			// der sker ikke noget.
 		}
