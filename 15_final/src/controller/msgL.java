@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class msgL {
 	private static String[] info_danish = new String[1000];
 	private static String[] info_english = new String[1000];
-	static String lang="en";
+	static String lang="dk";
 	
 	static {
 		//System.out.println(new File("Language.csv").getAbsolutePath()); // FInd bib.
@@ -38,5 +38,18 @@ public class msgL {
 		else{
 			return info_danish[index];
 		}
+	}
+	/**
+	 * 
+	 * @param language
+	 * @return
+	 */
+	public static String changeLanguage(String language){
+		if(language.equals("en")){
+			lang="en";
+		}else if(language.equals("dk")){
+			lang="dk";
+		}
+		return lang;
 	}
 }

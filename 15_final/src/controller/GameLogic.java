@@ -187,7 +187,7 @@ public class GameLogic {
 		} else { // menu options for owning property, a house or 3 streets of
 					// same type.
 			if (theplayer.getJailStatus() == true) {
-				choices.add("Betal kaution 1000 kr.");
+				choices.add(msgL.msg(166));
 			}
 			choices.add(msgL.msg(1));
 			choices.add(msgL.msg(10));
