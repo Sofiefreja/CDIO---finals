@@ -2,14 +2,13 @@ package controller;
 
 import java.util.ArrayList;
 
-import board.Ownable;
-import board.Street;
 import desktop_resources.GUI;
 import entities.AllCards;
 import entities.Board;
 import entities.Cup;
 import entities.Player;
 import test.FakeCup;
+import board.Street;
 
 public class GameLogic {
 
@@ -19,6 +18,9 @@ public class GameLogic {
 	private ArrayList<Player> thePlayers;
 	private int equalEyeCounter;
 	private int i;
+	private AllCards allTheCards;
+
+	
 
 	/**
 	 * GameLogic controls the gameflow
@@ -36,8 +38,9 @@ public class GameLogic {
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
 		theCup = new FakeCup(0);
-		theBoard = new Board(theCup);
-		// AllCards theCards = new AllCards(thePlayers);
+		theBoard = new Board(theCup,allTheCards);
+		allTheCards = new AllCards(thePlayers ,theBoard);
+		
 
 		// The players are initialized
 		thePlayers = createPlayers();
@@ -49,7 +52,7 @@ public class GameLogic {
 		while (thePlayers.size() > 1) {
 
 			// The for loop running through all the players.
-			for (i = 0; i < thePlayers.size(); i++) {
+			for ( i = 0; i < thePlayers.size(); i++) {
 
 				// If only one player is left, the 'else' runs and breaks the
 				// for loop
@@ -143,7 +146,7 @@ public class GameLogic {
 							// missing removePlayer
 							thePlayers.remove(i);
 							i--; // fordi arrayet bliver mindre
-						} else if (turn.equals(msgL.msg(166))) {
+						}else if (turn.equals(msgL.msg(166))) {
 							GUIControl.printMessage(msgL.msg(167));
 							thePlayers.get(i).withdraw(1000);
 							thePlayers.get(i).setJailStatus(false);
@@ -302,6 +305,7 @@ public class GameLogic {
 		GUIGame.setBuilding(position, numberOfBuildings);
 		thePlayer.buyHouses(theStreet, 1);
 		GUIGame.updateBalance(thePlayer);
+		
 		
 	}
 }

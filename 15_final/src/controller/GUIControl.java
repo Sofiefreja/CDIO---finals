@@ -386,4 +386,7 @@ public class GUIControl {
 	public static String makeLists(String test, String[] options){
 		return GUI.getUserSelection(test, options);
 	}
+	public static void displayChanceCard(String txt){
+		GUI.displayChanceCard(txt);
+	}
 }
