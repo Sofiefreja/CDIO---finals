@@ -252,6 +252,26 @@ public class GUIControl {
 		GUI.setCar(thePlayer.getCurrentPosition() + 1, thePlayer.toString());
 
 	}
+	
+
+//	public static void moveVehicle(Player thePlayer) {
+//		// Calculate value
+//		
+//		int value = thePlayer.getCurrentPosition() - thePlayer.getPreviousPosition();
+//		while(value < 0) value += 40;
+//		
+//		for(int i = 0; i < value; i++){
+//			GUI.removeCar((thePlayer.getPreviousPosition()+i)%40 +1, thePlayer.toString());
+//			GUI.setCar((thePlayer.getPreviousPosition()+i+1)%40 +1, thePlayer.toString());
+//		
+//			try {
+//				Thread.currentThread();
+//				Thread.sleep(250);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
 
 	// Extra roll to determine Labor Camp tax.
 
@@ -347,6 +367,7 @@ public class GUIControl {
 	public static void notEnoughMoney(Ownable own) {
 		GUI.showMessage("Whoa there, you don't have enough money to buy " + own.toString());
 	}
+	
 
 	/*
 	 * public static void taxNotEnoughMoney(Tax tax){
