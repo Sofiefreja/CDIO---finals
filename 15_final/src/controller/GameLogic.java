@@ -193,7 +193,7 @@ public class GameLogic {
 		// Save all the players in a ArrayList.
 
 		for (int i = 0; i < playerNames.length; i++) {
-			thePlayers.add(new Player(playerNames[i], 30000)); // Creating
+			thePlayers.add(new Player(playerNames[i], 130000)); // Creating
 																// player
 			// objects for the game
 			GUIGame.createPlayer(thePlayers.get(i)); // Creating Player objects
