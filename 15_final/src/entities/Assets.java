@@ -23,6 +23,7 @@ public class Assets {
 	private boolean buildingOwner;
 	private boolean buildStatus;
 	private boolean pawnStatus;
+	private boolean hasPawn;
 
 	/**
 	 * Constructor for Assets
@@ -368,16 +369,15 @@ public class Assets {
 
 	public boolean getPawnStatus() {
 
-		if (ownedStreet.size() == 0) {
+		if (owned.size() == 0) {
 			pawnStatus = false;
 			return pawnStatus;
 		} else {
-			for (int i = 0; i < ownedStreet.size(); i++) {
+			for (int i = 0; i < owned.size(); i++) {
 
-				if (ownedStreet.get(i).getNumberOfBuildings() == 0) {
+				if (owned.get(i).getPropertyPawnStatus() == false) {
 
 					pawnStatus = true;
-					break;
 
 				}
 
@@ -393,30 +393,91 @@ public class Assets {
 
 		ArrayList<String> pawnable = new ArrayList<String>();
 
-		for (int i = 0; i < ownedStreet.size(); i++) {
+		for (int i = 0; i < owned.size(); i++) {
 
-			if (ownedStreet.get(i).getNumberOfBuildings() == 0) {
+			if (owned.get(i).getPropertyPawnStatus() == false) {
 
-				pawnable.add(ownedStreet.get(i).toString());
+				if (owned.get(i) instanceof Street) {
 
+					String streetName = owned.get(i).toString();
+
+					for (int j = 0; j < ownedStreet.size(); j++) {
+
+						if (ownedStreet.get(j).toString().equals(streetName)) {
+
+							if (ownedStreet.get(j).getNumberOfBuildings() == 0) {
+
+								pawnable.add(ownedStreet.get(j).toString());
+
+							}
+						}
+
+					}
+				} else {
+
+					pawnable.add(owned.get(i).toString());
+
+				}
 			}
-
 		}
 
 		return pawnable.toArray(new String[pawnable.size()]);
 
 	}
 
+	public String[] getPawned() {
+
+		ArrayList<String> pawned = new ArrayList<String>();
+
+		for (int i = 0; i < owned.size(); i++) {
+
+			if (owned.get(i).getPropertyPawnStatus() == true) {
+
+				pawned.add(owned.get(i).toString());
+
+			}
+
+		}
+
+		return pawned.toArray(new String[pawned.size()]);
+
+	}
+
+	public boolean getHasPawned() {
+
+		if (owned.size() == 0) {
+			hasPawn = false;
+			return hasPawn;
+		} else {
+			for (int i = 0; i < owned.size(); i++) {
+
+				if (owned.get(i).getPropertyPawnStatus() == true) {
+
+					hasPawn = true;
+
+				}
+
+			}
+
+			return hasPawn;
+
+		}
+
+	}
+
 	public void pawnProperty(Ownable ownable) {
-		
-		ownable.setPawnStatus(true);
-		
+
+		ownable.pawnProperty();
+		pawnStatus = false;
+		hasPawn = true;
+
 	}
-	
+
 	public void liftPawn(Ownable ownable) {
-		
-		ownable.setPawnStatus(false);
-		
+
+		ownable.liftPawn();
+		pawnStatus = true;
+		hasPawn = false;
 	}
-	
+
 }

@@ -2,6 +2,7 @@ package controller;
 
 import java.util.ArrayList;
 
+import board.Ownable;
 import desktop_resources.GUI;
 import entities.AllCards;
 import entities.Board;
@@ -46,7 +47,7 @@ public class GameLogic {
 		while (thePlayers.size() > 1) {
 
 			// The for loop running through all the players.
-			for ( i = 0; i < thePlayers.size(); i++) {
+			for (i = 0; i < thePlayers.size(); i++) {
 
 				// If only one player is left, the 'else' runs and breaks the
 				// for loop
@@ -94,11 +95,40 @@ public class GameLogic {
 							System.out.println("Shit");
 							i--;// han skal have en tur mere
 						} else if (turn.equals(msgL.msg(4))) {
-							System.out.println("Shit");
+							Ownable pawned = null;
+							String pawnName = GUIControl.makeLists(msgL.msg(5), thePlayers.get(i).getPawnable());
+							for (int j = 0; j < thePlayers.get(i).getOwned().size(); j++) {
+
+								if (thePlayers.get(i).getOwned().get(j).toString().equals(pawnName)) {
+
+									pawned = thePlayers.get(i).getOwned().get(j);
+
+								}
+
+							}
+
+							thePlayers.get(i).pawnProperty(pawned);
 							i--;
-						} else if (turn.equals(msgL.msg(6))) {//køb hus
-							String streetName= GUIControl.makeLists("Hvilken grund vil du gerne bygge et hus på", thePlayers.get(i).getBuildableList());
-							GUIGame.setBuilding(streetName, thePlayers.get(i));					
+						} else if (turn.equals("Løft pantsætning")) {
+							Ownable hasPawned = null;
+							String hasPawnName = GUIControl.makeLists("Du vil gerne hæve en pantsætning", thePlayers.get(i).getPawned());
+							for (int j = 0; j < thePlayers.get(i).getOwned().size(); j++) {
+								
+								if (thePlayers.get(i).getOwned().get(j).toString().equals(hasPawnName)) {
+									
+									hasPawned = thePlayers.get(i).getOwned().get(j);
+									
+								}
+								
+							}
+							
+							thePlayers.get(i).liftPawn(hasPawned);
+							
+							i--;
+						} else if (turn.equals(msgL.msg(6))) {// køb hus
+							String streetName = GUIControl.makeLists("Hvilken grund vil du gerne bygge et hus på",
+									thePlayers.get(i).getBuildableList());
+							GUIGame.setBuilding(streetName, thePlayers.get(i));
 							i--;
 						} else if (turn.equals(msgL.msg(8))) {
 							System.out.println("Shit");
@@ -108,7 +138,7 @@ public class GameLogic {
 							// missing removePlayer
 							thePlayers.remove(i);
 							i--; // fordi arrayet bliver mindre
-						}else if (turn.equals(msgL.msg(166))) {
+						} else if (turn.equals(msgL.msg(166))) {
 							GUIControl.printMessage(msgL.msg(167));
 							thePlayers.get(i).withdraw(1000);
 							thePlayers.get(i).setJailStatus(false);
@@ -119,13 +149,14 @@ public class GameLogic {
 						// missing removePlayer
 						thePlayers.remove(i);
 						i--; // fordi arrayet bliver mindre
-					} 
+					}
 				} else { // Breaks the forloop because winner is found.
 					break;
 				}
 			}
-		}GUIGame.showWinner(thePlayers.get(0)); // Shows the winner.
-	GUIGame.endGUI();
+		}
+		GUIGame.showWinner(thePlayers.get(0)); // Shows the winner.
+		GUIGame.endGUI();
 
 	}
 
@@ -193,7 +224,12 @@ public class GameLogic {
 			choices.add(msgL.msg(1));
 			choices.add(msgL.msg(10));
 			if (theplayer.getProperty()) {
-				choices.add(msgL.msg(4));
+				if (theplayer.getPawnStatus() == true) {
+					choices.add(msgL.msg(4));
+				}
+				if (theplayer.getHasPawned() == true) {
+					choices.add("Løft pantsætning");
+				}
 				if (theplayer.getBuilding()) {
 					choices.add(msgL.msg(8));
 				}

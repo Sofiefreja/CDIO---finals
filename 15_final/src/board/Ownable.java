@@ -100,13 +100,24 @@ public abstract class Ownable extends Square {
 		return pawn;
 	}
 	
-	public void setPawnStatus(boolean pawnStatus) {
+	public void pawnProperty() {
 		
-		this.pawnStatus = pawnStatus;
+		owner.deposit(pawn);
+		this.pawnStatus = true;
+		GUIControl.updateBalance(owner);
 		
 	}
 	
-	public boolean getPawnStatus() {
+	public void liftPawn() {
+		
+		int amount = pawn+(pawn/10);
+		owner.withdraw(amount);
+		this.pawnStatus = false;
+		GUIControl.updateBalance(owner);
+		
+	}
+	
+	public boolean getPropertyPawnStatus() {
 		
 		return pawnStatus;
 		
