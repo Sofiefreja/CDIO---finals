@@ -26,6 +26,7 @@ import board.*;
 import board.Ownable;
 
 public class GUIControl {
+	private int position, numberOfBuildings;
 
 	public void makeBoard() { // Method that creates the board for the GUI and
 								// sets the squares with their descriptions,
@@ -357,11 +358,17 @@ public class GUIControl {
 	public void endGUI() {
 		GUI.close();
 	}
-	public void setBuilding(String building, int fieldNumber){
-		if(building == "house"){
-			GUI.setHouses(fieldNumber, 1);
-		} else if (building == "hotel") {
-			GUI.setHotel(fieldNumber, true);
+	public void setBuilding(String streetName, Player thePlayer){
+		for(int q=0;q<thePlayer.getOwnedStreet().size();q++){
+			if(thePlayer.getOwnedStreet().get(q).toString().equals(streetName)) {
+				position =thePlayer.getOwnedStreet().get(q).getID();
+				numberOfBuildings = thePlayer.getOwnedStreet().get(q).getNumberOfBuildings();
+			}
+		}
+		if(numberOfBuildings == 4){
+			GUI.setHotel(position, true);
+		} else {
+			GUI.setHouses(position, 1);
 		}
 	}
 	public static String make2Buttons(String message, String button1, String button2){

@@ -97,8 +97,18 @@ public class GameLogic {
 							System.out.println("Shit");
 							i--;
 						} else if (turn.equals(msgL.msg(6))) {//køb hus
-							//GUIControl.makeLists("Hello", thePlayers.get(i).getBuildableList());
-							//if(thePlayers.get(i).)
+							
+							String StreetName= GUIControl.makeLists("Hvilken grund vil du gerne bygge et hus på", thePlayers.get(i).getBuildableList());
+							
+							int i, antal, position;
+							for(int q=0;q<thePlayers.get(i).getOwnedStreet().size();q++){
+								if(thePlayers.get(i).getOwnedStreet().get(q).toString().equals(StreetName))
+									position =thePlayers.get(i).getOwnedStreet().get(q).getID();
+							}
+							GUIGame.setBuilding(building, fieldNumber);
+						
+							
+							}
 							System.out.println("Shit");
 							i--;
 						} else if (turn.equals(msgL.msg(8))) {
@@ -125,9 +135,9 @@ public class GameLogic {
 					break;
 				}
 			}
-		}
-		GUIGame.showWinner(thePlayers.get(0)); // Shows the winner.
-		GUIGame.endGUI();
+		}GUIGame.showWinner(thePlayers.get(0)); // Shows the winner.
+	GUIGame.endGUI();
+
 	}
 
 	/**
