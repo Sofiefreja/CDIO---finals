@@ -1,6 +1,8 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 import desktop_resources.GUI;
 import entities.AllCards;
@@ -17,7 +19,7 @@ public class GameLogic {
 	private GUIControl GUIGame;
 	private Board theBoard;
 	private Cup theCup;
-	private ArrayList<Player> thePlayers;
+	private List<Player> thePlayers;
 	private int equalEyeCounter;
 	private int i;
 	private AllCards allTheCards;
@@ -40,9 +42,11 @@ public class GameLogic {
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
 		theCup = new FakeCup(0);
-		allTheCards = new AllCards(thePlayers ,theBoard);
-		theBoard = new Board(theCup,allTheCards);
-		allTheCards.shuffle();
+		
+		
+		theBoard = new Board(theCup,allTheCards,thePlayers);
+		
+		//allTheCards.shuffle();
 		
 		
 
@@ -177,7 +181,7 @@ public class GameLogic {
 	 * players.
 	 */
 
-	private ArrayList<Player> createPlayers() {
+	private List<Player> createPlayers() {
 		String[] playerNames;
 		// playerNames=GUIGame.numberOfPlayers(); // Ask how many
 		// players there are
@@ -269,6 +273,7 @@ public class GameLogic {
 		GUIControl.moveVehicle(theplayer);
 		int newPosition = theplayer.getCurrentPosition();
 		theBoard.getSquare(newPosition).landOnSquare(theplayer);
+		
 	}
 
 	/**

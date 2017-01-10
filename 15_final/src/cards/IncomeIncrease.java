@@ -39,7 +39,7 @@ public class IncomeIncrease extends Transaction {
 	 */
 	public void useCard(Player player) {
 		player.deposit(money);
-		GUIControl.printMessage(msgL.msg(112)+ money);
+		GUIControl.printMessage(msgL.msg(118)+ money);
 		GUIControl.updateBalance(player);
 	}
 }
