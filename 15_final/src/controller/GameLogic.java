@@ -34,9 +34,9 @@ public class GameLogic {
 		GUIGame.makeBoard();
 		theCup = new FakeCup(0);
 		theBoard = new Board(theCup);
-		String lang = GUIGame.changeLanguage();//User gets a choice of languages.
-		GUIGame.endGUI();//original GUI closes
-		GUIGame.makeBoard();//GUI in correct language opens
+//		String lang = GUIGame.changeLanguage();//User gets a choice of languages.
+//		GUIGame.endGUI();//original GUI closes
+//		GUIGame.makeBoard();//GUI in correct language opens
 		// AllCards theCards = new AllCards(thePlayers);
 
 		// The players are initialized
@@ -94,16 +94,16 @@ public class GameLogic {
 								equalEyeCounter = 0;
 							}
 						} else if (turn.equals(msgL.msg(2))) {
-							System.out.println("Shit");
+							GUIControl.printMessage(msgL.msg(3));
 							i--;// han skal have en tur mere
 						} else if (turn.equals(msgL.msg(4))) {
-							System.out.println("Shit");
+							GUIControl.printMessage(msgL.msg(5));
 							i--;
 						} else if (turn.equals(msgL.msg(6))) {
-							System.out.println("Shit");
+							GUIControl.printMessage(msgL.msg(7));
 							i--;
 						} else if (turn.equals(msgL.msg(8))) {
-							System.out.println("Shit");
+							GUIControl.printMessage(msgL.msg(9));
 							i--;
 						} else if (turn.equals(msgL.msg(10))) {
 							GUIGame.removePlayer(thePlayers.get(i));
@@ -233,17 +233,17 @@ public class GameLogic {
 	 */
 	private void doJail(Player theplayer) {
 		if (theCup.getEquals()) {
-			GUIControl.printMessage("Du slog 2 ens og er hermed løsladt");
+			GUIControl.printMessage(msgL.msg(170));
 			doMoveVehicle(theplayer);
 			theplayer.setJailStatus(false);
 			i--;
 		} else if (theplayer.getJailCounter() == 2) {
-			GUIControl.printMessage("Du har ikke slået 2 ens i tre ture, du skal betale kaution (1000 kr.)");
+			GUIControl.printMessage(msgL.msg(171));
 			theplayer.withdraw(1000);
 			theplayer.setJailStatus(false);
 			doMoveVehicle(theplayer);
 		} else {
-			GUIControl.printMessage("Du slog ikke 2 ens og er stadig fanget");
+			GUIControl.printMessage(msgL.msg(172));
 			theplayer.addToJailCounter();
 			// der sker ikke noget.
 		}
