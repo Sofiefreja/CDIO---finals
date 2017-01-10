@@ -28,6 +28,7 @@ public abstract class Card {
 	 * 
 	 * @retun description
 	 */
+	@Override
 	public String toString() {
 		return description;
 	}
