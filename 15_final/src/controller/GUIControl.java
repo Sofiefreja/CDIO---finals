@@ -357,5 +357,12 @@ public class GUIControl {
 	public void endGUI() {
 		GUI.close();
 	}
+	public void setBuilding(String building, int fieldNumber){
+		if(building == "house"){
+			GUI.setHouses(fieldNumber, 1);
+		} else if (building == "hotel") {
+			GUI.setHotel(fieldNumber, true);
+		}
+	}
 
 }
