@@ -1,6 +1,7 @@
 package cards;
 
 import controller.GUIControl;
+import controller.msgL;
 import entities.Board;
 import entities.Player;
 
@@ -38,7 +39,7 @@ public class Expense extends Transaction {
 	 */
 	public void useCard(Player player) {
 		player.withdraw(money);
-		GUIControl.printMessage("you pay " + money);
+		GUIControl.printMessage(msgL.msg(113)+ money);
 		GUIControl.updateBalance(player);
 	}
 
