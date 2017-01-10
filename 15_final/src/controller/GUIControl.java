@@ -270,7 +270,7 @@ public class GUIControl {
 //		
 //			try {
 //				Thread.currentThread();
-//				Thread.sleep(250);
+//				Thread.sleep(100);
 //			} catch (InterruptedException e) {
 //				e.printStackTrace();
 //			}
@@ -347,12 +347,12 @@ public class GUIControl {
 
 	public static void ownedMessage(Ownable field, Player landed, Player owner, int payment) {
 		GUI.showMessage(landed.toString() + msgL.msg(111) + field.toString() + msgL.msg(112)
-				+ owner.toString() + msgL.msg(184) + msgL.msg(113) + payment + msgL.msg(119) + msgL.msg(114) + owner.toString());
+				+ owner.toString() + msgL.msg(113) + payment + msgL.msg(119) + msgL.msg(114) + owner.toString());
 	}
 
 	public static void buyMessage(Ownable field, Player player) {
 		GUI.showMessage(
-				msgL.msg(115) + field.toString() + msgL.msg(185) + field.getPrice() + msgL.msg(119));
+				msgL.msg(115) + field.toString() + msgL.msg(184) + field.getPrice() + msgL.msg(119));
 	}
 
 	public static void taxMessage(Player player, int amount) {

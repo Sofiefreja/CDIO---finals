@@ -110,9 +110,9 @@ Index108	Indtast navn på spiller nummer	Enter name of player number
 Index109	Ugyldigt navn: navne må ikke være ens	Invalid name: names cannot be the same
 Index110	 det er din tur. Gør noget:	it's your turn. Take an action:
 Index111	, du landede på 	, you landed on
-Index112	, hvilket er eget af	, which is owned by
-Index113	Du betaler	You pay
-Index114	 til	to
+Index112	, som er eget af 	, which is owned by
+Index113	 Du betaler	You pay
+Index114	 til 	to
 Index115	Tillykke! Du har købt 	Congratulations! You have bought
 Index116	 betalte	payed
 Index117	, du landede på helle	, you landed on the Refuge
@@ -182,5 +182,5 @@ Index180	Nej	No
 Index181	kr.?	kr.?
 Index182	. Vil du betale indkomstskatten med 4.000 kr., eller med 10% af dine totale værdier?  	 Do you want to pay the incometax by 4000 kr. or by 10% of your total assets? 
 Index183	10%	10%
-Index184	\n	\n
-Index185	! Du betaler 	! You pay 
+Index184	! Du betaler 	! You pay 
+Index185	Du er landet på Start feltet, men du har teknisk set ikke passeret feltet endnu.	Du have landed on the Start field, but you haven't techincally passed the field yet.
