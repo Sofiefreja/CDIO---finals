@@ -15,6 +15,7 @@ public abstract class Ownable extends Square {
 	protected int pawn;
 	protected char type;
 	protected Player owner;
+	protected boolean pawnStatus;
 
 	/**
 	 * Constructor to create an ownable Square
@@ -30,6 +31,7 @@ public abstract class Ownable extends Square {
 		this.price = price;
 		this.pawn = pawn;
 		this.type = type;
+		this.pawnStatus = false;
 	}
 
 	// Implements the inherited method landOnSquare, to be overridden for each
@@ -40,7 +42,11 @@ public abstract class Ownable extends Square {
 			if (player.toString().equals(owner.toString()) == false) {// if the player is not the owner of
 																		// this field, the following happens
 				if(owner.getJailStatus()==true){
-					GUIControl.printMessage("Ejeren er i fængsel, du skal ikke betale nogen leje.");
+					GUIControl.printMessage("Ejeren er i fï¿½ngsel, du skal ikke betale nogen leje.");
+				} else if (this.pawnStatus == true) {
+					
+					GUIControl.printMessage("Denne grund er pantsat. Du skal ikke betale leje");
+					
 				}else{
 					int amount = getRent();// the rent is calculated, depending on the subclass.
 					GUIControl.ownedMessage(this, player, owner, amount);// a message is printed to the player about the sequence.
@@ -89,9 +95,23 @@ public abstract class Ownable extends Square {
 	 * 
 	 * @return pawn
 	 */
+	
 	public int getPawn() {
 		return pawn;
 	}
+	
+	public void setPawnStatus(boolean pawnStatus) {
+		
+		this.pawnStatus = pawnStatus;
+		
+	}
+	
+	public boolean getPawnStatus() {
+		
+		return pawnStatus;
+		
+	}
+	
 	/**
 	 * Method for returning the type of this square, as a char
 	 * @return type

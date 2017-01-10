@@ -22,6 +22,7 @@ public class Assets {
 	private boolean propertyOwner;
 	private boolean buildingOwner;
 	private boolean buildStatus;
+	private boolean pawnStatus;
 
 	/**
 	 * Constructor for Assets
@@ -133,19 +134,19 @@ public class Assets {
 	 */
 	public String[] getHouseList() {
 
-		String[] houseList = new String[owned.size()];
+		ArrayList<String> houseList = new ArrayList<String>();
 
 		for (int i = 0; i < ownedStreet.size(); i++) {
 
 			if (ownedStreet.get(i).getNumberOfBuildings() >= 1 && ownedStreet.get(i).getNumberOfBuildings() < 5) {
 
-				houseList[i] = ownedStreet.get(i).toString();
+				houseList.add(ownedStreet.get(i).toString());
 
 			}
 
 		}
 
-		return houseList;
+		return houseList.toArray(new String[houseList.size()]);
 	}
 
 	/**
@@ -156,19 +157,19 @@ public class Assets {
 	 */
 	public String[] getHotelList() {
 
-		String[] hotelList = new String[owned.size()];
+		ArrayList<String> hotelList = new ArrayList<String>();
 
 		for (int i = 0; i < ownedStreet.size(); i++) {
 
 			if (ownedStreet.get(i).getNumberOfBuildings() == 5) {
 
-				hotelList[i] = ownedStreet.get(i).toString();
+				hotelList.add(ownedStreet.get(i).toString());
 
 			}
 
 		}
 
-		return hotelList;
+		return hotelList.toArray(new String[hotelList.size()]);
 	}
 
 	/**
@@ -310,7 +311,7 @@ public class Assets {
 	 */
 	public String[] getBuildableList() {
 
-		String[] buildableList = new String[ownedStreet.size()];
+		ArrayList<String> buildableList = new ArrayList<String>();
 		int counterA = 0;
 		int counterB = 0;
 		int counterC = 0;
@@ -358,10 +359,64 @@ public class Assets {
 					|| counterF == 3 && ownedStreet.get(i).getType() == 'F'
 					|| counterG == 3 && ownedStreet.get(i).getType() == 'G' || counterH == 2
 							&& ownedStreet.get(i).getType() == 'H' && ownedStreet.get(i).getNumberOfBuildings() < 5) {
-				buildableList[i] = ownedStreet.get(i).toString();
+				buildableList.add(ownedStreet.get(i).toString());
 			}
 
 		}
-		return buildableList;
+		return buildableList.toArray(new String[buildableList.size()]);
 	}
+
+	public boolean getPawnStatus() {
+
+		if (ownedStreet.size() == 0) {
+			pawnStatus = false;
+			return pawnStatus;
+		} else {
+			for (int i = 0; i < ownedStreet.size(); i++) {
+
+				if (ownedStreet.get(i).getNumberOfBuildings() == 0) {
+
+					pawnStatus = true;
+					break;
+
+				}
+
+			}
+
+			return pawnStatus;
+
+		}
+
+	}
+
+	public String[] getPawnable() {
+
+		ArrayList<String> pawnable = new ArrayList<String>();
+
+		for (int i = 0; i < ownedStreet.size(); i++) {
+
+			if (ownedStreet.get(i).getNumberOfBuildings() == 0) {
+
+				pawnable.add(ownedStreet.get(i).toString());
+
+			}
+
+		}
+
+		return pawnable.toArray(new String[pawnable.size()]);
+
+	}
+
+	public void pawnProperty(Ownable ownable) {
+		
+		ownable.setPawnStatus(true);
+		
+	}
+	
+	public void liftPawn(Ownable ownable) {
+		
+		ownable.setPawnStatus(false);
+		
+	}
+	
 }

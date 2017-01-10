@@ -38,7 +38,7 @@ public class Vehicle {
 	 */
 
 	public int move(int value) {
-
+		
 		previousPosition = currentPosition;
 
 		currentPosition = (currentPosition + value) % 40;

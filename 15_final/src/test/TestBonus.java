@@ -11,23 +11,33 @@ public class TestBonus {
 	@Test
 	public void test() {
 
-		int currentPosition = 39;
+		boolean jailStatus = false;
 
-		int value = 1;
+		int penultimatePosition = 17;
+
+		int currentPosition = 29;
+
+		int value = 12;
 
 		int previousPosition = currentPosition;
 
 		System.out.print((currentPosition + value) % 40);
 
-		int newPos = (currentPosition + value) % 40;
+		currentPosition = (currentPosition + value) % 40;
 
-		if ((currentPosition + value) % 40 <= 11 && (currentPosition + value) % 40 > 0
-				|| previousPosition == 0) {
+		if (penultimatePosition >= 16 && previousPosition >= 28 && currentPosition <= 12 && jailStatus == false) {
 
 			System.out.println("Derp");
 
 		}
 
-	}
+		value = 8;
 
+		if (penultimatePosition >= 16 && previousPosition >= 28 && currentPosition <= 12 && jailStatus == false) {
+
+			System.out.println("Derp2");
+
+		}
+
+	}
 }
