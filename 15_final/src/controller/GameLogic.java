@@ -8,6 +8,7 @@ import entities.Board;
 import entities.Cup;
 import entities.Player;
 import test.FakeCup;
+import board.Ownable;
 import board.Street;
 
 public class GameLogic {
