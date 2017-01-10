@@ -359,16 +359,18 @@ public class GUIControl {
 		GUI.close();
 	}
 	public void setBuilding(String streetName, Player thePlayer){
-		for(int q=0;q<thePlayer.getOwnedStreet().size();q++){
-			if(thePlayer.getOwnedStreet().get(q).toString().equals(streetName)) {
-				position =thePlayer.getOwnedStreet().get(q).getID();
-				numberOfBuildings = thePlayer.getOwnedStreet().get(q).getNumberOfBuildings();
+		for(int i=0;i<thePlayer.getOwnedStreet().size();i++){
+			if(thePlayer.getOwnedStreet().get(i).toString().equals(streetName)) {
+				position =thePlayer.getOwnedStreet().get(i).getID();
+				numberOfBuildings = thePlayer.getOwnedStreet().get(i).getNumberOfBuildings();
 			}
 		}
 		if(numberOfBuildings == 4){
 			GUI.setHotel(position, true);
-		} else {
+		} else if (numberOfBuildings > 0) {
 			GUI.setHouses(position, 1);
+		} else {
+			GUI.showMessage("Der er sket en fejl i setBuildings");//tiltænkt til os
 		}
 	}
 	public static String make2Buttons(String message, String button1, String button2){
