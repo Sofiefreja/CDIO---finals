@@ -364,5 +364,10 @@ public class GUIControl {
 			GUI.setHotel(fieldNumber, true);
 		}
 	}
-
+	public static String make2Buttons(String message, String button1, String button2){
+		return GUI.getUserButtonPressed(message, button1, button2);
+	}
+	public static String makeLists(String test, String[] options){
+		return GUI.getUserSelection(test, options);
+	}
 }

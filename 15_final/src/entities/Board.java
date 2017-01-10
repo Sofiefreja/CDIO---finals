@@ -67,4 +67,5 @@ public class Board {
 	public Square getSquare(int index) {
 		return squares[index];
 	}
+	
 }

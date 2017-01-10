@@ -97,6 +97,8 @@ public class GameLogic {
 							System.out.println("Shit");
 							i--;
 						} else if (turn.equals(msgL.msg(6))) {//køb hus
+							//GUIControl.makeLists("Hello", thePlayers.get(i).getBuildableList());
+							//if(thePlayers.get(i).)
 							System.out.println("Shit");
 							i--;
 						} else if (turn.equals(msgL.msg(8))) {
