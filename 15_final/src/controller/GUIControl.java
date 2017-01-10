@@ -169,6 +169,11 @@ public class GUIControl {
 
 		GUI.create(fields);
 	}
+	public String changeLanguage(){
+		String language=GUI.getUserButtonPressed("Please choose language: ", "Dansk","English");
+		msgL.changeLanguage(language);
+		return language;
+	}
 
 	// public void showSquareInfo(Square theSquare) {
 	//

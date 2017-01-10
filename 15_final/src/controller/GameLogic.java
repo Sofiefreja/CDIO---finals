@@ -34,6 +34,9 @@ public class GameLogic {
 		GUIGame.makeBoard();
 		theCup = new FakeCup(0);
 		theBoard = new Board(theCup);
+		String lang = GUIGame.changeLanguage();//User gets a choice of languages.
+		GUIGame.endGUI();//original GUI closes
+		GUIGame.makeBoard();//GUI in correct language opens
 		// AllCards theCards = new AllCards(thePlayers);
 
 		// The players are initialized
