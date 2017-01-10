@@ -173,6 +173,23 @@ public class Assets {
 		return hotelList.toArray(new String[hotelList.size()]);
 	}
 
+	public String[] getSellableList() {
+
+		ArrayList<String> sellableList = new ArrayList<String>();
+
+		for (int i = 0; i < ownedStreet.size(); i++) {
+
+			if (ownedStreet.get(i).getNumberOfBuildings() >= 1 && ownedStreet.get(i).getNumberOfBuildings() <=5 ) {
+
+				sellableList.add(ownedStreet.get(i).toString());
+
+			}
+
+		}
+
+		return sellableList.toArray(new String[sellableList.size()]);
+	}
+	
 	/**
 	 * Method for returning a boolean value of whether the player owns a
 	 * building.
@@ -286,22 +303,23 @@ public class Assets {
 					counterH++;
 				}
 
-			}
-
-			for (int i = 0; i < ownedStreet.size(); i++) {
-
 				if (counterA == 2 || counterH == 2 || counterB == 3 || counterC == 3 || counterD == 3 || counterE == 3
-						|| counterF == 3 || counterG == 3 && ownedStreet.get(i).getNumberOfBuildings() < 5) {
-					buildStatus = true;
-				} else {
-					buildStatus = false;
+						|| counterF == 3 || counterG == 3) {
+					for (int j = 0; j < ownedStreet.size(); j++) {
+
+						if (ownedStreet.get(j).getNumberOfBuildings() == 5) {
+							buildStatus = false;
+
+						} else {
+							buildStatus = true;
+
+						}
+					}
 				}
-
 			}
-
-			return buildStatus;
-
 		}
+		return buildStatus;
+
 	}
 
 	/**
@@ -350,6 +368,7 @@ public class Assets {
 			}
 
 		}
+
 		for (int i = 0; i < ownedStreet.size(); i++) {
 
 			if (counterA == 2 && ownedStreet.get(i).getType() == 'A'
@@ -360,11 +379,17 @@ public class Assets {
 					|| counterF == 3 && ownedStreet.get(i).getType() == 'F'
 					|| counterG == 3 && ownedStreet.get(i).getType() == 'G' || counterH == 2
 							&& ownedStreet.get(i).getType() == 'H' && ownedStreet.get(i).getNumberOfBuildings() < 5) {
-				buildableList.add(ownedStreet.get(i).toString());
-			}
 
+				if (ownedStreet.get(i).getPropertyPawnStatus() == false) {
+
+					buildableList.add(ownedStreet.get(i).toString());
+
+				}
+			}
 		}
+
 		return buildableList.toArray(new String[buildableList.size()]);
+
 	}
 
 	public boolean getPawnStatus() {
@@ -375,7 +400,8 @@ public class Assets {
 		} else {
 			for (int i = 0; i < owned.size(); i++) {
 
-				if (owned.get(i).getPropertyPawnStatus() == false) {
+				if (ownedStreet.get(i).getPropertyPawnStatus() == false
+						&& ownedStreet.get(i).getNumberOfBuildings() == 0) {
 
 					pawnStatus = true;
 
@@ -393,32 +419,14 @@ public class Assets {
 
 		ArrayList<String> pawnable = new ArrayList<String>();
 
-		for (int i = 0; i < owned.size(); i++) {
+		for (int i = 0; i < ownedStreet.size(); i++) {
 
-			if (owned.get(i).getPropertyPawnStatus() == false) {
+			if (ownedStreet.get(i).getPropertyPawnStatus() == false && ownedStreet.get(i).getNumberOfBuildings() == 0) {
 
-				if (owned.get(i) instanceof Street) {
+				pawnable.add(ownedStreet.get(i).toString());
 
-					String streetName = owned.get(i).toString();
-
-					for (int j = 0; j < ownedStreet.size(); j++) {
-
-						if (ownedStreet.get(j).toString().equals(streetName)) {
-
-							if (ownedStreet.get(j).getNumberOfBuildings() == 0) {
-
-								pawnable.add(ownedStreet.get(j).toString());
-
-							}
-						}
-
-					}
-				} else {
-
-					pawnable.add(owned.get(i).toString());
-
-				}
 			}
+
 		}
 
 		return pawnable.toArray(new String[pawnable.size()]);

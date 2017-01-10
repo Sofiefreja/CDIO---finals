@@ -22,8 +22,6 @@ public class GameLogic {
 	private int i;
 	private AllCards allTheCards;
 
-	
-
 	/**
 	 * GameLogic controls the gameflow
 	 * 
@@ -40,9 +38,8 @@ public class GameLogic {
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
 		theCup = new FakeCup(0);
-		theBoard = new Board(theCup,allTheCards);
-		allTheCards = new AllCards(thePlayers ,theBoard);
-		
+		theBoard = new Board(theCup, allTheCards);
+		allTheCards = new AllCards(thePlayers, theBoard);
 
 		// The players are initialized
 		thePlayers = createPlayers();
@@ -54,7 +51,7 @@ public class GameLogic {
 		while (thePlayers.size() > 1) {
 
 			// The for loop running through all the players.
-			for ( i = 0; i < thePlayers.size(); i++) {
+			for (i = 0; i < thePlayers.size(); i++) {
 
 				// If only one player is left, the 'else' runs and breaks the
 				// for loop
@@ -118,37 +115,45 @@ public class GameLogic {
 							i--;
 						} else if (turn.equals("Løft pantsætning")) {
 							Ownable hasPawned = null;
-							String hasPawnName = GUIControl.makeLists("Du vil gerne hæve en pantsætning", thePlayers.get(i).getPawned());
+							String hasPawnName = GUIControl.makeLists("Du vil gerne hæve en pantsætning",
+									thePlayers.get(i).getPawned());
 							for (int j = 0; j < thePlayers.get(i).getOwned().size(); j++) {
-								
+
 								if (thePlayers.get(i).getOwned().get(j).toString().equals(hasPawnName)) {
-									
+
 									hasPawned = thePlayers.get(i).getOwned().get(j);
-									
+
 								}
-								
+
 							}
-							
+
 							thePlayers.get(i).liftPawn(hasPawned);
-							
+
 							i--;
-						} else if (turn.equals(msgL.msg(6))) {//køb hus eller hotel
-							if(thePlayers.get(i).getBuildStatus()== true){
-							String streetName= GUIControl.makeLists("Hvilken grund vil du gerne bygge et hus på", thePlayers.get(i).getBuildableList());
-							setBuilding(thePlayers.get(i), streetName);
-							}else{
+						} else if (turn.equals(msgL.msg(6))) {// køb hus eller
+																// hotel
+							if (thePlayers.get(i).getBuildStatus() == true) {
+								String streetName = GUIControl.makeLists("Hvilken grund vil du gerne bygge et hus på?",
+										thePlayers.get(i).getBuildableList());
+								setBuilding(thePlayers.get(i), streetName);
+							} else {
 								GUIControl.printMessage("Du kan ikke købe mere .....");
 							}
 							i--;
 						} else if (turn.equals(msgL.msg(8))) {
-							System.out.println("Shit");
+							if (thePlayers.get(i).getBuilding() == true) {
+								String streetName = GUIControl.makeLists(
+										"Hvilken grund vil du gerne sælge et hus/hotel fra?",
+										thePlayers.get(i).getSellableList());
+								removeBuilding(thePlayers.get(i), streetName);
+							}
 							i--;
 						} else if (turn.equals(msgL.msg(10))) {
 							GUIGame.removePlayer(thePlayers.get(i));
 							// missing removePlayer
 							thePlayers.remove(i);
 							i--; // fordi arrayet bliver mindre
-						}else if (turn.equals(msgL.msg(166))) {
+						} else if (turn.equals(msgL.msg(166))) {
 							GUIControl.printMessage(msgL.msg(167));
 							thePlayers.get(i).withdraw(1000);
 							thePlayers.get(i).setJailStatus(false);
@@ -195,7 +200,7 @@ public class GameLogic {
 		// Save all the players in a ArrayList.
 
 		for (int i = 0; i < playerNames.length; i++) {
-			thePlayers.add(new Player(playerNames[i], 30000)); // Creating
+			thePlayers.add(new Player(playerNames[i], 130000)); // Creating
 																// player
 			// objects for the game
 			GUIGame.createPlayer(thePlayers.get(i)); // Creating Player objects
@@ -240,7 +245,7 @@ public class GameLogic {
 				if (theplayer.getHasPawned() == true) {
 					choices.add("Løft pantsætning");
 				}
-				if (theplayer.getBuilding()) {
+				if (theplayer.getBuilding() == true) {
 					choices.add(msgL.msg(8));
 				}
 				if (theplayer.getBuildStatus() == true) {
@@ -252,7 +257,7 @@ public class GameLogic {
 		return choices.toArray(new String[choices.size()]); // Converting the
 															// Arraylist to
 		// an Array.
-		
+
 	}
 
 	/**
@@ -293,13 +298,14 @@ public class GameLogic {
 		}
 		equalEyeCounter = 0;
 	}
-	private void setBuilding(Player thePlayer, String streetName){
-		int i, position=0,numberOfBuildings=0;
-		Street theStreet=null;
-		
-		for(i=0;i<thePlayer.getOwnedStreet().size();i++){
-			if(thePlayer.getOwnedStreet().get(i).toString().equals(streetName)) {
-				position =thePlayer.getOwnedStreet().get(i).getID();
+
+	private void setBuilding(Player thePlayer, String streetName) {
+		int i, position = 0, numberOfBuildings = 0;
+		Street theStreet = null;
+
+		for (i = 0; i < thePlayer.getOwnedStreet().size(); i++) {
+			if (thePlayer.getOwnedStreet().get(i).toString().equals(streetName)) {
+				position = thePlayer.getOwnedStreet().get(i).getID();
 				numberOfBuildings = thePlayer.getOwnedStreet().get(i).getNumberOfBuildings();
 				theStreet = thePlayer.getOwnedStreet().get(i);
 			}
@@ -307,7 +313,23 @@ public class GameLogic {
 		GUIGame.setBuilding(position, numberOfBuildings);
 		thePlayer.buyHouses(theStreet, 1);
 		GUIGame.updateBalance(thePlayer);
-		
-		
+
+	}
+
+	private void removeBuilding(Player thePlayer, String streetName) {
+		int i, position = 0, numberOfBuildings = 0;
+		Street theStreet = null;
+
+		for (i = 0; i < thePlayer.getOwnedStreet().size(); i++) {
+			if (thePlayer.getOwnedStreet().get(i).toString().equals(streetName)) {
+				position = thePlayer.getOwnedStreet().get(i).getID();
+				numberOfBuildings = thePlayer.getOwnedStreet().get(i).getNumberOfBuildings();
+				theStreet = thePlayer.getOwnedStreet().get(i);
+			}
+		}
+		GUIGame.removeBuilding(position, numberOfBuildings);
+		thePlayer.removeHouses(theStreet, 1);
+		GUIGame.updateBalance(thePlayer);
+
 	}
 }

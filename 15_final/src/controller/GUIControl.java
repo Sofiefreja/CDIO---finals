@@ -380,6 +380,13 @@ public class GUIControl {
 			GUI.showMessage("Der er sket en fejl i setBuildings");//tiltænkt til os
 		}
 	}
+	
+	public void removeBuilding(int position, int numberOfBuildings){
+		
+			GUI.setHouses(position, numberOfBuildings-1);
+		
+	}
+	
 	public static String make2Buttons(String message, String button1, String button2){
 		return GUI.getUserButtonPressed(message, button1, button2);
 	}

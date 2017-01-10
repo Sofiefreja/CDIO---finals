@@ -303,6 +303,12 @@ public class Player {
 		return assets.getBuildableList();
 	}
 
+	public String[] getSellableList() {
+		
+		return assets.getSellableList();
+		
+	}
+	
 	public boolean getPawnStatus() {
 		
 		return assets.getPawnStatus();
