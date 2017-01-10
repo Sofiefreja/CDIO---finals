@@ -302,6 +302,5 @@ public class GameLogic {
 		thePlayer.buyHouses(theStreet, 1);
 		GUIGame.updateBalance(thePlayer);
 		
-		
 	}
 }
