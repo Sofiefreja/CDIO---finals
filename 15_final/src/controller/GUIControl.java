@@ -31,142 +31,139 @@ public class GUIControl {
 								// colouring and number
 		// Street colors
 		Field[] fields = new Field[40];
-		fields[0] = new Start.Builder().setTitle("Start").setDescription("Hver gang De passere modtag kr. 4000")
-				.setSubText("4000 kr.").setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[1] = new Street.Builder().setTitle("Rødovrevej")
-				.setDescription(
-						"Leje af grund 50,  m/1 hus = 250, 2 huse = 750, 3 huse = 2250, 4 huse = 4000, hotel = 6000, Hus pris = 1000, Hotel pris = 1000, pant = 600")
-				.setSubText("Pris: 1200").setBgColor(Color.blue).setFgColor(Color.black).build();
+		fields[0] = new Start.Builder().setTitle(msgL.msg(11)).setDescription(msgL.msg(12))
+				.setSubText(msgL.msg(173)).setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
+		fields[1] = new Street.Builder().setTitle(msgL.msg(13))
+				.setDescription(msgL.msg(14))
+				.setSubText(msgL.msg(15)).setBgColor(Color.blue).setFgColor(Color.black).build();
 		fields[2] = new Chance.Builder().setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[3] = new Street.Builder().setTitle("Hvidovrevej")
-				.setDescription(
-						"Leje af grund 50,  m/1 hus = 250, 2 huse = 750, 3 huse = 2250, 4 huse = 4000, hotel = 6000, Hus pris = 1000, Hotel pris = 1000, pant = 600")
-				.setSubText("Pris: 1200 kr.").setBgColor(Color.blue).setFgColor(Color.black).build();
-		fields[4] = new Tax.Builder().setTitle("Indkomstskat").setDescription("Vælg mellem 10% eller 4000 kr.")
+		fields[3] = new Street.Builder().setTitle(msgL.msg(16))
+				.setDescription(msgL.msg(17))
+				.setSubText(msgL.msg(15)).setBgColor(Color.blue).setFgColor(Color.black).build();
+		fields[4] = new Tax.Builder().setTitle(msgL.msg(18)).setDescription(msgL.msg(19))
 				.setSubText("").setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[5] = new Shipping.Builder().setTitle("Scandlines H-H")
-				.setDescription("Leje af grund hvis du ejer 1 = 500, 2 = 1000, 3 = 2000, 4 huse = 4000")
-				.setSubText("Pris: 4000 kr.").setRent("Rent: 500").setBgColor(Color.white).setFgColor(Color.black)
+		fields[5] = new Shipping.Builder().setTitle(msgL.msg(20))
+				.setDescription(msgL.msg(21))
+				.setSubText(msgL.msg(22)).setBgColor(Color.white).setFgColor(Color.black)
 				.build();
-		fields[6] = new Street.Builder().setTitle("Roskildevej")
-				.setDescription(
-						"Leje af grund 100,  m/1 hus = 600, 2 huse = 1800, 3 huse = 5400, 4 huse = 8000, hotel = 11000, Hus pris = 1000, Hotel pris = 1000, pant = 1000")
-				.setSubText("Pris: 2000").setBgColor(Color.getHSBColor(127, 140, 141)).setFgColor(Color.black).build();
+		fields[6] = new Street.Builder().setTitle(msgL.msg(23))
+				.setDescription(msgL.msg(24))
+				.setSubText(msgL.msg(25)).setBgColor(Color.getHSBColor(127, 140, 141)).setFgColor(Color.black).build();
 		fields[7] = new Chance.Builder().setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[8] = new Street.Builder().setTitle("Valby Langgade")
-				.setDescription(
-						"Leje af grund 100,  m/1 hus = 600, 2 huse = 1800, 3 huse = 5400, 4 huse = 8000, hotel = 11000, Hus pris = 1000, Hotel pris = 1000, pant = 1000")
-				.setSubText("Pris: 2000 kr.").setBgColor(Color.getHSBColor(127, 140, 141)).setFgColor(Color.black)
+		fields[8] = new Street.Builder().setTitle(msgL.msg(26))
+				.setDescription(msgL.msg(27))
+				.setSubText(msgL.msg(28)).setBgColor(Color.getHSBColor(127, 140, 141)).setFgColor(Color.black)
 				.build();
-		fields[9] = new Street.Builder().setTitle("Allégade")
-				.setDescription(
-						"Leje af grund 150,  m/1 hus = 800, 2 huse = 2000, 3 huse = 6000, 4 huse = 9000, hotel = 12000, Hus pris = 1000, Hotel pris = 1000, pant = 1200")
-				.setSubText("Pris: 2400 kr.").setBgColor(Color.getHSBColor(127, 140, 141)).setFgColor(Color.black)
+		fields[9] = new Street.Builder().setTitle(msgL.msg(29))
+				.setDescription(msgL.msg(30))
+				.setSubText(msgL.msg(31)).setBgColor(Color.getHSBColor(127, 140, 141)).setFgColor(Color.black)
 				.build();
-		fields[10] = new Jail.Builder().setTitle("Fængsels besøg").setDescription("Du er på besøg i fængselet")
-				.setSubText("Fængsels besøg.").setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black)
+		fields[10] = new Jail.Builder().setTitle(msgL.msg(32)).setDescription(msgL.msg(33))
+				.setSubText(msgL.msg(32)).setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black)
 				.build();
-		fields[11] = new Street.Builder().setTitle("Frederiksberg Allé")
-				.setDescription(
-						"Leje af grund 200,  m/1 hus = 1000, 2 huse = 3000, 3 huse = 9000, 4 huse = 12500, hotel = 15000, Hus pris = 2000, Hotel pris = 2000, pant = 1400")
-				.setSubText("Pris: 2800 kr.").setRent("1600").setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[12] = new Brewery.Builder().setTitle("Tuborg")
-				.setDescription("Leje af grund, per grund du ejer x100, x200  , pant = 1500")
-				.setSubText("Pris: 3000 kr.").setRent("Rent: 500,1000,2000 or 4000").setBgColor(Color.white)
+		fields[11] = new Street.Builder().setTitle(msgL.msg(34))
+				.setDescription(msgL.msg(35))
+				.setSubText(msgL.msg(36)).setBgColor(Color.green).setFgColor(Color.black).build();
+		fields[12] = new Brewery.Builder().setTitle(msgL.msg(37))
+				.setDescription(msgL.msg(38))
+				.setSubText(msgL.msg(39)).setBgColor(Color.white)
 				.setFgColor(Color.black).build();
-		fields[13] = new Street.Builder().setTitle("Bülowsvej")
+		fields[13] = new Street.Builder().setTitle(msgL.msg(40))
+				.setDescription(msgL.msg(41))
+				.setSubText(msgL.msg(42)).setBgColor(Color.green).setFgColor(Color.black).build();
+		fields[14] = new Street.Builder().setTitle(msgL.msg(43))
+				.setDescription(msgL.msg(44))
+				.setSubText(msgL.msg(45)).setBgColor(Color.green).setFgColor(Color.black).build();
+		fields[15] = new Shipping.Builder().setTitle(msgL.msg(46))
+				.setDescription(msgL.msg(47))
+				.setSubText(msgL.msg(22)).setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[16] = new Street.Builder().setTitle(msgL.msg(49))
 				.setDescription(
-						"Leje af grund 200,  m/1 hus = 1000, 2 huse = 3000, 3 huse = 9000, 4 huse = 12500, hotel = 15000, Hus pris = 2000, Hotel pris = 2000, pant = 1400")
-				.setSubText("Pris: 2800 kr.").setRent("2000").setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[14] = new Street.Builder().setTitle("Gl. Kongevej")
-				.setDescription(
-						"Leje af grund 250,  m/1 hus = 1250, 2 huse = 3750, 3 huse = 10000, 4 huse = 14000, hotel = 18000, Hus pris = 2000, Hotel pris = 2000, pant = 1600")
-				.setSubText("Pris: 3200 kr.").setBgColor(Color.green).setFgColor(Color.black).build();
-		fields[15] = new Shipping.Builder().setTitle("Mols-Linien")
-				.setDescription("Leje af grund hvis du ejer 1 = 500, 2 = 1000, 3 = 2000, 4 huse = 4000")
-				.setSubText("Pris: 4000 kr.").setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[16] = new Street.Builder().setTitle("Bernstorffsvej")
-				.setDescription(
-						"Leje af grund 300,  m/1 hus = 1400, 2 huse = 4000, 3 huse = 11000, 4 huse = 15000, hotel = 19000, Hus pris = 2000, Hotel pris = 2000, pant = 1800")
-				.setSubText("Pris: 3600 kr.").setBgColor(Color.gray).setFgColor(Color.black).build();
+						msgL.msg(50))
+				.setSubText(msgL.msg(54)).setBgColor(Color.gray).setFgColor(Color.black).build();
 		fields[17] = new Chance.Builder().setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[18] = new Street.Builder().setTitle("Hellerupvej")
+		fields[18] = new Street.Builder().setTitle(msgL.msg(52))
 				.setDescription(
-						"Leje af grund 300,  m/1 hus = 1400, 2 huse = 4000, 3 huse = 11000, 4 huse = 15000, hotel = 19000, Hus pris = 2000, Hotel pris = 2000, pant = 1800")
-				.setSubText("Pris: 3600 kr.").setBgColor(Color.gray).setFgColor(Color.black).build();
-		fields[19] = new Street.Builder().setTitle("Strandvejen")
+						msgL.msg(50))
+				.setSubText(msgL.msg(54)).setBgColor(Color.gray).setFgColor(Color.black).build();
+		fields[19] = new Street.Builder().setTitle(msgL.msg(55))
 				.setDescription(
-						"Leje af grund 350,  m/1 hus = 1600, 2 huse = 4400, 3 huse = 12000, 4 huse = 16000, hotel = 20000, Hus pris = 2000, Hotel pris = 2000, pant = 2000")
-				.setSubText("Pris: 4000 kr").setBgColor(Color.gray).setFgColor(Color.black).build();
-		fields[20] = new Refuge.Builder().setTitle("Parkering").setDescription("Du er pakeret").setSubText("Helle")
+						msgL.msg(56))
+				.setSubText(msgL.msg(48)).setBgColor(Color.gray).setFgColor(Color.black).build();
+		fields[20] = new Refuge.Builder().setTitle(msgL.msg(58)).setDescription(msgL.msg(59)).setSubText(msgL.msg(60))
 				.setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[21] = new Street.Builder().setTitle("Trianglen")
+		fields[21] = new Street.Builder().setTitle(msgL.msg(61))
 				.setDescription(
-						"Leje af grund 350,  m/1 hus = 1800, 2 huse = 5000, 3 huse = 14000, 4 huse = 17500, hotel = 21000, Hus pris = 3000, Hotel pris = 3000, pant = 1800")
-				.setSubText("Pris: 4400 kr.").setBgColor(Color.getHSBColor(224, 130, 131)).setFgColor(Color.black)
+						msgL.msg(56))
+				.setSubText(msgL.msg(63)).setBgColor(Color.getHSBColor(224, 130, 131)).setFgColor(Color.black)
 				.build();
 		fields[22] = new Chance.Builder().setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[23] = new Street.Builder().setTitle("Østerbrogade")
+		fields[23] = new Street.Builder().setTitle(msgL.msg(64))
 				.setDescription(
-						"Leje af grund 350,  m/1 hus = 1800, 2 huse = 5000, 3 huse = 14000, 4 huse = 17500, hotel = 21000, Hus pris = 3000, Hotel pris = 3000, pant = 2200")
-				.setSubText("Pris: 4400 kr.").setBgColor(Color.getHSBColor(224, 130, 131)).setFgColor(Color.black)
+						msgL.msg(65))
+				.setSubText(msgL.msg(63)).setBgColor(Color.getHSBColor(224, 130, 131)).setFgColor(Color.black)
 				.build();
-		fields[24] = new Street.Builder().setTitle("Grønningen")
+		fields[24] = new Street.Builder().setTitle(msgL.msg(67))
 				.setDescription(
-						"Leje af grund 400,  m/1 hus = 2000, 2 huse = 6000, 3 huse = 15000, 4 huse = 18500, hotel = 22000, Hus pris = 3000, Hotel pris = 3000, pant = 2400")
-				.setSubText("Pris: 4800 kr.").setBgColor(Color.getHSBColor(224, 130, 131)).setFgColor(Color.black)
+						msgL.msg(68))
+				.setSubText(msgL.msg(69)).setBgColor(Color.getHSBColor(224, 130, 131)).setFgColor(Color.black)
 				.build();
-		fields[25] = new Shipping.Builder().setTitle("Scandlines G-R")
-				.setDescription("Leje af grund hvis du ejer 1 = 500, 2 = 1000, 3 = 2000, 4 huse = 4000")
-				.setSubText("Pris: 4000 kr.").setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[26] = new Street.Builder().setTitle("Bredgade")
+		fields[25] = new Shipping.Builder().setTitle(msgL.msg(70))
+				.setDescription(msgL.msg(71))
+				.setSubText(msgL.msg(48)).setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[26] = new Street.Builder().setTitle(msgL.msg(73))
 				.setDescription(
-						"Leje af grund 450,  m/1 hus = 2200, 2 huse = 6600, 3 huse = 16000, 4 huse = 19500, hotel = 23000, Hus pris = 3000, Hotel pris = 3000, pant = 2600")
-				.setSubText("Pris: 5200 kr.").setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[27] = new Street.Builder().setTitle("Kgs. Nytorv")
+						msgL.msg(44))
+				.setSubText(msgL.msg(75)).setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[27] = new Street.Builder().setTitle(msgL.msg(76))
 				.setDescription(
-						"Leje af grund 450,  m/1 hus = 2200, 2 huse = 6600, 3 huse = 16000, 4 huse = 19500, hotel = 23000, Hus pris = 3000, Hotel pris = 3000, pant = 2600")
-				.setSubText("Pris: 5200 kr.").setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[28] = new Brewery.Builder().setTitle("Carlsberg").setDescription("Hvis du ejer 1 terning = x100, 2=x200")
-				.setSubText("Pris: 3000 kr.").setRent("Rent: 700").setBgColor(Color.white).setFgColor(Color.black)
+						msgL.msg(74))
+				.setSubText(msgL.msg(78)).setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[28] = new Brewery.Builder().setTitle(msgL.msg(79)).setDescription(msgL.msg(80))
+				.setSubText(msgL.msg(81)).setBgColor(Color.white).setFgColor(Color.black)
 				.build();
-		fields[29] = new Street.Builder().setTitle("Østergade")
+		fields[29] = new Street.Builder().setTitle(msgL.msg(82))
 				.setDescription(
-						"Leje af grund 500,  m/1 hus = 2400, 2 huse = 7200, 3 huse = 17000, 4 huse = 20500, hotel = 24000, Hus pris = 3000, Hotel pris = 3000, pant = 2800")
-				.setSubText("Pris: 5600 kr.").setBgColor(Color.white).setFgColor(Color.black).build();
-		fields[30] = new Jail.Builder().setTitle("Fængslet").setDescription("Ryk til fængsel!")
-				.setSubText("Ryk til fængsel!").setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black)
+						msgL.msg(83))
+				.setSubText(msgL.msg(84)).setBgColor(Color.white).setFgColor(Color.black).build();
+		fields[30] = new Jail.Builder().setTitle(msgL.msg(85)).setDescription(msgL.msg(86))
+				.setSubText(msgL.msg(86)).setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black)
 				.build();
-		fields[31] = new Street.Builder().setTitle("Amagertorv")
+		fields[31] = new Street.Builder().setTitle(msgL.msg(87))
 				.setDescription(
-						"Leje af grund 550,  m/1 hus = 2600, 2 huse = 7800, 3 huse = 18000, 4 huse = 22000, hotel = 25000, Hus pris = 4000, Hotel pris = 4000, pant = 3000")
-				.setSubText("Pris: 6000 kr.").setBgColor(Color.yellow).setFgColor(Color.black).build();
-		fields[32] = new Street.Builder().setTitle("Vimmelskaftet")
+						msgL.msg(88))
+				.setSubText(msgL.msg(89)).setBgColor(Color.yellow).setFgColor(Color.black).build();
+		fields[32] = new Street.Builder().setTitle(msgL.msg(90))
 				.setDescription(
-						"Leje af grund 550,  m/1 hus = 2600, 2 huse = 7800, 3 huse = 18000, 4 huse = 22000, hotel = 25000, Hus pris = 4000, Hotel pris = 4000, pant = 2600")
-				.setSubText("Pris: 6000 kr.").setRent("1600").setBgColor(Color.yellow).setFgColor(Color.black).build();
+						msgL.msg(91))
+				.setSubText(msgL.msg(92)).setBgColor(Color.yellow).setFgColor(Color.black).build();
 		fields[33] = new Chance.Builder().setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[34] = new Street.Builder().setTitle("Nygade")
+		fields[34] = new Street.Builder().setTitle(msgL.msg(93)) 
 				.setDescription(
-						"Leje af grund 600,  m/1 hus = 3000, 2 huse = 9000, 3 huse = 20000, 4 huse = 24000, hotel = 28000, Hus pris = 4000, Hotel pris = 4000, pant = 3200")
-				.setSubText("Pris: 6400 kr.").setRent("2000").setBgColor(Color.yellow).setFgColor(Color.black).build();
-		fields[35] = new Shipping.Builder().setTitle("Scandlines R-P")
-				.setDescription("Leje af grund hvis du ejer 1 = 500, 2 = 1000, 3 = 2000, 4 huse = 4000")
-				.setSubText("Pris: 4000 kr.").setBgColor(Color.white).setFgColor(Color.black).build();
+						msgL.msg(94))
+				.setSubText(msgL.msg(95)).setBgColor(Color.yellow).setFgColor(Color.black).build();
+		fields[35] = new Shipping.Builder().setTitle(msgL.msg(96))
+				.setDescription(msgL.msg(47))  
+				.setSubText(msgL.msg(47)).setBgColor(Color.white).setFgColor(Color.black).build();
 		fields[36] = new Chance.Builder().setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
-		fields[37] = new Street.Builder().setTitle("Frederiksberggade")
+		fields[37] = new Street.Builder().setTitle(msgL.msg(97))
 				.setDescription(
-						"Leje af grund 700,  m/1 hus = 3500, 2 huse = 10000, 3 huse = 22000, 4 huse = 30000, hotel = 40000, Hus pris = 4000, Hotel pris = 4000, pant = 3500")
-				.setSubText("Pris: 7000 kr.").setBgColor(Color.orange).setFgColor(Color.black).build();
-		fields[38] = new Tax.Builder().setTitle("").setDescription("Betal ekstraordinær statsskat 2000 kr.")
-				.setSubText("Betal ekstraordinær statsskat 2000 kr.").setBgColor(Color.getHSBColor(241, 196, 15))
+						msgL.msg(98))
+				.setSubText(msgL.msg(99)).setBgColor(Color.orange).setFgColor(Color.black).build();
+		fields[38] = new Tax.Builder().setTitle("").setDescription(msgL.msg(100))
+				.setSubText(msgL.msg(100)).setBgColor(Color.getHSBColor(241, 196, 15))
 				.setFgColor(Color.black).build();
-		fields[39] = new Street.Builder().setTitle("Rådhuspladsen")
+		fields[39] = new Street.Builder().setTitle(msgL.msg(101))
 				.setDescription(
-						"Leje af grund 1000,  m/1 hus = 4000, 2 huse = 12000, 3 huse = 28000, 4 huse = 34000, hotel = 40000, Hus pris = 4000, Hotel pris = 4000, pant = 4000")
-				.setSubText("Pris: 8000 kr.").setBgColor(Color.orange).setFgColor(Color.black).build();
+						msgL.msg(102))
+				.setSubText(msgL.msg(103)).setBgColor(Color.orange).setFgColor(Color.black).build();
 
 		GUI.create(fields);
+	}
+	public String changeLanguage(){
+		String language=GUI.getUserButtonPressed(msgL.msg(174), msgL.msg(175),msgL.msg(176));
+		msgL.changeLanguage(language);
+		return language;
 	}
 
 	// public void showSquareInfo(Square theSquare) {
@@ -174,7 +171,7 @@ public class GUIControl {
 	// }
 
 	public void showWinner(Player winner) {
-		GUI.showMessage("Congratulations " + winner + "! " + "You are the winner!");
+		GUI.showMessage(msgL.msg(104) + winner + "! " + msgL.msg(105));
 	}
 
 	public void createPlayer(Player newPlayer) {
@@ -203,12 +200,12 @@ public class GUIControl {
 	 */
 
 	public String[] numberOfPlayers() {
-		int numberOfPlayers = GUI.getUserInteger("How many players are you? (between 3-6)", 3, 6);
+		int numberOfPlayers = GUI.getUserInteger(msgL.msg(106), 3, 6);
 		String[] playerNames = new String[numberOfPlayers];
 		String[] tempArray = new String[numberOfPlayers];
 		for(int u=0;u<numberOfPlayers;u++){
-			tempArray[u]="error";
-			playerNames[u]="error"+u;
+			tempArray[u]=msgL.msg(107);
+			playerNames[u]=msgL.msg(107)+u;
 		}
 		String tempName;
 		boolean sameName = false;
@@ -218,12 +215,12 @@ public class GUIControl {
 			number = i + 1; // The Array[] have to start at index 0, but the
 							// player is number 1.
 			sameName = false;
-			tempName = GUI.getUserString("Indtast navn p� spiller nummer " + String.valueOf(number));
+			tempName = GUI.getUserString(msgL.msg(108) + String.valueOf(number));
 			for (int j = 0; j < numberOfPlayers; j++) {
 				if (tempArray[j].equals(tempName)) {
 					sameName = true;
 					i--;
-					GUI.showMessage("Ugyldigt navn: navne må ikke være ens");
+					GUI.showMessage(msgL.msg(109));
 				}
 			}
 			if (sameName == false) {
@@ -237,7 +234,7 @@ public class GUIControl {
 	// Player choices for each new turn
 	public String getUserInputTurn(Player thePlayer, String[] choices) {
 		String input;
-		input = GUI.getUserButtonPressed(thePlayer.toString() + " it's your turn. Take an action: ", choices);
+		input = GUI.getUserButtonPressed(thePlayer.toString() + msgL.msg(110), choices);
 		return input;
 	}
 
@@ -287,9 +284,9 @@ public class GUIControl {
 
 	public static boolean getBuyChoice(Ownable field, Player player) {
 
-		String input = GUI.getUserButtonPressed(player.toString() + ", you landed on " + field.toString()
-				+ ".\nDo you want to buy " + field.toString() + " for " + field.getPrice() + "£?", "Yes", "No");
-		if (input.equals("Yes"))
+		String input = GUI.getUserButtonPressed(player.toString() + msgL.msg(111) + field.toString()
+				+ msgL.msg(177) + field.toString() + msgL.msg(178) + field.getPrice() + msgL.msg(181), msgL.msg(179), msgL.msg(180));
+		if (input.equals(msgL.msg(179)))
 			return true;
 		else
 			return false;
@@ -297,8 +294,8 @@ public class GUIControl {
 	
 	public static boolean getTaxChoice(String name, Player player) {
 
-		String input = GUI.getUserButtonPressed(player.toString()+", du er landet p� "+name+".\nVil du betale indkomstskatten med 4.000 kr., eller med 10% af dine totale v�rdier?  ", "4.000 kr.", "10%");
-		if (input.equals("4.000 kr."))
+		String input = GUI.getUserButtonPressed(player.toString()+msgL.msg(111)+name+msgL.msg(182),msgL.msg(173), msgL.msg(183));
+		if (input.equals(msgL.msg(173)))
 			return true;
 		else
 			return false;
@@ -342,30 +339,26 @@ public class GUIControl {
 	}
 
 	public static void ownedMessage(Ownable field, Player landed, Player owner, int payment) {
-		GUI.showMessage(landed.toString() + ", you landed on " + field.toString() + ", which is owned by "
-				+ owner.toString() + ".\n" + "You pay " + payment + "£ to " + owner.toString());
+		GUI.showMessage(landed.toString() + msgL.msg(111) + field.toString() + msgL.msg(112)
+				+ owner.toString() + msgL.msg(184) + msgL.msg(113) + payment + msgL.msg(119) + msgL.msg(114) + owner.toString());
 	}
 
 	public static void buyMessage(Ownable field, Player player) {
 		GUI.showMessage(
-				"Congratulations! You have bought " + field.toString() + "! You pay " + field.getPrice() + "£");
+				msgL.msg(115) + field.toString() + msgL.msg(185) + field.getPrice() + msgL.msg(119));
 	}
 
 	public static void taxMessage(Player player, int amount) {
-		GUI.showMessage(player.toString() + " payed " + amount + "£");
+		GUI.showMessage(player.toString() + msgL.msg(116) + amount + msgL.msg(119));
 	}
 
 	public static void refugeMessage(Refuge refuge, Player player, int bonus) {
-		GUI.showMessage(player.toString() + ", you landed on the Refuge " + refuge.toString()
-				+ ". You are awarded a bonus of: " + bonus + "£");
-	}
-
-	public static void selfOwned() {
-		GUI.showMessage("You are the owner of this square!");
+		GUI.showMessage(player.toString() + msgL.msg(117) + refuge.toString()
+				+ msgL.msg(118) + bonus + msgL.msg(119));
 	}
 
 	public static void notEnoughMoney(Ownable own) {
-		GUI.showMessage("Whoa there, you don't have enough money to buy " + own.toString());
+		GUI.showMessage(msgL.msg(121) + own.toString());
 	}
 	
 
