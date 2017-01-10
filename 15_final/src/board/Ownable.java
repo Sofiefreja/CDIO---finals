@@ -2,6 +2,7 @@ package board;
 
 import entities.Player;
 import controller.GUIControl;
+import controller.msgL;
 
 /**
  * Abstract class Ownable, extended from Square. Superclass to all ownable types
@@ -40,7 +41,7 @@ public abstract class Ownable extends Square {
 			if (player.toString().equals(owner.toString()) == false) {// if the player is not the owner of
 																		// this field, the following happens
 				if(owner.getJailStatus()==true){
-					GUIControl.printMessage("Ejeren er i fængsel, du skal ikke betale nogen leje.");
+					GUIControl.printMessage(msgL.msg(127));
 				}else{
 					int amount = getRent();// the rent is calculated, depending on the subclass.
 					GUIControl.ownedMessage(this, player, owner, amount);// a message is printed to the player about the sequence.
@@ -50,7 +51,7 @@ public abstract class Ownable extends Square {
 					GUIControl.updateBalance(owner);
 				}
 			} else { //if the player is the owner of this square
-				GUIControl.selfOwned(); // prints "You are the owner of this square!"
+				GUIControl.printMessage(msgL.msg(120));
 			}
 		} else if (player.getBalance() >= this.price) {// if the field is'nt owned and the player
 														// has enough money, he has the choice of buying it.

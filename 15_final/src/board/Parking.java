@@ -1,6 +1,7 @@
 package board;
 import entities.Player;
 import controller.GUIControl;
+import controller.msgL;
 /**
  * 	A player lands on parking.
  * @author Sofie Freja Christensen s153932
@@ -20,6 +21,6 @@ public class Parking extends Square {
 	 * @param player
 	 */
 	public void landOnSquare(Player player){
-		GUIControl.printMessage("Du er landet på et parkeringsfelt");
+		GUIControl.printMessage(msgL.msg(58));
 	}
 }

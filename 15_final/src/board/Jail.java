@@ -2,6 +2,7 @@ package board;
 
 import entities.Player;
 import controller.GUIControl;
+import controller.msgL;
 
 /**
  * 
@@ -17,6 +18,7 @@ public class Jail extends Square {
 	
 	@Override
 	public void landOnSquare(Player player) {
+		GUIControl.printMessage(msgL.msg(164));
 		player.setJailStatus(true);
 		player.setPosition(10,player.getCurrentPosition());
 		GUIControl.moveVehicle(player);

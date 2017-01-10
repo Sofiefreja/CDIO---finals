@@ -117,7 +117,7 @@ Index115	Tillykke! Du har købt	Congratulations! You have bought
 Index116	betalte	payed
 Index117	, du landede på helle	, you landed on the Refuge
 Index118	Du er tildelt en bonus på	. You are awarded a bonus of:
-Index119	kr.	kr.
+Index119	 kr.	 kr. 
 Index120	Du er ejeren af dette felt!	You are the owner of this square!
 Index121	Uha, du har ikke nok penge til at købe	Whoa there, you don't have enough money to buy
 Index122	Du får legatet på 4000 kr!	You get a grant of 40000 kr!
@@ -163,6 +163,8 @@ Index161	Kommunen har eftergivet et kvartals skat. Hæv i banken 3.000 kr.	The m
 Index162	De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag 500 kr. fra hver spiller	You put money out for a potluck. Receive 500 kr. From each player
 Index163	De har kørt frem for 'Fuldt stop'. Betal 1.000 kr. i bøde.	You've run over 'Full stop'. Pay 1000 kr. In fines.
 Index164	Du rykker i fængsel.	You move to jail.
-Index165	Du har betalt	You have paid
+Index165	Du har betalt 	You have paid 
 Index166	Betal kaution på 1000 kr.	Pay bail of 1000 kr.
 Index167	Du betaler 1000 kroner i kaution.	You pay the bail of 1000 kr.
+Index168	Du har købt	You have bought
+Index169	huse. Det kostede 	houses. It cost 

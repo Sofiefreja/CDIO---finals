@@ -346,10 +346,6 @@ public class GUIControl {
 				+ ". You are awarded a bonus of: " + bonus + "£");
 	}
 
-	public static void selfOwned() {
-		GUI.showMessage("You are the owner of this square!");
-	}
-
 	public static void notEnoughMoney(Ownable own) {
 		GUI.showMessage("Whoa there, you don't have enough money to buy " + own.toString());
 	}
