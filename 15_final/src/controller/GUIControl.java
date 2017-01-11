@@ -125,8 +125,11 @@ public class GUIControl {
 	public void createPlayer(Player newPlayer) {
 
 		// Creating the car.
-		Car car = new Car.Builder().typeUfo().patternFill().primaryColor(newPlayer.getColor())
-				.secondaryColor(newPlayer.getColor()).build();
+		Car car = new Car.Builder().typeUfo()
+				.patternHorizontalDualColor()
+				.primaryColor(Color.WHITE)
+				.secondaryColor(newPlayer.getColor())
+				.build();
 		// Creating player on board.
 		GUI.addPlayer(newPlayer.toString(), newPlayer.getBalance(), car);
 		GUI.setCar(1, newPlayer.toString());
