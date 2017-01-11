@@ -38,6 +38,10 @@ public class GameLogic {
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
 		theCup = new FakeCup(0);
+<<<<<<< HEAD
+=======
+		allTheCards = new AllCards(thePlayers, theBoard);
+>>>>>>> branch 'Develop' of https://github.com/Sofiefreja/CDIO---finals.git
 		
 		// The players are initialized
 				thePlayers = createPlayers();
@@ -295,6 +299,7 @@ public class GameLogic {
 		} else if (theplayer.getJailCounter() == 2) {
 			GUIControl.printMessage(msgL.msg(171));
 			theplayer.withdraw(1000);
+			GUIControl.updateBalance(theplayer);
 			theplayer.setJailStatus(false);
 			doMoveVehicle(theplayer);
 		} else {
