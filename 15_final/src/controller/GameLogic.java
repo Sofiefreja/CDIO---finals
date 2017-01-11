@@ -81,6 +81,9 @@ public class GameLogic {
 								// If the dice is equals turn resets
 								if (theCup.getEquals() == true && equalEyeCounter != 2) {
 									doMoveVehicle(thePlayers.get(i));
+									if(thePlayers.get(i).getBalance()<0){
+									getMenu(thePlayers.get(i));
+								}
 									i--;
 									equalEyeCounter++;
 								} else if (theCup.getEquals() && equalEyeCounter == 2) { // Puts
@@ -98,6 +101,9 @@ public class GameLogic {
 								} else {
 									equalEyeCounter = 0;
 									doMoveVehicle(thePlayers.get(i));
+									if(thePlayers.get(i).getBalance()<0){
+									getMenu(thePlayers.get(i));
+								}
 								}
 							}
 						} else if (turn.equals(msgL.msg(2))) {
@@ -205,7 +211,7 @@ public class GameLogic {
 		// Save all the players in a ArrayList.
 
 		for (int i = 0; i < playerNames.length; i++) {
-			thePlayers.add(new Player(playerNames[i], 130000)); // Creating
+			thePlayers.add(new Player(playerNames[i], 30000)); // Creating
 																// player
 			// objects for the game
 			GUIGame.createPlayer(thePlayers.get(i)); // Creating Player objects
