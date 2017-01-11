@@ -3,7 +3,7 @@ package controller;
 import java.awt.Color;
 import java.util.ArrayList;
 
-//import board.LaborCamp;
+
 //import board.Tax;
 //import board.Refuge;
 import board.Ownable;
