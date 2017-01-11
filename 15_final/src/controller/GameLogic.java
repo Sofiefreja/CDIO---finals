@@ -81,8 +81,10 @@ public class GameLogic {
 								if (theCup.getEquals() == true && equalEyeCounter != 2) {
 									doMoveVehicle(thePlayers.get(i));
 
-									i--;
-									equalEyeCounter++;
+									if (thePlayers.get(i).getJailStatus() == false) {
+										i--;
+										equalEyeCounter++;
+									}
 								} else if (theCup.getEquals() && equalEyeCounter == 2) { // Puts
 																							// the
 									// player in
@@ -288,8 +290,7 @@ public class GameLogic {
 			}
 		}
 		choices.add(msgL.msg(10));
-		
-		
+
 		// }
 
 		return choices.toArray(new String[choices.size()]); // Converting the
