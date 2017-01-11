@@ -7,6 +7,7 @@ import java.util.Random;
 
 import board.Ownable;
 import controller.GUIControl;
+import controller.GameLogic;
 import entities.Board;
 import entities.Player;
 
@@ -16,9 +17,9 @@ import entities.Player;
  *
  */
 public class PlayerTransaction extends Transaction{
+	ArrayList<Player> playerList;
 
 	int number = 0;
-	ArrayList<Player> playerList = new ArrayList<Player>();
 	
 	/**
 	 * Constructor for MobilePay Card
@@ -28,24 +29,23 @@ public class PlayerTransaction extends Transaction{
 	 * @param playerList
 	 */
 	public PlayerTransaction(String description, int money, ArrayList<Player> playerList) {
-		super(description,money);
-		this.playerList = playerList;
-		
+		super(description, money);
+		this.playerList = playerList;	
 	}
 
 	@Override
 	public void useCard(Player player) {
 		
-		int amount = playerList.size();
+	
+	int amount = playerList.size();
 		
-
-			GUIControl.printMessage(description);;
+			GUIControl.printMessage(description);
 			
-			for (int i=0; i<=playerList.size();i++) {
+			for (int i=0; i<playerList.size();i++) {
 				playerList.get(i).withdraw(money);
 			}
-				
 			player.deposit(money*amount);
+			
 			
 		
 		

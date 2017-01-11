@@ -1,5 +1,7 @@
 package cards;
 
+import java.util.ArrayList;
+
 import board.Street;
 import controller.GUIControl;
 import controller.msgL;

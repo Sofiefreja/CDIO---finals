@@ -17,7 +17,7 @@ public class GameLogic {
 	private GUIControl GUIGame;
 	private Board theBoard;
 	private Cup theCup;
-	private ArrayList<Player> thePlayers;
+	public ArrayList<Player> thePlayers;
 	private int equalEyeCounter;
 	private int i;
 	private AllCards allTheCards;
@@ -37,18 +37,18 @@ public class GameLogic {
 
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
-		theCup = new Cup();
-		allTheCards = new AllCards(thePlayers, theBoard);
+		theCup = new FakeCup(0);
 		
+		// The players are initialized
+				thePlayers = createPlayers();
 		
 		theBoard = new Board(theCup,allTheCards,thePlayers);
 		
+//		allTheCards = new AllCards(thePlayers, theBoard);
+		
 		//allTheCards.shuffle();
 		
-		
-
-		// The players are initialized
-		thePlayers = createPlayers();
+		allTheCards = new AllCards(thePlayers, theBoard);
 
 		// Beginning the game.
 		equalEyeCounter = 0;

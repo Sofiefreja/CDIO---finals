@@ -1,6 +1,5 @@
 package entities;
 import java.util.ArrayList;
-import java.util.List;
 
 import java.util.Random;
 
@@ -30,7 +29,6 @@ public class AllCards {
 	 */
 	public AllCards(ArrayList<Player> thePlayers, Board theBoard) { // 
 		theCards = new Card[44];
-		
 		
 		theCards[0] = new PriceIncrease("Ejendomsskatterne er steget. Ekstraudgifterne er: 800 kr. pr. hus, 2.300 kr. pr. hotel", 800, 2300);
 		theCards[1] = new MoveToSquare("Ryk frem til Frederiksberg Allé. Hvis de passerer 'START', indkassér da 4.000 kr.", 37, theBoard);//Kig lige
@@ -63,7 +61,7 @@ public class AllCards {
 		theCards[28] = new IncomeIncrease("De havde en række med elleve rigtige i tipning. Modtag 4.000 kr.", 4000);
 		theCards[29] = new IncomeIncrease("De har vundet i klasselotteriet. Modtag 500 kr.", 500);
 		theCards[30] = new IncomeIncrease("De har vundet i klasselotteriet. Modtag 500 kr.", 500);
-		theCards[31] = new MoveToSquare("Ryk frem til Vimmelskaftet. Hvis de passerer start, indkassér da 4.000 kr.", 0,theBoard);// Kig lige
+		theCards[31] = new MoveToSquare("Ryk frem til Vimmelskaftet. Hvis de passerer start, indkassér da 4.000 kr.", 32,theBoard);// Kig lige
 		theCards[32] = new ChangePosition("Ryk tre felter tilbage", -3,theBoard);//Kige lige
 		theCards[33] = new ChangePosition("Ryk tre felter tilbage", -3,theBoard);//Kig lige
 		theCards[34] = new Pardon("I andledningen af kongens fødselsdag benådes de herved for fængsel. Dette kort kan opbevares indtil De får brug for det.");
