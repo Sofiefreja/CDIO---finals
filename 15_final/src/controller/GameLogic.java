@@ -295,6 +295,7 @@ public class GameLogic {
 		} else if (theplayer.getJailCounter() == 2) {
 			GUIControl.printMessage(msgL.msg(171));
 			theplayer.withdraw(1000);
+			GUIControl.updateBalance(theplayer);
 			theplayer.setJailStatus(false);
 			doMoveVehicle(theplayer);
 		} else {
