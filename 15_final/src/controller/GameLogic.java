@@ -36,7 +36,7 @@ public class GameLogic {
 
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
-		theCup = new Cup();
+		theCup = new FakeCup(0);
 
 		// The players are initialized
 		thePlayers = createPlayers();

@@ -265,62 +265,67 @@ public class Assets {
 	 */
 	public boolean getBuildStatus() {
 
-		int counterA = 0;
-		int counterB = 0;
-		int counterC = 0;
-		int counterD = 0;
-		int counterE = 0;
-		int counterF = 0;
-		int counterG = 0;
-		int counterH = 0;
+//		int counterA = 0;
+//		int counterB = 0;
+//		int counterC = 0;
+//		int counterD = 0;
+//		int counterE = 0;
+//		int counterF = 0;
+//		int counterG = 0;
+//		int counterH = 0;
+//
+//		if (ownedStreet.size() == 0) {
+//			buildStatus = false;
+//			return buildStatus;
+//		} else {
+//			for (int i = 0; i < ownedStreet.size(); i++) {
+//
+//				if (ownedStreet.get(i).getType() == 'A') {
+//					counterA++;
+//
+//				} else if (ownedStreet.get(i).getType() == 'B') {
+//					counterB++;
+//
+//				} else if (ownedStreet.get(i).getType() == 'C') {
+//					counterC++;
+//
+//				} else if (ownedStreet.get(i).getType() == 'D') {
+//					counterD++;
+//
+//				} else if (ownedStreet.get(i).getType() == 'E') {
+//					counterE++;
+//
+//				} else if (ownedStreet.get(i).getType() == 'F') {
+//					counterF++;
+//
+//				} else if (ownedStreet.get(i).getType() == 'G') {
+//					counterG++;
+//
+//				} else if (ownedStreet.get(i).getType() == 'H') {
+//					counterH++;
+//				}
+//
+//			}
+//
+//			if (counterA == 2 || counterH == 2 || counterB == 3 || counterC == 3 || counterD == 3 || counterE == 3
+//					|| counterF == 3 || counterG == 3) {
+//				for (int j = 0; j < ownedStreet.size(); j++) {
 
-		if (ownedStreet.size() == 0) {
-			buildStatus = false;
-			return buildStatus;
-		} else {
-			for (int i = 0; i < ownedStreet.size(); i++) {
+					if (this.getBuildableList().length != 0) {
+					
+						buildStatus = true;
 
-				if (ownedStreet.get(i).getType() == 'A') {
-					counterA++;
+					} else {
+						
+						buildStatus = false;
 
-				} else if (ownedStreet.get(i).getType() == 'B') {
-					counterB++;
-
-				} else if (ownedStreet.get(i).getType() == 'C') {
-					counterC++;
-
-				} else if (ownedStreet.get(i).getType() == 'D') {
-					counterD++;
-
-				} else if (ownedStreet.get(i).getType() == 'E') {
-					counterE++;
-
-				} else if (ownedStreet.get(i).getType() == 'F') {
-					counterF++;
-
-				} else if (ownedStreet.get(i).getType() == 'G') {
-					counterG++;
-
-				} else if (ownedStreet.get(i).getType() == 'H') {
-					counterH++;
-				}
-
-				if (counterA == 2 || counterH == 2 || counterB == 3 || counterC == 3 || counterD == 3 || counterE == 3
-						|| counterF == 3 || counterG == 3) {
-					for (int j = 0; j < ownedStreet.size(); j++) {
-
-						if (ownedStreet.get(j).getNumberOfBuildings() == 5
-								|| assetOwner.getBalance() < ownedStreet.get(j).getPriceOfBuilding()) {
-							buildStatus = false;
-
-						} else {
-							buildStatus = true;
-
-						}
 					}
-				}
-			}
-		}
+//				}
+//			} else {
+//				buildStatus = false;
+//			}
+//		}
+
 		return buildStatus;
 
 	}
@@ -384,7 +389,8 @@ public class Assets {
 							&& ownedStreet.get(i).getType() == 'H' && ownedStreet.get(i).getNumberOfBuildings() < 5) {
 
 				if (ownedStreet.get(i).getPropertyPawnStatus() == false
-						&& assetOwner.getBalance() >= ownedStreet.get(i).getPriceOfBuilding() && ownedStreet.get(i).getNumberOfBuildings() < 5) {
+						&& assetOwner.getBalance() >= ownedStreet.get(i).getPriceOfBuilding()
+						&& ownedStreet.get(i).getNumberOfBuildings() < 5) {
 
 					buildableList.add(ownedStreet.get(i).toString());
 
@@ -398,34 +404,42 @@ public class Assets {
 
 	public boolean getPawnStatus() {
 
-		if (owned.size() == 0) {
-			pawnStatus = false;
-			return pawnStatus;
+		if (this.getPawnable().length != 0) {
+			
+			pawnStatus = true;
+
 		} else {
-
-			if (ownedStreet.size() != 0) {
-
-				for (int i = 0; i < ownedStreet.size(); i++) {
-
-					if (ownedStreet.get(i).getPropertyPawnStatus() == false
-							&& ownedStreet.get(i).getNumberOfBuildings() == 0) {
-
-						pawnStatus = true;
-					}
-				}
-			}
-
-			if (owned.size() != 0) {
-
-				for (int j = 0; j < owned.size(); j++) {
-
-					if (owned.get(j).getPropertyPawnStatus() == false && !(owned.get(j) instanceof Street)) {
-
-						pawnStatus = true;
-
-					}
-
-				}
+			
+			pawnStatus = false;
+		
+//		if (owned.size() == 0) {
+//			pawnStatus = false;
+//			return pawnStatus;
+//		} else {
+//
+//			if (ownedStreet.size() != 0) {
+//
+//				for (int i = 0; i < ownedStreet.size(); i++) {
+//
+//					if (ownedStreet.get(i).getPropertyPawnStatus() == false
+//							&& ownedStreet.get(i).getNumberOfBuildings() == 0) {
+//
+//						pawnStatus = true;
+//					}
+//				}
+//			}
+//
+//			if (owned.size() != 0) {
+//
+//				for (int j = 0; j < owned.size(); j++) {
+//
+//					if (owned.get(j).getPropertyPawnStatus() == false && !(owned.get(j) instanceof Street)) {
+//
+//						pawnStatus = true;
+//
+//					}
+//
+//				}
 
 			}
 
@@ -433,7 +447,7 @@ public class Assets {
 
 		}
 
-	}
+//	}
 
 	public String[] getPawnable() {
 
