@@ -226,10 +226,10 @@ public class GameLogic {
 
 		if (theplayer.getBalance() < 0) { // menu if is balance under 0 (forced
 											// to sell houses)
-			if (theplayer.getBuilding()) {
+			if (theplayer.getBuilding() == true) {
 				choices.add(msgL.msg(2));
 			}
-			if (theplayer.getProperty()) { // menu if is balance under 0 (forced
+			if (theplayer.getProperty() == true && theplayer.getPawnStatus() == true) { // menu if is balance under 0 (forced
 											// to pawn)
 				choices.add(msgL.msg(3));
 			}
