@@ -179,7 +179,7 @@ public class Assets {
 
 		for (int i = 0; i < ownedStreet.size(); i++) {
 
-			if (ownedStreet.get(i).getNumberOfBuildings() >= 1 && ownedStreet.get(i).getNumberOfBuildings() <=5 ) {
+			if (ownedStreet.get(i).getNumberOfBuildings() >= 1 && ownedStreet.get(i).getNumberOfBuildings() <= 5) {
 
 				sellableList.add(ownedStreet.get(i).toString());
 
@@ -189,7 +189,7 @@ public class Assets {
 
 		return sellableList.toArray(new String[sellableList.size()]);
 	}
-	
+
 	/**
 	 * Method for returning a boolean value of whether the player owns a
 	 * building.
@@ -398,12 +398,28 @@ public class Assets {
 			pawnStatus = false;
 			return pawnStatus;
 		} else {
-			for (int i = 0; i < owned.size(); i++) {
 
-				if (ownedStreet.get(i).getPropertyPawnStatus() == false
-						&& ownedStreet.get(i).getNumberOfBuildings() == 0) {
+			if (ownedStreet.size() != 0) {
 
-					pawnStatus = true;
+				for (int i = 0; i < ownedStreet.size(); i++) {
+
+					if (ownedStreet.get(i).getPropertyPawnStatus() == false
+							&& ownedStreet.get(i).getNumberOfBuildings() == 0) {
+
+						pawnStatus = true;
+					}
+				}
+			}
+
+			if (owned.size() != 0) {
+
+				for (int j = 0; j < owned.size(); j++) {
+
+					if (owned.get(j).getPropertyPawnStatus() == false && !(owned.get(j) instanceof Street)) {
+
+						pawnStatus = true;
+
+					}
 
 				}
 
@@ -427,6 +443,15 @@ public class Assets {
 
 			}
 
+		}
+		
+		for (int j = 0; j < owned.size(); j++) {
+			
+			if (owned.get(j).getPropertyPawnStatus() == false && !(owned.get(j) instanceof Street)) {
+				
+				pawnable.add(owned.get(j).toString());
+				
+			}
 		}
 
 		return pawnable.toArray(new String[pawnable.size()]);
