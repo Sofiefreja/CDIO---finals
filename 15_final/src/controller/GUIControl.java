@@ -136,9 +136,10 @@ public class GUIControl {
 	public void showDice(Cup newCup) {
 		int d1 = newCup.getD1();
 		int d2 = newCup.getD2();
-		if (d1 > 6 || d2 > 6)
+		if (d1 > 6 || d2 > 6 && d2<0||d2<0)
 			GUI.setDice(1, 1);
-		GUI.setDice(d1, d2);
+		else
+			GUI.setDice(d1, d2);
 	}
 
 	// Creation of players, saving the number of players to an integer and the

@@ -44,8 +44,5 @@ public class Chance extends Square {
 		} else {
 			index++;
 		}
-
-		
-
 	}
 }

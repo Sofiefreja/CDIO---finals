@@ -28,6 +28,7 @@ public class Board {
 	public Board(Cup theCup, ArrayList<Player> thePlayers) {
 		
 		allTheCards = new AllCards(thePlayers ,this);
+		allTheCards.shuffle();
 
 		// Navn, ID, pris, pawn, pris for bygning, rent 0,1,2,3,4,hotel, type
 		squares[0] = new Start("Start", 1);

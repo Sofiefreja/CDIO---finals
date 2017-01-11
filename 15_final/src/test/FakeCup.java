@@ -14,13 +14,13 @@ public class FakeCup extends Cup{
 
 	public FakeCup(int testCaseNumber) {
 		//System.out.println(new File("ajknsfhijoa").getAbsolutePath()); // FInd bib
-		String fileName = "testData.csv";
+		String fileName = "cupFile.csv";
 		File file = new File(fileName);
 		int i = 0;
 		try {
 			Scanner inputStream = new Scanner(file);
 			while (inputStream.hasNextLine()) {
-				cupArray[i++] = inputStream.nextLine().split(";")[testCaseNumber];
+				cupArray[i++] = inputStream.nextLine().split("\t")[testCaseNumber];
 			}
 			inputStream.close();
 		} catch (FileNotFoundException e) {
