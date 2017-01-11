@@ -1,192 +1,3 @@
-<<<<<<< HEAD
-Index0	Danish	English				
-Index1	Rul	Roll				
-Index2	Sælg	Sell				
-Index3	Du vil gerne sælge noget	You want to sell something				
-Index4	Pantsætning	Pawning				
-Index5	Du vil gerne pantsætte noget	You want to pawn something				
-Index6	Køb huse eller hotel	Buy houses or hotel				
-Index7	Du vil gerne købe huse eller hoteller	You want to buy houses or hotels				
-Index8	Sælg huse eller hotel	Sell houses or hotel				
-Index9	Du vil gerne sælge huse eller hoteller	You want to sell houses and hotels				
-Index10	Giv op	Give up				
-Index11	Start	Start				
-Index12	Hver gang De passere Start, modtag kr. 4000	Each time you pass start you receive kr. 4000				
-Index13	Rødovrevej	Rødovrevej				
-Index14	Leje af grund 50, m/1 hus = 250, 2 huse = 750, 3 huse = 2250, 4 huse = 4000, hotel = 6000, Hus pris = 1000, Hotel pris = 1000, pant = 600	Rent = 50. w/ 1 house = 250, 2 houses = 750, 3 houses = 2250, 4 = 4000 houses, hotel = 6000, house price = 1000, Hotel Price = 1000, pawn = 600				
-Index15	Pris: 1200	Price: 1200				
-Index16	Hvidovrevej	Hvidovrevej				
-Index17	Leje af grund 50, m/1 hus = 250, 2 huse = 750, 3 huse = 2250, 4 huse = 4000, hotel = 6000, Hus pris = 1000, Hotel pris = 1000, pant = 600	Rent= 50, m/1 house = 250, 2 houses = 750, 3 houses = 2250, 4 houses = 4000, hotel = 6000, house price = 1000, Hotel price = 1000, pawn = 600				
-Index18	Indkomstskat	Income tax				
-Index19	Vælg mellem at betale 10% eller 4000 kr.	Choose between paying 10%, or 4000 kr.				
-Index20	Scandlines H-H	Scandlines H-H				
-Index21	Leje af grund hvis du ejer 1 = 500, 2 = 1000, 3 = 2000, 4 = 4000	Renting if you own 1 = 500, 2 = 1000, 3 = 2000, 4 = 4000				
-Index22	Pris: 4000 kr.	Price: 4000 kr				
-Index23	Roskildevej	Roskildevej				
-Index24	Leje af grund 100, m/1 hus = 600, 2 huse = 1800, 3 huse = 5400, 4 huse = 8000, hotel = 11000, Hus pris = 1000, Hotel pris = 1000, pant = 1000	Rent= 100, m/1 house = 600, 2 houses = 1800, 3 houses = 5400, 4 houses = 8000, hotel = 11000, house price = 1000, Hotel price = 1000, pawn = 1000				
-Index25	Pris: 2000	Price: 2000 kr				
-Index26	Valby Langgade	Valby Langgade				
-Index27	Leje af grund 100, m/1 hus = 600, 2 huse = 1800, 3 huse = 5400, 4 huse = 8000, hotel = 11000, Hus pris = 1000, Hotel pris = 1000, pant = 1000	Rent= 100, m/1 house = 600, 2 houses = 1800, 3 houses = 5400, 4 houses = 8000, hotel = 11000, house price = 1000, Hotel price = 1000, pawn = 1000				
-Index28	Pris: 2000 kr	Price: 2000 kr				
-Index29	Allégade	Allégade				
-Index30	Leje af grund 150, m/1 hus = 800, 2 huse = 2000, 3 huse = 6000, 4 huse = 9000, hotel = 12000, Hus pris = 1000, Hotel pris = 1000, pant = 1200	Rent= 150, m/1 house = 800, 2 houses = 2000, 3 houses = 6000, 4 houses = 9000, hotel = 12000, house price = 1000, Hotel price = 1000, pawn = 1200				
-Index31	Pris: 2400 kr.	Price: 2400 kr.				
-Index32	Fængsels besøg	Prison visit				
-Index33	Du er på besøg i fængslet	You are visiting the prison				
-Index34	Frederiksberg Allé	Frederiksberg Allé				
-Index35	Leje af grund 200, m/1 hus = 1000, 2 huse = 3000, 3 huse = 9000, 4 huse = 12500, hotel = 15000, Hus pris = 2000, Hotel pris = 2000, pant = 1400	Rent= 200, m/1 house = 1000, 2 houses = 3000, 3 houses = 9000, 4 houses = 12500, hotel = 15000, house price = 2000, Hotel price = 2000, pawn = 1400				
-Index36	Pris: 2800 kr.	Price: 2800 kr.				
-Index37	Tuborg	Tuborg				
-Index38	Leje af grund, per grund du ejer x100, x200 , pant = 150	Rent per brewery you own 1= x100, 2=x200 , pawn = 150				
-Index39	Pris: 3000 kr	Price: 3000 kr				
-Index40	Bülowsvej	Bülowsvej				
-Index41	Leje af grund 200, m/1 hus = 1000, 2 huse = 3000, 3 huse = 9000, 4 huse = 12500, hotel = 15000, Hus pris = 2000, Hotel pris = 2000, pant = 1400	Rent= 200, m/1 house = 1000, 2 houses = 3000, 3 houses = 9000, 4 houses = 12500, hotel = 15000, house price = 2000, Hotel price = 2000, pawn = 1400				
-Index42	Pris: 2800 kr.	Price: 2800 kr.				
-Index43	Gl. Kongevej	Gl. Kongevej				
-Index44	Leje af grund 250, m/1 hus = 1250, 2 huse = 3750, 3 huse = 10000, 4 huse = 14000, hotel = 18000, Hus pris = 2000, Hotel pris = 2000, pant = 1600	Rent= 250, m/1 house = 1250, 2 houses = 3750, 3 houses = 10000, 4 houses = 14000, hotel = 18000, house price = 2000, Hotel price = 2000, pawn = 1600				
-Index45	Pris: 3200 kr.	Price: 3200 kr.				
-Index46	Mols-Linien	Mols-Linien				
-Index47	Leje af grund hvis du ejer 1 = 500, 2 = 1000, 3 = 2000, 4 = 4000	Renting if you own 1 = 500, 2 = 1000, 3 = 2000, 4 = 4000				
-Index48	Pris: 4000 kr	Price: 4000 kr				
-Index49	Bernstorffsvej	Bernstorffsvej				
-Index50	Leje af grund 300, m/1 hus = 1400, 2 huse = 4000, 3 huse = 11000, 4 huse = 15000, hotel = 19000, Hus pris = 2000, Hotel pris = 2000, pant = 1800	Rent= 300, m/1 house = 1400, 2 houses = 4000, 3 houses = 11000, 4 houses = 15000, hotel = 19000, house price = 2000, Hotel price = 2000, pawn = 1800				
-Index51	Pris: 3600 kr	Price: 3600 kr				
-Index52	Hellerupvej	Hellerupvej				
-Index53	Leje af grund 300, m/1 hus = 1400, 2 huse = 4000, 3 huse = 11000, 4 huse = 15000, hotel = 19000, Hus pris = 2000, Hotel pris = 2000, pant = 1800	Rent= 300, m/1 house = 1400, 2 houses = 4000, 3 houses = 11000, 4 houses = 15000, hotel = 19000, house price = 2000, Hotel price = 2000, pawn = 1800				
-Index54	Pris: 3600 kr.	Price: 3600 kr.				
-Index55	Strandvejen	Strandvejen				
-Index56	Leje af grund 350, m/1 hus = 1600, 2 huse = 4400, 3 huse = 12000, 4 huse = 16000, hotel = 20000, Hus pris = 2000, Hotel pris = 2000, pant = 2000	Rent= 350, m/1 house = 1600, 2 houses = 4400, 3 houses = 12000, 4 houses = 16000, hotel = 20000, house price = 2000, Hotel price = 2000, pawn = 2000				
-Index57	Pris: 4000 kr.	Price: 4000 kr.				
-Index58	Parkering	Parking				
-Index59	Du er parkeret	You are parked				
-Index60	Helle	Refuge				
-Index61	Trianglen	Trianglen				
-Index62	Leje af grund 350, m/1 hus = 1800, 2 huse = 5000, 3 huse = 14000, 4 huse = 17500, hotel = 21000, Hus pris = 3000, Hotel pris = 3000, pant = 1800	Rent= 350, m/1 house = 1800, 2 houses = 5000, 3 houses = 14000, 4 houses = 17500, hotel = 21000, house price = 3000, Hotel price = 3000, pawn = 1800				
-Index63	Pris: 4400 kr.	Price: 4400 kr.				
-Index64	Østerbrogade	Østerbrogade				
-Index65	Leje af grund 350, m/1 hus = 1800, 2 huse = 5000, 3 huse = 14000, 4 huse = 17500, hotel = 21000, Hus pris = 3000, Hotel pris = 3000, pant = 2200	Rent= 350, m/1 house = 1800, 2 houses = 5000, 3 houses = 14000, 4 houses = 17500, hotel = 21000, house price = 3000, Hotel price = 3000, pawn = 2200				
-Index66	Pris: 4400 kr	Price: 4400 kr				
-Index67	Grønningen	Grønningen				
-Index68	Leje af grund 400, m/1 hus = 2000, 2 huse = 6000, 3 huse = 15000, 4 huse = 18500, hotel = 22000, Hus pris = 3000, Hotel pris = 3000, pant = 2400	Rent= 400, m/1 house = 2000, 2 houses = 6000, 3 houses = 15000, 4 houses = 18500, hotel = 22000, house price = 3000, Hotel price = 3000, pawn = 2400				
-Index69	Pris: 4800 kr	Price: 4800 kr				
-Index70	Scandlines G-R	Scandlines G-R				
-Index71	Leje af grund hvis du ejer 1 = 500, 2 = 1000, 3 = 2000, 4 huse = 4000	Renting if you own 1 = 500, 2 = 1000, 3 = 2000, 4 = 4000				
-Index72	Pris: 4000 kr	Price: 4000 kr				
-Index73	Bredgade	Bredgade				
-Index74	Leje af grund= 450, m/1 hus = 2200, 2 huse = 6600, 3 huse = 16000, 4 huse = 19500, hotel = 23000, Hus pris = 3000, Hotel pris = 3000, pant = 2600	Rent= 450, m/1 house = 2200, 2 houses = 6600, 3 houses = 16000, 4 houses = 19500, hotel = 23000, house price = 3000, Hotel price = 3000, pawn = 2600				
-Index75	Pris: 5200 kr.	Price: 5200 kr.				
-Index76	Kgs. Nytorv	Kgs. Nytorv				
-Index77	Leje af grund 450, m/1 hus = 2200, 2 huse = 6600, 3 huse = 16000, 4 huse = 19500, hotel = 23000, Hus pris = 3000, Hotel pris = 3000, pant = 2600	Rent= 450, m/1 house = 2200, 2 houses = 6600, 3 houses = 16000, 4 houses = 19500, hotel = 23000, house pris = 3000, Hotel pris = 3000, pawn = 2600				
-Index78	Pris: 5200 kr.	Price: 5200 kr.				
-Index79	Carlsberg	Carlsberg				
-Index80	Hvis du ejer 1 terning = x100, 2=x200	Rent per brewery you own 1=x100, 2=x200 , pawn = 150				
-Index81	Pris: 3000 kr.	Price: 3000 kr.				
-Index82	Østergade	Øastergade				
-Index83	Leje af grund 500, m/1 hus = 2400, 2 huse = 7200, 3 huse = 17000, 4 huse = 20500, hotel = 24000, Hus pris = 3000, Hotel pris = 3000, pant = 2800	Rent= 500, m/1 house = 2400, 2 houses = 7200, 3 houses = 17000, 4 houses = 20500, hotel = 24000, house price = 3000, Hotel price = 3000, pawn = 2800				
-Index84	Pris: 5600 kr.	Price: 5600 kr.				
-Index85	Fængslet	Jail				
-Index86	Ryk til fængsel!	Move to jail!				
-Index87	Amagertorv	Amagertorv				
-Index88	Leje af grund 550, m/1 hus = 2600, 2 huse = 7800, 3 huse = 18000, 4 huse = 22000, hotel = 25000, Hus pris = 4000, Hotel pris = 4000, pant = 3000	Rent= 550, m/1 house = 2600, 2 houses = 7800, 3 houses = 18000, 4 houses = 22000, hotel = 25000, house price = 4000, Hotel price = 4000, pawn = 3000				
-Index89	Pris: 6000 kr	Price: 6000 kr				
-Index90	Vimmelskaftet	Vimmelskaftet				
-Index91	Leje af grund 550, m/1 hus = 2600, 2 huse = 7800, 3 huse = 18000, 4 huse = 22000, hotel = 25000, Hus pris = 4000, Hotel pris = 4000, pant = 2600	Rent= 550, m/1 house = 2600, 2 houses = 7800, 3 houses = 18000, 4 houses = 22000, hotel = 25000, house price = 4000, Hotel price = 4000, pawn = 2600				
-Index92	Pris: 6000 kr.	Price: 6000 kr.				
-Index93	Nygade	Nygade				
-Index94	Leje af grund 600, m/1 hus = 3000, 2 huse = 9000, 3 huse = 20000, 4 huse = 24000, hotel = 28000, Hus pris = 4000, Hotel pris = 4000, pant = 3200	Rent= 600, m/1 house = 3000, 2 houses = 9000, 3 houses = 20000, 4 houses = 24000, hotel = 28000, house price = 4000, Hotel price = 4000, pawn = 3200				
-Index95	Pris: 6400 kr.	Price: 6400 kr.				
-Index96	Scandlines R-P	Scandlines R-P				
-Index97	Frederiksberggade	Frederiksberggade				
-Index98	Leje af grund 700, m/1 hus = 3500, 2 huse = 10000, 3 huse = 22000, 4 huse = 30000, hotel = 40000, Hus pris = 4000, Hotel pris = 4000, pant = 3500	Rent= 700, m/1 house = 3500, 2 houses = 10000, 3 houses = 22000, 4 houses = 30000, hotel = 40000, house price = 4000, Hotel price = 4000, pawn = 3500				
-Index99	Pris: 7000 kr.	Price: 7000 kr.				
-Index100	Betal ekstraordinær skat 2000 kr.	Pay special tax 2000 kr.				
-Index101	Rådhuspladsen	Rådhuspladsen				
-Index102	Leje af grund 1000, m/1 hus = 4000, 2 huse = 12000, 3 huse = 28000, 4 huse = 34000, hotel = 40000, Hus pris = 4000, Hotel pris = 4000, pant = 4000	Rent= 1000, m/1 house = 4000, 2 houses = 12000, 3 houses = 28000, 4 houses = 34000, hotel = 40000, house price = 4000, Hotel price = 4000, pawn = 4000				
-Index103	Pris: 8000 kr.	Price: 8000 kr.				
-Index104	Tillykke	Congratulations				
-Index105	Du er vinderen!	you are the winner!				
-Index106	Hvor mange spillere er i? (mellen 3-6)	How many players are you? (between 3-6)				
-Index107	Fejl	Error				
-Index108	Indtast navn på spiller nummer	Enter name of player number				
-Index109	Ugyldigt navn: navne må ikke være ens	Invalid name: names cannot be the same				
-Index110	det er din tur. Gør noget:	it's your turn. Take an action:				
-Index111	, du landede på	, you landed on				
-Index112	, som er eget af	, which is owned by				
-Index113	. Du betaler	. You pay				
-Index114	til	to				
-Index115	Tillykke! Du har købt	Congratulations! You have bought				
-Index116	betalte	payed				
-Index117	, du landede på helle	, you landed on the Refuge				
-Index118	Du er tildelt en bonus på	. You are awarded a bonus of:				
-Index119	kr.	kr.				
-Index120	Du er ejeren af dette felt!	You are the owner of this square!				
-Index121	Uha, du har ikke nok penge til at købe	Whoa there, you don't have enough money to buy				
-Index122	Du får legatet på 40000 kr!	You get a grant of 40000 kr!				
-Index123	DU FÅR IKKE NOGET!	YOU GET NOTHING!				
-Index124	Du får	You get				
-Index125	Du vil nu rykke til skibet	You will now move to the ship				
-Index126	Du ejer ingen huse eller hoteller, og skal derfor ikke betale afgift.	You own no houses or hotels, and therefor do not have to pay any tax.				
-Index127	Ejeren er i fængsel, du skal ikke betale nogen leje.	The owner is in jail, you do not pay any rent.				
-Index128	Du har et kort til at slippe ud af fængslet	You got a card for getting out of jail				
-Index129	Prøv løkken	Chance				
-Index130	Ejendomsskatterne er steget. Ekstraudgifterne er: 800 kr. pr. hus, 2.300 kr. pr. hotel	Property taxes have risen. The additional cost is 800 kr. per. house and 2300 kr. per. hotel				
-Index131	Ryk frem til Frederiksberg Allé. Hvis de passerer 'START', indkasser da 4.000 kr.	Move forward to Frederiksberg Allé. If you pass 'START' cash in 4000 kr.				
-Index132	Det er deres fødselsdag. Modtag af hver medspiller 200 kr.	It's your birthday. Receive from each player 200 kr.				
-Index133	Ryk tre felter frem	Move three squares forward				
-Index134	De modtager deres aktieudbytte. Modtag 1.000 kr. af banken.	You receive your share dividends. Receive 1000 kr. from the bank.				
-Index135	Grundet dyrtiden har De fået gageforhøjelse. Modtag 1.000 kr.	Due to the dearth You have received salary increases. Receive 1000 kr.				
-Index136	Betal for vognvask og smøring	Pay for car wash and greasing				
-Index137	Deres præmieobligation er udtrukket. De modtager 1000 kr. af banken	Your premium bond is drawn. You receive 1000 kr from the bank.				
-Index138	De modtager 'Matador-legatet for værdigt trængende på 40.000. Ved værdigt trængende forstås, at deres formue, dvs. deres kontante penge + skøder + bygninger ikke overstiger 15.000 kr.	You receive the 'Matador Scholarship for those in need of 40000. At the needy understood that their assets, ie their cash + deeds + buildings does not exceed 15,000 kr.				
-Index139	Ryk frem til 'START'	Move to 'START'				
-Index140	De skal holde familiefest og har fået et tilskud fra hver medspiller på 500 kr.	You are hosting a family party and receive a grant from every player of 500 kr.				
-Index141	Tag ind på Rådhuspladsen	Go to Rådhuspladsen				
-Index142	Tag med Mols-Linien. Flyt brikken frem, og hvis de passerer 'START', indkasser da 4.000 kr.	Take with the Mols-Linien. Move the piece forward, and if you pass 'START' cash in when 4000 kr.				
-Index143	De har købt 4 nye dæk til Deres vogn. Betal 1.000 kr.	You bought four new tires for your car. Pay 1,000 kr.				
-Index144	De har fået en parkeringsbøde. Betal 200 kr. i bøde.	You've got a parking ticket. Pay 200 kr. In fines.				
-Index145	Betal 200 kr. for levering af 2 kasser øl.	Pay 200 kr. For the supply of two cases of beer.				
-Index146	Tag med den nærmeste færge. Flyt brikken frem, og hvis de passerer 'START', indkasser da 4.000 kr.	Take the nearest ferry. Move the piece forward, and if they pass 'GO' cash in when 4,000 kr.				
-Index147	Gå i fængsel. Ryk direkte til fængslet. Selvom de passerer 'START', indkasserer de ikke 4.000 kr.	Go to jail. Move directly to jail. Even if they pass 'START', you do not recieve 4000 kr.				
-Index148	Oliepriserne er steget, og de skal betale: 500 kr. pr. hus, 2.000 kr. pr. hotel	Oil prices have risen and you have to pay 500 kr. Per. House and 2,000 kr. per. hotel				
-Index149	Modtag udbytte af deres aktier - 1.000 kr	Receive the benefits of your stocks - 1000 kr				
-Index150	Ryk brikken frem til det nærmeste rederi. Hvis selskabet ikke ejes af nogen kan du købe det af banken.	Move the piece up to the nearest shipping. If the company is not owned by anyone, you can buy it from the bank.				
-Index151	Betal deres bilforsikring - 1.000 kr.	Pay your car insurance - 1000 kr.				
-Index152	De havde en række med elleve rigtige i tipning. Modtag 4.000 kr.	You had a row with eleven right in tipping. Receive 4000 kr.				
-Index153	De har vundet i klasselotteriet. Modtag 500 kr.	You have won the class lottery. Receive 500 kr.				
-Index154	Ryk frem til Vimmelskaftet. Hvis de passerer start, indkasser da 4.000 kr.	Move forward to Vimmelskaftet. If you pass the start, cash in 4000 kr.				
-Index155	Ryk tre felter tilbage	Move three squares back				
-Index156	I anledningen af kongens fødselsdag benådes de herved for fængsel. Dette kort kan opbevares indtil De får brug for det.	In honor of King's birthday you are pardoned from prison. This card can be stored until you need them.				
-Index157	Betal 3.000 kr. for reparation af deres vogn.	Pay 3000 kr. for the repair of your vehicle.				
-Index158	De har solgt nogle gamle møbler på aukion. Modtag 1.000 kr. af banken.	You have sold some old furniture at auction. Receive 1,000 kr. from the bank				
-Index159	De har været en tur i udlandet og haft mange cigaretter med hjem. Betal 200 kr. i told.	You have been a trip abroad and had many cigarettes home. Pay 200 kr. In customs.				
-Index160	Ryk frem til Grønningen. Hvis de passerer start indkasser da 4000 kr.	Move forward to Grønningen. If you pass the 'START' cash in 4000 kr.				
-Index161	Kommunen har eftergivet et kvartals skat. Hæv i banken 3.000 kr.	The municipality has waived a quarterly tax. Recieve from the bank 3000 kr.				
-Index162	De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag 500 kr. fra hver spiller	You put money out for a potluck. Receive 500 kr. From each player				
-Index163	De har kørt frem for 'Fuldt stop'. Betal 1.000 kr. i bøde.	You've run over 'Full stop'. Pay 1000 kr. In fines.				
-Index164	Du rykker i fængsel.	You move to jail.				
-Index165	Du har betalt	You have paid				
-Index166	Betal kaution på 1000 kr.	Pay bail of 1000 kr.				
-Index167	Du betaler 1000 kroner i kaution.	You pay the bail of 1000 kr.				
-Index168	Du har købt	You have bought				
-Index169	huse. Det kostede	houses. It cost				
-Index170	Du slog to ens og er hermed løsladt.	You rolled two equals, and are herby released from jail.				
-Index171	Du har ikke slået to ens i tre ture, du skal betale kaution (1000 kr.)	You have not rolled two equals for three rounds, you must pay bail (1000 kr.)				
-Index172	Du slog ikke to ens og er stadig i fængsel.	You didn't roll two equals and are still in jail.				
-Index173	4000 kr.	4000 kr.				
-Index174	Vælg venligst sprog:	Please choose language:				
-Index175	Dansk	Danish				
-Index176	English	English				
-Index177	. Vil du købe	. Do you want to buy				
-Index178	for	for				
-Index179	Ja	Yes				
-Index180	Nej	No				
-Index181	kr.?	kr.?				
-Index182	. Vil du betale indkomstskatten med 4.000 kr., eller med 10% af dine totale værdier?	Do you want to pay the incometax by 4000 kr. or by 10% of your total assets?				
-Index183	10%	10%				
-Index184	! Du betaler	! You pay				
-Index185	Du er landet på Start feltet, men du har teknisk set ikke passeret feltet endnu.	Du have landed on the Start field, but you haven't techincally passed the field yet.				
-Index186	Ryk frem til Strandvejen. Hvis du passerer start, indkassér 4.000 kr.	Move to Strandvejen. If you pass the start, in you recieve 4000 kr.				
-=======
 Index0	Danish	English
 Index1	Rul	Roll
 Index2	Sælg	Sell
@@ -308,7 +119,7 @@ Index117	, du landede på helle	, you landed on the Refuge
 Index118	Du er tildelt en bonus på	. You are awarded a bonus of:
 Index119	kr.	kr.
 Index120	Du er ejeren af dette felt!	You are the owner of this square!
-Index121	Uha, du har ikke nok penge til at købe	Whoa there, you don't have enough money to buy
+Index121	Uha, du har ikke nok penge til at købe 	Whoa there, you don't have enough money to buy 
 Index122	Du får legatet på 40000 kr!	You get a grant of 40000 kr!
 Index123	DU FÅR IKKE NOGET!	YOU GET NOTHING!
 Index124	Du får	You get
@@ -337,12 +148,12 @@ Index146	Tag med den nærmeste færge. Flyt brikken frem, og hvis de passerer 'S
 Index147	Gå i fængsel. Ryk direkte til fængslet. Selvom de passerer 'START', indkasserer de ikke 4.000 kr.	Go to jail. Move directly to jail. Even if they pass 'START', you do not recieve 4000 kr.
 Index148	Oliepriserne er steget, og de skal betale: 500 kr. pr. hus, 2.000 kr. pr. hotel	Oil prices have risen and you have to pay 500 kr. Per. House and 2,000 kr. per. hotel
 Index149	Modtag udbytte af deres aktier - 1.000 kr	Receive the benefits of your stocks - 1000 kr
-Index150	Ryk brikken frem til det nærmeste rederi og betal lejeren to gange den leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan du købe det af banken.	Move the piece up to the nearest shipping and pay the owner twice the rent he is otherwise entitled. If the company is not owned by anyone, you can buy it from the bank.
+Index150	Ryk brikken frem til det nærmeste rederi. Hvis selskabet ikke ejes af nogen kan du købe det af banken.	Move the piece up to the nearest shipping. If the company is not owned by anyone, you can buy it from the bank.
 Index151	Betal deres bilforsikring - 1.000 kr.	Pay your car insurance - 1000 kr.
 Index152	De havde en række med elleve rigtige i tipning. Modtag 4.000 kr.	You had a row with eleven right in tipping. Receive 4000 kr.
 Index153	De har vundet i klasselotteriet. Modtag 500 kr.	You have won the class lottery. Receive 500 kr.
 Index154	Ryk frem til Vimmelskaftet. Hvis de passerer start, indkasser da 4.000 kr.	Move forward to Vimmelskaftet. If you pass the start, cash in 4000 kr.
-Index155	Ryk tre felter tilbage	Move three squares back
+Index155	Ryk tre felter frem	Move three squares forward
 Index156	I anledningen af kongens fødselsdag benådes de herved for fængsel. Dette kort kan opbevares indtil De får brug for det.	In honor of King's birthday you are pardoned from prison. This card can be stored until you need them.
 Index157	Betal 3.000 kr. for reparation af deres vogn.	Pay 3000 kr. for the repair of your vehicle.
 Index158	De har solgt nogle gamle møbler på aukion. Modtag 1.000 kr. af banken.	You have sold some old furniture at auction. Receive 1,000 kr. from the bank
@@ -374,4 +185,3 @@ Index183	10%	10%
 Index184	! Du betaler	! You pay
 Index185	Du er landet på Start feltet, men du har teknisk set ikke passeret feltet endnu.	Du have landed on the Start field, but you haven't techincally passed the field yet.
 Index186	Ryk frem til Strandvejen. Hvis du passerer start, indkassér 4.000 kr.	Move to Strandvejen. If you pass the start, in you recieve 4000 kr.
->>>>>>> refs/heads/chancecardMessages

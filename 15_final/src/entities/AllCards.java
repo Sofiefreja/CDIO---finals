@@ -63,8 +63,8 @@ public class AllCards {
 		theCards[29] = new IncomeIncrease(msgL.msg(153), 500);
 		theCards[30] = new IncomeIncrease(msgL.msg(153), 500);
 		theCards[31] = new MoveToSquare(msgL.msg(154), 32,theBoard);
-		theCards[32] = new ChangePosition(msgL.msg(155), -3,theBoard);
-		theCards[33] = new ChangePosition(msgL.msg(155), -3,theBoard);
+		theCards[32] = new ChangePosition(msgL.msg(155), 3,theBoard);
+		theCards[33] = new ChangePosition(msgL.msg(155), 3,theBoard);
 		theCards[34] = new Pardon(msgL.msg(156));
 		theCards[35] = new Pardon(msgL.msg(156));
 		theCards[36] = new Expense(msgL.msg(157), 3000);
