@@ -103,26 +103,26 @@ Index101	Rådhuspladsen	Rådhuspladsen
 Index102	Leje af grund 1000, m/1 hus = 4000, 2 huse = 12000, 3 huse = 28000, 4 huse = 34000, hotel = 40000, Hus pris = 4000, Hotel pris = 4000, pant = 4000	Rent= 1000, m/1 house = 4000, 2 houses = 12000, 3 houses = 28000, 4 houses = 34000, hotel = 40000, house price = 4000, Hotel price = 4000, pawn = 4000
 Index103	Pris: 8000 kr.	Price: 8000 kr.
 Index104	Tillykke	Congratulations
-Index105	Du er vinderen!	you are the winner!
+Index105	 du er vinderen!	 you are the winner!
 Index106	Hvor mange spillere er i? (mellen 3-6)	How many players are you? (between 3-6)
 Index107	Fejl	Error
 Index108	Indtast navn på spiller nummer	Enter name of player number
 Index109	Ugyldigt navn: navne må ikke være ens	Invalid name: names cannot be the same
-Index110	det er din tur. Gør noget:	it's your turn. Take an action:
-Index111	, du landede på	, you landed on
-Index112	, som er eget af	, which is owned by
-Index113	. Du betaler	. You pay
-Index114	til	to
-Index115	Tillykke! Du har købt	Congratulations! You have bought
-Index116	betalte	payed
+Index110	 det er din tur. Gør noget:	 it's your turn. Take an action:
+Index111	, du landede på 	, you landed on 
+Index112	, som er eget af 	, which is owned by 
+Index113	. Du betaler 	. You pay 
+Index114	 til 	 to 
+Index115	Tillykke! Du har købt 	Congratulations! You have bought 
+Index116	 betalte 	 payed 
 Index117	, du landede på helle	, you landed on the Refuge
-Index118	Du er tildelt en bonus på	. You are awarded a bonus of:
-Index119	kr.	kr.
+Index118	Du er tildelt en bonus på 	. You are awarded a bonus of: 
+Index119	 kr. 	 kr.
 Index120	Du er ejeren af dette felt!	You are the owner of this square!
 Index121	Uha, du har ikke nok penge til at købe 	Whoa there, you don't have enough money to buy 
 Index122	Du får legatet på 40000 kr!	You get a grant of 40000 kr!
 Index123	DU FÅR IKKE NOGET!	YOU GET NOTHING!
-Index124	Du får	You get
+Index124	Du får 	You get 
 Index125	Du vil nu rykke til skibet	You will now move to the ship
 Index126	Du ejer ingen huse eller hoteller, og skal derfor ikke betale afgift.	You own no houses or hotels, and therefor do not have to pay any tax.
 Index127	Ejeren er i fængsel, du skal ikke betale nogen leje.	The owner is in jail, you do not pay any rent.
@@ -153,7 +153,7 @@ Index151	Betal deres bilforsikring - 1.000 kr.	Pay your car insurance - 1000 kr.
 Index152	De havde en række med elleve rigtige i tipning. Modtag 4.000 kr.	You had a row with eleven right in tipping. Receive 4000 kr.
 Index153	De har vundet i klasselotteriet. Modtag 500 kr.	You have won the class lottery. Receive 500 kr.
 Index154	Ryk frem til Vimmelskaftet. Hvis de passerer start, indkasser da 4.000 kr.	Move forward to Vimmelskaftet. If you pass the start, cash in 4000 kr.
-Index155	Ryk tre felter frem	Move three squares forward
+Index155	Ryk tre felter frem.	Move three squares forward
 Index156	I anledningen af kongens fødselsdag benådes de herved for fængsel. Dette kort kan opbevares indtil De får brug for det.	In honor of King's birthday you are pardoned from prison. This card can be stored until you need them.
 Index157	Betal 3.000 kr. for reparation af deres vogn.	Pay 3000 kr. for the repair of your vehicle.
 Index158	De har solgt nogle gamle møbler på aukion. Modtag 1.000 kr. af banken.	You have sold some old furniture at auction. Receive 1,000 kr. from the bank
@@ -163,25 +163,25 @@ Index161	Kommunen har eftergivet et kvartals skat. Hæv i banken 3.000 kr.	The m
 Index162	De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag 500 kr. fra hver spiller	You put money out for a potluck. Receive 500 kr. From each player
 Index163	De har kørt frem for 'Fuldt stop'. Betal 1.000 kr. i bøde.	You've run over 'Full stop'. Pay 1000 kr. In fines.
 Index164	Du rykker i fængsel.	You move to jail.
-Index165	Du har betalt	You have paid
+Index165	Du har betalt 	You have paid 
 Index166	Betal kaution på 1000 kr.	Pay bail of 1000 kr.
 Index167	Du betaler 1000 kroner i kaution.	You pay the bail of 1000 kr.
-Index168	Du har købt	You have bought
-Index169	huse. Det kostede	houses. It cost
+Index168	Du har købt 	You have bought 
+Index169	huse. Det kostede 	houses. It cost 
 Index170	Du slog to ens og er hermed løsladt.	You rolled two equals, and are herby released from jail.
 Index171	Du har ikke slået to ens i tre ture, du skal betale kaution (1000 kr.)	You have not rolled two equals for three rounds, you must pay bail (1000 kr.)
 Index172	Du slog ikke to ens og er stadig i fængsel.	You didn't roll two equals and are still in jail.
 Index173	4000 kr.	4000 kr.
-Index174	Vælg venligst sprog:	Please choose language:
+Index174	Vælg venligst sprog: 	Please choose language:
 Index175	Dansk	Danish
 Index176	English	English
-Index177	. Vil du købe	. Do you want to buy
-Index178	for	for
+Index177	. Vil du købe 	. Do you want to buy 
+Index178	 for 	 for 
 Index179	Ja	Yes
 Index180	Nej	No
 Index181	kr.?	kr.?
 Index182	. Vil du betale indkomstskatten med 4.000 kr., eller med 10% af dine totale værdier?	Do you want to pay the incometax by 4000 kr. or by 10% of your total assets?
 Index183	10%	10%
-Index184	! Du betaler	! You pay
+Index184	! Du betaler 	! You pay 
 Index185	Du er landet på Start feltet, men du har teknisk set ikke passeret feltet endnu.	Du have landed on the Start field, but you haven't techincally passed the field yet.
 Index186	Ryk frem til Strandvejen. Hvis du passerer start, indkassér 4.000 kr.	Move to Strandvejen. If you pass the start, in you recieve 4000 kr.
