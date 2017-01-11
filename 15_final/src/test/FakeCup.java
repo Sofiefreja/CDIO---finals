@@ -20,7 +20,7 @@ public class FakeCup extends Cup{
 		try {
 			Scanner inputStream = new Scanner(file);
 			while (inputStream.hasNextLine()) {
-				cupArray[i++] = inputStream.nextLine().split(";")[testCaseNumber];
+				cupArray[i++] = inputStream.nextLine().split("\t")[testCaseNumber];
 			}
 			inputStream.close();
 		} catch (FileNotFoundException e) {

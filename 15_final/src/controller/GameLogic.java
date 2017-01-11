@@ -20,7 +20,6 @@ public class GameLogic {
 	public ArrayList<Player> thePlayers;
 	private int equalEyeCounter;
 	private int i;
-	private AllCards allTheCards;
 
 	/**
 	 * GameLogic controls the gameflow

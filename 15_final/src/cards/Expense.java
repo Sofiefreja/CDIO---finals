@@ -39,7 +39,7 @@ public class Expense extends Transaction {
 	 */
 	public void useCard(Player player) {
 		player.withdraw(money);
-		GUIControl.printMessage(msgL.msg(113)+ money);
+		GUIControl.printMessage(player+msgL.msg(113)+ money);
 		GUIControl.updateBalance(player);
 	}
 

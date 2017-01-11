@@ -97,8 +97,8 @@ public class AllCards {
 			theCards[i] = tmp;
 		}
 	}
-	
-//	public static void main(String[] args) {
+
+//	public static void main(String[] args) { //for testing
 //		AllCards a = new AllCards(null, null);
 //		for(Card c : a.theCards){
 //			System.out.println(c);
