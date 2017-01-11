@@ -20,7 +20,7 @@ public class GameLogic {
 	public ArrayList<Player> thePlayers;
 	private int equalEyeCounter;
 	private int i;
-	
+	private AllCards allTheCards;
 
 	/**
 	 * GameLogic controls the gameflow
@@ -39,12 +39,9 @@ public class GameLogic {
 		GUIGame.makeBoard();
 		theCup = new FakeCup(0);
 
-		
-
 		// The players are initialized
 		thePlayers = createPlayers();
 		
-
 		theBoard = new Board(theCup, thePlayers);
 
 		// Beginning the game.
