@@ -3,7 +3,7 @@ package controller;
 import java.awt.Color;
 import java.util.ArrayList;
 
-//import board.LaborCamp;
+
 //import board.Tax;
 //import board.Refuge;
 import board.Ownable;
@@ -270,22 +270,14 @@ public class GUIControl {
 //		
 //			try {
 //				Thread.currentThread();
-//				Thread.sleep(100);
+//				Thread.sleep(250);
 //			} catch (InterruptedException e) {
 //				e.printStackTrace();
 //			}
 //		}
 //	}
 
-	// Extra roll to determine Labor Camp tax.
 
-	/*
-	 * public static int getUserRoll(LaborCamp camp) { int value = 0; Cup thecup
-	 * = new Cup(); //GUI.showMessage("You landed on "+camp.toString()+
-	 * ". You roll to determine the rent you need to pay."); value =
-	 * thecup.roll(); GUI.setDice(thecup.getD1(),thecup.getD2());
-	 * //GUI.showMessage("You rolled: "+value); return value; }
-	 */
 
 	// Player choice of buying a square or not.
 
