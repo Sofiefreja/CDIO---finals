@@ -41,7 +41,7 @@ public class GameLogic {
 
 		// The players are initialized
 		thePlayers = createPlayers();
-		
+
 		theBoard = new Board(theCup, thePlayers);
 
 		// Beginning the game.
@@ -76,27 +76,35 @@ public class GameLogic {
 
 								doJail(thePlayers.get(i));
 
-							} else if (equalEyeCounter != 2) {
-
-								doMoveVehicle(thePlayers.get(i));
+							} else {
 
 								// If the dice is equals turn resets
-								if (theCup.getEquals() == true) {
+								if (theCup.getEquals() == true && equalEyeCounter != 2) {
+									doMoveVehicle(thePlayers.get(i));
+									if(thePlayers.get(i).getBalance()<0){
+									getMenu(thePlayers.get(i));
+								}
 									i--;
 									equalEyeCounter++;
-								} else
+								} else if (theCup.getEquals() && equalEyeCounter == 2) { // Puts
+																							// the
+									// player in
+									// jail if
+									// equalEyeCounter
+									// hits 3.
+									GUIControl.printMessage(
+											"Du slog 2 ens for tredie gang, du ryger i fængsel for snyd!");
+									thePlayers.get(i).setPosition(10, thePlayers.get(i).getCurrentPosition());
+									GUIControl.moveVehicle(thePlayers.get(i));
+									thePlayers.get(i).setJailStatus(true);
 									equalEyeCounter = 0;
-
-							} else if (equalEyeCounter == 2) { // Puts the
-																// player in
-																// jail if
-								// equalEyeCounter
-								// hits 3.
-								GUIControl.printMessage("Du slog 2 ens for tredie gang, du ryger i fængsel for snyd!");
-								thePlayers.get(i).setPosition(10, thePlayers.get(i).getCurrentPosition());
-								GUIControl.moveVehicle(thePlayers.get(i));
-								thePlayers.get(i).setJailStatus(true);
-								equalEyeCounter = 0;
+								} else {
+									equalEyeCounter = 0;
+									doMoveVehicle(thePlayers.get(i));
+									if(thePlayers.get(i).getBalance()<0){
+									getMenu(thePlayers.get(i));
+								}
+								}
 							}
 						} else if (turn.equals(msgL.msg(2))) {
 							System.out.println("Shit");
@@ -203,7 +211,7 @@ public class GameLogic {
 		// Save all the players in a ArrayList.
 
 		for (int i = 0; i < playerNames.length; i++) {
-			thePlayers.add(new Player(playerNames[i], 130000)); // Creating
+			thePlayers.add(new Player(playerNames[i], 30000)); // Creating
 																// player
 			// objects for the game
 			GUIGame.createPlayer(thePlayers.get(i)); // Creating Player objects
