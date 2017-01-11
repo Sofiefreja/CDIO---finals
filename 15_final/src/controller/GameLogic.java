@@ -39,16 +39,10 @@ public class GameLogic {
 		GUIGame.makeBoard();
 		theCup = new FakeCup(0);
 
-		allTheCards = new AllCards(thePlayers, theBoard);
-		
 		// The players are initialized
-				thePlayers = createPlayers();
+		thePlayers = createPlayers();
 		
-		theBoard = new Board(theCup,allTheCards,thePlayers);
-		
-		//allTheCards.shuffle();
-		
-		allTheCards = new AllCards(thePlayers, theBoard);
+		theBoard = new Board(theCup, thePlayers);
 
 		// Beginning the game.
 		equalEyeCounter = 0;
@@ -82,7 +76,7 @@ public class GameLogic {
 
 								doJail(thePlayers.get(i));
 
-							} else if (equalEyeCounter != 3) {
+							} else if (equalEyeCounter != 2) {
 
 								doMoveVehicle(thePlayers.get(i));
 
@@ -93,12 +87,15 @@ public class GameLogic {
 								} else
 									equalEyeCounter = 0;
 
-							} else { // Puts the player in jail if
-										// equalEyeCounter
-										// hits 3.
-								thePlayers.get(i).setJailStatus(true);
+							} else if (equalEyeCounter == 2) { // Puts the
+																// player in
+																// jail if
+								// equalEyeCounter
+								// hits 3.
+								GUIControl.printMessage("Du slog 2 ens for tredie gang, du ryger i fængsel for snyd!");
 								thePlayers.get(i).setPosition(10, thePlayers.get(i).getCurrentPosition());
-								doMoveVehicle(thePlayers.get(i));
+								GUIControl.moveVehicle(thePlayers.get(i));
+								thePlayers.get(i).setJailStatus(true);
 								equalEyeCounter = 0;
 							}
 						} else if (turn.equals(msgL.msg(2))) {

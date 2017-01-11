@@ -32,7 +32,7 @@ public class AllCards {
 		
 		theCards[0] = new PriceIncrease("Ejendomsskatterne er steget. Ekstraudgifterne er: 800 kr. pr. hus, 2.300 kr. pr. hotel", 800, 2300);
 		theCards[1] = new MoveToSquare("Ryk frem til Frederiksberg Allé. Hvis de passerer 'START', indkassér da 4.000 kr.", 37, theBoard);//Kig lige
-		theCards[2] = new PlayerTransaction("Det er deres fødselsdag. Modtag af hver medspiller", 200, thePlayers);
+		theCards[2] = new PlayerTransaction("Det er deres fødselsdag. Modtag 200 kr.,af hver medspiller", 200, thePlayers);
 		theCards[3] = new ChangePosition("Ryk tre felter frem", 3, theBoard);
 		theCards[4] = new IncomeIncrease("De modtager deres aktieudbytte. Modtag 1.000 kr. af banken.",1000);
 		theCards[5] = new IncomeIncrease("Grundet dyrtiden har De fået gageforhøjelse. Modtag 1.000 kr.", 1000);

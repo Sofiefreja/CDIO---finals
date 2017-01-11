@@ -16,7 +16,7 @@ import entities.AllCards;
 public class Chance extends Square {
 
 	AllCards allTheCards;
-	static int index = 2;
+	static int index = 0;
 
 	public Chance(String name, int id, AllCards allTheCards) {
 		super(name, id);

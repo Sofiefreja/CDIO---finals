@@ -43,6 +43,6 @@ public class Grant extends Transaction {
 			player.deposit(40000);
 		} else {
 			GUIControl.printMessage(msgL.msg(123));
-		}
+		} GUIControl.updateBalance(player);
 	}
 }

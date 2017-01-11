@@ -47,7 +47,7 @@ public class PlayerTransaction extends Transaction{
 			player.deposit(money*amount);
 			
 			
-		
+		GUIControl.updateBalance(player);
 		
 		}
 			
