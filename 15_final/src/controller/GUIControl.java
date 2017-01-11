@@ -217,9 +217,8 @@ public class GUIControl {
 				if(value>12){
 					Thread.sleep(0);
 				}else{
-					Thread.sleep(200);
+					Thread.sleep(100);
 				}
-				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
