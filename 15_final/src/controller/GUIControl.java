@@ -192,10 +192,10 @@ public class GUIControl {
 	 * @param thePlayer
 	 *            type: Player
 	 */
-	// public static void moveVehicle(Player thePlayer) {
-	// GUI.removeCar(thePlayer.getPreviousPosition() + 1, thePlayer.toString());
-	// GUI.setCar(thePlayer.getCurrentPosition() + 1, thePlayer.toString());
-	// }
+//	 public static void teleportVehicle(Player thePlayer) {
+//	 GUI.removeCar(thePlayer.getPreviousPosition() + 1, thePlayer.toString());
+//	 GUI.setCar(thePlayer.getCurrentPosition() + 1, thePlayer.toString());
+//	 }
 
 	public static void moveVehicle(Player thePlayer) {
 		// Calculate value
@@ -203,7 +203,7 @@ public class GUIControl {
 		int value = thePlayer.getCurrentPosition() - thePlayer.getPreviousPosition();
 		while (value < 0)
 			value += 40;
-
+			
 		for (int i = 0; i < value; i++) {
 			GUI.removeCar((thePlayer.getPreviousPosition() + i) % 40 + 1, thePlayer.toString());
 			GUI.setCar((thePlayer.getPreviousPosition() + i + 1) % 40 + 1, thePlayer.toString());
@@ -218,6 +218,11 @@ public class GUIControl {
 
 			try {
 				Thread.currentThread();
+				if(value>12){
+					Thread.sleep(0);
+				}else{
+					Thread.sleep(200);
+				}
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
