@@ -86,7 +86,7 @@ public class GameLogic {
 
 								doJail(thePlayers.get(i));
 
-							} else if (equalEyeCounter != 3) {
+							} else if (equalEyeCounter != 2) {
 
 								doMoveVehicle(thePlayers.get(i));
 
@@ -97,12 +97,13 @@ public class GameLogic {
 								} else
 									equalEyeCounter = 0;
 
-							} else { // Puts the player in jail if
+							} else if (equalEyeCounter == 2) { // Puts the player in jail if
 										// equalEyeCounter
 										// hits 3.
-								thePlayers.get(i).setJailStatus(true);
+								GUIControl.printMessage("Du slog 2 ens for tredie gang, du ryger i fængsel for snyd!");
 								thePlayers.get(i).setPosition(10, thePlayers.get(i).getCurrentPosition());
-								doMoveVehicle(thePlayers.get(i));
+								GUIControl.moveVehicle(thePlayers.get(i));
+								thePlayers.get(i).setJailStatus(true);
 								equalEyeCounter = 0;
 							}
 						} else if (turn.equals(msgL.msg(2))) {
