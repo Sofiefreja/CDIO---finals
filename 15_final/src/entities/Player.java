@@ -6,6 +6,7 @@ import java.util.*;
 
 import board.Ownable;
 import board.Street;
+import controller.GUIControl;
 
 /**
  * 
@@ -160,6 +161,7 @@ public class Player {
 	 */
 	public void deposit(int amount) {
 		balance.deposit(amount);
+		GUIControl.updateBalance(this);
 	}
 
 	/**
@@ -169,6 +171,7 @@ public class Player {
 	 */
 	public void withdraw(int amount) {
 		balance.withdraw(amount);
+		GUIControl.updateBalance(this);;
 	}
 
 	/**

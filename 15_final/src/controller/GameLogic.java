@@ -38,17 +38,13 @@ public class GameLogic {
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
 		theCup = new FakeCup(0);
-<<<<<<< HEAD
-=======
+
 		allTheCards = new AllCards(thePlayers, theBoard);
->>>>>>> branch 'Develop' of https://github.com/Sofiefreja/CDIO---finals.git
 		
 		// The players are initialized
 				thePlayers = createPlayers();
 		
 		theBoard = new Board(theCup,allTheCards,thePlayers);
-		
-//		allTheCards = new AllCards(thePlayers, theBoard);
 		
 		//allTheCards.shuffle();
 		
