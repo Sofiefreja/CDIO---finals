@@ -14,6 +14,7 @@ import cards.MovetoShip;
 import cards.Pardon;
 import cards.PlayerTransaction;
 import cards.PriceIncrease;
+import controller.msgL;
 /**
  * Class for holding all Cards
  * 
@@ -27,53 +28,53 @@ public class AllCards {
 	 * Creating an AllCards instance
 	 * @param thePlayers
 	 */
-	public AllCards(ArrayList<Player> thePlayers, Board theBoard) { // 
+	public AllCards(ArrayList<Player> thePlayers, Board theBoard) { 
 		theCards = new Card[44];
 		
-		theCards[0] = new PriceIncrease("Ejendomsskatterne er steget. Ekstraudgifterne er: 800 kr. pr. hus, 2.300 kr. pr. hotel", 800, 2300);
-		theCards[1] = new MoveToSquare("Ryk frem til Frederiksberg Allé. Hvis de passerer 'START', indkassér da 4.000 kr.", 37, theBoard);//Kig lige
-		theCards[2] = new PlayerTransaction("Det er deres fødselsdag. Modtag 200 kr.,af hver medspiller", 200, thePlayers);
-		theCards[3] = new ChangePosition("Ryk tre felter frem", 3, theBoard);
-		theCards[4] = new IncomeIncrease("De modtager deres aktieudbytte. Modtag 1.000 kr. af banken.",1000);
-		theCards[5] = new IncomeIncrease("Grundet dyrtiden har De fået gageforhøjelse. Modtag 1.000 kr.", 1000);
-		theCards[6] = new Expense("Betal for vognvask og smøring", 300);
-		theCards[7] = new IncomeIncrease("Deres præmieobligation er udtrukket. De modtager 1.000 kr. af banken.", 1000);
-		theCards[8] = new IncomeIncrease("Deres præmieobligation er udtrukket. De modtager 1.000 kr. af banken.", 1000);
-		theCards[9] = new Grant("De modtager 'Matador-legatet for værdigt trængende' på 40.000. Ved værdigt trængende forstås, at deres formue, dvs. deres kontante penge + skøder + bygninger ikke overstiger 15.000 kr.", 40000);
-		theCards[10] = new MoveToSquare("Ryk frem til 'START'", 0, theBoard);//Kig lige
-		theCards[11] = new MoveToSquare("Ryk frem til 'START'", 0, theBoard);//Kig lige
-		theCards[12] = new PlayerTransaction("De skal holde familiefest og har fået et tilskud fra hver medspiller på 500 kr.", 500, thePlayers);
-		theCards[13] = new MoveToSquare("Tag ind på Rådhuspladsen", 39 ,theBoard);//Kige lige
-		theCards[14] = new MovetoShip("Tag med Mols-Linien. Flyt brikken frem, og hvis de passerer 'START', indkassér da 4.000 kr.",theBoard);
-		theCards[15] = new Expense("De har købt 4 nye dæk til Deres vogn. Betal 1.000 kr.", 1000);
-		theCards[16] = new Expense("De har fået en parkeringsbøde. Betal 200 kr. i bøde.", 200);
-		theCards[17] = new Expense("Betal 200 kr. for levering af 2 kasser øl.", 200);
-		theCards[18] = new MovetoShip("Tag med den nærmeste færge. Flyt brikken frem, og hvis de passerer 'START', indkassér da 4.000 kr.",theBoard);
-		theCards[19] = new GoToJail("Gå i fængsel. Ryk direkte til fængslet. Selvom de passerer 'START', indkasserer de ikke 4.000 kr.");
-		theCards[20] = new GoToJail("Gå i fængsel. Ryk direkte til fængslet. Selvom de passerer 'START', indkasserer de ikke 4.000 kr.");
-		theCards[21] = new PriceIncrease("Oliepriserne er steget, og de skal betale: 500 kr. pr. hus, 2.000 kr. pr. hotel", 500, 2000);
-		theCards[22] = new IncomeIncrease("Modtag udbytte af deres aktier - 1.000 kr.", 1000);
-		theCards[23] = new IncomeIncrease("Modtag udbytte af deres aktier - 1.000 kr.", 1000);
-		theCards[24] = new MovetoShip("Ryk brikken frem til det nærmeste rederi og betal lejern to gane leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan du købe det af banken.",theBoard);
-		theCards[25] = new MovetoShip("Ryk brikken frem til det nærmeste rederi og betal lejeren to gange leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan du købe det af banken.", theBoard);
-		theCards[26] = new MoveToSquare("Ryk frem til Strandvejen. Hvis du passerer start, indkassér 4.000 kr.", 19 ,theBoard);// Kig lige
-		theCards[27] = new Expense("Betal deres bilforsikring - 1.000 kr.", 1000);
-		theCards[28] = new IncomeIncrease("De havde en række med elleve rigtige i tipning. Modtag 4.000 kr.", 4000);
-		theCards[29] = new IncomeIncrease("De har vundet i klasselotteriet. Modtag 500 kr.", 500);
-		theCards[30] = new IncomeIncrease("De har vundet i klasselotteriet. Modtag 500 kr.", 500);
-		theCards[31] = new MoveToSquare("Ryk frem til Vimmelskaftet. Hvis de passerer start, indkassér da 4.000 kr.", 32,theBoard);// Kig lige
-		theCards[32] = new ChangePosition("Ryk tre felter tilbage", -3,theBoard);//Kige lige
-		theCards[33] = new ChangePosition("Ryk tre felter tilbage", -3,theBoard);//Kig lige
-		theCards[34] = new Pardon("I andledningen af kongens fødselsdag benådes de herved for fængsel. Dette kort kan opbevares indtil De får brug for det.");
-		theCards[35] = new Pardon("I andledningen af kongens fødselsdag benådes de herved for fængsel. Dette kort kan opbevares indtil De får brug for det.");
-		theCards[36] = new Expense("Betal 3.000 kr. for reparation af deres vogn.", 3000);
-		theCards[37] = new Expense("Betal 3.000 kr. for reparation af deres vogn.", 3000);
-		theCards[38] = new IncomeIncrease("De har solgt nogle gamle møbler på aukion. Modtag 1.000 kr. af banken.", 1000);
-		theCards[39] = new Expense("De har været en tur i udlandet og haft mange cigaretter med hjem. Betal 200 kr. i told.", 200);
-		theCards[40] = new MoveToSquare("Ryk frem til Grønningen. Hvis de passerer start indkassér da 4000 kr.", 24,theBoard);// Kig lige
-		theCards[41] = new IncomeIncrease("Kommunen har eftergivet et kvartals skat. Hæv i banken 3.000 kr.", 3000);
-		theCards[42] = new PlayerTransaction("De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag 500 kr. fra hver spiller", 500, thePlayers);
-		theCards[43] = new Expense("De har kørt frem for 'Fuldt stop'. Betal 1.000 kr. i bøde.", 1000);
+		theCards[0] = new PriceIncrease(msgL.msg(130), 800, 2300);
+		theCards[1] = new MoveToSquare(msgL.msg(131), 11, theBoard);
+		theCards[2] = new PlayerTransaction(msgL.msg(132), 200, thePlayers);
+		theCards[3] = new ChangePosition(msgL.msg(133), 3, theBoard);
+		theCards[4] = new IncomeIncrease(msgL.msg(134),1000);
+		theCards[5] = new IncomeIncrease(msgL.msg(135), 1000);
+		theCards[6] = new Expense(msgL.msg(136), 300);
+		theCards[7] = new IncomeIncrease(msgL.msg(137), 1000);
+		theCards[8] = new IncomeIncrease(msgL.msg(137), 1000);
+		theCards[9] = new Grant(msgL.msg(138), 40000);
+		theCards[10] = new MoveToSquare(msgL.msg(139), 0, theBoard);
+		theCards[11] = new MoveToSquare(msgL.msg(139), 0, theBoard);
+		theCards[12] = new PlayerTransaction(msgL.msg(140), 500, thePlayers);
+		theCards[13] = new MoveToSquare(msgL.msg(141), 39 ,theBoard);
+		theCards[14] = new MovetoShip(msgL.msg(142),theBoard);
+		theCards[15] = new Expense(msgL.msg(143), 1000);
+		theCards[16] = new Expense(msgL.msg(144), 200);
+		theCards[17] = new Expense(msgL.msg(145), 200);
+		theCards[18] = new MovetoShip(msgL.msg(146),theBoard);
+		theCards[19] = new GoToJail(msgL.msg(147));
+		theCards[20] = new GoToJail(msgL.msg(147));
+		theCards[21] = new PriceIncrease(msgL.msg(148), 500, 2000);
+		theCards[22] = new IncomeIncrease(msgL.msg(149), 1000);
+		theCards[23] = new IncomeIncrease(msgL.msg(149), 1000);
+		theCards[24] = new MovetoShip(msgL.msg(150),theBoard);
+		theCards[25] = new MovetoShip(msgL.msg(150), theBoard);
+		theCards[26] = new MoveToSquare(msgL.msg(186), 19 ,theBoard);
+		theCards[27] = new Expense(msgL.msg(151), 1000);
+		theCards[28] = new IncomeIncrease(msgL.msg(152), 4000);
+		theCards[29] = new IncomeIncrease(msgL.msg(153), 500);
+		theCards[30] = new IncomeIncrease(msgL.msg(153), 500);
+		theCards[31] = new MoveToSquare(msgL.msg(154), 32,theBoard);
+		theCards[32] = new ChangePosition(msgL.msg(155), 3,theBoard);
+		theCards[33] = new ChangePosition(msgL.msg(155), 3,theBoard);
+		theCards[34] = new Pardon(msgL.msg(156));
+		theCards[35] = new Pardon(msgL.msg(156));
+		theCards[36] = new Expense(msgL.msg(157), 3000);
+		theCards[37] = new Expense(msgL.msg(157), 3000);
+		theCards[38] = new IncomeIncrease(msgL.msg(158), 1000);
+		theCards[39] = new Expense(msgL.msg(159), 200);
+		theCards[40] = new MoveToSquare(msgL.msg(160), 24,theBoard);
+		theCards[41] = new IncomeIncrease(msgL.msg(161), 3000);
+		theCards[42] = new PlayerTransaction(msgL.msg(162), 500, thePlayers);
+		theCards[43] = new Expense(msgL.msg(163), 1000);
 	}
 	/**
 	 * Method which takes an int as a parameter 
