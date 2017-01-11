@@ -14,7 +14,7 @@ public class FakeCup extends Cup{
 
 	public FakeCup(int testCaseNumber) {
 		//System.out.println(new File("ajknsfhijoa").getAbsolutePath()); // FInd bib
-		String fileName = "testData.csv";
+		String fileName = "cupFile.csv";
 		File file = new File(fileName);
 		int i = 0;
 		try {

@@ -19,7 +19,7 @@ public class Player {
 	private String name;
 	private Account balance = new Account();
 	private Vehicle vehicle;
-	private Assets assets = new Assets();
+	private Assets assets = new Assets(this);
 	private int jailCounter;
 	private boolean jailStatus;
 	private boolean firstRound=true;

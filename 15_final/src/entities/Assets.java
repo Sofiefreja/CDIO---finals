@@ -19,6 +19,7 @@ public class Assets {
 	ArrayList<Street> ownedStreet = new ArrayList<Street>();
 	ArrayList<String> property = new ArrayList<String>();
 	private int jailCard;
+	private Player assetOwner;
 	private boolean propertyOwner;
 	private boolean buildingOwner;
 	private boolean buildStatus;
@@ -28,11 +29,12 @@ public class Assets {
 	/**
 	 * Constructor for Assets
 	 */
-	public Assets() {
+	public Assets(Player player) {
 		jailCard = 0;
 		propertyOwner = false;
 		buildingOwner = false;
 		buildStatus = false;
+		assetOwner = player;
 	}
 
 	/**
@@ -307,7 +309,8 @@ public class Assets {
 						|| counterF == 3 || counterG == 3) {
 					for (int j = 0; j < ownedStreet.size(); j++) {
 
-						if (ownedStreet.get(j).getNumberOfBuildings() == 5) {
+						if (ownedStreet.get(j).getNumberOfBuildings() == 5
+								|| assetOwner.getBalance() < ownedStreet.get(j).getPriceOfBuilding()) {
 							buildStatus = false;
 
 						} else {
@@ -380,7 +383,8 @@ public class Assets {
 					|| counterG == 3 && ownedStreet.get(i).getType() == 'G' || counterH == 2
 							&& ownedStreet.get(i).getType() == 'H' && ownedStreet.get(i).getNumberOfBuildings() < 5) {
 
-				if (ownedStreet.get(i).getPropertyPawnStatus() == false) {
+				if (ownedStreet.get(i).getPropertyPawnStatus() == false
+						&& assetOwner.getBalance() >= ownedStreet.get(i).getPriceOfBuilding() && ownedStreet.get(i).getNumberOfBuildings() < 5) {
 
 					buildableList.add(ownedStreet.get(i).toString());
 
@@ -444,13 +448,13 @@ public class Assets {
 			}
 
 		}
-		
+
 		for (int j = 0; j < owned.size(); j++) {
-			
+
 			if (owned.get(j).getPropertyPawnStatus() == false && !(owned.get(j) instanceof Street)) {
-				
+
 				pawnable.add(owned.get(j).toString());
-				
+
 			}
 		}
 

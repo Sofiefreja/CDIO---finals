@@ -37,7 +37,7 @@ public class GameLogic {
 
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
-		theCup = new FakeCup(0);
+		theCup = new Cup();
 
 		// The players are initialized
 		thePlayers = createPlayers();
@@ -81,9 +81,7 @@ public class GameLogic {
 								// If the dice is equals turn resets
 								if (theCup.getEquals() == true && equalEyeCounter != 2) {
 									doMoveVehicle(thePlayers.get(i));
-									if(thePlayers.get(i).getBalance()<0){
-									getMenu(thePlayers.get(i));
-								}
+
 									i--;
 									equalEyeCounter++;
 								} else if (theCup.getEquals() && equalEyeCounter == 2) { // Puts
@@ -101,9 +99,10 @@ public class GameLogic {
 								} else {
 									equalEyeCounter = 0;
 									doMoveVehicle(thePlayers.get(i));
-									if(thePlayers.get(i).getBalance()<0){
-									getMenu(thePlayers.get(i));
-								}
+									if (thePlayers.get(i).getBalance() < 0) {
+										i--;
+									}
+
 								}
 							}
 						} else if (turn.equals(msgL.msg(2))) {
@@ -170,11 +169,48 @@ public class GameLogic {
 							thePlayers.get(i).setJailStatus(false);
 							i--;
 						}
-					} else if (thePlayers.get(i).getBalance() < 0) {
+					} else if (thePlayers.get(i).getBalance() < 0 && thePlayers.get(i).getProperty() == true) {
+
+						if (thePlayers.get(i).getProperty()) {
+							getMenu(thePlayers.get(i));
+							if (turn.equals(msgL.msg(4))) {
+								Ownable pawned = null;
+								String pawnName = GUIControl.makeLists(msgL.msg(5), thePlayers.get(i).getPawnable());
+								for (int j = 0; j < thePlayers.get(i).getOwned().size(); j++) {
+
+									if (thePlayers.get(i).getOwned().get(j).toString().equals(pawnName)) {
+
+										pawned = thePlayers.get(i).getOwned().get(j);
+
+									}
+
+								}
+
+								thePlayers.get(i).pawnProperty(pawned);
+								if (thePlayers.get(i).getBalance() < 0) {
+									i--;
+								}
+							}
+
+						} else if (turn.equals(msgL.msg(8))) {
+							if (thePlayers.get(i).getBuilding() == true) {
+								String streetName = GUIControl.makeLists(
+										"Hvilken grund vil du gerne sælge et hus/hotel fra?",
+										thePlayers.get(i).getSellableList());
+								removeBuilding(thePlayers.get(i), streetName);
+							}
+							if (thePlayers.get(i).getBalance() < 0) {
+								i--;
+							}
+						}
+
+					} else if (thePlayers.get(i).getBalance() < 0 && thePlayers.get(i).getProperty() == false) {
+
 						GUIGame.removePlayer(thePlayers.get(i));
 						// missing removePlayer
 						thePlayers.remove(i);
 						i--; // fordi arrayet bliver mindre
+
 					}
 				} else { // Breaks the forloop because winner is found.
 					break;
@@ -232,38 +268,30 @@ public class GameLogic {
 	private String[] getMenu(Player theplayer) {
 		ArrayList<String> choices = new ArrayList<>();
 
-		if (theplayer.getBalance() < 0) { // menu if is balance under 0 (forced
-											// to sell houses)
-			if (theplayer.getBuilding() == true) {
-				choices.add(msgL.msg(2));
-			}
-			if (theplayer.getProperty() == true && theplayer.getPawnStatus() == true) { // menu if is balance under 0 (forced
-											// to pawn)
-				choices.add(msgL.msg(3));
-			}
-			choices.add(msgL.msg(10));
-		} else { // menu options for owning property, a house or 3 streets of
-					// same type.
-			if (theplayer.getJailStatus() == true) {
-				choices.add(msgL.msg(166));
-			}
+		if (theplayer.getJailStatus() == true) {
+			choices.add(msgL.msg(166));
+		}
+		if (!(theplayer.getBalance() < 0)) {
 			choices.add(msgL.msg(1));
-			choices.add(msgL.msg(10));
-			if (theplayer.getProperty()) {
-				if (theplayer.getPawnStatus() == true) {
-					choices.add(msgL.msg(4));
-				}
-				if (theplayer.getHasPawned() == true) {
-					choices.add("Løft pantsætning");
-				}
-				if (theplayer.getBuilding() == true) {
-					choices.add(msgL.msg(8));
-				}
-				if (theplayer.getBuildStatus() == true) {
-					choices.add(msgL.msg(6));
-				}
+		}
+		if (theplayer.getProperty()) {
+			if (theplayer.getPawnStatus() == true) {
+				choices.add(msgL.msg(4));
+			}
+			if (theplayer.getHasPawned() == true) {
+				choices.add("Løft pantsætning");
+			}
+			if (theplayer.getBuilding() == true) {
+				choices.add(msgL.msg(8));
+			}
+			if (theplayer.getBuildStatus() == true) {
+				choices.add(msgL.msg(6));
 			}
 		}
+		choices.add(msgL.msg(10));
+		
+		
+		// }
 
 		return choices.toArray(new String[choices.size()]); // Converting the
 															// Arraylist to
