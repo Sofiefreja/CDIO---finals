@@ -25,7 +25,7 @@ public class ChangePosition extends Move {
 	@Override
 	public void useCard(Player player) {
 		GUIControl.printMessage(description);
-		player.setPosition(moveTo,player.getCurrentPosition());
+		player.setPosition(moveTo+player.getCurrentPosition(),player.getCurrentPosition());
 		GUIControl.moveVehicle(player);
 		board.getSquare(player.getCurrentPosition()).landOnSquare(player);
 
