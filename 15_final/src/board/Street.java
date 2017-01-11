@@ -8,6 +8,7 @@ import controller.msgL;
 /**
  * Class Street, which has a type, and can have houses and a hotel built on it.
  * @author Mathias Tvaermose Gleerup, s153120
+ * @author Simon Lundorf s154008
  *
  */
 public class Street extends Ownable {
@@ -43,7 +44,24 @@ public class Street extends Ownable {
 	
 	@Override
 	public int getRent() {
+		int maxAmount;
+		ArrayList<Ownable> arr = owner.getOwned();
+		int counter=0;
+		for(int i =0; i<arr.size();i++){
+			if(arr.get(i).getType()==this.type){
+				counter++;
+			}
+		}
+		if(this.type=='A'||this.type=='H'){
+			maxAmount=2;
+		}else{
+			maxAmount =3;
+		}
+		if(counter==maxAmount && numberOfBuildings == 0){
+			return rents[0]*2;
+		} else {
 		return rents[numberOfBuildings];
+		}
 	}
 	/**
 	 * Method for buying houses on a street.
