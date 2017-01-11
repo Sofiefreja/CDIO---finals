@@ -20,7 +20,7 @@ public class GameLogic {
 	public ArrayList<Player> thePlayers;
 	private int equalEyeCounter;
 	private int i;
-	private AllCards allTheCards;
+	
 
 	/**
 	 * GameLogic controls the gameflow
@@ -38,21 +38,14 @@ public class GameLogic {
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
 		theCup = new FakeCup(0);
-<<<<<<< HEAD
-=======
-		allTheCards = new AllCards(thePlayers, theBoard);
->>>>>>> branch 'Develop' of https://github.com/Sofiefreja/CDIO---finals.git
+
 		
+
 		// The players are initialized
-				thePlayers = createPlayers();
+		thePlayers = createPlayers();
 		
-		theBoard = new Board(theCup,allTheCards,thePlayers);
-		
-//		allTheCards = new AllCards(thePlayers, theBoard);
-		
-		//allTheCards.shuffle();
-		
-		allTheCards = new AllCards(thePlayers, theBoard);
+
+		theBoard = new Board(theCup, thePlayers);
 
 		// Beginning the game.
 		equalEyeCounter = 0;
@@ -97,9 +90,11 @@ public class GameLogic {
 								} else
 									equalEyeCounter = 0;
 
-							} else if (equalEyeCounter == 2) { // Puts the player in jail if
-										// equalEyeCounter
-										// hits 3.
+							} else if (equalEyeCounter == 2) { // Puts the
+																// player in
+																// jail if
+								// equalEyeCounter
+								// hits 3.
 								GUIControl.printMessage("Du slog 2 ens for tredie gang, du ryger i fængsel for snyd!");
 								thePlayers.get(i).setPosition(10, thePlayers.get(i).getCurrentPosition());
 								GUIControl.moveVehicle(thePlayers.get(i));
