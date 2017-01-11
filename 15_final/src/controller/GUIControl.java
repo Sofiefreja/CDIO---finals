@@ -192,10 +192,6 @@ public class GUIControl {
 	 * @param thePlayer
 	 *            type: Player
 	 */
-//	 public static void teleportVehicle(Player thePlayer) {
-//	 GUI.removeCar(thePlayer.getPreviousPosition() + 1, thePlayer.toString());
-//	 GUI.setCar(thePlayer.getCurrentPosition() + 1, thePlayer.toString());
-//	 }
 
 	public static void moveVehicle(Player thePlayer) {
 		// Calculate value
