@@ -523,7 +523,7 @@ public class Assets {
 		hasPawn = true;
 
 	}
-
+	
 	public void liftPawn(Ownable ownable) {
 
 		ownable.liftPawn();
