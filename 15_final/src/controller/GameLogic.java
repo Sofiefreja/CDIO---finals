@@ -387,7 +387,7 @@ public class GameLogic {
 			}
 		}
 		GUIGame.setBuilding(position, numberOfBuildings);
-		thePlayer.buyHouses(theStreet, 1);
+		thePlayer.buyBuildings(theStreet, 1);
 
 	}
 	/**
@@ -408,7 +408,7 @@ public class GameLogic {
 
 		}
 		GUIGame.removeBuilding(position, numberOfBuildings);
-		thePlayer.removeHouses(theStreet, 1);
+		thePlayer.removeBuildings(theStreet, 1);
 
 	}
 }

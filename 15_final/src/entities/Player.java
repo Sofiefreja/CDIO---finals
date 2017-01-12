@@ -292,9 +292,9 @@ public class Player {
 	 * @param street
 	 * @param amount
 	 */
-	public void buyHouses(Street street, int amount) {
+	public void buyBuildings(Street street, int amount) {
 
-		assets.buyHouses(street, amount);
+		assets.buyBuildings(street, amount);
 
 	}
 	/**
@@ -302,9 +302,9 @@ public class Player {
 	 * @param street
 	 * @param amount
 	 */
-	public void removeHouses(Street street, int amount) {
+	public void removeBuildings(Street street, int amount) {
 
-		assets.removeHouses(street, amount);
+		assets.removeBuildings(street, amount);
 
 	}
 	/**

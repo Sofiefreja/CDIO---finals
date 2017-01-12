@@ -36,10 +36,10 @@ public class Buildable {
 
 		System.out.println(p1.getBalance());
 
-		p1.buyHouses((Street) (theBoard.getSquare(3)), 2);
-		p1.buyHouses((Street) (theBoard.getSquare(13)), 4);
-		p1.buyHouses((Street) (theBoard.getSquare(14)), 5);
-		p1.buyHouses((Street) (theBoard.getSquare(1)), 5);
+		p1.buyBuildings((Street) (theBoard.getSquare(3)), 2);
+		p1.buyBuildings((Street) (theBoard.getSquare(13)), 4);
+		p1.buyBuildings((Street) (theBoard.getSquare(14)), 5);
+		p1.buyBuildings((Street) (theBoard.getSquare(1)), 5);
 
 		System.out.println(p1.getBalance());
 

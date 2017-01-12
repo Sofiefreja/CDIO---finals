@@ -70,7 +70,7 @@ public class Street extends Ownable {
 	 * Method for buying an amount buildings on a Street
 	 * @param amount of buildings
 	 */
-	public void buyHouses(int amount) {
+	public void buyBuildings(int amount) {
 		int maxAmount;
 		ArrayList<Ownable> arr = owner.getOwned();
 		int counter = 0;
@@ -96,7 +96,7 @@ public class Street extends Ownable {
 	 * Method for removing an amount of buildings on this instance.
 	 * @param amount
 	 */
-	public void removeHouses(int amount) {
+	public void removeBuildings(int amount) {
 		numberOfBuildings -= amount;
 		owner.deposit(amount * priceOfBuilding);
 	}

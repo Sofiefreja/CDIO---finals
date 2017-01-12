@@ -231,9 +231,9 @@ public class Assets {
 	 * @param street
 	 * @param amount
 	 */
-	public void buyHouses(Street street, int amount) {
+	public void buyBuildings(Street street, int amount) {
 
-		street.buyHouses(amount);
+		street.buyBuildings(amount);
 		buildingOwner = true;
 
 	}
@@ -244,12 +244,12 @@ public class Assets {
 	 * @param street
 	 * @param amount
 	 */
-	public void removeHouses(Street street, int amount) {
+	public void removeBuildings(Street street, int amount) {
 
 		boolean noBuilding = true;
 		buildingOwner = false;
 
-		street.removeHouses(amount);
+		street.removeBuildings(amount);
 
 		for (int i = 0; i < ownedStreet.size(); i++) {
 
