@@ -92,7 +92,7 @@ public class GameLogic {
 									// equalEyeCounter
 									// hits 3.
 									GUIControl.printMessage(
-											"Du slog 2 ens for tredie gang, du ryger i fængsel for snyd!");
+											msgL.msg(189));
 									thePlayers.get(i).setPosition(10, thePlayers.get(i).getCurrentPosition());
 									GUIControl.moveVehicle(thePlayers.get(i));
 									thePlayers.get(i).setJailStatus(true);
@@ -106,6 +106,7 @@ public class GameLogic {
 
 								}
 							}
+							// Bliver muligvis ikke brugt 
 						} else if (turn.equals(msgL.msg(2))) {
 							System.out.println("Shit");
 							i--;// han skal have en tur mere
@@ -124,9 +125,9 @@ public class GameLogic {
 
 							thePlayers.get(i).pawnProperty(pawned);
 							i--;
-						} else if (turn.equals("Løft pantsætning")) {
+						} else if (turn.equals(msgL.msg(190))) {
 							Ownable hasPawned = null;
-							String hasPawnName = GUIControl.makeLists("Du vil gerne hæve en pantsætning",
+							String hasPawnName = GUIControl.makeLists(msgL.msg(191),
 									thePlayers.get(i).getPawned());
 							for (int j = 0; j < thePlayers.get(i).getOwned().size(); j++) {
 
@@ -144,17 +145,17 @@ public class GameLogic {
 						} else if (turn.equals(msgL.msg(6))) {// køb hus eller
 																// hotel
 							if (thePlayers.get(i).getBuildStatus() == true) {
-								String streetName = GUIControl.makeLists("Hvilken grund vil du gerne bygge et hus på?",
+								String streetName = GUIControl.makeLists(msgL.msg(192),
 										thePlayers.get(i).getBuildableList());
 								setBuilding(thePlayers.get(i), streetName);
 							} else {
-								GUIControl.printMessage("Du kan ikke købe mere .....");
+								GUIControl.printMessage(msgL.msg(193));
 							}
 							i--;
 						} else if (turn.equals(msgL.msg(8))) {
 							if (thePlayers.get(i).getBuilding() == true) {
 								String streetName = GUIControl.makeLists(
-										"Hvilken grund vil du gerne sælge et hus/hotel fra?",
+										msgL.msg(194),
 										thePlayers.get(i).getSellableList());
 								removeBuilding(thePlayers.get(i), streetName);
 							}
@@ -196,7 +197,7 @@ public class GameLogic {
 						} else if (turn.equals(msgL.msg(8))) {
 							if (thePlayers.get(i).getBuilding() == true) {
 								String streetName = GUIControl.makeLists(
-										"Hvilken grund vil du gerne sælge et hus/hotel fra?",
+										msgL.msg(194),
 										thePlayers.get(i).getSellableList());
 								removeBuilding(thePlayers.get(i), streetName);
 							}
@@ -280,7 +281,7 @@ public class GameLogic {
 				choices.add(msgL.msg(4));
 			}
 			if (theplayer.getHasPawned() == true) {
-				choices.add("Løft pantsætning");
+				choices.add(msgL.msg(190));
 			}
 			if (theplayer.getBuilding() == true) {
 				choices.add(msgL.msg(8));
