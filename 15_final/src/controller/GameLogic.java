@@ -44,11 +44,10 @@ public class GameLogic {
 			theCup = new FakeCup(0);
 			testMode = true;
 			startAmount = 30000;
-		}
-		else if (startUp == "Game") {
+		} else if (startUp == "Game") {
 			theCup = new Cup();
 			startAmount = 30000;
-			
+
 		}
 
 		// The players are initialized
@@ -262,7 +261,7 @@ public class GameLogic {
 
 		for (int i = 0; i < playerNames.length; i++) {
 			thePlayers.add(new Player(playerNames[i], startAmount)); // Creating
-																// player
+			// player
 			// objects for the game
 			GUIGame.createPlayer(thePlayers.get(i)); // Creating Player objects
 														// for the GUI
@@ -378,6 +377,7 @@ public class GameLogic {
 				position = thePlayer.getOwnedStreet().get(i).getID();
 				numberOfBuildings = thePlayer.getOwnedStreet().get(i).getNumberOfBuildings();
 			}
+
 		}
 		GUIGame.removeBuilding(position, numberOfBuildings);
 		thePlayer.removeHouses(theStreet, 1);
