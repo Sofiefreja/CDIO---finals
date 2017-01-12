@@ -23,8 +23,15 @@ import desktop_resources.GUI;
 import entities.Cup;
 import entities.Player;
 
+/**
+ * Controller class which handles all contact with the GUI.
+ * @author mathi
+ *
+ */
 public class GUIControl {
-
+	/**
+	 * Makes the visual board.
+	 */
 	public void makeBoard() { // Method that creates the board for the GUI and
 								// sets the squares with their descriptions,
 								// colouring and number
@@ -107,21 +114,25 @@ public class GUIControl {
 
 		GUI.create(fields);
 	}
-
+	/**
+	 * Method for choosing language of the messages.
+	 */
 	public String changeLanguage() {
 		String language = GUI.getUserButtonPressed(msgL.msg(174), msgL.msg(175), msgL.msg(176));
 		msgL.changeLanguage(language);
 		return language;
 	}
-
-	// public void showSquareInfo(Square theSquare) {
-	//
-	// }
-
+	/**
+	 * Shows the winner in the GUI
+	 * @param winner
+	 */
 	public void showWinner(Player winner) {
 		GUI.showMessage(msgL.msg(104) + winner + "! " + msgL.msg(105));
 	}
-
+	/**
+	 * Creates a player on the board.
+	 * @param newPlayer
+	 */
 	public void createPlayer(Player newPlayer) {
 
 		// Creating the car.
@@ -132,22 +143,24 @@ public class GUIControl {
 		GUI.setCar(1, newPlayer.toString());
 	}
 
-	// Getting dice value, printing to GUI
+	/**
+	 * Visual representation of the dices.
+	 * @param newCup
+	 */
 	public void showDice(Cup newCup) {
 		int d1 = newCup.getD1();
 		int d2 = newCup.getD2();
-		if (d1 > 6 || d2 > 6 && d2 < 0 || d2 < 0)
+		if (d1 > 6 || d2 > 6 && d2 < 0 || d2 < 0) //in test mode som dicevalues will exceed 6
+												//which isn't compatible with the GUI.
 			GUI.setDice(1, 1);
 		else
 			GUI.setDice(d1, d2);
 	}
 
-	// Creation of players, saving the number of players to an integer and the
-	// name of a player as a string in an array.
 	/**
-	 * Input number of players, name of players and denies same name entries.
+	 * Getting a string array with the names of the players.
+	 * @return playerNames String[]
 	 */
-
 	public String[] numberOfPlayers() {
 		int numberOfPlayers = GUI.getUserInteger(msgL.msg(106), 3, 6);
 		String[] playerNames = new String[numberOfPlayers];
@@ -180,7 +193,12 @@ public class GUIControl {
 		return playerNames;
 	}
 
-	// Player choices for each new turn
+	/**
+	 * 
+	 * @param thePlayer
+	 * @param choices
+	 * @return input
+	 */
 	public String getUserInputTurn(Player thePlayer, String[] choices) {
 		String input;
 		input = GUI.getUserButtonPressed(thePlayer.toString() + msgL.msg(110), choices);
@@ -193,32 +211,28 @@ public class GUIControl {
 	 * @param thePlayer
 	 *            type: Player
 	 */
-
 	public static void moveVehicle(Player thePlayer) {
-		// Calculate value
 
 		int value = thePlayer.getCurrentPosition() - thePlayer.getPreviousPosition();
 		while (value < 0)
 			value += 40;
 
-		for (int i = 0; i < value; i++) {
+		for (int i = 0; i < value; i++) {//Sets the player on one spot after another to simulate a piece moving on the board
 			GUI.removeCar((thePlayer.getPreviousPosition() + i) % 40 + 1, thePlayer.toString());
 			GUI.setCar((thePlayer.getPreviousPosition() + i + 1) % 40 + 1, thePlayer.toString());
-			if ((thePlayer.getPreviousPosition() + i + 1) % 40 + 1 == 2) {
+			if ((thePlayer.getPreviousPosition() + i + 1) % 40 + 1 == 2) {//if the player has passed the Start field
 				if (thePlayer.getFirstRound() == false && thePlayer.getCurrentPosition() != 10) {
 					thePlayer.deposit(4000);
-					updateBalance(thePlayer);
 				} else {
 					thePlayer.setFirstRound(false);
 				}
 			}
-
 			try {
 				Thread.currentThread();
 				if (value > 12) {
-					Thread.sleep(0);
+					Thread.sleep(0);//for test modes, the vehicle teleports.
 				} else {
-					Thread.sleep(100);
+					Thread.sleep(150);//the thread sleeps for 150 miliseconds
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -226,8 +240,12 @@ public class GUIControl {
 		}
 	}
 
-	// Player choice of buying a square or not.
-
+	/**
+	 * Player choice of buying the square he landed on.
+	 * @param field
+	 * @param player
+	 * @return boolean 
+	 */
 	public static boolean getBuyChoice(Ownable field, Player player) {
 
 		String input = GUI.getUserButtonPressed(player.toString() + msgL.msg(111) + field.toString() + msgL.msg(177)
@@ -237,7 +255,12 @@ public class GUIControl {
 		else
 			return false;
 	}
-
+	/**
+	 * Player chooses which way he wants to pay taxes.
+	 * @param name
+	 * @param player
+	 * @return boolean
+	 */
 	public static boolean getTaxChoice(String name, Player player) {
 
 		String input = GUI.getUserButtonPressed(player.toString() + msgL.msg(111) + name + msgL.msg(182), msgL.msg(173),
@@ -253,14 +276,15 @@ public class GUIControl {
 	 * 
 	 * @param message
 	 *            type: String
-	 * @author Jonas Larsen (s136335)
-	 * @author Morten Velin (s147300)
 	 */
 	public static void printMessage(String message) {
 		GUI.showMessage(message);
 	}
 
-	// Removing player from playing board when player surrenders or looses.
+	/**
+	 * Removing player from playing board when player surrenders or looses.
+	 * @param thePlayer
+	 */
 	public void removePlayer(Player thePlayer) {
 
 		// Remove the players owned squares.
@@ -268,6 +292,8 @@ public class GUIControl {
 		ArrayList<Ownable> arr = thePlayer.getOwned();
 		for (int i = 0; i < list.length; i++) {
 			GUI.removeOwner(list[i]);
+			GUI.setHouses(arr.get(i).getID(), 0);
+			arr.get(i).liftPawn();
 			arr.get(i).clearOwner();
 		}
 		// Remove Car
@@ -275,46 +301,33 @@ public class GUIControl {
 		GUI.setBalance(thePlayer.toString(), 0);
 	}
 
-	// set square as owned.
+	/**
+	 * Marks a square as owned buy a player.
+	 * @param squareNumber
+	 * @param thePlayer
+	 */
 	public static void setOwned(int squareNumber, Player thePlayer) {
 
 		GUI.setOwner(squareNumber, thePlayer.toString());
 	}
-
+	/**
+	 * Updates the balance of the player in the GUI
+	 * @param player
+	 */
 	public static void updateBalance(Player player) {
 		GUI.setBalance(player.toString(), player.getBalance());
 	}
-
-	public static void ownedMessage(Ownable field, Player landed, Player owner, int payment) {
-		GUI.showMessage(landed.toString() + msgL.msg(111) + field.toString() + msgL.msg(112) + owner.toString()
-				+ msgL.msg(113) + payment + msgL.msg(119) + msgL.msg(114) + owner.toString());
-	}
-
-	public static void buyMessage(Ownable field, Player player) {
-		GUI.showMessage(msgL.msg(115) + field.toString() + msgL.msg(184) + field.getPrice() + msgL.msg(119));
-	}
-
-	public static void taxMessage(Player player, int amount) {
-		GUI.showMessage(player.toString() + msgL.msg(116) + amount + msgL.msg(119));
-	}
-
-	public static void refugeMessage(Refuge refuge, Player player, int bonus) {
-		GUI.showMessage(player.toString() + msgL.msg(117) + refuge.toString() + msgL.msg(118) + bonus + msgL.msg(119));
-	}
-
-	public static void notEnoughMoney(Ownable own) {
-		GUI.showMessage(msgL.msg(121) + own.toString());
-	}
-
-	/*
-	 * public static void taxNotEnoughMoney(Tax tax){
-	 * GUI.showMessage("You don't have enough money to pay the tax amount of "
-	 * +tax.getTaxAmount()+", so you have to pay the 10% tax rate."); }
+	/**
+	 * Closes the GUI.
 	 */
 	public void endGUI() {
 		GUI.close();
 	}
-
+	/**
+	 * Sets a number of buildings on the specified square.
+	 * @param position
+	 * @param numberOfBuildings
+	 */
 	public void setBuilding(int position, int numberOfBuildings) {
 
 		if (numberOfBuildings == 4) {
@@ -322,30 +335,52 @@ public class GUIControl {
 		} else if (numberOfBuildings >= 0) {
 			GUI.setHouses(position, numberOfBuildings + 1);
 		} else {
-			GUI.showMessage(msgL.msg(195));// tiltænkt
-											// til os
+			GUI.showMessage(msgL.msg(195));// error message is displayed.
 		}
 	}
-
+	/**
+	 * Removes a number of houses from a street.
+	 * @param position
+	 * @param numberOfBuildings
+	 */
 	public void removeBuilding(int position, int numberOfBuildings) {
-
 		GUI.setHouses(position, numberOfBuildings - 1);
-
 	}
-
+	/**
+	 * Makes two buttons and returns a string representation of what was pressed.
+	 * @param message
+	 * @param button1
+	 * @param button2
+	 * @return
+	 */
 	public static String make2Buttons(String message, String button1, String button2) {
 
 		return GUI.getUserButtonPressed(message, button1, button2);
 	}
-
+	/**
+	 * Makes three buttons and returns a string representation of what was pressed.
+	 * @param message
+	 * @param button1
+	 * @param button2
+	 * @param button3
+	 * @return
+	 */
 	public static String make3Buttons(String message, String button1, String button2, String button3) {
 		return GUI.getUserButtonPressed(message, button1, button2, button3);
 	}
-
+	/**
+	 * Makes a list for the player to choose from.
+	 * @param test
+	 * @param options
+	 * @return
+	 */
 	public static String makeLists(String test, String[] options) {
 		return GUI.getUserSelection(test, options);
 	}
-
+	/**
+	 * Displays a text in the chanceCard field in the middle.
+	 * @param txt
+	 */
 	public static void displayChanceCard(String txt) {
 		GUI.displayChanceCard(txt);
 	}

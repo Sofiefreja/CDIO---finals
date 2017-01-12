@@ -47,7 +47,7 @@ public abstract class Ownable extends Square {
 					
 				}else{
 					int amount = getRent();// the rent is calculated, depending on the subclass.
-					GUIControl.ownedMessage(this, player, owner, amount);// a message is printed to the player about the sequence.
+					GUIControl.printMessage(player.toString() + msgL.msg(111) + this.toString() + msgL.msg(112) + owner.toString()+ msgL.msg(113) + amount + msgL.msg(119) + msgL.msg(114) + owner.toString());
 					player.withdraw(amount);
 					owner.deposit(amount);
 				}
@@ -61,11 +61,11 @@ public abstract class Ownable extends Square {
 				player.withdraw(this.price);
 				owner = player;
 				GUIControl.setOwned(this.getID(), player);
-				GUIControl.buyMessage(this, player);
+				GUIControl.printMessage(msgL.msg(115) + this.toString() + msgL.msg(184) + this.getPrice() + msgL.msg(119));
 			}
 		} else {// if the square is not owned but the player can't afford it, a
 				// message is printed.
-			GUIControl.notEnoughMoney(this);
+			GUIControl.printMessage(msgL.msg(121) + this.toString());
 		}
 	}
 

@@ -119,13 +119,19 @@ public class Assets {
 	public ArrayList<Ownable> getOwned() {
 		return owned;
 	}
-	
+	/**
+	 * 
+	 * @return property String ArrayList
+	 */
 	public ArrayList<String> getPropertyList() {
 		
 		return property;
 		
 	}
-	
+	/**
+	 * ArrayList
+	 * @return
+	 */
 	public ArrayList<Street> getOwnedStreet() {
 		
 		return ownedStreet;
@@ -177,7 +183,9 @@ public class Assets {
 
 		return hotelList.toArray(new String[hotelList.size()]);
 	}
-
+	/**
+	 * @return list of sellable squares.
+	 */
 	public String[] getSellableList() {
 
 		ArrayList<String> sellableList = new ArrayList<String>();
@@ -353,7 +361,10 @@ public class Assets {
 		return buildableList.toArray(new String[buildableList.size()]);
 
 	}
-
+	/**
+	 * 
+	 * @return pawnstatus
+	 */
 	public boolean getPawnStatus() {
 
 		if (this.getPawnable().length != 0) {
@@ -369,7 +380,10 @@ public class Assets {
 		return pawnStatus;
 
 	}
-
+	/**
+	 * 
+	 * @return list of pawnable squares.
+	 */
 	public String[] getPawnable() {
 
 		ArrayList<String> pawnable = new ArrayList<String>();
@@ -396,7 +410,10 @@ public class Assets {
 		return pawnable.toArray(new String[pawnable.size()]);
 
 	}
-
+	/**
+	 * 
+	 * @return list of the pawned squares.
+	 */
 	public String[] getPawned() {
 
 		ArrayList<String> pawned = new ArrayList<String>();
@@ -414,8 +431,11 @@ public class Assets {
 		return pawned.toArray(new String[pawned.size()]);
 
 	}
-
-	public boolean getHasPawned() {
+	/**
+	 * 
+	 * @return boolean value of whether Assets contain a pawned square.
+	 */
+	public boolean hasPawned() {
 
 		if (owned.size() == 0) {
 			hasPawn = false;
@@ -436,7 +456,10 @@ public class Assets {
 		}
 
 	}
-
+	/**
+	 * Sets the pawnstatus to true of this square
+	 * @param ownable
+	 */
 	public void pawnProperty(Ownable ownable) {
 
 		ownable.pawnProperty();
@@ -444,7 +467,10 @@ public class Assets {
 		hasPawn = true;
 
 	}
-
+	/**
+	 * Unpawns a square.
+	 * @param ownable
+	 */
 	public void liftPawn(Ownable ownable) {
 
 		ownable.liftPawn();

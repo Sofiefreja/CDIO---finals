@@ -85,33 +85,19 @@ public class AllCards {
 	public Card getCard(int index) {
 		return theCards[index];
 	}
-	
+	/**
+	 * Shuffles the cards
+	 */
 	public void shuffle(){
 		Random r = new Random();
 		
 		for(int last = theCards.length-1; last > 0; last--){
 			int i = r.nextInt(last+1);
-			
-			// Swap
 			Card tmp = theCards[last];
 			theCards[last] = theCards[i];
 			theCards[i] = tmp;
 		}
 	}
-
-//	public static void main(String[] args) { //for testing
-//		AllCards a = new AllCards(null, null);
-//		for(Card c : a.theCards){
-//			System.out.println(c);
-//		}
-//		
-//		a.shuffle();
-//		System.out.println("=====================================================");
-//		
-//		for(Card c : a.theCards){
-//			System.out.println(c);
-//		}
-//	}
 }
 
 

@@ -9,8 +9,8 @@ public class msgL {
 	private static String[] info_english = new String[1000];
 	static String lang="Dansk";
 	
+	//the static block runs as soon as a method in this class has been initiated.
 	static {
-		//System.out.println(new File("Language.csv").getAbsolutePath()); // FInd bib.
 		String fileName = "language2";
 		File file = new File(fileName);
 		String tempString;
@@ -21,8 +21,8 @@ public class msgL {
 		try {
 			Scanner inputStream = new Scanner(file);
 			while (inputStream.hasNextLine()) {
-				tempString=inputStream.nextLine();
-				info_danish[i++] = tempString.split("\t")[Danish];
+				tempString=inputStream.nextLine();//stores the next line in a temporary string
+				info_danish[i++] = tempString.split("\t")[Danish];//splits the text by tabs
 				info_english[j++] = tempString.split("\t")[English];
 			}
 			inputStream.close();
@@ -31,6 +31,11 @@ public class msgL {
 			System.out.println("Forkert filnavn");
 		}
 	}
+	/**
+	 * Getter for the String arrays with messages.
+	 * @param index
+	 * @return string
+	 */
 	public static String msg(int index){
 		if(lang.equals("English")){
 			return info_english[index];
@@ -40,9 +45,8 @@ public class msgL {
 		}
 	}
 	/**
-	 * 
+	 * Changes the language of the strings msg() returns
 	 * @param language
-	 * @return
 	 */
 	public static void changeLanguage(String language){
 		if(language.equals("English")){

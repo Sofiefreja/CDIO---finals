@@ -2,15 +2,14 @@ package controller;
 
 import java.util.ArrayList;
 
-import desktop_resources.GUI;
-import entities.AllCards;
+
 import entities.Board;
 import entities.Cup;
 import entities.Player;
 import test.FakeCup;
 import board.Ownable;
 import board.Street;
-import board.Ownable;
+
 
 public class GameLogic {
 
@@ -109,10 +108,6 @@ public class GameLogic {
 
 								}
 							}
-							// Bliver muligvis ikke brugt
-						} else if (turn.equals(msgL.msg(2))) {
-							System.out.println("Shit");
-							i--;// han skal have en tur mere
 						} else if (turn.equals(msgL.msg(4))) {
 							Ownable pawned = null;
 							String pawnName = GUIControl.makeLists(msgL.msg(5), thePlayers.get(i).getPawnable());
@@ -194,7 +189,6 @@ public class GameLogic {
 									i--;
 								}
 							}
-
 						} else if (turn.equals(msgL.msg(8))) {
 							if (thePlayers.get(i).getBuilding() == true) {
 								String streetName = GUIControl.makeLists(msgL.msg(194),
@@ -249,7 +243,11 @@ public class GameLogic {
 		} else if (startUp == "Normalt") {
 			theCup = new Cup();
 			startAmount = 30000;
-
+			if(GUIGame.changeLanguage().equals("English")){
+					GUIGame.endGUI();
+					GUIGame.makeBoard();
+			}
+					
 		}
 	}
 
@@ -296,8 +294,9 @@ public class GameLogic {
 	 * balance.
 	 * 
 	 * @param theplayer
-	 *            Type: Player
-	 * @return Type: String[] with player options.
+	 *          Type: Player
+	 * @return options 
+	 * 			Type: String[] with player options.
 	 */
 	private String[] getMenu(Player theplayer) {
 		ArrayList<String> choices = new ArrayList<>();
@@ -371,7 +370,11 @@ public class GameLogic {
 		}
 		equalEyeCounter = 0;
 	}
-
+	/**
+	 * Sets a building on the Street and in the GUI.
+	 * @param thePlayer
+	 * @param streetName
+	 */
 	private void setBuilding(Player thePlayer, String streetName) {
 		int i, position = 0, numberOfBuildings = 0;
 		Street theStreet = null;
@@ -387,7 +390,11 @@ public class GameLogic {
 		thePlayer.buyHouses(theStreet, 1);
 
 	}
-
+	/**
+	 * Removes a building from the Street and the player.
+	 * @param thePlayer
+	 * @param streetName
+	 */
 	private void removeBuilding(Player thePlayer, String streetName) {
 		int i, position = 0, numberOfBuildings = 0;
 		Street theStreet = null;

@@ -350,7 +350,7 @@ public class Player {
 	
 	public boolean getHasPawned() {
 		
-		return assets.getHasPawned();
+		return assets.hasPawned();
 		
 	}
 	
