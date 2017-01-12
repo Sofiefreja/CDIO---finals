@@ -353,7 +353,6 @@ public class GameLogic {
 		}
 		GUIGame.setBuilding(position, numberOfBuildings);
 		thePlayer.buyHouses(theStreet, 1);
-		GUIGame.updateBalance(thePlayer);
 
 	}
 
@@ -370,7 +369,6 @@ public class GameLogic {
 		}
 		GUIGame.removeBuilding(position, numberOfBuildings);
 		thePlayer.removeHouses(theStreet, 1);
-		GUIGame.updateBalance(thePlayer);
 
 	}
 }
