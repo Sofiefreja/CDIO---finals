@@ -58,8 +58,8 @@ public class GameLogic {
 
 					// Creating menues for the player based on property or
 					// status.
-					String[] valg = getMenu(thePlayers.get(i));
-					String turn = GUIGame.getUserInputTurn(thePlayers.get(i), valg);
+					String[] availableChoices = getMenu(thePlayers.get(i));
+					String turn = GUIGame.getUserInputTurn(thePlayers.get(i), availableChoices);
 
 					// All the if statements for Player choices on start of
 					// turn.
