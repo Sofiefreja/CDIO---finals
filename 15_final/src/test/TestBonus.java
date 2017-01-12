@@ -1,6 +1,6 @@
 package test;
 
-import entities.Cup;
+
 import entities.Player;
 import org.junit.Test;
 

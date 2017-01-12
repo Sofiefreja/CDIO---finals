@@ -311,7 +311,7 @@ public class GameLogic {
 			if (theplayer.getPawnStatus() == true) {
 				choices.add(msgL.msg(4));
 			}
-			if (theplayer.getHasPawned() == true) {
+			if (theplayer.hasPawned() == true) {
 				choices.add(msgL.msg(190));
 			}
 			if (theplayer.getBuilding() == true) {

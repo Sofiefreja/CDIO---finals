@@ -48,7 +48,10 @@ public class Player {
 	public int[] getOwnedID() {
 		return assets.getOwnedID();
 	}
-
+	/**
+	 * 
+	 * @return ArrayList of the streets, this player owns.
+	 */
 	public ArrayList<Street> getOwnedStreet() {
 
 		return assets.getOwnedStreet();
@@ -56,7 +59,7 @@ public class Player {
 	}
 	
 	/**
-	 * Method for buying a Ownable Square.
+	 * Method for buying an Ownable Square.
 	 * 
 	 * @param square
 	 */
@@ -86,9 +89,17 @@ public class Player {
 	public int getJailCounter() {
 		return jailCounter;
 	}
+	/**
+	 * Setting the firstRound boolean.
+	 * @param boolean
+	 */
 	public void setFirstRound(boolean b){
 		firstRound=b;
 	}
+	/**
+	 * 
+	 * @return a boolean value of whether this is the players first round.
+	 */
 	public boolean getFirstRound(){
 		return firstRound;
 	}
@@ -312,43 +323,64 @@ public class Player {
 	public String[] getBuildableList() {
 		return assets.getBuildableList();
 	}
-
+	/**
+	 * 
+	 * @return string array of sellable squares.
+	 */
 	public String[] getSellableList() {
 		
 		return assets.getSellableList();
 		
 	}
-	
+	/**
+	 * 
+	 * @return boolean value of whether the player can pawn something.
+	 */
 	public boolean getPawnStatus() {
 		
 		return assets.getPawnStatus();
 		
 	}
-	
+	/**
+	 * 
+	 * @return string array of pawnable squares
+	 */
 	public String[] getPawnable() {
 		
 		return assets.getPawnable();
 		
 	}
-	
+	/**
+	 * Pawns a property.
+	 * @param ownable
+	 */
 	public void pawnProperty(Ownable ownable) {
 		
 		assets.pawnProperty(ownable);
 	}
-	
+	/**
+	 * Lifts the pawn of the property.
+	 * @param ownable
+	 */
 	public void liftPawn(Ownable ownable) {
 		
 		assets.liftPawn(ownable);
 		
 	}
-	
+	/**
+	 * 
+	 * @return String[] of pawned properties.
+	 */
 	public String[] getPawned() {
 		
 		return assets.getPawned();
 		
 	}
-	
-	public boolean getHasPawned() {
+	/**
+	 * 
+	 * @return boolean value of whether the player has a pawned square.
+	 */
+	public boolean hasPawned() {
 		
 		return assets.hasPawned();
 		

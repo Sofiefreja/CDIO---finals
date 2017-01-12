@@ -1,8 +1,6 @@
 package entities;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import board.*;
 import board.Tax;
 import board.Parking;
@@ -19,8 +17,7 @@ public class Board {
 	private AllCards allTheCards;
 
 	/**
-	 * Constructor for a Board, which accepts a Cup, for the creating of
-	 * Breweries.
+	 * Constructor for a Board
 	 * 
 	 * @param theCup
 	 */
@@ -31,7 +28,6 @@ public class Board {
 		if (testMode == false)
 			allTheCards.shuffle();
 
-		// Navn, ID, pris, pawn, pris for bygning, rent 0,1,2,3,4,hotel, type
 		squares[0] = new Start("Start", 1);
 		squares[1] = new Street("Rødovrevej", 2, 1200, 600, 1000, 50, 250, 750, 2250, 4000, 6000, 'A');
 		squares[2] = new Chance("Prøv lykken", 3, allTheCards);

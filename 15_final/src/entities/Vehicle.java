@@ -2,8 +2,6 @@ package entities;
 
 import java.awt.Color;
 
-import controller.GUIControl;
-
 /**
  * Class which keeps track of the player's position on the board and creates a
  * piece that the player moves with

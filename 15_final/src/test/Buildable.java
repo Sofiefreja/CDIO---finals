@@ -1,22 +1,9 @@
 package test;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.IntStream;
-
 import org.junit.Test;
-
-import board.Brewery;
-import board.Jail;
-import board.Ownable;
-import board.Parking;
-import board.Shipping;
-import board.Square;
-import board.Start;
 import board.Street;
-import board.Tax;
 import entities.Board;
 import entities.Cup;
 import entities.Player;
