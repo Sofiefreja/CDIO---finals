@@ -20,6 +20,8 @@ public class GameLogic {
 	public ArrayList<Player> thePlayers;
 	private int equalEyeCounter;
 	private int i;
+	private boolean testMode = false;
+	private int startAmount;
 
 	/**
 	 * GameLogic controls the gameflow
@@ -36,10 +38,21 @@ public class GameLogic {
 
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
-		theCup = new FakeCup(0);
+		String startUp = GUI.getUserButtonPressed("Du skal vælge test måde", "Test mode", "Game");
+
+		if (startUp == "Test mode") {
+			theCup = new FakeCup(0);
+			testMode = true;
+			startAmount = 30000;
+		}
+		else if (startUp == "Game") {
+			theCup = new Cup();
+			startAmount = 30000;
+			
+		}
 
 		// The players are initialized
-		thePlayers = createPlayers();
+		thePlayers = createPlayers(testMode, startAmount);
 
 		theBoard = new Board(theCup, thePlayers);
 
@@ -91,8 +104,7 @@ public class GameLogic {
 									// jail if
 									// equalEyeCounter
 									// hits 3.
-									GUIControl.printMessage(
-											msgL.msg(189));
+									GUIControl.printMessage(msgL.msg(189));
 									thePlayers.get(i).setPosition(10, thePlayers.get(i).getCurrentPosition());
 									GUIControl.moveVehicle(thePlayers.get(i));
 									thePlayers.get(i).setJailStatus(true);
@@ -106,7 +118,7 @@ public class GameLogic {
 
 								}
 							}
-							// Bliver muligvis ikke brugt 
+							// Bliver muligvis ikke brugt
 						} else if (turn.equals(msgL.msg(2))) {
 							System.out.println("Shit");
 							i--;// han skal have en tur mere
@@ -127,8 +139,7 @@ public class GameLogic {
 							i--;
 						} else if (turn.equals(msgL.msg(190))) {
 							Ownable hasPawned = null;
-							String hasPawnName = GUIControl.makeLists(msgL.msg(191),
-									thePlayers.get(i).getPawned());
+							String hasPawnName = GUIControl.makeLists(msgL.msg(191), thePlayers.get(i).getPawned());
 							for (int j = 0; j < thePlayers.get(i).getOwned().size(); j++) {
 
 								if (thePlayers.get(i).getOwned().get(j).toString().equals(hasPawnName)) {
@@ -154,8 +165,7 @@ public class GameLogic {
 							i--;
 						} else if (turn.equals(msgL.msg(8))) {
 							if (thePlayers.get(i).getBuilding() == true) {
-								String streetName = GUIControl.makeLists(
-										msgL.msg(194),
+								String streetName = GUIControl.makeLists(msgL.msg(194),
 										thePlayers.get(i).getSellableList());
 								removeBuilding(thePlayers.get(i), streetName);
 							}
@@ -196,8 +206,7 @@ public class GameLogic {
 
 						} else if (turn.equals(msgL.msg(8))) {
 							if (thePlayers.get(i).getBuilding() == true) {
-								String streetName = GUIControl.makeLists(
-										msgL.msg(194),
+								String streetName = GUIControl.makeLists(msgL.msg(194),
 										thePlayers.get(i).getSellableList());
 								removeBuilding(thePlayers.get(i), streetName);
 							}
@@ -229,16 +238,19 @@ public class GameLogic {
 	 * players.
 	 */
 
-	private ArrayList<Player> createPlayers() {
+	private ArrayList<Player> createPlayers(boolean testMode, int startAmount) {
 		String[] playerNames;
-		// playerNames=GUIGame.numberOfPlayers(); // Ask how many
-		// players there are
-		// in the game.
+		if (testMode == false) {
+			playerNames = GUIGame.numberOfPlayers();// Ask how many players
+													// there are in the game.
 
-		// For testing.
-		playerNames = new String[2];
-		playerNames[0] = "Morten";
-		playerNames[1] = "Jonas";
+		} else {
+
+			playerNames = new String[3];
+			playerNames[0] = "Jens";
+			playerNames[1] = "Peter";
+			playerNames[2] = "Line";
+		}
 
 		/*
 		 * Creating the players. By using an array, the names are saved in each
@@ -249,7 +261,7 @@ public class GameLogic {
 		// Save all the players in a ArrayList.
 
 		for (int i = 0; i < playerNames.length; i++) {
-			thePlayers.add(new Player(playerNames[i], 30000)); // Creating
+			thePlayers.add(new Player(playerNames[i], startAmount)); // Creating
 																// player
 			// objects for the game
 			GUIGame.createPlayer(thePlayers.get(i)); // Creating Player objects
