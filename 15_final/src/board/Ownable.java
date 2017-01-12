@@ -50,8 +50,6 @@ public abstract class Ownable extends Square {
 					GUIControl.ownedMessage(this, player, owner, amount);// a message is printed to the player about the sequence.
 					player.withdraw(amount);
 					owner.deposit(amount);
-					GUIControl.updateBalance(player);
-					GUIControl.updateBalance(owner);
 				}
 			} else { //if the player is the owner of this square
 				GUIControl.printMessage(msgL.msg(120));
@@ -64,7 +62,6 @@ public abstract class Ownable extends Square {
 				owner = player;
 				GUIControl.setOwned(this.getID(), player);
 				GUIControl.buyMessage(this, player);
-				GUIControl.updateBalance(player);
 			}
 		} else {// if the square is not owned but the player can't afford it, a
 				// message is printed.
@@ -79,33 +76,57 @@ public abstract class Ownable extends Square {
 	 */
 	public abstract int getRent();
 	
-	public void clearOwner() {
-		this.owner = null;
-	}
-	
-	public void pawnProperty() {
-		owner.deposit(pawn);
-		this.pawnStatus = true;
-	}
-	
+	/**
+	 * Sets pawn status to false and withdraws an amount to the owners Account.
+	 */
 	public void liftPawn() {
 		int amount = pawn+(pawn/10);
 		owner.withdraw(amount);
 		this.pawnStatus = false;
 	}
 	
+	/**
+	 *Sets pawn status to true and deposits the pawn price to the owners Account.
+	 */
+	public void pawnProperty() {
+		owner.deposit(pawn);
+		this.pawnStatus = true;
+	}
+	
+	/**
+	 * Sets owner to null.
+	 */
+	public void clearOwner() {
+		this.owner = null;
+	}
+	/**
+	 * 
+	 * @return boolean value of the pawn status.
+	 */
 	public boolean getPropertyPawnStatus() {
 		return pawnStatus;
 	}
-
+	
+	/**
+	 * 
+	 * @return price of this instance
+	 */
 	public int getPrice() {
 		return price;
 	}
 	
+	/**
+	 * 
+	 * @return the type of this instance.
+	 */
 	public char getType() {
 		return type;
 	}
 	
+	/**
+	 * 
+	 * @return pawn amount.
+	 */
 	public int getPawn() {
 		return pawn;
 	}

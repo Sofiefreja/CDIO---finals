@@ -67,7 +67,7 @@ public class Street extends Ownable {
 	}
 
 	/**
-	 * Method for buying buildings on a Street
+	 * Method for buying an amount buildings on a Street
 	 * @param amount of buildings
 	 */
 	public void buyHouses(int amount) {
@@ -94,7 +94,6 @@ public class Street extends Ownable {
 	
 	/**
 	 * Method for removing an amount of buildings on this instance.
-	 * 
 	 * @param amount
 	 */
 	public void removeHouses(int amount) {
@@ -102,10 +101,18 @@ public class Street extends Ownable {
 		owner.deposit(amount * priceOfBuilding);
 	}
 	
+	/**
+	 * 
+	 * @return Number of buildings of this instance
+	 */
 	public int getNumberOfBuildings() {
 		return numberOfBuildings;
 	}
-
+	
+	/**
+	 * 
+	 * @return The cost of building a building
+	 */
 	public int getPriceOfBuilding() {
 		return priceOfBuilding;
 	}
