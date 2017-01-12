@@ -38,10 +38,9 @@ public class GameLogic {
 
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
-		
 
+		// How to start the game.
 		GameOrTestMode();
-		
 
 		// The players are initialized
 		thePlayers = createPlayers(testMode, startAmount);
@@ -229,7 +228,7 @@ public class GameLogic {
 	 * Run the game in test mode or just run the game.
 	 */
 	private void GameOrTestMode() {
-		
+
 		String startUp = GUIControl.make2Buttons("Du skal vælge test måde", "Test mode", "Game");
 		if (startUp == "Test mode") {
 			String testCase = GUIControl.make3Buttons("Du skal vælge hvilken test Case du vil have",
