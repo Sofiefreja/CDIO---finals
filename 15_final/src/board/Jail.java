@@ -16,7 +16,7 @@ public class Jail extends Square {
 	
 	/**
 	 * Constructor
-	 * @param name of this instance
+	 * @param name
 	 * @param id [1:40]
 	 */
 	public Jail(String name, int id) {

@@ -10,7 +10,7 @@ public abstract class Square {
 	protected int id;
 	/**
 	 * Constructor
-	 * @param name of this instance
+	 * @param name
 	 * @param id [1:40]
 	 */
 	public Square( String name, int id){

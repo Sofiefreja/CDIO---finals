@@ -19,11 +19,11 @@ public class Street extends Ownable {
 
 	/**
 	 * Constructor
-	 * @param name of this instance
+	 * @param name
 	 * @param id [1:40]
-	 * @param price of this instance
-	 * @param pawn amount of this instance
-	 * @param price of adding a building to this instance
+	 * @param price
+	 * @param pawn
+	 * @param priceOfBuilding
 	 * @param rent0
 	 * @param rent1
 	 * @param rent2

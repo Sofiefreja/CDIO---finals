@@ -21,7 +21,7 @@ public class Tax extends Square {
 	/**
 	 * Constructor
 	 * 
-	 * @param name of this instance
+	 * @param name
 	 * @param id [1:40]
 	 * @param taxAmount
 	 */

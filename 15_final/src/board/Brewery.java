@@ -14,9 +14,9 @@ public class Brewery extends Ownable {
 	private Cup gameCup;
 	/**
 	 * Constructor
-	 * @param Name of this instance
+	 * @param Name 
 	 * @param id [1:40]
-	 * @param The cup used in the game
+	 * @param Cup the cup used in this game
 	 */
 	public Brewery(String name, int id, Cup gameCup) {
 		super(name, id, 3000, 1500, 'I');	// the price, pawn-price and type for a Shipping field

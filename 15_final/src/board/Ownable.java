@@ -20,10 +20,10 @@ public abstract class Ownable extends Square {
 
 	/**
 	 * Constructor
-	 * @param name of this instance
+	 * @param name
 	 * @param id [1:40]
-	 * @param price of this instance
-	 * @param pawn price of this instance
+	 * @param price
+	 * @param pawn
 	 * @param type [A:J]
 	 */
 	public Ownable(String name, int id, int price, int pawn, char type) {
