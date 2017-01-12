@@ -75,7 +75,7 @@ Index73	Bredgade	Bredgade
 Index74	Leje af grund= 450, m/1 hus = 2200, 2 huse = 6600, 3 huse = 16000, 4 huse = 19500, hotel = 23000, Hus pris = 3000, Hotel pris = 3000, pant = 2600	Rent= 450, m/1 house = 2200, 2 houses = 6600, 3 houses = 16000, 4 houses = 19500, hotel = 23000, house price = 3000, Hotel price = 3000, pawn = 2600
 Index75	Pris: 5200 kr.	Price: 5200 kr.
 Index76	Kgs. Nytorv	Kgs. Nytorv
-Index77	Leje af grund 450, m/1 hus = 2200, 2 huse = 6600, 3 huse = 16000, 4 huse = 19500, hotel = 23000, Hus pris = 3000, Hotel pris = 3000, pant = 2600	Rent= 450, m/1 house = 2200, 2 houses = 6600, 3 houses = 16000, 4 houses = 19500, hotel = 23000, house pris = 3000, Hotel pris = 3000, pawn = 2600
+Index77	Leje af grund 450, m/1 hus = 2200, 2 huse = 6600, 3 huse = 16000, 4 huse = 19500, hotel = 23000, Hus pris = 3000, Hotel pris = 3000, pant = 2600	Rent= 450, m/1 house = 2200, 2 houses = 6600, 3 houses = 16000, 4 houses = 19500, hotel = 23000, house pris = 3000, Hotel price = 3000, pawn = 2600
 Index78	Pris: 5200 kr.	Price: 5200 kr.
 Index79	Carlsberg	Carlsberg
 Index80	Hvis du ejer 1 terning = x100, 2=x200	Rent per brewery you own 1=x100, 2=x200 , pawn = 150
@@ -185,3 +185,13 @@ Index183	10%	10%
 Index184	! Du betaler 	! You pay 
 Index185	Du er landet på Start feltet, men du har teknisk set ikke passeret feltet endnu.	Du have landed on the Start field, but you haven't techincally passed the field yet.
 Index186	Ryk frem til Strandvejen. Hvis du passerer start, indkassér 4.000 kr.	Move to Strandvejen. If you pass the start, in you recieve 4000 kr.
+Index187	Du rykker til fængslet, men du havde et benådelseskort, så du er bare på besøg.	You move to jail, but you are pardoned so you are just on a visit.
+Index188	Denne grund er pantsat. Du skal ikke betale leje	This street is pawned. You do not pay rent.
+Index189	Du slog 2 ens for tredje gang, du ryger i fængsel for snyd!	You rolled 2 equal dice for the third time, you go to jail for cheating!
+Index190	Løft pantsæting	Remove pawn status
+Index191	Du vil gerne hæve en pantsætning	You want to remove a pawn status
+Index192	Hvilken grund vil du gerne bygge et hus på?	What street do you want to build on?
+Index193	Du kan ikke købe mere...	You cannot buy anymore....
+Index194	Hvilken grund vil du gerne sælge et hus/hotel fra?	Which street do you want to sell a house/hotel from?
+Index195	Der er sket en fejl i setBuildings	An error appeared in setBuildings
+Index196	Forkert filnavn	Wrong filename

@@ -46,7 +46,7 @@ public abstract class Ownable extends Square {
 					GUIControl.printMessage(msgL.msg(127));
 				} else if (this.pawnStatus == true) {
 					
-					GUIControl.printMessage("Denne grund er pantsat. Du skal ikke betale leje");
+					GUIControl.printMessage(msgL.msg(188));
 					
 				}else{
 					int amount = getRent();// the rent is calculated, depending on the subclass.

@@ -24,7 +24,7 @@ public class Jail extends Square {
 		player.setPosition(10,player.getCurrentPosition());
 		GUIControl.moveVehicle(player);
 		} else {
-			GUIControl.printMessage("Du rykker til fængslet, men du havde et benådelseskort, så du er bare på besøg.");
+			GUIControl.printMessage(msgL.msg(187));
 			player.setPosition(10,player.getCurrentPosition());
 			GUIControl.moveVehicle(player);
 			player.useJailCard();

@@ -325,7 +325,7 @@ public class GUIControl {
 		} else if (numberOfBuildings >= 0) {
 			GUI.setHouses(position, numberOfBuildings + 1);
 		} else {
-			GUI.showMessage("Der er sket en fejl i setBuildings");// tiltænkt
+			GUI.showMessage(msgL.msg(195));// tiltænkt
 																	// til os
 		}
 	}
