@@ -9,6 +9,12 @@ package cards;
  */
 public abstract class Move extends Card {
 	protected int moveTo;
+	
+	/**
+	 * Constructor
+	 * @param description
+	 * @param moveTo
+	 */
 	public Move(String description, int moveTo) {
 		super(description);
 		this.moveTo = moveTo;

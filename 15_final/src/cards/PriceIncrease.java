@@ -1,14 +1,8 @@
 package cards;
 
-import entities.Board;
+
 import entities.Player;
-
 import java.util.ArrayList;
-import java.util.Random;
-import java.util.stream.IntStream;
-
-import board.Ownable;
-import board.Street;
 import controller.GUIControl;
 import controller.msgL;
 
@@ -28,7 +22,6 @@ public class PriceIncrease extends Transaction {
 	 * @param description
 	 * @param houseTax
 	 * @param hotelTax
-	 * @param board
 	 */
 	public PriceIncrease(String description, int houseTax, int hotelTax) {
 		super(description, houseTax);

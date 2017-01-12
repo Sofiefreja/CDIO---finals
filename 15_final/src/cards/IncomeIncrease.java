@@ -2,19 +2,17 @@ package cards;
 
 import controller.GUIControl;
 import controller.msgL;
-import entities.Board;
 import entities.Player;
 
 /**
- * Bank gives money, receive a player in all
+ * Class IncomeIncrease extends Transaction
  * 
  * @author Sofie Freja Christensen s153932
  *
  */
 public class IncomeIncrease extends Transaction {
 	/**
-	 * Constructor which accepts two parameters name and reward for this
-	 * specific instance.
+	 * Constructor
 	 * 
 	 * @param name
 	 * @param reward
@@ -24,8 +22,6 @@ public class IncomeIncrease extends Transaction {
 	}
 
 	/**
-	 * Method for calculating amount
-	 * 
 	 * @return pay amount
 	 */
 	public int getMoney() {

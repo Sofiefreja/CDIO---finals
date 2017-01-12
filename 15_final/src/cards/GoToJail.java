@@ -1,20 +1,18 @@
 package cards;
 
 import controller.GUIControl;
-import entities.Board;
 import entities.Player;
 
 /**
- * 
+ * Class GoToJail extends Move
  * @author Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
  *
  */
 public class GoToJail extends Move{
 	/**
-	 * Constructor for Busted card.
+	 * Constructor for GoToJail card.
 	 * 	
 	 * @param name
-	 * @param board
 	 */
 	 public GoToJail(String description) {
 	 super(description,10);

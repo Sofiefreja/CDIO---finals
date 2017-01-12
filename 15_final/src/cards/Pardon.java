@@ -6,7 +6,8 @@ import entities.Player;
 /**
  * Class which awards the Player with a 'get out of jail for free card'.
  * 
- * @author Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
+ * @author Simon Lundorf s154008
+ * @author Emily Skovgaard Rasmussen s153374
  *
  */
 public class Pardon extends Card {
@@ -15,7 +16,6 @@ public class Pardon extends Card {
 	 * Constructor for PrisonBreak card
 	 * 
 	 * @param description
-	 * @param board
 	 */
 	public Pardon(String description) {
 		super(description);

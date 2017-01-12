@@ -1,19 +1,13 @@
 package cards;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import java.util.Random;
-
-import board.Ownable;
 import controller.GUIControl;
-import controller.GameLogic;
-import entities.Board;
 import entities.Player;
 
 /**
  * 
- * @author Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
+ * @author Simon Lundorf s154008
+ * @author Emily Skovgaard Rasmussen s153374
  *
  */
 public class PlayerTransaction extends Transaction{
@@ -24,7 +18,6 @@ public class PlayerTransaction extends Transaction{
 	/**
 	 * Constructor for MobilePay Card
 	 * @param description
-	 * @param board
 	 * @param money
 	 * @param playerList
 	 */
@@ -50,6 +43,4 @@ public class PlayerTransaction extends Transaction{
 		GUIControl.updateBalance(player);
 		
 		}
-			
-		
 	}

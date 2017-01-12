@@ -14,7 +14,6 @@ public abstract class Transaction extends Card {
 	 * Constructor for a Transaction card
 	 * 
 	 * @param description
-	 * @param board
 	 * @param money
 	 */
 	public Transaction(String description, int money) {

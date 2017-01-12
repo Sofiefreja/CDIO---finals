@@ -5,7 +5,7 @@ import entities.Board;
 import entities.Player;
 
 /**
- * Move squares, value xx front/back.
+ * Class ChangePosition extends Move
  * 
  * @author Sofie Freja Christensen s153932
  *
@@ -13,7 +13,7 @@ import entities.Player;
 public class ChangePosition extends Move {
 	Board board;
 	/**
-	 * Constructor for ChangePosition card
+	 * Constructor
 	 * @param description
 	 * @param moveTo
 	 * @param board

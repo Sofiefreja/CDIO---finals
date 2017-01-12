@@ -1,15 +1,14 @@
 package cards;
 
-import java.util.ArrayList;
+
 
 import board.Street;
 import controller.GUIControl;
 import controller.msgL;
-import entities.Board;
 import entities.Player;
 
 /**
- * Receive 40.000 if the player does not have over 15.000 kr.
+ * Class Grant extends Transaction
  * 
  * @author Sofie Freja Christensen s153932
  *
@@ -21,7 +20,6 @@ public class Grant extends Transaction {
 	 * 
 	 * @param description
 	 * @param money
-	 * @param board
 	 */
 	public Grant(String description, int money) {
 		super(description, money);

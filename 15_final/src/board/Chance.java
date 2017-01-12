@@ -34,7 +34,6 @@ public class Chance extends Square {
 		GUIControl.printMessage(name); // Text "Prøv lykken" is printet.
 		String description = allTheCards.getCard(index).toString();
 		GUIControl.displayChanceCard(description);
-		GUIControl.updateBalance(player);
 		allTheCards.getCard(index).useCard(player);
 		
 		if (index == 43) {

@@ -1,6 +1,5 @@
 package cards;
 
-import entities.Board;
 import entities.Player;
 
 /**
@@ -25,8 +24,7 @@ public abstract class Card {
 
 	/**
 	 * Returns the name of the Card
-	 * 
-	 * @retun description
+	 * @return description
 	 */
 	@Override
 	public String toString() {
@@ -36,7 +34,6 @@ public abstract class Card {
 	/**
 	 * Method which determines what happens to a player when the specific card
 	 * is picked.
-	 * 
 	 * @param player
 	 */
 	public abstract void useCard(Player player);
