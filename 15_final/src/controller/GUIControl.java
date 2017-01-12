@@ -125,11 +125,8 @@ public class GUIControl {
 	public void createPlayer(Player newPlayer) {
 
 		// Creating the car.
-		Car car = new Car.Builder().typeUfo()
-				.patternHorizontalDualColor()
-				.primaryColor(Color.WHITE)
-				.secondaryColor(newPlayer.getColor())
-				.build();
+		Car car = new Car.Builder().typeUfo().patternHorizontalDualColor().primaryColor(Color.WHITE)
+				.secondaryColor(newPlayer.getColor()).build();
 		// Creating player on board.
 		GUI.addPlayer(newPlayer.toString(), newPlayer.getBalance(), car);
 		GUI.setCar(1, newPlayer.toString());
@@ -139,7 +136,7 @@ public class GUIControl {
 	public void showDice(Cup newCup) {
 		int d1 = newCup.getD1();
 		int d2 = newCup.getD2();
-		if (d1 > 6 || d2 > 6 && d2<0||d2<0)
+		if (d1 > 6 || d2 > 6 && d2 < 0 || d2 < 0)
 			GUI.setDice(1, 1);
 		else
 			GUI.setDice(d1, d2);
@@ -203,12 +200,12 @@ public class GUIControl {
 		int value = thePlayer.getCurrentPosition() - thePlayer.getPreviousPosition();
 		while (value < 0)
 			value += 40;
-			
+
 		for (int i = 0; i < value; i++) {
 			GUI.removeCar((thePlayer.getPreviousPosition() + i) % 40 + 1, thePlayer.toString());
 			GUI.setCar((thePlayer.getPreviousPosition() + i + 1) % 40 + 1, thePlayer.toString());
 			if ((thePlayer.getPreviousPosition() + i + 1) % 40 + 1 == 2) {
-				if (thePlayer.getFirstRound() == false && thePlayer.getCurrentPosition()!=10) {
+				if (thePlayer.getFirstRound() == false && thePlayer.getCurrentPosition() != 10) {
 					thePlayer.deposit(4000);
 					updateBalance(thePlayer);
 				} else {
@@ -218,9 +215,9 @@ public class GUIControl {
 
 			try {
 				Thread.currentThread();
-				if(value>12){
+				if (value > 12) {
 					Thread.sleep(0);
-				}else{
+				} else {
 					Thread.sleep(100);
 				}
 			} catch (InterruptedException e) {
@@ -326,7 +323,7 @@ public class GUIControl {
 			GUI.setHouses(position, numberOfBuildings + 1);
 		} else {
 			GUI.showMessage(msgL.msg(195));// tiltænkt
-																	// til os
+											// til os
 		}
 	}
 
@@ -337,7 +334,12 @@ public class GUIControl {
 	}
 
 	public static String make2Buttons(String message, String button1, String button2) {
+
 		return GUI.getUserButtonPressed(message, button1, button2);
+	}
+
+	public static String make3Buttons(String message, String button1, String button2, String button3) {
+		return GUI.getUserButtonPressed(message, button1, button2, button3);
 	}
 
 	public static String makeLists(String test, String[] options) {

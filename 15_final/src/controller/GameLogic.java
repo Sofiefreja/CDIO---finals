@@ -38,10 +38,18 @@ public class GameLogic {
 
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
-		String startUp = GUI.getUserButtonPressed("Du skal vælge test måde", "Test mode", "Game");
+		String startUp = GUIControl.make2Buttons("Du skal vælge test måde", "Test mode", "Game");
 
 		if (startUp == "Test mode") {
-			theCup = new FakeCup(0);
+			String testCase = GUIControl.make3Buttons("Du skal vælge hvilken test Case du vil have",
+					"TC1: Køb, salg og pantsætning", "TC2: Fængsel", "TC3: Lykkekort og Startfelt");
+
+			if (testCase == "TC1: Køb, salg og pantsætning")
+				theCup = new FakeCup(0);
+			else if (testCase == "TC2: Fængsel")
+				theCup = new FakeCup(1);
+			else if (testCase == "TC3: Lykkekort og Startfelt")
+				theCup = new FakeCup(2);
 			testMode = true;
 			startAmount = 30000;
 		} else if (startUp == "Game") {
@@ -53,7 +61,7 @@ public class GameLogic {
 		// The players are initialized
 		thePlayers = createPlayers(testMode, startAmount);
 
-		theBoard = new Board(theCup, thePlayers);
+		theBoard = new Board(theCup, thePlayers, testMode);
 
 		// Beginning the game.
 		equalEyeCounter = 0;

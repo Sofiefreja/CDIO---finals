@@ -17,18 +17,19 @@ import board.Parking;
 public class Board {
 	Square[] squares = new Square[40];
 	private AllCards allTheCards;
-	
-	
+
 	/**
 	 * Constructor for a Board, which accepts a Cup, for the creating of
 	 * Breweries.
 	 * 
 	 * @param theCup
 	 */
-	public Board(Cup theCup, ArrayList<Player> thePlayers) {
-		
-		allTheCards = new AllCards(thePlayers ,this);
-		allTheCards.shuffle();
+	public Board(Cup theCup, ArrayList<Player> thePlayers, boolean testMode) {
+
+		allTheCards = new AllCards(thePlayers, this);
+
+		if (testMode == false)
+			allTheCards.shuffle();
 
 		// Navn, ID, pris, pawn, pris for bygning, rent 0,1,2,3,4,hotel, type
 		squares[0] = new Start("Start", 1);
