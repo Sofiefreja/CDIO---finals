@@ -38,29 +38,10 @@ public class GameLogic {
 
 		GUIGame = new GUIControl();
 		GUIGame.makeBoard();
-		String startUp = GUIControl.make2Buttons("Du skal vælge test måde", "Test mode", "Game");
+		
 
-		if (startUp == "Test mode") {
-			String testCase = GUIControl.make3Buttons("Du skal vælge hvilken test Case du vil have",
-					"TC1: Køb, salg og pantsætning", "TC2: Fængsel", "TC3: Lykkekort og Startfelt");
-
-			if (testCase == "TC1: Køb, salg og pantsætning") {
-				theCup = new FakeCup(0);
-				startAmount = 35000;
-			} else if (testCase == "TC2: Fængsel") {
-				theCup = new FakeCup(1);
-				startAmount = 30000;
-			} else if (testCase == "TC3: Lykkekort og Startfelt") {
-				theCup = new FakeCup(2);
-				startAmount = 30000;
-			}
-			testMode = true;
-
-		} else if (startUp == "Game") {
-			theCup = new Cup();
-			startAmount = 30000;
-
-		}
+		GameOrTestMode();
+		
 
 		// The players are initialized
 		thePlayers = createPlayers(testMode, startAmount);
@@ -242,6 +223,35 @@ public class GameLogic {
 		GUIGame.showWinner(thePlayers.get(0)); // Shows the winner.
 		GUIGame.endGUI();
 
+	}
+
+	/**
+	 * Run the game in test mode or just run the game.
+	 */
+	private void GameOrTestMode() {
+		
+		String startUp = GUIControl.make2Buttons("Du skal vælge test måde", "Test mode", "Game");
+		if (startUp == "Test mode") {
+			String testCase = GUIControl.make3Buttons("Du skal vælge hvilken test Case du vil have",
+					"TC1: Køb, salg og pantsætning", "TC2: Fængsel", "TC3: Lykkekort og Startfelt");
+
+			if (testCase == "TC1: Køb, salg og pantsætning") {
+				theCup = new FakeCup(0);
+				startAmount = 35000;
+			} else if (testCase == "TC2: Fængsel") {
+				theCup = new FakeCup(1);
+				startAmount = 30000;
+			} else if (testCase == "TC3: Lykkekort og Startfelt") {
+				theCup = new FakeCup(2);
+				startAmount = 30000;
+			}
+			testMode = true;
+
+		} else if (startUp == "Game") {
+			theCup = new Cup();
+			startAmount = 30000;
+
+		}
 	}
 
 	/**
