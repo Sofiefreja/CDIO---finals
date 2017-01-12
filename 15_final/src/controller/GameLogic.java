@@ -229,9 +229,9 @@ public class GameLogic {
 	 */
 	private void GameOrTestMode() {
 
-		String startUp = GUIControl.make2Buttons("Du skal vælge test måde", "Test mode", "Game");
+		String startUp = GUIControl.make2Buttons("Hvordan vil du starte spillet? ", "Test mode", "Spil");
 		if (startUp == "Test mode") {
-			String testCase = GUIControl.make3Buttons("Du skal vælge hvilken test Case du vil have",
+			String testCase = GUIControl.make3Buttons("Vælg test case. Slaget 1,1, kan have en sum større end 12",
 					"TC1: Køb, salg og pantsætning", "TC2: Fængsel", "TC3: Lykkekort og Startfelt");
 
 			if (testCase == "TC1: Køb, salg og pantsætning") {
@@ -246,7 +246,7 @@ public class GameLogic {
 			}
 			testMode = true;
 
-		} else if (startUp == "Game") {
+		} else if (startUp == "Spil") {
 			theCup = new Cup();
 			startAmount = 30000;
 
