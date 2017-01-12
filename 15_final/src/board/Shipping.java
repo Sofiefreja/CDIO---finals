@@ -1,6 +1,6 @@
 package board;
 /**
- * 
+ * Class Shipping extends Ownable
  * @author Mathias Tvaermose Gleerup, s153120
  *
  */
@@ -8,12 +8,13 @@ public class Shipping extends Ownable {
 	int [] rents={500,1000,2000,4000};
 	int numberOfShips;
 	/**
-	 * Constructor for Shipping
-	 * @param name
-	 * @param id
+	 * Constructor
+	 * @param name of this instance
+	 * @param id [1:40]
 	 */
 	public Shipping(String name, int id) {
-		super(name, id, 4000, 2000, 'J');
+		super(name, id, 4000, 2000, 'J'); 	// the price, pawn-price and type for a Shipping field
+											// is always the same.
 	}
 	@Override
 	public int getRent() {

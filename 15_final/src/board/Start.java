@@ -5,16 +5,17 @@ import controller.msgL;
 import entities.Player;
 
 /**
- * 
- * @author Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
+ * Class Start extends Square
+ * @author Simon Lundorf s154008
+ * @author Emily Skovgaard Rasmussen s153374
  *
  */
 
 public class Start extends Square {
 	/**
-	 * Constructor for a Start square
-	 * @param name
-	 * @param id
+	 * Constructor
+	 * @param name of this instance
+	 * @param id [1:40]
 	 */
 	public Start(String name, int id) {
 		super(name, id);

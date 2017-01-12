@@ -6,7 +6,7 @@ import controller.GUIControl;
 import controller.msgL;
 
 /**
- * Class Street, which has a type, and can have houses and a hotel built on it.
+ * Class Street extends Ownable
  * 
  * @author Mathias Tvaermose Gleerup, s153120
  * @author Simon Lundorf s154008
@@ -18,20 +18,19 @@ public class Street extends Ownable {
 	int numberOfBuildings = 0;
 
 	/**
-	 * Constructor for Street
-	 * 
-	 * @param name
-	 * @param id
-	 * @param price
-	 * @param pawn
-	 * @param priceOfBuilding
+	 * Constructor
+	 * @param name of this instance
+	 * @param id [1:40]
+	 * @param price of this instance
+	 * @param pawn amount of this instance
+	 * @param price of adding a building to this instance
 	 * @param rent0
 	 * @param rent1
 	 * @param rent2
 	 * @param rent3
 	 * @param rent4
 	 * @param rentHotel
-	 * @param type
+	 * @param type [A:H]
 	 */
 	public Street(String name, int id, int price, int pawn, int priceOfBuilding, int rent0, int rent1, int rent2,
 			int rent3, int rent4, int rentHotel, char type) {
@@ -68,9 +67,8 @@ public class Street extends Ownable {
 	}
 
 	/**
-	 * Method for buying houses on a street.
-	 * 
-	 * @param amount
+	 * Method for buying buildings on a Street
+	 * @param amount of buildings
 	 */
 	public void buyHouses(int amount) {
 		int maxAmount;
@@ -92,25 +90,8 @@ public class Street extends Ownable {
 			GUIControl.printMessage(msgL.msg(168) + amount + msgL.msg(169) + (amount * priceOfBuilding));
 		}
 	}
-
-	/**
-	 * Method for returning number of houses built on this instance.
-	 * 
-	 * @return numberOfBuildings
-	 */
-	public int getNumberOfBuildings() {
-		return numberOfBuildings;
-	}
-
-	/**
-	 * Returns the price of this instance
-	 * 
-	 * @return
-	 */
-	public int getPriceOfBuilding() {
-		return priceOfBuilding;
-	}
-
+	
+	
 	/**
 	 * Method for removing an amount of buildings on this instance.
 	 * 
@@ -119,5 +100,13 @@ public class Street extends Ownable {
 	public void removeHouses(int amount) {
 		numberOfBuildings -= amount;
 		owner.deposit(amount * priceOfBuilding);
+	}
+	
+	public int getNumberOfBuildings() {
+		return numberOfBuildings;
+	}
+
+	public int getPriceOfBuilding() {
+		return priceOfBuilding;
 	}
 }

@@ -5,8 +5,8 @@ import controller.GUIControl;
 import controller.msgL;
 
 /**
- * Abstract class Ownable, extended from Square. Superclass to all ownable types
- * of Square.
+ * Abstract class Ownable, extended from Square.
+ * Superclass to all ownable subclasses of Square.
  * 
  * @author Mathias Tvaermose Gleerup, s153120
  *
@@ -19,13 +19,12 @@ public abstract class Ownable extends Square {
 	protected boolean pawnStatus;
 
 	/**
-	 * Constructor to create an ownable Square
-	 * 
-	 * @param name
-	 * @param id
-	 * @param price
-	 * @param pawn
-	 * @param type
+	 * Constructor
+	 * @param name of this instance
+	 * @param id [1:40]
+	 * @param price of this instance
+	 * @param pawn price of this instance
+	 * @param type [A:J]
 	 */
 	public Ownable(String name, int id, int price, int pawn, char type) {
 		super(name, id);
@@ -34,9 +33,7 @@ public abstract class Ownable extends Square {
 		this.type = type;
 		this.pawnStatus = false;
 	}
-
-	// Implements the inherited method landOnSquare, to be overridden for each
-	// type with a different getRent() method.
+	
 	@Override
 	public void landOnSquare(Player player) {
 		if (owner != null) {// if the square is owned, the following happens.
@@ -76,67 +73,42 @@ public abstract class Ownable extends Square {
 	}
 
 	/**
-	 * Method for getting the rent of this instance.
+	 * Method for getting the rent of the instance this method is called upon.
 	 * 
-	 * @return rent.
+	 * @return rent
 	 */
 	public abstract int getRent();
+	
+	public void clearOwner() {
+		this.owner = null;
+	}
+	
+	public void pawnProperty() {
+		owner.deposit(pawn);
+		this.pawnStatus = true;
+	}
+	
+	public void liftPawn() {
+		int amount = pawn+(pawn/10);
+		owner.withdraw(amount);
+		this.pawnStatus = false;
+	}
+	
+	public boolean getPropertyPawnStatus() {
+		return pawnStatus;
+	}
 
-	/**
-	 * Method for returning the price of this instance.
-	 * 
-	 * @return price
-	 */
 	public int getPrice() {
 		return price;
 	}
-
-	/**
-	 * Method for returning the pawn amount.
-	 * 
-	 * @return pawn
-	 */
+	
+	public char getType() {
+		return type;
+	}
 	
 	public int getPawn() {
 		return pawn;
 	}
-	
-	public void pawnProperty() {
-		
-		owner.deposit(pawn);
-		this.pawnStatus = true;
-		GUIControl.updateBalance(owner);
-		
-	}
-	
-	public void liftPawn() {
-		
-		int amount = pawn+(pawn/10);
-		owner.withdraw(amount);
-		this.pawnStatus = false;
-		GUIControl.updateBalance(owner);
-		
-	}
-	
-	public boolean getPropertyPawnStatus() {
-		
-		return pawnStatus;
-		
-	}
-	
-	/**
-	 * Method for returning the type of this square, as a char
-	 * @return type
-	 */
-	public char getType() {
-		return type;
-	}
 
-	/**
-	 * Method for clearing the owner field of this instance.
-	 */
-	public void clearOwner() {
-		this.owner = null;
-	}
 
 }

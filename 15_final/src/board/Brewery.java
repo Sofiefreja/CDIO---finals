@@ -3,7 +3,7 @@ package board;
 import entities.Cup;
 
 /**
- * 
+ * Class Brewery extends Ownable
  * @author Mathias Tvaermose Gleerup, s153120
  *
  */
@@ -13,13 +13,14 @@ public class Brewery extends Ownable {
 	private int multiplier_2=200;
 	private Cup gameCup;
 	/**
-	 * Constructor which takes a name, ID and the cup used by the game as parameters
-	 * @param name
-	 * @param id
-	 * @param gameCup
+	 * Constructor
+	 * @param Name of this instance
+	 * @param id [1:40]
+	 * @param The cup used in the game
 	 */
 	public Brewery(String name, int id, Cup gameCup) {
-		super(name, id, 3000, 1500, 'I');
+		super(name, id, 3000, 1500, 'I');	// the price, pawn-price and type for a Shipping field
+											// is always the same.
 		this.gameCup = gameCup;
 	}
 	

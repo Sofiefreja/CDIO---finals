@@ -9,9 +9,9 @@ public abstract class Square {
 	protected String name;
 	protected int id;
 	/**
-	 * Constructor which takes a String name as a parameter.
-	 * @param name
-	 * @param id
+	 * Constructor
+	 * @param name of this instance
+	 * @param id [1:40]
 	 */
 	public Square( String name, int id){
 		this.name=name;
@@ -23,15 +23,15 @@ public abstract class Square {
 	 */
 	public abstract void landOnSquare(Player player);
 	/**
-	 * Returns the name of the Square
+	 * Returns the name of this instance
 	 * @return name
 	 */
 	public String toString(){
 		return name;
 	}
 	/**
-	 * Returns the id (int) of the square.
-	 * @return id [1-40]
+	 * Returns the id (int) of this instance.
+	 * @return id [1:40]
 	 */
 	public int getID(){
 		return this.id;

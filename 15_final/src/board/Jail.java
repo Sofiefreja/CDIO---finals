@@ -5,13 +5,20 @@ import controller.GUIControl;
 import controller.msgL;
 
 /**
+ * Class Jail extends Square
  * 
- * @author Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
+ * @author Simon Lundorf s154008 
+ * @author Emily Skovgaard Rasmussen s153374
  *
  */
 
 public class Jail extends Square {
-
+	
+	/**
+	 * Constructor
+	 * @param name of this instance
+	 * @param id [1:40]
+	 */
 	public Jail(String name, int id) {
 		super(name, id);
 	}

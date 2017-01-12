@@ -3,21 +3,21 @@ import entities.Player;
 import controller.GUIControl;
 import controller.msgL;
 /**
- * 	A player lands on parking.
+ * Class Parking extends Square
  * @author Sofie Freja Christensen s153932
  *
  */
 public class Parking extends Square {
 	/**
-	 * Constructor which accepts one parameter name for thisspecific instance.
+	 * Constructor
 	 * @param name
-	 * @param id
+	 * @param id [1:40]
 	 */
 	public Parking(String name, int id) {
 		super(name, id);
 	}
 	/**
-	 * When landing on square, it tells the GUIControl to write out a message.
+	 * When landing on a Parking square, a message is printet.
 	 * @param player
 	 */
 	public void landOnSquare(Player player){
