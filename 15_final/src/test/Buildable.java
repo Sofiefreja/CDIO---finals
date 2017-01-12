@@ -24,7 +24,7 @@ import entities.Player;
 public class Buildable {
 
 	private Cup theCup = new Cup();
-	private Board theBoard = new Board(theCup, null);
+	private Board theBoard = new Board(theCup, null, false);
 	ArrayList<Integer> housePrice = new ArrayList<Integer>();
 	ArrayList<Integer> hotelPrice = new ArrayList<Integer>();
 	int sumHouse;
