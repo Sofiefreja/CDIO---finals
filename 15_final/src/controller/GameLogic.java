@@ -44,14 +44,18 @@ public class GameLogic {
 			String testCase = GUIControl.make3Buttons("Du skal vælge hvilken test Case du vil have",
 					"TC1: Køb, salg og pantsætning", "TC2: Fængsel", "TC3: Lykkekort og Startfelt");
 
-			if (testCase == "TC1: Køb, salg og pantsætning")
+			if (testCase == "TC1: Køb, salg og pantsætning") {
 				theCup = new FakeCup(0);
-			else if (testCase == "TC2: Fængsel")
+				startAmount = 35000;
+			} else if (testCase == "TC2: Fængsel") {
 				theCup = new FakeCup(1);
-			else if (testCase == "TC3: Lykkekort og Startfelt")
+				startAmount = 30000;
+			} else if (testCase == "TC3: Lykkekort og Startfelt") {
 				theCup = new FakeCup(2);
+				startAmount = 30000;
+			}
 			testMode = true;
-			startAmount = 30000;
+
 		} else if (startUp == "Game") {
 			theCup = new Cup();
 			startAmount = 30000;
