@@ -363,9 +363,9 @@ public class GameLogic {
 
 		for (i = 0; i < thePlayer.getOwnedStreet().size(); i++) {
 			if (thePlayer.getOwnedStreet().get(i).toString().equals(streetName)) {
+				theStreet = thePlayer.getOwnedStreet().get(i);
 				position = thePlayer.getOwnedStreet().get(i).getID();
 				numberOfBuildings = thePlayer.getOwnedStreet().get(i).getNumberOfBuildings();
-				theStreet = thePlayer.getOwnedStreet().get(i);
 			}
 		}
 		GUIGame.removeBuilding(position, numberOfBuildings);
