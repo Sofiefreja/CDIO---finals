@@ -51,7 +51,7 @@ public class Player {
 
 	public ArrayList<Street> getOwnedStreet() {
 
-		return assets.ownedStreet;
+		return assets.getOwnedStreet();
 
 	}
 	

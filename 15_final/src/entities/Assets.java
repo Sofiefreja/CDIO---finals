@@ -119,14 +119,17 @@ public class Assets {
 	public ArrayList<Ownable> getOwned() {
 		return owned;
 	}
-
-	/**
-	 * Returns a list of the names of the properties owned by this player.
-	 * 
-	 * @return ArrayList<String>
-	 */
+	
 	public ArrayList<String> getPropertyList() {
+		
 		return property;
+		
+	}
+	
+	public ArrayList<Street> getOwnedStreet() {
+		
+		return ownedStreet;
+		
 	}
 
 	/**
