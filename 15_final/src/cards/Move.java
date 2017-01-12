@@ -12,8 +12,8 @@ public abstract class Move extends Card {
 	
 	/**
 	 * Constructor
-	 * @param description
-	 * @param moveTo
+	 * @param description of the cards
+	 * @param moveTo a number
 	 */
 	public Move(String description, int moveTo) {
 		super(description);

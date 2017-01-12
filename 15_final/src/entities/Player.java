@@ -43,7 +43,7 @@ public class Player {
 	 * Method for getting an integer array of the ID of the Ownable Squares this
 	 * player owns.
 	 * 
-	 * @return
+	 * @return array of integers containing the ID of owned squares.
 	 */
 	public int[] getOwnedID() {
 		return assets.getOwnedID();
@@ -61,7 +61,7 @@ public class Player {
 	/**
 	 * Method for buying an Ownable Square.
 	 * 
-	 * @param square
+	 * @param square in question
 	 */
 	public void buySquare(Ownable square) {
 		assets.buySquare(square);
@@ -84,14 +84,14 @@ public class Player {
 	/**
 	 * getter method for the players jailCounter.
 	 * 
-	 * @return
+	 * @return jailCounter
 	 */
 	public int getJailCounter() {
 		return jailCounter;
 	}
 	/**
-	 * Setting the firstRound boolean.
-	 * @param boolean
+	 * Setting the value of firstRound
+	 * @param b value of firstRound
 	 */
 	public void setFirstRound(boolean b){
 		firstRound=b;
@@ -106,7 +106,7 @@ public class Player {
 	/**
 	 * Method for returning and ArrayList of the squares this player owns.
 	 * 
-	 * @return ArrayList<Ownable>
+	 * @return ArrayList of ownables
 	 */
 	public ArrayList<Ownable> getOwned() {
 		return assets.getOwned();
@@ -115,7 +115,7 @@ public class Player {
 	/**
 	 * Method for setting the jail status of a player
 	 * 
-	 * @param jailStatus
+	 * @param jailStatus of the player
 	 */
 	public void setJailStatus(boolean jailStatus) {
 		this.jailStatus = jailStatus;
@@ -168,7 +168,7 @@ public class Player {
 	/**
 	 * Method for depositing an amount from the player account
 	 * 
-	 * @param amount
+	 * @param amount of money
 	 */
 	public void deposit(int amount) {
 		balance.deposit(amount);
@@ -178,7 +178,7 @@ public class Player {
 	/**
 	 * Method for withdrawing an amount from the player account
 	 * 
-	 * @param amount
+	 * @param amount of money
 	 */
 	public void withdraw(int amount) {
 		balance.withdraw(amount);
@@ -198,7 +198,7 @@ public class Player {
 	 * Method for calculating where the player's vehicle lands after rolling the
 	 * dice
 	 * 
-	 * @param roll
+	 * @param roll value of the cup
 	 */
 	public void moveVehicle(int roll) {
 		vehicle.move(roll);
@@ -279,8 +279,8 @@ public class Player {
 	}
 
 	/**
-	 * Returns a boolean value of whether the player owns a property or not.
-	 * @return
+	 * 
+	 * @return Returns a boolean value of whether the player owns a property or not.
 	 */
 	public boolean getProperty() {
 
@@ -289,8 +289,8 @@ public class Player {
 	}
 	/**
 	 * Method for buying houses on a Street.
-	 * @param street
-	 * @param amount
+	 * @param street in question
+	 * @param amount of houses
 	 */
 	public void buyBuildings(Street street, int amount) {
 
@@ -299,8 +299,8 @@ public class Player {
 	}
 	/**
 	 * Method for removing houses on a Street
-	 * @param street
-	 * @param amount
+	 * @param street in question
+	 * @param amount of houses
 	 */
 	public void removeBuildings(Street street, int amount) {
 
@@ -309,7 +309,7 @@ public class Player {
 	}
 	/**
 	 * Method for getting a boolean value of whether the player can build houses
-	 * @return
+	 * @return boolean of has a building.
 	 */
 	public boolean getBuildStatus() {
 
@@ -318,7 +318,7 @@ public class Player {
 	}
 	/**
 	 * Returns a string array of streets which can be built on.
-	 * @return
+	 * @return String[] buildable squares
 	 */
 	public String[] getBuildableList() {
 		return assets.getBuildableList();
@@ -352,7 +352,7 @@ public class Player {
 	}
 	/**
 	 * Pawns a property.
-	 * @param ownable
+	 * @param ownable square
 	 */
 	public void pawnProperty(Ownable ownable) {
 		
@@ -360,7 +360,7 @@ public class Player {
 	}
 	/**
 	 * Lifts the pawn of the property.
-	 * @param ownable
+	 * @param ownable square
 	 */
 	public void liftPawn(Ownable ownable) {
 		

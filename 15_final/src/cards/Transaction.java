@@ -13,8 +13,8 @@ public abstract class Transaction extends Card {
 	/**
 	 * Constructor for a Transaction card
 	 * 
-	 * @param description
-	 * @param money
+	 * @param description of the card
+	 * @param money to be transferred
 	 */
 	public Transaction(String description, int money) {
 		super(description);

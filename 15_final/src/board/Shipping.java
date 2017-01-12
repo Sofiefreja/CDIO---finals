@@ -9,7 +9,7 @@ public class Shipping extends Ownable {
 	int numberOfShips;
 	/**
 	 * Constructor
-	 * @param name
+	 * @param name of this instance
 	 * @param id [1:40]
 	 */
 	public Shipping(String name, int id) {

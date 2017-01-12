@@ -21,9 +21,9 @@ public class Tax extends Square {
 	/**
 	 * Constructor
 	 * 
-	 * @param name
-	 * @param id [1:40]
-	 * @param taxAmount
+	 *@param name of this instance
+	 *@param id [1:40]
+	 *@param taxAmount to be withdrawed if chosen.
 	 */
 	public Tax(String name, int id, int taxAmount) {
 		super(name, id);

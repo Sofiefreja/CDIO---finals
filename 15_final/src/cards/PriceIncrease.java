@@ -9,7 +9,8 @@ import controller.msgL;
 /**
  * Class for card which charges the Player with a fee for houses and hotels.
  * 
- * @author Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
+ * @author Simon Lundorf s154008
+ * @author Emily Skovgaard Rasmussen s153374
  *
  */
 public class PriceIncrease extends Transaction {
@@ -19,9 +20,9 @@ public class PriceIncrease extends Transaction {
 	/**
 	 * Constructor for a PriceIncrease card
 	 * 
-	 * @param description
-	 * @param houseTax
-	 * @param hotelTax
+	 * @param description of the card
+	 * @param houseTax increase
+	 * @param hotelTax increase
 	 */
 	public PriceIncrease(String description, int houseTax, int hotelTax) {
 		super(description, houseTax);

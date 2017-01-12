@@ -18,8 +18,8 @@ public class Grant extends Transaction {
 	/**
 	 * Constructor for Grant card
 	 * 
-	 * @param description
-	 * @param money
+	 * @param description of the card.
+	 * @param money to be granted
 	 */
 	public Grant(String description, int money) {
 		super(description, money);

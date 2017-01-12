@@ -15,8 +15,7 @@ public abstract class Card {
 	/**
 	 * Super constructor which takes a String name as a parameter.
 	 * 
-	 * @param description
-	 * @param money
+	 * @param description of the card
 	 */
 	public Card(String description) {
 		this.description = description;
@@ -34,7 +33,7 @@ public abstract class Card {
 	/**
 	 * Method which determines what happens to a player when the specific card
 	 * is picked.
-	 * @param player
+	 * @param player to use the card
 	 */
 	public abstract void useCard(Player player);
 }

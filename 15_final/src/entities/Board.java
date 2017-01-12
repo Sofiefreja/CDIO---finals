@@ -18,8 +18,9 @@ public class Board {
 
 	/**
 	 * Constructor for a Board
-	 * 
-	 * @param theCup
+	 * @param theCup of the game
+	 * @param thePlayers of the game
+	 * @param testMode value of test mode
 	 */
 	public Board(Cup theCup, ArrayList<Player> thePlayers, boolean testMode) {
 
@@ -74,7 +75,7 @@ public class Board {
 	/**
 	 * Method for returning a square from the array in this instance.
 	 * 
-	 * @param index
+	 * @param index message 
 	 * @return Square
 	 */
 	public Square getSquare(int index) {

@@ -14,9 +14,9 @@ public class MoveToSquare extends Move {
 	Board board;
 	/**
 	 * Constructor for MoveToSquare
-	 * @param description
-	 * @param moveTo
-	 * @param board
+	 * @param description of the card
+	 * @param moveTo the square ID the player should move to
+	 * @param board in the game
 	 */
 	public MoveToSquare(String description, int moveTo,Board board){
 		super(description,moveTo);

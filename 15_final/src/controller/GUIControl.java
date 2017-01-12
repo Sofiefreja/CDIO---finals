@@ -116,6 +116,7 @@ public class GUIControl {
 	}
 	/**
 	 * Method for choosing language of the messages.
+	 * @return language chosen
 	 */
 	public String changeLanguage() {
 		String language = GUI.getUserButtonPressed(msgL.msg(174), msgL.msg(175), msgL.msg(176));
@@ -124,14 +125,14 @@ public class GUIControl {
 	}
 	/**
 	 * Shows the winner in the GUI
-	 * @param winner
+	 * @param winner to be announced
 	 */
 	public void showWinner(Player winner) {
 		GUI.showMessage(msgL.msg(104) + winner + "! " + msgL.msg(105));
 	}
 	/**
 	 * Creates a player on the board.
-	 * @param newPlayer
+	 * @param newPlayer to enter
 	 */
 	public void createPlayer(Player newPlayer) {
 
@@ -145,7 +146,7 @@ public class GUIControl {
 
 	/**
 	 * Visual representation of the dices.
-	 * @param newCup
+	 * @param newCup reference
 	 */
 	public void showDice(Cup newCup) {
 		int d1 = newCup.getD1();
@@ -195,8 +196,8 @@ public class GUIControl {
 
 	/**
 	 * 
-	 * @param thePlayer
-	 * @param choices
+	 * @param thePlayer in question
+	 * @param choices in String[]
 	 * @return input
 	 */
 	public String getUserInputTurn(Player thePlayer, String[] choices) {
@@ -242,8 +243,8 @@ public class GUIControl {
 
 	/**
 	 * Player choice of buying the square he landed on.
-	 * @param field
-	 * @param player
+	 * @param field the player landed on
+	 * @param player in question
 	 * @return boolean 
 	 */
 	public static boolean getBuyChoice(Ownable field, Player player) {
@@ -257,8 +258,8 @@ public class GUIControl {
 	}
 	/**
 	 * Player chooses which way he wants to pay taxes.
-	 * @param name
-	 * @param player
+	 * @param name of the Tax field.
+	 * @param player to get choice
 	 * @return boolean
 	 */
 	public static boolean getTaxChoice(String name, Player player) {
@@ -283,7 +284,7 @@ public class GUIControl {
 
 	/**
 	 * Removing player from playing board when player surrenders or looses.
-	 * @param thePlayer
+	 * @param thePlayer to be removed
 	 */
 	public void removePlayer(Player thePlayer) {
 
@@ -303,8 +304,8 @@ public class GUIControl {
 
 	/**
 	 * Marks a square as owned buy a player.
-	 * @param squareNumber
-	 * @param thePlayer
+	 * @param squareNumber of the Ownable
+	 * @param thePlayer to own
 	 */
 	public static void setOwned(int squareNumber, Player thePlayer) {
 
@@ -312,7 +313,7 @@ public class GUIControl {
 	}
 	/**
 	 * Updates the balance of the player in the GUI
-	 * @param player
+	 * @param player in question
 	 */
 	public static void updateBalance(Player player) {
 		GUI.setBalance(player.toString(), player.getBalance());
@@ -325,8 +326,8 @@ public class GUIControl {
 	}
 	/**
 	 * Sets a number of buildings on the specified square.
-	 * @param position
-	 * @param numberOfBuildings
+	 * @param position of the Street
+	 * @param numberOfBuildings to be set
 	 */
 	public void setBuilding(int position, int numberOfBuildings) {
 
@@ -340,18 +341,18 @@ public class GUIControl {
 	}
 	/**
 	 * Removes a number of houses from a street.
-	 * @param position
-	 * @param numberOfBuildings
+	 * @param position of the Street
+	 * @param numberOfBuildings to be removed
 	 */
 	public void removeBuilding(int position, int numberOfBuildings) {
 		GUI.setHouses(position, numberOfBuildings - 1);
 	}
 	/**
 	 * Makes two buttons and returns a string representation of what was pressed.
-	 * @param message
-	 * @param button1
-	 * @param button2
-	 * @return
+	 * @param message to be printed
+	 * @param button1 text
+	 * @param button2 text
+	 * @return button pressed
 	 */
 	public static String make2Buttons(String message, String button1, String button2) {
 
@@ -359,27 +360,27 @@ public class GUIControl {
 	}
 	/**
 	 * Makes three buttons and returns a string representation of what was pressed.
-	 * @param message
-	 * @param button1
-	 * @param button2
-	 * @param button3
-	 * @return
+	 * @param message to be printed
+	 * @param button1 text
+	 * @param button2 text
+	 * @param button3 text
+	 * @return button pressed
 	 */
 	public static String make3Buttons(String message, String button1, String button2, String button3) {
 		return GUI.getUserButtonPressed(message, button1, button2, button3);
 	}
 	/**
 	 * Makes a list for the player to choose from.
-	 * @param test
-	 * @param options
-	 * @return
+	 * @param message to be printed
+	 * @param options to choose from
+	 * @return selection String
 	 */
-	public static String makeLists(String test, String[] options) {
-		return GUI.getUserSelection(test, options);
+	public static String makeLists(String message, String[] options) {
+		return GUI.getUserSelection(message, options);
 	}
 	/**
 	 * Displays a text in the chanceCard field in the middle.
-	 * @param txt
+	 * @param txt of the chance card
 	 */
 	public static void displayChanceCard(String txt) {
 		GUI.displayChanceCard(txt);

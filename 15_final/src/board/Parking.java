@@ -10,7 +10,7 @@ import controller.msgL;
 public class Parking extends Square {
 	/**
 	 * Constructor
-	 * @param name
+	 * @param name of this instance
 	 * @param id [1:40]
 	 */
 	public Parking(String name, int id) {
@@ -18,7 +18,7 @@ public class Parking extends Square {
 	}
 	/**
 	 * When landing on a Parking square, a message is printet.
-	 * @param player
+	 * @param player who landed on this square
 	 */
 	public void landOnSquare(Player player){
 		GUIControl.printMessage(msgL.msg(58));

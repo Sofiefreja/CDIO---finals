@@ -17,9 +17,9 @@ public class PlayerTransaction extends Transaction{
 	
 	/**
 	 * Constructor for MobilePay Card
-	 * @param description
-	 * @param money
-	 * @param playerList
+	 * @param description of the card
+	 * @param money to be payed
+	 * @param playerList a list of the players
 	 */
 	public PlayerTransaction(String description, int money, ArrayList<Player> playerList) {
 		super(description, money);

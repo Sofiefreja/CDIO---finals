@@ -33,8 +33,8 @@ public class Vehicle {
 	 * Method for calculating and returning the new position of a player's
 	 * vehicle while also saving the previous position
 	 * 
-	 * @param value
-	 * @return The new position of the player's vehicle of the type integer
+	 * @param value of movement
+	 * @return currentPosition
 	 */
 
 	public int move(int value) {
@@ -53,8 +53,8 @@ public class Vehicle {
 	 * Method for setting a new position of the player's vehicle
 	 * 
 	 * @param currentPosition [0-39]
+	 * @param previousPosition [0-39]
 	 */
-
 	public void setPosition(int currentPosition,int previousPosition) {
 		this.currentPosition = currentPosition;
 		this.previousPosition = previousPosition;

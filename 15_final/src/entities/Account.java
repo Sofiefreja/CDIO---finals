@@ -20,7 +20,7 @@ public class Account {
 	/**
 	 * Method for depositing money into a player's account
 	 * 
-	 * @param value
+	 * @param value of money
 	 */
 
 	public void deposit(int value) {
@@ -32,7 +32,7 @@ public class Account {
 	/**
 	 * Method for withdrawing money from a player's account
 	 * 
-	 * @param value
+	 * @param value of money
 	 */
 
 	public void withdraw(int value) {

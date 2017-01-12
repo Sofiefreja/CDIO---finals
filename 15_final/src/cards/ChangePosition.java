@@ -14,9 +14,9 @@ public class ChangePosition extends Move {
 	Board board;
 	/**
 	 * Constructor
-	 * @param description
-	 * @param moveTo
-	 * @param board
+	 * @param description of the card.
+	 * @param moveTo the position the player shall be moved by.
+	 * @param board of the game
 	 */
 	public ChangePosition(String description, int moveTo, Board board) {
 		super(description, moveTo);

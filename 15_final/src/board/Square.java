@@ -10,7 +10,7 @@ public abstract class Square {
 	protected int id;
 	/**
 	 * Constructor
-	 * @param name
+	 * @param name of this instance
 	 * @param id [1:40]
 	 */
 	public Square( String name, int id){
@@ -19,7 +19,7 @@ public abstract class Square {
 	}
 	/**
 	 * Method which determines what happens to a player when he lands on this instance.
-	 * @param player
+	 * @param player landed
 	 */
 	public abstract void landOnSquare(Player player);
 	/**

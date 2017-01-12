@@ -14,8 +14,8 @@ public class MovetoShip extends Card {
 	Board board;
 	/**
 	 * Constructor for MoveToShip card
-	 * @param description
-	 * @param board
+	 * @param description oif the card
+	 * @param board of the game
 	 */
 	public MovetoShip(String description, Board board) {
 		super(description);

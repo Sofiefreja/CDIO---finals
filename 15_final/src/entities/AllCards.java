@@ -26,7 +26,8 @@ public class AllCards {
 	
 	/**
 	 * Creating an AllCards instance
-	 * @param thePlayers
+	 * @param thePlayers of the game
+	 * @param theBoard of the game
 	 */
 	public AllCards(ArrayList<Player> thePlayers, Board theBoard) { 
 		theCards = new Card[44];
@@ -79,7 +80,7 @@ public class AllCards {
 	/**
 	 * Method which takes an int as a parameter 
 	 * and returns that index from the 'theCards' array of this instance 
-	 * @param index
+	 * @param index [0:43]
 	 * @return Card
 	 */
 	public Card getCard(int index) {

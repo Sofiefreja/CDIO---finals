@@ -14,7 +14,7 @@ import entities.Player;
 public class Start extends Square {
 	/**
 	 * Constructor
-	 * @param name
+	 * @param name of this instance
 	 * @param id [1:40]
 	 */
 	public Start(String name, int id) {

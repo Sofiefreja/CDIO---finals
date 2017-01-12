@@ -5,14 +5,15 @@ import entities.Player;
 
 /**
  * Class GoToJail extends Move
- * @author Simon Lundorf s154008 & Emily Skovgaard Rasmussen s153374
+ * @author Simon Lundorf s154008
+ * @author Emily Skovgaard Rasmussen s153374
  *
  */
 public class GoToJail extends Move{
 	/**
 	 * Constructor for GoToJail card.
 	 * 	
-	 * @param name
+	 * @param description of the card
 	 */
 	 public GoToJail(String description) {
 	 super(description,10);

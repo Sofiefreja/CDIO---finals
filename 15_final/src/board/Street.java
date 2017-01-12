@@ -19,17 +19,17 @@ public class Street extends Ownable {
 
 	/**
 	 * Constructor
-	 * @param name
+	 * @param name of this instance
 	 * @param id [1:40]
-	 * @param price
-	 * @param pawn
-	 * @param priceOfBuilding
-	 * @param rent0
-	 * @param rent1
-	 * @param rent2
-	 * @param rent3
-	 * @param rent4
-	 * @param rentHotel
+	 * @param price of this instance
+	 * @param pawn price
+	 * @param priceOfBuilding price of a building
+	 * @param rent0 base
+	 * @param rent1 house1
+	 * @param rent2 house2
+	 * @param rent3 house3
+	 * @param rent4 house4
+	 * @param rentHotel hotel
 	 * @param type [A:H]
 	 */
 	public Street(String name, int id, int price, int pawn, int priceOfBuilding, int rent0, int rent1, int rent2,
@@ -94,7 +94,7 @@ public class Street extends Ownable {
 	
 	/**
 	 * Method for removing an amount of buildings on this instance.
-	 * @param amount
+	 * @param amount to be removed
 	 */
 	public void removeBuildings(int amount) {
 		numberOfBuildings -= amount;

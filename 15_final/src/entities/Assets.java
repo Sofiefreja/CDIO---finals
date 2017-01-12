@@ -28,6 +28,7 @@ public class Assets {
 
 	/**
 	 * Constructor for Assets
+	 * @param player owner of this asset
 	 */
 	public Assets(Player player) {
 		jailCard = 0;
@@ -39,10 +40,7 @@ public class Assets {
 
 	/**
 	 * Method for adding a get out of jail free card to the player
-	 * 
-	 * @param jailCard
 	 */
-
 	public void setJailCard() {
 		jailCard++;
 	}
@@ -65,10 +63,7 @@ public class Assets {
 	/**
 	 * Method for removing a get out of jail free card after it is used by the
 	 * player
-	 * 
-	 * @param jailCard
 	 */
-
 	public void useJailCard() {
 		jailCard--;
 	}
@@ -76,7 +71,7 @@ public class Assets {
 	/**
 	 * Method for adding a bought square to list of squares a player owns
 	 * 
-	 * @param square
+	 * @param square bought
 	 */
 
 	public void buySquare(Ownable square) {
@@ -114,7 +109,7 @@ public class Assets {
 	/**
 	 * Method for getting an ArrayList of owned squares
 	 * 
-	 * @return ArrayList<Ownable>
+	 * @return ArrayList of Ownables
 	 */
 	public ArrayList<Ownable> getOwned() {
 		return owned;
@@ -129,8 +124,8 @@ public class Assets {
 		
 	}
 	/**
-	 * ArrayList
-	 * @return
+	 * 
+	 * @return ArrayList Street of the owned streets.
 	 */
 	public ArrayList<Street> getOwnedStreet() {
 		
@@ -228,8 +223,8 @@ public class Assets {
 	/**
 	 * Method for buying an amount of buildings on a specific Street.
 	 * 
-	 * @param street
-	 * @param amount
+	 * @param street in question 
+	 * @param amount of buildings
 	 */
 	public void buyBuildings(Street street, int amount) {
 
@@ -241,8 +236,8 @@ public class Assets {
 	/**
 	 * Method for removing an amount of houses from a specific Street.
 	 * 
-	 * @param street
-	 * @param amount
+	 * @param street in question
+	 * @param amount of buildings
 	 */
 	public void removeBuildings(Street street, int amount) {
 
@@ -272,7 +267,7 @@ public class Assets {
 	 * Method for returning a boolean value of whether the player can build a
 	 * house.
 	 * 
-	 * @return
+	 * @return boolean 
 	 */
 	public boolean getBuildStatus() {
 
@@ -458,7 +453,7 @@ public class Assets {
 	}
 	/**
 	 * Sets the pawnstatus to true of this square
-	 * @param ownable
+	 * @param ownable in question
 	 */
 	public void pawnProperty(Ownable ownable) {
 
@@ -469,7 +464,7 @@ public class Assets {
 	}
 	/**
 	 * Unpawns a square.
-	 * @param ownable
+	 * @param ownable in question 
 	 */
 	public void liftPawn(Ownable ownable) {
 

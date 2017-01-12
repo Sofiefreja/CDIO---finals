@@ -33,7 +33,7 @@ public class msgL {
 	}
 	/**
 	 * Getter for the String arrays with messages.
-	 * @param index
+	 * @param index of message
 	 * @return string
 	 */
 	public static String msg(int index){
@@ -46,7 +46,7 @@ public class msgL {
 	}
 	/**
 	 * Changes the language of the strings msg() returns
-	 * @param language
+	 * @param language chosen
 	 */
 	public static void changeLanguage(String language){
 		if(language.equals("English")){

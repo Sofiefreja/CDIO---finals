@@ -20,9 +20,9 @@ public class Chance extends Square {
 	
 	/**
 	 * Constructor
-	 * @param Name
+	 * @param name of this instance
 	 * @param id [1:40]
-	 * @param AllCards
+	 * @param allTheCards of the game
 	 */
 	public Chance(String name, int id, AllCards allTheCards) {
 		super(name, id);

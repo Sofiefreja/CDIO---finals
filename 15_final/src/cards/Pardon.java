@@ -15,7 +15,7 @@ public class Pardon extends Card {
 	/**
 	 * Constructor for PrisonBreak card
 	 * 
-	 * @param description
+	 * @param description of the card
 	 */
 	public Pardon(String description) {
 		super(description);

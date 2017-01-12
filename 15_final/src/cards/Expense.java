@@ -15,8 +15,8 @@ public class Expense extends Transaction {
 	 * Constructor which accepts two parameters name and withdrawal for this
 	 * specific instance.
 	 * 
-	 * @param description
-	 * @param withdrawal
+	 * @param description of the card
+	 * @param money to be withdrawed
 	 */
 	public Expense(String description, int money) {
 		super(description, money);
@@ -34,7 +34,7 @@ public class Expense extends Transaction {
 	/**
 	 * Player pays the expense, and balance is updated.
 	 * 
-	 * @param player
+	 * @param player to use the card
 	 */
 	public void useCard(Player player) {
 		player.withdraw(money);
