@@ -163,8 +163,14 @@ public class GameLogic {
 							i--;
 						}
 					} else if (thePlayers.get(i).getBalance() < 0 && thePlayers.get(i).getProperty() == true) {
-
-						if (thePlayers.get(i).getProperty()) {
+						
+						if (turn.equals(msgL.msg(10))) {
+							GUIGame.removePlayer(thePlayers.get(i));
+							thePlayers.remove(i);
+							i--; //
+						}
+						
+						else if (thePlayers.get(i).getProperty()) {
 							getMenu(thePlayers.get(i));
 							if (turn.equals(msgL.msg(4))) {
 								Ownable pawned = null;
