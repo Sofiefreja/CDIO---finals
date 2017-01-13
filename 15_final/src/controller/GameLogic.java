@@ -168,8 +168,15 @@ public class GameLogic {
 							i--;
 						}
 					} else if (thePlayers.get(i).getBalance() < 0 && thePlayers.get(i).getProperty() == true) {
-
-						if (thePlayers.get(i).getProperty()) {
+						
+						if (turn.equals(msgL.msg(10))) {
+							System.out.println("Morten smider dig ud");
+							GUIGame.removePlayer(thePlayers.get(i));
+							thePlayers.remove(i);
+							i--; //
+						}
+						
+						else if (thePlayers.get(i).getProperty()) {
 							getMenu(thePlayers.get(i));
 							if (turn.equals(msgL.msg(4))) {
 								Ownable pawned = null;
@@ -230,7 +237,7 @@ public class GameLogic {
 
 			if (testCase == "TC1: Køb, salg og pantsætning") {
 				theCup = new FakeCup(0);
-				startAmount = 35000;
+				startAmount = 4000;
 			} else if (testCase == "TC2: Fængsel") {
 				theCup = new FakeCup(1);
 				startAmount = 30000;
