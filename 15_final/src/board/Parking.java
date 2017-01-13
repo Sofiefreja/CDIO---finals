@@ -4,7 +4,6 @@ import controller.GUIControl;
 import controller.msgL;
 /**
  * Class Parking extends Square
- * @author Sofie Freja Christensen s153932
  *
  */
 public class Parking extends Square {

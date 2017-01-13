@@ -4,12 +4,7 @@ import java.util.ArrayList;
 import controller.GUIControl;
 import entities.Player;
 
-/**
- * 
- * @author Simon Lundorf s154008
- * @author Emily Skovgaard Rasmussen s153374
- *
- */
+
 public class PlayerTransaction extends Transaction{
 	ArrayList<Player> playerList;
 

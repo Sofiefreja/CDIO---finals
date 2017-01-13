@@ -24,11 +24,6 @@ public class GameLogic {
 
 	/**
 	 * GameLogic controls the gameflow
-	 * 
-	 * @author Jonas Larsen s136335
-	 * @author Morten Velin s147300
-	 * @author Sofie Freja Christensen s153932
-	 * @author Simon Lundorf s154008
 	 */
 
 	public GameLogic() {

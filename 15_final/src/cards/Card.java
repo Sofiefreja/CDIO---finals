@@ -4,8 +4,6 @@ import entities.Player;
 
 /**
  * Abstract class Card, superclass to all Cards.
- * 
- * @author Sofie Freja Christensen s153932
  *
  */
 public abstract class Card {

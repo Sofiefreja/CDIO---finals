@@ -8,9 +8,6 @@ import controller.msgL;
 
 /**
  * Class for card which charges the Player with a fee for houses and hotels.
- * 
- * @author Simon Lundorf s154008
- * @author Emily Skovgaard Rasmussen s153374
  *
  */
 public class PriceIncrease extends Transaction {

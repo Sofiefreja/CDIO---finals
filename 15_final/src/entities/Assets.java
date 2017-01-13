@@ -8,8 +8,6 @@ import board.Street;
 /**
  * Class which keeps track of a Player's assets (Squares, buildings and
  * jailCards).
- * 
- * @author Simon Lundorf s154008
  *
  */
 

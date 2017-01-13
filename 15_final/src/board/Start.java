@@ -6,8 +6,6 @@ import entities.Player;
 
 /**
  * Class Start extends Square
- * @author Simon Lundorf s154008
- * @author Emily Skovgaard Rasmussen s153374
  *
  */
 

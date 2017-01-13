@@ -6,10 +6,7 @@ import board.Tax;
 import board.Parking;
 
 /**
- * Keeps track of all the squares, in an array.
- * 
- * @author Jonas Larsen s136335
- * @author Sofie Freja Christensen s153932
+ * Keeps track of all the squares, in an array
  * 
  */
 public class Board {

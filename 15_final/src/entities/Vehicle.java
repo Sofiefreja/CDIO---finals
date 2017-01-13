@@ -5,8 +5,6 @@ import java.awt.Color;
 /**
  * Class which keeps track of the player's position on the board and creates a
  * piece that the player moves with
- * 
- * @author Simon Lundorf s154008
  *
  */
 

@@ -8,11 +8,6 @@ import board.Ownable;
 import board.Street;
 import controller.GUIControl;
 
-/**
- * 
- * @author Simon Lundorf s154008
- *
- */
 
 public class Player {
 

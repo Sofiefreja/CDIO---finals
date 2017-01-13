@@ -9,8 +9,6 @@ import entities.Player;
 
 /**
  * Class Grant extends Transaction
- * 
- * @author Sofie Freja Christensen s153932
  *
  */
 public class Grant extends Transaction {

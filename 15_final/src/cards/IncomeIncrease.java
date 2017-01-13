@@ -6,8 +6,6 @@ import entities.Player;
 
 /**
  * Class IncomeIncrease extends Transaction
- * 
- * @author Sofie Freja Christensen s153932
  *
  */
 public class IncomeIncrease extends Transaction {

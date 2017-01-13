@@ -7,8 +7,6 @@ import controller.msgL;
 /**
  * Abstract class Ownable, extended from Square.
  * Superclass to all ownable subclasses of Square.
- * 
- * @author Mathias Tvaermose Gleerup, s153120
  *
  */
 public abstract class Ownable extends Square {

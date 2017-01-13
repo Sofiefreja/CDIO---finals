@@ -2,7 +2,6 @@ package entities;
 import java.util.Random;
 /**
  * Class Dice, for getting random value between 1 and 6.
- * @author Mathias Tværmose Gleerup
  *
  */
 public class Dice {

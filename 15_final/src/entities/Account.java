@@ -1,8 +1,6 @@
 package entities;
 /**
  * Class for creating an Account, which keeps track of a players balance.
- * 
- * @author Simon Lundorf s154008
  *
  */
 public class Account {

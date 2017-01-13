@@ -7,9 +7,6 @@ import controller.msgL;
 
 /**
  * Class Street extends Ownable
- * 
- * @author Mathias Tvaermose Gleerup, s153120
- * @author Simon Lundorf s154008
  *
  */
 public class Street extends Ownable {

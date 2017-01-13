@@ -5,9 +5,6 @@ import entities.Board;
 
 /**
  * Class for cards which moves a player to nearest Shipping square
- * 
- * @author Simon Lundorf s154008
- * @author Emily Skovgaard Rasmussen s153374
  *
  */
 public class MovetoShip extends Card {

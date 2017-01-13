@@ -17,8 +17,6 @@ import cards.PriceIncrease;
 import controller.msgL;
 /**
  * Class for holding all Cards
- * 
- * @author Sofie Freja Christensen s153932
  *
  */
 public class AllCards { 

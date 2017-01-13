@@ -1,7 +1,6 @@
 package board;
 /**
  * Class Shipping extends Ownable
- * @author Mathias Tvaermose Gleerup, s153120
  *
  */
 public class Shipping extends Ownable {

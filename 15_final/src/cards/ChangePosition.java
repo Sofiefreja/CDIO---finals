@@ -6,8 +6,6 @@ import entities.Player;
 
 /**
  * Class ChangePosition extends Move
- * 
- * @author Sofie Freja Christensen s153932
  *
  */
 public class ChangePosition extends Move {

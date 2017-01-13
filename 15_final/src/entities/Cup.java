@@ -2,8 +2,6 @@ package entities;
 
 /**
  * Class Cup, for operating two Die at once.
- * 
- * @author Mathias Tværmose Gleerup
  *
  */
 public class Cup {

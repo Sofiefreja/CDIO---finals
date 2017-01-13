@@ -5,8 +5,6 @@ import entities.Player;
 
 /**
  * Class GoToJail extends Move
- * @author Simon Lundorf s154008
- * @author Emily Skovgaard Rasmussen s153374
  *
  */
 public class GoToJail extends Move{

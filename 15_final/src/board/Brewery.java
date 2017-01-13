@@ -4,7 +4,6 @@ import entities.Cup;
 
 /**
  * Class Brewery extends Ownable
- * @author Mathias Tvaermose Gleerup, s153120
  *
  */
 public class Brewery extends Ownable {

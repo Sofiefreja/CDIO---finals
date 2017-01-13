@@ -3,8 +3,6 @@ package cards;
 
 /**
  * Abstract class for Card subclasses which changes the position of the player.
- * 
- * @author Sofie Freja Christensen s153932
  *
  */
 public abstract class Move extends Card {

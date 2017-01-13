@@ -6,10 +6,7 @@ import entities.AllCards;
 
 /**
  * 
- * Class Chance extends Square
- * @author Jonas Larsen s136335
- * @author Sofie Freja Christensen s153932
- * @author Morten Velin Christensen s147300
+ * Class Chance extends Squar
  *
  */
 

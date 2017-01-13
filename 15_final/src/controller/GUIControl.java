@@ -25,7 +25,6 @@ import entities.Player;
 
 /**
  * Controller class which handles all contact with the GUI.
- * @author mathi
  *
  */
 public class GUIControl {

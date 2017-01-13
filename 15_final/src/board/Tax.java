@@ -7,14 +7,6 @@ import java.util.ArrayList;
 import controller.GUIControl;
 import controller.msgL;
 
-/**
- * 
- * @author Sofie Freja Christensen s153932
- * @author Mathias Tvaermose Gleerup, s153120
- * @author Simon Lundorf s154008
- * @author Emily Skovgaard Rasmussen s153374
- *
- */
 public class Tax extends Square {
 	private int taxAmount; // amount defined in constructor
 
