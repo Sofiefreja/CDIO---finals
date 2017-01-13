@@ -170,7 +170,6 @@ public class GameLogic {
 					} else if (thePlayers.get(i).getBalance() < 0 && thePlayers.get(i).getProperty() == true) {
 						
 						if (turn.equals(msgL.msg(10))) {
-							System.out.println("Morten smider dig ud");
 							GUIGame.removePlayer(thePlayers.get(i));
 							thePlayers.remove(i);
 							i--; //
@@ -237,7 +236,7 @@ public class GameLogic {
 
 			if (testCase == "TC1: Køb, salg og pantsætning") {
 				theCup = new FakeCup(0);
-				startAmount = 4000;
+				startAmount = 35000;
 			} else if (testCase == "TC2: Fængsel") {
 				theCup = new FakeCup(1);
 				startAmount = 30000;
