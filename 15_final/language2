@@ -102,11 +102,11 @@ Index100	Betal ekstraordinær skat 2000 kr.	Pay special tax 2000 kr.
 Index101	Rådhuspladsen	Rådhuspladsen
 Index102	Leje af grund 1000, m/1 hus = 4000, 2 huse = 12000, 3 huse = 28000, 4 huse = 34000, hotel = 40000, Hus pris = 4000, Hotel pris = 4000, pant = 4000	Rent= 1000, m/1 house = 4000, 2 houses = 12000, 3 houses = 28000, 4 houses = 34000, hotel = 40000, house price = 4000, Hotel price = 4000, pawn = 4000
 Index103	Pris: 8000 kr.	Price: 8000 kr.
-Index104	Tillykke	Congratulations
+Index104	Tillykke 	Congratulations 
 Index105	 du er vinderen!	 you are the winner!
 Index106	Hvor mange spillere er i? (mellen 3-6)	How many players are you? (between 3-6)
 Index107	Fejl	Error
-Index108	Indtast navn på spiller nummer	Enter name of player number
+Index108	Indtast navn på spiller nummer 	Enter name of player number 
 Index109	Ugyldigt navn: navne må ikke være ens	Invalid name: names cannot be the same
 Index110	 det er din tur. Gør noget:	 it's your turn. Take an action:
 Index111	, du landede på 	, you landed on 
@@ -161,13 +161,13 @@ Index159	De har været en tur i udlandet og haft mange cigaretter med hjem. Beta
 Index160	Ryk frem til Grønningen. Hvis de passerer start indkasser da 4000 kr.	Move forward to Grønningen. If you pass the 'START' cash in 4000 kr.
 Index161	Kommunen har eftergivet et kvartals skat. Hæv i banken 3.000 kr.	The municipality has waived a quarterly tax. Recieve from the bank 3000 kr.
 Index162	De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag 500 kr. fra hver spiller	You put money out for a potluck. Receive 500 kr. From each player
-Index163	De har kørt frem for 'Fuldt stop'. Betal 1.000 kr. i bøde.	You've run over 'Full stop'. Pay 1000 kr. In fines.
+Index163	De har kørt frem for 'Fuldt stop'. Betal 1.000 kr. i bøde.	You've run past 'Full stop'. Pay 1000 kr. in fines.
 Index164	Du rykker i fængsel.	You move to jail.
 Index165	Du har betalt 	You have paid 
 Index166	Betal kaution på 1000 kr.	Pay bail of 1000 kr.
 Index167	Du betaler 1000 kroner i kaution.	You pay the bail of 1000 kr.
 Index168	Du har købt 	You have bought 
-Index169	huse. Det kostede 	houses. It cost 
+Index169	 huse. Det kostede	 houses. It cost 
 Index170	Du slog to ens og er hermed løsladt.	You rolled two equals, and are herby released from jail.
 Index171	Du har ikke slået to ens i tre ture, du skal betale kaution (1000 kr.)	You have not rolled two equals for three rounds, you must pay bail (1000 kr.)
 Index172	Du slog ikke to ens og er stadig i fængsel.	You didn't roll two equals and are still in jail.

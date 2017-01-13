@@ -46,7 +46,7 @@ public class Board {
 		squares[17] = new Chance("Prøv lykken", 18, allTheCards);
 		squares[18] = new Street("Hellerupvej", 19, 3600, 1800, 2000, 300, 1400, 4000, 11000, 15000, 19000, 'D');
 		squares[19] = new Street("Strandvejen", 20, 4000, 2000, 2000, 350, 1600, 4400, 12000, 16000, 20000, 'D');
-		squares[20] = new Parking("Parkering", 21);
+		squares[20] = new Parking("Du er parkeret", 21);
 		squares[21] = new Street("Trianglen", 22, 4400, 2200, 3000, 350, 1800, 5000, 14000, 17500, 21000, 'E');
 		squares[22] = new Chance("Prøv lykken", 23, allTheCards);
 		squares[23] = new Street("Østerbrogade", 24, 4400, 2200, 3000, 350, 1800, 5000, 14000, 17500, 21000, 'E');

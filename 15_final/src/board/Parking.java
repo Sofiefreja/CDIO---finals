@@ -1,7 +1,6 @@
 package board;
 import entities.Player;
 import controller.GUIControl;
-import controller.msgL;
 /**
  * Class Parking extends Square
  *
@@ -20,6 +19,6 @@ public class Parking extends Square {
 	 * @param player who landed on this square
 	 */
 	public void landOnSquare(Player player){
-		GUIControl.printMessage(msgL.msg(58));
+		GUIControl.printMessage(name);
 	}
 }
