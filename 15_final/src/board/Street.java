@@ -95,7 +95,7 @@ public class Street extends Ownable {
 	 */
 	public void removeBuildings(int amount) {
 		numberOfBuildings -= amount;
-		owner.deposit(amount * priceOfBuilding);
+		owner.deposit(amount * (priceOfBuilding/2));
 	}
 	
 	/**
