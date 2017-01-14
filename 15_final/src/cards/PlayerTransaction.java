@@ -32,10 +32,6 @@ public class PlayerTransaction extends Transaction{
 			for (int i=0; i<playerList.size();i++) {
 				playerList.get(i).withdraw(money);
 			}
-			player.deposit(money*amount);
-			
-			
-		GUIControl.updateBalance(player);
-		
+		player.deposit(money*amount);	
 		}
 	}

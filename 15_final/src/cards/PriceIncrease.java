@@ -74,7 +74,5 @@ public class PriceIncrease extends Transaction {
 				GUIControl.printMessage(msgL.msg(126));
 				
 			}
-			GUIControl.updateBalance(player);
-
 	}
 }

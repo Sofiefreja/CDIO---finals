@@ -35,8 +35,8 @@ public class Expense extends Transaction {
 	 * @param player to use the card
 	 */
 	public void useCard(Player player) {
-		player.withdraw(money);
 		GUIControl.printMessage(player+msgL.msg(113)+ money);
+		player.withdraw(money);
 	}
 
 }
