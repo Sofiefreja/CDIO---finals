@@ -12,7 +12,7 @@ import entities.Board;
 import entities.Cup;
 import entities.Player;
 
-public class TestTax10 {
+public class TestTaxPercent {
 
 	private Cup theCup = new Cup();
 	private Board theBoard = new Board(theCup, null, false);
