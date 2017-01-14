@@ -119,15 +119,18 @@ public class GameLogic {
 							for (int j = 0; j < thePlayers.get(i).getOwned().size(); j++) {
 
 								if (thePlayers.get(i).getOwned().get(j).toString().equals(hasPawnName)) {
-
-									hasPawned = thePlayers.get(i).getOwned().get(j);
-
+									if(thePlayers.get(i).getBalance()>=thePlayers.get(i).getOwned().get(j).getPawn()){
+										hasPawned = thePlayers.get(i).getOwned().get(j);
+									}
 								}
 
 							}
 
-							thePlayers.get(i).liftPawn(hasPawned);
-
+							if(hasPawned!=null){
+								thePlayers.get(i).liftPawn(hasPawned);
+							}else{
+								GUIControl.printMessage(msgL.msg(213));
+							}
 							i--;
 						} else if (turn.equals(msgL.msg(6))) {//player chose "Buy houses or hotels
 							if (thePlayers.get(i).getBuildStatus() == true) {
@@ -300,7 +303,8 @@ public class GameLogic {
 				choices.add(msgL.msg(4));
 			}
 			if (theplayer.hasPawned() == true) {
-				choices.add(msgL.msg(190));
+				if(theplayer.getBalance()>0)
+					choices.add(msgL.msg(190));
 			}
 			if (theplayer.getBuilding() == true) {
 				choices.add(msgL.msg(8));
