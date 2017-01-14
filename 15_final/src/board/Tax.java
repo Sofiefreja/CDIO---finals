@@ -54,7 +54,6 @@ public class Tax extends Square {
 		} else {
 			GUIControl.printMessage(player.toString() + msgL.msg(116) + taxAmount + msgL.msg(119)+msgL.msg(212));
 			player.withdraw(taxAmount);
-			//GUIControl.taxMessage(player, taxAmount);
 		}
 	}
 	/**

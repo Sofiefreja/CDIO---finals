@@ -386,7 +386,6 @@ public class Assets {
 			if (ownedStreet.get(i).getPropertyPawnStatus() == false && ownedStreet.get(i).getNumberOfBuildings() == 0) {
 
 				pawnable.add(ownedStreet.get(i).toString());
-
 			}
 
 		}
@@ -435,19 +434,12 @@ public class Assets {
 			return hasPawn;
 		} else {
 			for (int i = 0; i < owned.size(); i++) {
-
 				if (owned.get(i).getPropertyPawnStatus() == true) {
-
 					hasPawn = true;
-
 				}
-
 			}
-
 			return hasPawn;
-
 		}
-
 	}
 	/**
 	 * Sets the pawnstatus to true of this square
