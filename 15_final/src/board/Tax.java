@@ -52,6 +52,11 @@ public class Tax extends Square {
 		return taxAmount;
 	}
 
+	/**
+	 * Method for calculating and withdrawing 10% of a player's total assets
+	 * @param player
+	 */
+	
 	public void taxPercent(Player player) {
 
 		ArrayList<Integer> propertyPrice = new ArrayList<Integer>();
