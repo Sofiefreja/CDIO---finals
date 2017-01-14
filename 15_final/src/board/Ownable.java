@@ -129,6 +129,28 @@ public abstract class Ownable extends Square {
 	public int getPawn() {
 		return pawn;
 	}
+	
+	/**
+	 * Test method for setting the owner
+	 * @param player
+	 */
+	
+	public void setOwner(Player player) {
+		
+		owner = player;
+		
+	}
+	
+	/**
+	 * Test method for getting the owner
+	 * @return Owner of the square of the type Player
+	 */
+	
+	public Player getOwner() {
+		
+		return owner;
+		
+	}
 
 
 }

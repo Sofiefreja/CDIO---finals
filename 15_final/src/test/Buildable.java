@@ -1,8 +1,12 @@
 package test;
 
+import static org.junit.Assert.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.junit.Test;
+
+import board.Ownable;
 import board.Street;
 import entities.Board;
 import entities.Cup;
@@ -25,17 +29,39 @@ public class Buildable {
 
 	@Test
 	public void test() {
+		
+//		theBoard.getSquare(1).landOnSquare(p1);
+//		theBoard.getSquare(3).landOnSquare(p1);
+//		theBoard.getSquare(6).landOnSquare(p1);
+//		theBoard.getSquare(8).landOnSquare(p1);
+//		theBoard.getSquare(11).landOnSquare(p1);
+//		theBoard.getSquare(13).landOnSquare(p1);
+//		theBoard.getSquare(14).landOnSquare(p1);
+//
+//		System.out.println(p1.getBalance());
 
-		theBoard.getSquare(1).landOnSquare(p1);
-		theBoard.getSquare(3).landOnSquare(p1);
-		theBoard.getSquare(6).landOnSquare(p1);
-		theBoard.getSquare(8).landOnSquare(p1);
-		theBoard.getSquare(11).landOnSquare(p1);
-		theBoard.getSquare(13).landOnSquare(p1);
-		theBoard.getSquare(14).landOnSquare(p1);
-
+		p1.buySquare((Street) (theBoard.getSquare(1))); // Price 1200 //
+		p1.buySquare((Street) (theBoard.getSquare(3))); // Price 1200 //
+		p1.buySquare((Street) (theBoard.getSquare(6))); // Price 2000 //
+		p1.buySquare((Street) (theBoard.getSquare(8))); // Price 2000 //
+		p1.buySquare((Street) (theBoard.getSquare(11))); // Price 2800 //
+		p1.buySquare((Street) (theBoard.getSquare(13))); // Price 2800 //
+		p1.buySquare((Street) (theBoard.getSquare(14))); // Price 3200 //
+		
+		p1.withdraw(((Ownable) theBoard.getSquare(1)).getPrice());
+		p1.withdraw(((Ownable) theBoard.getSquare(3)).getPrice());
+		p1.withdraw(((Ownable) theBoard.getSquare(6)).getPrice());
+		p1.withdraw(((Ownable) theBoard.getSquare(8)).getPrice());
+		p1.withdraw(((Ownable) theBoard.getSquare(11)).getPrice());
+		p1.withdraw(((Ownable) theBoard.getSquare(13)).getPrice());
+		p1.withdraw(((Ownable) theBoard.getSquare(14)).getPrice());
+		
+		// A total of 15.200 should have been withdrawn from the player's balance //
+		
+		assertEquals(84800, p1.getBalance());
+		
 		System.out.println(p1.getBalance());
-
+		
 		p1.buyBuildings((Street) (theBoard.getSquare(3)), 2);
 		p1.buyBuildings((Street) (theBoard.getSquare(13)), 4);
 		p1.buyBuildings((Street) (theBoard.getSquare(14)), 5);
