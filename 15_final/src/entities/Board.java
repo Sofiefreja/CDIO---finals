@@ -28,7 +28,7 @@ public class Board {
 			allTheCards.shuffle();
 
 		squares[0] = new Start(msgL.msg(11), 1);
-		squares[1] = new Street(msgL.msg(18), 2, 1200, 600, 1000, 50, 250, 750, 2250, 4000, 6000, 'A');
+		squares[1] = new Street(msgL.msg(13), 2, 1200, 600, 1000, 50, 250, 750, 2250, 4000, 6000, 'A');
 		squares[2] = new Chance(msgL.msg(208), 3, allTheCards);
 		squares[3] = new Street(msgL.msg(16), 4, 1200, 600, 1000, 50, 250, 750, 2250, 4000, 6000, 'A');
 		squares[4] = new Tax(msgL.msg(18), 5, 4000);
