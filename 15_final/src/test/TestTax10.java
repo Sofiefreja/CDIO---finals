@@ -87,7 +87,7 @@ public class TestTax10 {
 		
 		assertEquals(59800, p1.getBalance());
 
-		// The following code is the method in Tax that calculates 10% of a player's total assets
+		// Now the code that is supposed to calculate 10% of a players total assets, calculated as 10% of cash, price of buildings and price of property, can be tested
 		
 		for (int i = 0; i < p1.getOwned().size(); i++) {
 			propertyPrice.add(p1.getOwned().get(i).getPrice());
