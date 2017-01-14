@@ -43,7 +43,7 @@ public class GUIControl {
 		fields[2] = new Chance.Builder().setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
 		fields[3] = new Street.Builder().setTitle(msgL.msg(16)).setDescription(msgL.msg(17)).setSubText(msgL.msg(15))
 				.setBgColor(Color.blue).setFgColor(Color.black).build();
-		fields[4] = new Tax.Builder().setTitle(msgL.msg(18)).setDescription(msgL.msg(19)).setSubText("")
+		fields[4] = new Tax.Builder().setTitle(msgL.msg(18)).setDescription(msgL.msg(19)).setSubText(msgL.msg(19))
 				.setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
 		fields[5] = new Shipping.Builder().setTitle(msgL.msg(20)).setDescription(msgL.msg(21)).setSubText(msgL.msg(22))
 				.setBgColor(Color.white).setFgColor(Color.black).build();
@@ -101,7 +101,7 @@ public class GUIControl {
 		fields[33] = new Chance.Builder().setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
 		fields[34] = new Street.Builder().setTitle(msgL.msg(93)).setDescription(msgL.msg(94)).setSubText(msgL.msg(95))
 				.setBgColor(Color.yellow).setFgColor(Color.black).build();
-		fields[35] = new Shipping.Builder().setTitle(msgL.msg(96)).setDescription(msgL.msg(47)).setSubText(msgL.msg(47))
+		fields[35] = new Shipping.Builder().setTitle(msgL.msg(96)).setDescription(msgL.msg(47))
 				.setBgColor(Color.white).setFgColor(Color.black).build();
 		fields[36] = new Chance.Builder().setBgColor(Color.getHSBColor(241, 196, 15)).setFgColor(Color.black).build();
 		fields[37] = new Street.Builder().setTitle(msgL.msg(97)).setDescription(msgL.msg(98)).setSubText(msgL.msg(99))
@@ -127,7 +127,7 @@ public class GUIControl {
 	 * @param winner to be announced
 	 */
 	public void showWinner(Player winner) {
-		GUI.showMessage(msgL.msg(104) + winner + "! " + msgL.msg(105));
+		GUI.showMessage(msgL.msg(104) + winner + msgL.msg(207) + msgL.msg(105));
 	}
 	/**
 	 * Creates a player on the board.

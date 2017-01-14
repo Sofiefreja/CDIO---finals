@@ -224,27 +224,27 @@ public class GameLogic {
 	 */
 	private void GameOrTestMode() {
 
-		String startUp = GUIControl.make2Buttons("Hvordan vil du starte spillet? ", "Test mode", "Normalt");
-		if (startUp == "Test mode") {
-			String testCase = GUIControl.make3Buttons("Vælg test case. Slaget 1,1, kan have en sum større end 12",
-					"TC1: Køb, salg og pantsætning", "TC2: Fængsel", "TC3: Lykkekort og Startfelt");
+		String startUp = GUIControl.make2Buttons(msgL.msg(197), msgL.msg(198), msgL.msg(199));
+		if (startUp == msgL.msg(198)) {
+			String testCase = GUIControl.make3Buttons(msgL.msg(200),
+					msgL.msg(201), msgL.msg(202), msgL.msg(203));
 
-			if (testCase == "TC1: Køb, salg og pantsætning") {
+			if (testCase == msgL.msg(201)) {
 				theCup = new FakeCup(0);
 				startAmount = 35000;
-			} else if (testCase == "TC2: Fængsel") {
+			} else if (testCase == msgL.msg(202)) {
 				theCup = new FakeCup(1);
 				startAmount = 30000;
-			} else if (testCase == "TC3: Lykkekort og Startfelt") {
+			} else if (testCase == msgL.msg(203)) {
 				theCup = new FakeCup(2);
 				startAmount = 30000;
 			}
 			testMode = true;
 
-		} else if (startUp == "Normalt") {
+		} else if (startUp == msgL.msg(199)) {
 			theCup = new Cup();
 			startAmount = 30000;
-			if(GUIGame.changeLanguage().equals("English")){
+			if(GUIGame.changeLanguage().equals(msgL.msg(176))){
 					GUIGame.endGUI();
 					GUIGame.makeBoard();
 			}
@@ -266,9 +266,9 @@ public class GameLogic {
 		} else {
 
 			playerNames = new String[3];
-			playerNames[0] = "Jens";
-			playerNames[1] = "Peter";
-			playerNames[2] = "Line";
+			playerNames[0] = msgL.msg(204);
+			playerNames[1] = msgL.msg(205);
+			playerNames[2] = msgL.msg(206);
 		}
 
 		/*

@@ -45,7 +45,8 @@ public abstract class Ownable extends Square {
 					
 				}else{
 					int amount = getRent();// the rent is calculated, depending on the subclass.
-					GUIControl.printMessage(player.toString() + msgL.msg(111) + this.toString() + msgL.msg(112) + owner.toString()+ msgL.msg(113) + amount + msgL.msg(119) + msgL.msg(114) + owner.toString());
+					GUIControl.printMessage(player.toString() + msgL.msg(111) + this.toString() + msgL.msg(112) + owner.toString() 
+							+msgL.msg(113) + amount + msgL.msg(119) + msgL.msg(114) + owner.toString());
 					player.withdraw(amount);
 					owner.deposit(amount);
 				}

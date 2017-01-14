@@ -7,14 +7,14 @@ import entities.Board;
  * Class for cards which moves a player to nearest Shipping square
  *
  */
-public class MovetoShip extends Card {
+public class MoveToShip extends Card {
 	Board board;
 	/**
 	 * Constructor for MoveToShip card
 	 * @param description oif the card
 	 * @param board of the game
 	 */
-	public MovetoShip(String description, Board board) {
+	public MoveToShip(String description, Board board) {
 		super(description);
 		this.board=board;
 	}
