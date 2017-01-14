@@ -113,4 +113,15 @@ public class Street extends Ownable {
 	public int getPriceOfBuilding() {
 		return priceOfBuilding;
 	}
+	
+	/**
+	 * Test method for setting a number of buildings on the street
+	 * @param amount
+	 */
+	
+	public void setBuilding(int amount) {
+		
+		numberOfBuildings = amount;
+		
+	}
 }

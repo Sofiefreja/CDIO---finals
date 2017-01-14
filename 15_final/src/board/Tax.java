@@ -35,7 +35,7 @@ public class Tax extends Square {
 				player.withdraw(taxAmount);
 			} else {
 				for (int i = 0; i < player.getOwned().size(); i++) {
-					propertyPrice.add(player.getOwned().get(i).price);
+					propertyPrice.add(player.getOwned().get(i).getPrice());
 				}
 				for (int j = 0; j < player.getOwnedStreet().size(); j++) {
 					buildingPrice.add(player.getOwnedStreet().get(j).getNumberOfBuildings()
