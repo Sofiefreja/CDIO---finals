@@ -189,7 +189,9 @@ public class GameLogic {
 											thePlayers.get(i).getSellableList());
 									removeBuilding(thePlayers.get(i), streetName);
 								}
-								i--;
+								if (thePlayers.get(i).getBalance() < 0) {
+									i--;
+								}
 							}
 						}
 					} else if (thePlayers.get(i).getBalance() < 0 && thePlayers.get(i).getProperty() == false) {
