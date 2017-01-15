@@ -170,11 +170,8 @@ public class GameLogic {
 								Ownable pawned = null;
 								String pawnName = GUIControl.makeLists(msgL.msg(5), thePlayers.get(i).getPawnable());
 								for (int j = 0; j < thePlayers.get(i).getOwned().size(); j++) {
-
 									if (thePlayers.get(i).getOwned().get(j).toString().equals(pawnName)) {
-
 										pawned = thePlayers.get(i).getOwned().get(j);
-
 									}
 
 								}
