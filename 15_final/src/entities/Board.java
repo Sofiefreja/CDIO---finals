@@ -36,7 +36,7 @@ public class Board {
 		squares[6] = new Street(msgL.msg(23), 7, 2000, 1000, 1000, 100, 600, 1800, 5400, 8000, 11000, 'B');
 		squares[7] = new Chance(msgL.msg(208), 8, allTheCards);
 		squares[8] = new Street(msgL.msg(26), 9, 2000, 1000, 1000, 100, 600, 1800, 5400, 8000, 11000, 'B');
-		squares[9] = new Street(msgL.msg(29), 10, 2400, 1200, 1000, 150, 800, 2000, 6000, 9000, 1200, 'B');
+		squares[9] = new Street(msgL.msg(29), 10, 2400, 1200, 1000, 150, 800, 2000, 6000, 9000, 12000, 'B');
 		squares[10] = new Parking(msgL.msg(33), 11);
 		squares[11] = new Street(msgL.msg(34), 12, 2800, 1400, 2000, 200, 1000, 3000, 9000, 12500, 15000, 'C');
 		squares[12] = new Brewery(msgL.msg(37), 13, theCup);

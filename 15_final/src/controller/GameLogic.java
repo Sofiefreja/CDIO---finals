@@ -183,14 +183,12 @@ public class GameLogic {
 								if (thePlayers.get(i).getBalance() < 0) {
 									i--;
 								}
-							}
-						}else if (turn.equals(msgL.msg(8))) {//player chose "Sell houses or hotels"
-							if (thePlayers.get(i).getBuilding() == true) {
-								String streetName = GUIControl.makeLists(msgL.msg(194),
-										thePlayers.get(i).getSellableList());
-								removeBuilding(thePlayers.get(i), streetName);
-							}
-							if (thePlayers.get(i).getBalance() < 0) {
+							}else if (turn.equals(msgL.msg(8))) {//player chose "Sell houses or hotels"
+								if (thePlayers.get(i).getBuilding() == true) {
+									String streetName = GUIControl.makeLists(msgL.msg(194),
+											thePlayers.get(i).getSellableList());
+									removeBuilding(thePlayers.get(i), streetName);
+								}
 								i--;
 							}
 						}

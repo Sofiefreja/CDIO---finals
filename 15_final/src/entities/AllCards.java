@@ -44,7 +44,7 @@ public class AllCards {
 		theCards[11] = new MoveToSquare(msgL.msg(139), 0, theBoard);
 		theCards[12] = new PlayerTransaction(msgL.msg(140), 500, thePlayers);
 		theCards[13] = new MoveToSquare(msgL.msg(141), 39 ,theBoard);
-		theCards[14] = new MoveToShip(msgL.msg(142),theBoard);
+		theCards[14] = new MoveToSquare(msgL.msg(142),15,theBoard);
 		theCards[15] = new Expense(msgL.msg(143), 1000);
 		theCards[16] = new Expense(msgL.msg(144), 200);
 		theCards[17] = new Expense(msgL.msg(145), 200);

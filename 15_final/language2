@@ -96,7 +96,7 @@ Index94	Leje af grund 600, m/1 hus = 3000, 2 huse = 9000, 3 huse = 20000, 4 huse
 Index95	Pris: 6400 kr.	Price: 6400 kr.
 Index96	Scandlines R-P	Scandlines R-P
 Index97	Frederiksberggade	Frederiksberggade
-Index98	Leje af grund 700, m/1 hus = 3500, 2 huse = 10000, 3 huse = 22000, 4 huse = 30000, hotel = 40000, Hus pris = 4000, Hotel pris = 4000, pant = 3500	Rent= 700, m/1 house = 3500, 2 houses = 10000, 3 houses = 22000, 4 houses = 30000, hotel = 40000, house price = 4000, Hotel price = 4000, pawn = 3500
+Index98	Leje af grund 700, m/1 hus = 3500, 2 huse = 10000, 3 huse = 22000, 4 huse = 30000, hotel = 40000, Hus pris = 4000, Hotel pris = 4000, pant = 3500	Rent= 700, m/1 house = 3500, 2 houses = 10000, 3 houses = 22000, 4 houses = 26000, hotel = 35000, house price = 4000, Hotel price = 4000, pawn = 3500
 Index99	Pris: 7000 kr.	Price: 7000 kr.
 Index100	Betal ekstraordinær skat 2000 kr.	Pay special tax 2000 kr.
 Index101	Rådhuspladsen	Rådhuspladsen
@@ -167,7 +167,7 @@ Index165	Du har betalt 	You have paid
 Index166	Betal kaution på 1000 kr.	Pay bail of 1000 kr.
 Index167	Du betaler 1000 kroner i kaution.	You pay the bail of 1000 kr.
 Index168	Du har købt 	You have bought 
-Index169	 huse. Det kostede	 houses. It cost 
+Index169	 huse. Det kostede 	 houses. It cost 
 Index170	Du slog to ens og er hermed løsladt.	You rolled two equals, and are herby released from jail.
 Index171	Du har ikke slået to ens i tre ture, du skal betale kaution (1000 kr.)	You have not rolled two equals for three rounds, you must pay bail (1000 kr.)
 Index172	Du slog ikke to ens og er stadig i fængsel.	You didn't roll two equals and are still in jail.
