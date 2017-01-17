@@ -18,7 +18,7 @@ public class MoveToShip extends Card {
 		super(description);
 		this.board=board;
 	}
-
+ 
 	@Override
 	public void useCard(Player player) {
 		GUIControl.printMessage(description);
