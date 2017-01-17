@@ -8,6 +8,7 @@ import entities.Player;
 import test.FakeCup;
 import board.Ownable;
 import board.Street;
+import desktop_resources.GUI;
 
 public class GameLogic {
 
@@ -42,6 +43,58 @@ public class GameLogic {
 		// Beginning the game.
 		equalEyeCounter = 0;
 
+		thePlayers.get(0).buySquare((Street) (theBoard.getSquare(37)));
+		GUIControl.setOwned(38, thePlayers.get(0));
+		thePlayers.get(0).buySquare((Street) (theBoard.getSquare(39)));
+		GUIControl.setOwned(40, thePlayers.get(0));
+		thePlayers.get(1).buySquare((Street) (theBoard.getSquare(21)));
+		GUIControl.setOwned(22, thePlayers.get(1));
+		thePlayers.get(1).buySquare((Street) (theBoard.getSquare(23)));
+		GUIControl.setOwned(24, thePlayers.get(1));
+		thePlayers.get(1).buySquare((Street) (theBoard.getSquare(24)));
+		GUIControl.setOwned(25, thePlayers.get(1));
+		thePlayers.get(2).buySquare((Street) (theBoard.getSquare(32)));
+		GUIControl.setOwned(33, thePlayers.get(2));
+
+		for (int i = 0; i < thePlayers.get(0).getOwned().size(); i++) {
+
+			thePlayers.get(0).getOwned().get(i).setOwner(thePlayers.get(0));
+
+		}
+
+		for (int i = 0; i < thePlayers.get(1).getOwned().size(); i++) {
+
+			thePlayers.get(1).getOwned().get(i).setOwner(thePlayers.get(1));
+
+		}
+
+		for (int i = 0; i < thePlayers.get(2).getOwned().size(); i++) {
+
+			thePlayers.get(2).getOwned().get(i).setOwner(thePlayers.get(2));
+
+		}
+
+		((Street) theBoard.getSquare(37)).setBuilding(2);
+		((Street) theBoard.getSquare(39)).setBuilding(4);
+		GUIGame.setBuilding(38, 1);
+		GUIGame.setBuilding(40, 3);
+
+		GUI.removeCar(1, thePlayers.get(0).toString());
+		GUI.removeCar(1, thePlayers.get(1).toString());
+		GUI.removeCar(1, thePlayers.get(2).toString());
+
+		thePlayers.get(0).setPosition(20, 16);
+		thePlayers.get(1).setPosition(24, 16);
+		thePlayers.get(2).setPosition(32, 26);
+
+		GUI.setCar(21, thePlayers.get(0).toString());
+		GUI.setCar(25, thePlayers.get(1).toString());
+		GUI.setCar(33, thePlayers.get(2).toString());
+
+		thePlayers.get(0).setJailCard();
+		thePlayers.get(1).withdraw(80000);
+		GUIControl.updateBalance(thePlayers.get(1));
+
 		// The game should run until one player remains in the ArrayList.
 		while (thePlayers.size() > 1) {
 
@@ -60,15 +113,15 @@ public class GameLogic {
 					// All the if statements for Player choices on start of
 					// turn.
 					if (thePlayers.get(i).getBalance() >= 0) {
-						
-						if (turn.equals(msgL.msg(1))) {//player chose "Roll"
+
+						if (turn.equals(msgL.msg(1))) {// player chose "Roll"
 							theCup.roll();
 							GUIGame.showDice(theCup);
 							// All the if statements for different scenarios a
 							// player can be in when rolling.
 
 							if (thePlayers.get(i).getJailStatus()) {
-								//When a player is 
+								// When a player is
 								doJail(thePlayers.get(i));
 							} else {
 
@@ -97,8 +150,9 @@ public class GameLogic {
 									}
 								}
 							}
-							//Roll option ends.
-						} else if (turn.equals(msgL.msg(4))) {//player chose "Pawning"
+							// Roll option ends.
+						} else if (turn.equals(msgL.msg(4))) {// player chose
+																// "Pawning"
 							Ownable pawned = null;
 							String pawnName = GUIControl.makeLists(msgL.msg(5), thePlayers.get(i).getPawnable());
 							for (int j = 0; j < thePlayers.get(i).getOwned().size(); j++) {
@@ -113,26 +167,31 @@ public class GameLogic {
 
 							thePlayers.get(i).pawnProperty(pawned);
 							i--;
-						} else if (turn.equals(msgL.msg(190))) {//player chose "Remove pawn status"
+						} else if (turn.equals(msgL.msg(190))) {// player chose
+																// "Remove pawn
+																// status"
 							Ownable hasPawned = null;
 							String hasPawnName = GUIControl.makeLists(msgL.msg(191), thePlayers.get(i).getPawned());
 							for (int j = 0; j < thePlayers.get(i).getOwned().size(); j++) {
 
 								if (thePlayers.get(i).getOwned().get(j).toString().equals(hasPawnName)) {
-									if(thePlayers.get(i).getBalance()>=thePlayers.get(i).getOwned().get(j).getPawn()){
+									if (thePlayers.get(i).getBalance() >= thePlayers.get(i).getOwned().get(j)
+											.getPawn()) {
 										hasPawned = thePlayers.get(i).getOwned().get(j);
 									}
 								}
 
 							}
 
-							if(hasPawned!=null){
+							if (hasPawned != null) {
 								thePlayers.get(i).liftPawn(hasPawned);
-							}else{
+							} else {
 								GUIControl.printMessage(msgL.msg(213));
 							}
 							i--;
-						} else if (turn.equals(msgL.msg(6))) {//player chose "Buy houses or hotels
+						} else if (turn.equals(msgL.msg(6))) {// player chose
+																// "Buy houses
+																// or hotels
 							if (thePlayers.get(i).getBuildStatus() == true) {
 								String streetName = GUIControl.makeLists(msgL.msg(192),
 										thePlayers.get(i).getBuildableList());
@@ -141,32 +200,40 @@ public class GameLogic {
 								GUIControl.printMessage(msgL.msg(193));
 							}
 							i--;
-						} else if (turn.equals(msgL.msg(8))) {//player chose "Sell houses or hotels"
+						} else if (turn.equals(msgL.msg(8))) {// player chose
+																// "Sell houses
+																// or hotels"
 							if (thePlayers.get(i).getBuilding() == true) {
 								String streetName = GUIControl.makeLists(msgL.msg(194),
 										thePlayers.get(i).getSellableList());
 								removeBuilding(thePlayers.get(i), streetName);
 							}
 							i--;
-						} else if (turn.equals(msgL.msg(10))) {//player chose "Give up"
+						} else if (turn.equals(msgL.msg(10))) {// player chose
+																// "Give up"
 							GUIGame.removePlayer(thePlayers.get(i));
 							thePlayers.remove(i);
-							i--; //Because the array shrinks
-						} else if (turn.equals(msgL.msg(166))) {//player chose "Pay bail of 1000 kr."
+							i--; // Because the array shrinks
+						} else if (turn.equals(msgL.msg(166))) {// player chose
+																// "Pay bail of
+																// 1000 kr."
 							GUIControl.printMessage(msgL.msg(167));
 							thePlayers.get(i).withdraw(1000);
 							thePlayers.get(i).setJailStatus(false);
 							i--;
 						}
 					} else if (thePlayers.get(i).getBalance() < 0 && thePlayers.get(i).getProperty() == true) {
-						//the players options if the balance is below 0 and he still has a property.
-						if (turn.equals(msgL.msg(10))) {//player chose "Give up"
+						// the players options if the balance is below 0 and he
+						// still has a property.
+						if (turn.equals(msgL.msg(10))) {// player chose "Give
+														// up"
 							GUIGame.removePlayer(thePlayers.get(i));
 							thePlayers.remove(i);
-							i--;//Because the array shrinks
-						}else if (thePlayers.get(i).getProperty()) {
+							i--;// Because the array shrinks
+						} else if (thePlayers.get(i).getProperty()) {
 							getMenu(thePlayers.get(i));
-							if (turn.equals(msgL.msg(4))) {//player chose "Pawning"
+							if (turn.equals(msgL.msg(4))) {// player chose
+															// "Pawning"
 								Ownable pawned = null;
 								String pawnName = GUIControl.makeLists(msgL.msg(5), thePlayers.get(i).getPawnable());
 								for (int j = 0; j < thePlayers.get(i).getOwned().size(); j++) {
@@ -180,7 +247,11 @@ public class GameLogic {
 								if (thePlayers.get(i).getBalance() < 0) {
 									i--;
 								}
-							}else if (turn.equals(msgL.msg(8))) {//player chose "Sell houses or hotels"
+							} else if (turn.equals(msgL.msg(8))) {// player
+																	// chose
+																	// "Sell
+																	// houses or
+																	// hotels"
 								if (thePlayers.get(i).getBuilding() == true) {
 									String streetName = GUIControl.makeLists(msgL.msg(194),
 											thePlayers.get(i).getSellableList());
@@ -192,10 +263,11 @@ public class GameLogic {
 							}
 						}
 					} else if (thePlayers.get(i).getBalance() < 0 && thePlayers.get(i).getProperty() == false) {
-						//player is removed if he has negative balance and no properties.
+						// player is removed if he has negative balance and no
+						// properties.
 						GUIGame.removePlayer(thePlayers.get(i));
 						thePlayers.remove(i);
-						i--; //Because the array shrinks.
+						i--; // Because the array shrinks.
 
 					}
 				} else { // Breaks the forloop because winner is found.
@@ -215,18 +287,23 @@ public class GameLogic {
 
 		String startUp = GUIControl.make2Buttons(msgL.msg(197), msgL.msg(198), msgL.msg(199));
 		if (startUp == msgL.msg(198)) {
-			String testCase = GUIControl.make3Buttons(msgL.msg(200), msgL.msg(201), msgL.msg(202), msgL.msg(203));
+			String testCase = GUIControl.make3Buttons(msgL.msg(200), msgL.msg(201), msgL.msg(202), "Eksamen");
 
 			if (testCase == msgL.msg(201)) {
 				theCup = new FakeCup(0);
-				startAmount = 35000;
+				startAmount = 100000;
 			} else if (testCase == msgL.msg(202)) {
 				theCup = new FakeCup(1);
-				startAmount = 30000;
+				startAmount = 100000;
 			} else if (testCase == msgL.msg(203)) {
 				theCup = new FakeCup(2);
-				startAmount = 30000;
+				startAmount = 100000;
+
+			} else if (testCase == "Eksamen") {
+				theCup = new FakeCup(2);
+				startAmount = 100000;
 			}
+
 			testMode = true;
 
 		} else if (startUp == msgL.msg(199)) {
@@ -254,9 +331,9 @@ public class GameLogic {
 		} else {
 
 			playerNames = new String[3];
-			playerNames[0] = msgL.msg(204);
-			playerNames[1] = msgL.msg(205);
-			playerNames[2] = msgL.msg(206);
+			playerNames[0] = "Rich Bastard";
+			playerNames[1] = "Poor Bastard";
+			playerNames[2] = "Criminal";
 		}
 
 		/*
@@ -300,7 +377,7 @@ public class GameLogic {
 				choices.add(msgL.msg(4));
 			}
 			if (theplayer.hasPawned() == true) {
-				if(theplayer.getBalance()>0)
+				if (theplayer.getBalance() > 0)
 					choices.add(msgL.msg(190));
 			}
 			if (theplayer.getBuilding() == true) {

@@ -30,9 +30,9 @@ public class AllCards {
 	public AllCards(ArrayList<Player> thePlayers, Board theBoard) { 
 		theCards = new Card[44];
 		
-		theCards[0] = new Pardon(msgL.msg(156));
-		theCards[1] = new GoToJail(msgL.msg(147));
-		theCards[2] = new PlayerTransaction(msgL.msg(132), 200, thePlayers);
+		theCards[0] = new GoToJail(msgL.msg(147));
+		theCards[1] = new MoveToSquare(msgL.msg(160), 24,theBoard);
+		theCards[2] = new MoveToSquare(msgL.msg(141), 39 ,theBoard);
 		theCards[3] = new ChangePosition(msgL.msg(133), 3, theBoard);
 		theCards[4] = new IncomeIncrease(msgL.msg(134),1000);
 		theCards[5] = new IncomeIncrease(msgL.msg(135), 1000);
@@ -43,7 +43,7 @@ public class AllCards {
 		theCards[10] = new MoveToSquare(msgL.msg(139), 0, theBoard);
 		theCards[11] = new MoveToSquare(msgL.msg(139), 0, theBoard);
 		theCards[12] = new PlayerTransaction(msgL.msg(140), 500, thePlayers);
-		theCards[13] = new MoveToSquare(msgL.msg(141), 39 ,theBoard);
+		theCards[13] = new PlayerTransaction(msgL.msg(132), 200, thePlayers);
 		theCards[14] = new MoveToSquare(msgL.msg(142),15,theBoard);
 		theCards[15] = new Expense(msgL.msg(143), 1000);
 		theCards[16] = new Expense(msgL.msg(144), 200);
@@ -70,7 +70,7 @@ public class AllCards {
 		theCards[37] = new Expense(msgL.msg(157), 3000);
 		theCards[38] = new IncomeIncrease(msgL.msg(158), 1000);
 		theCards[39] = new Expense(msgL.msg(159), 200);
-		theCards[40] = new MoveToSquare(msgL.msg(160), 24,theBoard);
+		theCards[40] = new Pardon(msgL.msg(156));
 		theCards[41] = new IncomeIncrease(msgL.msg(161), 3000);
 		theCards[42] = new PlayerTransaction(msgL.msg(162), 500, thePlayers);
 		theCards[43] = new Expense(msgL.msg(163), 1000);
