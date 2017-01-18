@@ -331,9 +331,9 @@ public class GameLogic {
 		} else {
 
 			playerNames = new String[3];
-			playerNames[0] = "Rich Bastard";
-			playerNames[1] = "Poor Bastard";
-			playerNames[2] = "Criminal";
+			playerNames[0] = "Rig";
+			playerNames[1] = "Fallit";
+			playerNames[2] = "Fængsel";
 		}
 
 		/*
