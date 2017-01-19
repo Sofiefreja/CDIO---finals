@@ -94,7 +94,10 @@ public class GameLogic {
 		thePlayers.get(0).setJailCard();
 		thePlayers.get(1).withdraw(80000);
 		GUIControl.updateBalance(thePlayers.get(1));
-
+		
+		thePlayers.get(0).setFirstRound(false);
+		thePlayers.get(1).setFirstRound(false);
+		thePlayers.get(2).setFirstRound(false);
 		// The game should run until one player remains in the ArrayList.
 		while (thePlayers.size() > 1) {
 
